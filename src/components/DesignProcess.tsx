@@ -1,0 +1,168 @@
+// "use client";
+
+// import React from "react";
+// import { FaFileAlt, FaClipboardList, FaDownload } from "react-icons/fa";
+
+// const steps = [
+//   {
+//     icon: <FaFileAlt size={100} className="text-green-600 text-4xl relative z-10" />,
+//     title: "Submit your design request",
+//     description:
+//       "We’ll take your vision and bring it to life while staying consistent with your branding and keeping your goals & objectives in mind.",
+//     bgColor: "bg-[#E1F7E1]",
+//     textColor: "text-[#00E04C]",
+//     circleColor: "bg-[#C3E5C3]"
+//   },
+//   {
+//     icon: <FaClipboardList size={100} className="text-orange-500 text-4xl relative z-10" />,
+//     title: "Provide feedback on your design",
+//     description:
+//       "Use our visual feedback tool to click and annotate different parts of your design for crystal clear change requests.",
+//     bgColor: "bg-orange-100",
+//     textColor: "text-orange-500",
+//     circleColor: "bg-[#C3E5C3]"
+//   },
+//   {
+//     icon: <FaDownload size={100} className="text-purple-600 text-4xl relative z-10" />,
+//     title: "Download & launch your design",
+//     description:
+//       "Download your new design and source files and launch them online for audiences worldwide to see.",
+//     bgColor: "bg-[#EAE4FC]",
+//     textColor: "text-[#663CD9]",
+//     circleColor: "bg-[#D3CFE5]"
+//   },
+// ];
+
+// const DesignProcess = () => {
+//   return (
+//     <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center mb-44">
+//       {/* Heading */}
+//       <h2 className="text-3xl md:text-5xl font-bold text-center text-darkIndigo">
+//         Getting quality & scalable <br /> creatives has never been easier
+//       </h2>
+//       <p className="text-default text-xl text-center w-full max-w-3xl px-10 mt-10">
+//         We’ll take your vision and bring it to life while staying consistent with 
+//         your branding and keeping your goals & objectives in mind.
+//       </p>
+
+//       {/* Steps Section */}
+//       <div className="mt-16 space-y-6 w-full">
+//         {steps.map((step, index) => (
+//           <div
+//             key={index}
+//             className={`flex items-center p-12 gap-20 rounded-xl ${step.bgColor} `}
+//           >
+//             {/* Icon with Background Circle */}
+//             <div className="relative w-32 h-32 flex items-center justify-center border border-red-500">
+//               <div className={`absolute bottom-[-16px] right-[-24px] w-28 h-28 ${step.circleColor} rounded-full`}></div>
+//               {step.icon}
+//             </div>
+
+//             {/* Text Content */}
+//             <div className="ml-12">
+//               <h3 className={`text-3xl md:text-5xl font-semibold ${step.textColor}`}>
+//                 {step.title}
+//               </h3>
+//               <p className="text-default text-xl mt-4">{step.description}</p>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default DesignProcess;
+
+
+"use client";
+
+import React from "react";
+// import { FaFileAlt, FaClipboardList, FaDownload } from "react-icons/fa";
+import request from "../../public/Icons/web_submit-request.svg";
+import feedback from "../../public/Icons/web_feedback.svg";
+import download from "../../public/Icons/web_download.svg";
+import Image from "next/image";
+
+const steps = [
+  {
+    // icon: <FaFileAlt size={100} className="text-[#00E04C] text-4xl relative z-10" />,
+    icon: request,
+    title: "Submit your design request",
+    description:
+      "We’ll take your vision and bring it to life while staying consistent with your branding and keeping your goals & objectives in mind.",
+    bgColor: "bg-[#E1F7E1]",
+    textColor: "text-[#00E04C]",
+    circleColor: "bg-[#C3E5C3]",
+  },
+  {
+    // icon: <FaClipboardList size={100} className="text-[#FF8C00] text-4xl relative z-10" />,
+    icon: feedback,
+    title: "Provide feedback on your design",
+    description:
+      "Use our visual feedback tool to click and annotate different parts of your design for crystal clear change requests.",
+    bgColor: "bg-[#F9EFE3]",
+    textColor: "text-[#FF8C00]",
+    circleColor: "bg-[#EADDCE]",
+  },
+  {
+    // icon: <FaDownload size={100} className="text-[#663CD9] text-4xl relative z-10" />,
+    icon: download,
+    title: "Download & launch your design",
+    description:
+      "Download your new design and source files and launch them online for audiences worldwide to see.",
+    bgColor: "bg-[#EAE4FC]",
+    textColor: "text-[#663CD9]",
+    circleColor: "bg-[#D3CFE5]",
+  },
+];
+
+const DesignProcess = () => {
+  return (
+    <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center mb-44">
+      {/* Heading */}
+      <h2 className="text-3xl md:text-5xl font-bold text-center text-darkIndigo">
+        Getting quality & scalable <br /> creatives has never been easier
+      </h2>
+      <p className="text-default text-xl text-center w-full max-w-3xl px-10 mt-10">
+        We’ll take your vision and bring it to life while staying consistent with
+        your branding and keeping your goals & objectives in mind.
+      </p>
+
+      {/* Steps Section */}
+      <div className="mt-16 space-y-16 w-full">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`flex items-center p-10 pl-20 border gap-20 rounded-xl ${step.bgColor} `}
+          >
+            {/* Icon with Background Circle */}
+            {/* <div className="relative flex items-center justify-center w-32 h-32 mb-8">
+              <div
+                className={`absolute bottom-[-20px] right-[-24px] w-28 h-28 ${step.circleColor} rounded-full`}
+              ></div>
+              {step.icon}
+            </div> */}
+            <div className="w-36 h-36 relative">
+              <Image 
+                src={step.icon} 
+                alt={step.title} 
+                fill 
+                className="object-fill" 
+              />
+            </div>
+            {/* Text Content */}
+            <div>
+              <h3 className={`text-3xl md:text-5xl font-semibold ${step.textColor}`}>
+                {step.title}
+              </h3>
+              <p className="text-default text-xl mt-4">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default DesignProcess;
