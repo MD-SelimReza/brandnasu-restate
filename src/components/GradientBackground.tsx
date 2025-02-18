@@ -7,32 +7,34 @@ import Image from "next/image";
 
 const GradientBackground = () => {
   return (
-    <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center rounded-2xl justify-center overflow-hidden text-white relative p-20 h-auto mb-44">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-black rounded-2xl"></div>
-      <div className="absolute bottom-0 right-0 w-[40%] h-[100%] bg-gradient-to-tl from-[#2375F5] via-transparent to-transparent rounded-bl-2xl overflow-hidden"></div>
-      <div className="absolute bottom-0 left-0 w-[40%] h-[100%] bg-gradient-to-tr from-[#9644D5] via-transparent to-transparent rounded-br-2xl overflow-hidden"></div>
+    <div className="px-6 md:px-10 lg:px-20 xl:px-0">
+      <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center rounded-2xl justify-center overflow-hidden text-white relative h-auto p-6 py-10 md:p-16 lg:p-16 xl:p-20 my-16 xl:my-44">
+        {/* Background Gradient */}
+        <div className="absolute inset-0 bg-black rounded-2xl"></div>
+        <div className="absolute bottom-0 right-0 w-[40%] h-[100%] bg-gradient-to-tl from-[#2375F5] via-transparent to-transparent rounded-bl-2xl overflow-hidden"></div>
+        <div className="absolute bottom-0 left-0 w-[40%] h-[100%] bg-gradient-to-tr from-[#9644D5] via-transparent to-transparent rounded-br-2xl overflow-hidden"></div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center">
-        <h2 className="text-3xl lg:text-5xl font-bold text-lightIndigo">
-          Need Help Picking the Right <br /> Design Plan for You?
-        </h2>
-        <p className="text-lg md:text-xl mt-10 max-w-3xl mx-auto">
-          Try our Package Survey Tool to choose the types of designs you need, 
-          and we&apos;ll recommend the best plan options for you.
-        </p>
-      </div>
-
-      {/* Service Options */}
-      <div className="relative z-10 flex flex-col md:flex-row gap-20 w-full mt-16">
-        <div className="w-full p-10 bg-white text-purple-700 rounded-xl flex flex-col items-center ">
-          <Image src={calender} alt="Calendar" width={100} height={100} />
-          <p className="text-4xl font-medium mt-7">Subscription-based services</p>
+        {/* Content */}
+        <div className="relative z-10 text-center">
+          <h2 className="text-3xl lg:text-5xl font-bold text-lightIndigo lg:max-w-2xl md:max-w-lg mx-auto px-10">
+            Need Help Picking the Right Design Plan for You?
+          </h2>
+          <p className="text-[17px] md:text-xl xl:mt-10 md:mt-6 mt-4 max-w-3xl mx-auto">
+            Try our Package Survey Tool to choose the types of designs you need, 
+            and we&apos;ll recommend the best plan options for you.
+          </p>
         </div>
-        <div className="w-full p-10 bg-white text-purple-700 rounded-xl flex flex-col items-center ">
-          <Image src={communication} alt="Calendar" width={100} height={100} />
-          <p className="text-4xl font-medium mt-7">One-time purchases</p>
+
+        {/* Service Options */}
+        <div className="relative z-10 flex flex-col md:flex-row xl:gap-20 md:gap-10 gap-6 w-full xl:mt-16 md:mt-10 mt-6">
+          <div className="w-full xl:p-10 p-6 bg-white text-darkIndigo rounded-xl flex flex-col items-center ">
+            <Image src={calender} alt="Calendar" objectFit="fill" className="w-16 md:w-24" />
+            <p className="xl:text-4xl md:text-2xl text-xl font-medium xl:mt-7 mt-4">Subscription-based services</p>
+          </div>
+          <div className="w-full xl:p-10 p-6 bg-white text-darkIndigo rounded-xl flex flex-col items-center ">
+            <Image src={communication} alt="communication" objectFit="fill" className="w-16 md:w-24" />
+            <p className="xl:text-4xl md:text-2xl text-xl font-medium xl:mt-7 mt-4">One-time purchases</p>
+          </div>
         </div>
       </div>
     </div>

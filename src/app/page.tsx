@@ -12,10 +12,10 @@ import DesignPlatform from "@/components/DesignPlatform";
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-start min-h-screen w-full mx-auto bg-gray-100 max-w-[1440px">
+    <div className="flex flex-col justify-start min-h-[calc(100vh-86px)] w-full mx-auto bg-gray-100 max-w-[1440px">
       {/* <Navbar /> */}
       <AutoSlider />
-      <div className="border-b border-gray-100 -mt-20"></div>
+      <div className="border-b border-gray-100 xl:-mt-20 -mt-28"></div>
       <div className="">
         <InfoSection />
         <GradientSection />
