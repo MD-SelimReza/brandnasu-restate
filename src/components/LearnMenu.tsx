@@ -6,7 +6,7 @@ import DefaultImage from "../../public/default.jpg";
 
 const LearnMenu = () => (
   <div className="w-full left-0 xl:p-6 xl:rounded-lg xl:border xl:shadow my-5 xl:my-0">
-    <div className='max-w-[1440px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+    <div className='max-w-[1440px] mx-auto grid grid-cols-1 xl:grid-cols-3 gap-6'>
       <div className='bg-gray-100 p-5 rounded-lg space-y-8 h-fit'>
         <p className="font-semibold text-darkIndigo/90 text-sm xl:text-lg border-b">NOLIMIT UNIVERSITY</p>
         <ul className="space-y-2 text-default text-sm">

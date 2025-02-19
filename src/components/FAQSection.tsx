@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import Container from './Container';
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -18,36 +19,37 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="w-full max-w-[1440px] mx-auto flex gap-10 flex-col md:flex-row my-44">
-      {/* Left Section (40% width) */}
-      <div className="w-full md:w-2/5">
-        <h2 className="text-3xl md:text-5xl font-bold text-darkIndigo">Frequently <br /> Asked Questions</h2>
-        <p className="mt-10 text-xl text-default max-w-lg">Get answers to some of the most commonly asked questions we receive from businesses just like yours.
-        </p>
-      </div>
+    <Container>
+      <div className="w-full flex lg:gap-10 flex-col lg:flex-row my-16 xl:my-44">
+        {/* Left Section (40% width) */}
+        <div className="w-full lg:w-2/5 lg:text-left text-center lg:px-0 px-6">
+          <h2 className="text-3xl lg:text-5xl font-bold max-w-2xl mx-auto text-darkIndigo">Frequently Asked Questions</h2>
+          <p className="xl:mt-10 md:mt-6 mt-4 text-xl text-default mb-10">Get answers to some of the most commonly asked questions we receive from businesses just like yours.
+          </p>
+        </div>
 
-      {/* Right Section - FAQs (60% width) */}
-      <div className="w-full md:w-3/5 space-y-5">
-        {faqs.map((faq, index) => (
-          <div key={index} className="bg-[#EFEFEF] rounded-2xl p-8">
-            <button
-              className="w-full flex justify-between items-center text-black text-left font-semibold text-2xl py-2 focus:outline-none"
-              onClick={() => toggleFAQ(index)}
-            >
-              {faq.question}
-              {openIndex === index ? <FaMinus size={24} className="text-black font-medium" /> : <FaPlus size={24} className="text-black font-medium" />}
-            </button>
-            <div
-              className={`overflow-hidden transition-all duration-300 ${
-                openIndex === index ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'
-              }`}
-            >
-              <p className="text-default text-lg">{faq.answer}</p>
+        {/* Right Section - FAQs (60% width) */}
+        <div className="w-full lg:w-3/5 space-y-5">
+          {faqs.map((faq, index) => (
+            <div onClick={() => toggleFAQ(index)} key={index} className="bg-[#EFEFEF] rounded-2xl md:p-8 p-6">
+              <button
+                className="w-full flex justify-between gap-4 items-baseline text-black text-left font-semibold text-2xl py-2 focus:outline-none"
+              >
+                {faq.question}
+                {openIndex === index ? <FaMinus size={24} className="text-black font-medium" /> : <FaPlus size={24} className="text-black font-medium" />}
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <p className="text-default text-lg">{faq.answer}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </section>
+    </Container>
   );
 };
 

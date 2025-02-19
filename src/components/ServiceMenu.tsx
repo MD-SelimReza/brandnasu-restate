@@ -103,11 +103,11 @@ const plans = [
 
 const ServiceMenu = () => (
   <div className="w-full bg-white xl:p-6 xl:rounded-lg xl:drop-shadow-xl xl:border-2 my-5 xl:my-0">
-    <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 xl:gap-6 gap-y-10">
+    <div className="max-w-[1440px] mx-auto grid grid-cols-1 xl:grid-cols-3 xl:gap-6 gap-y-10">
       {/* Services Section */}
-      <div className="col-span-2">
+      <div className="col-span-2 pt-5">
         <p className="font-bold text-darkIndigo text-lg border-b pb-2 mb-3 xl:block hidden">SERVICES</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-2 text-gray-700 text-sm">
+        <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-2 text-gray-700 text-sm">
           {services.map(({ icon, title, desc }, index) => (
             <div
               key={index}

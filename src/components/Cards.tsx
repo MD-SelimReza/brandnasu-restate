@@ -186,10 +186,10 @@ const cardData: Record<ServiceType, { id: number; img: StaticImageData }[]> = {
 };
 
 const Cards: React.FC<CardProps> = ({ service }) => (
-  <div className='grid grid-cols-3 gap-x-10 gap-y-12 w-full max-w-[1440px] mx-auto px-4'>
+  <div className='grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 lg:gap-x-10 md:gap-x-6 gap-x-4 gap-y-6 lg:gap-y-12 w-full max-w-[1440px] mx-auto px-4'>
     {cardData[service].map((card) => (
-      <div key={card.id} className='w-full max-w-md'>
-        <div className="w-full h-80 flex items-center justify-center">
+      <div key={card.id} className='w-full'>
+        <div className="w-full h-full flex items-center justify-center">
           <Image src={card.img} alt='Card img' objectFit='fill' />
         </div>
       </div>

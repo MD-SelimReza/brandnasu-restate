@@ -74,19 +74,17 @@
 
 // export default DesignProcess;
 
-
 "use client";
 
 import React from "react";
-// import { FaFileAlt, FaClipboardList, FaDownload } from "react-icons/fa";
 import request from "../../public/Icons/web_submit-request.svg";
 import feedback from "../../public/Icons/web_feedback.svg";
 import download from "../../public/Icons/web_download.svg";
 import Image from "next/image";
+import Container from "./Container";
 
 const steps = [
   {
-    // icon: <FaFileAlt size={100} className="text-[#00E04C] text-4xl relative z-10" />,
     icon: request,
     title: "Submit your design request",
     description:
@@ -96,7 +94,6 @@ const steps = [
     circleColor: "bg-[#C3E5C3]",
   },
   {
-    // icon: <FaClipboardList size={100} className="text-[#FF8C00] text-4xl relative z-10" />,
     icon: feedback,
     title: "Provide feedback on your design",
     description:
@@ -106,7 +103,6 @@ const steps = [
     circleColor: "bg-[#EADDCE]",
   },
   {
-    // icon: <FaDownload size={100} className="text-[#663CD9] text-4xl relative z-10" />,
     icon: download,
     title: "Download & launch your design",
     description:
@@ -119,49 +115,44 @@ const steps = [
 
 const DesignProcess = () => {
   return (
-    <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center mb-44">
-      {/* Heading */}
-      <h2 className="text-3xl md:text-5xl font-bold text-center text-darkIndigo">
-        Getting quality & scalable <br /> creatives has never been easier
-      </h2>
-      <p className="text-default text-xl text-center w-full max-w-3xl px-10 mt-10">
-        We’ll take your vision and bring it to life while staying consistent with
-        your branding and keeping your goals & objectives in mind.
-      </p>
+    <Container>
+      <div className="w-full flex flex-col items-center mb-16 xl:mb-44">
+        <div className="w-full max-w-4xl px-6 mx-auto text-center">
+          <h2 className="text-3xl lg:text-5xl font-bold text-darkIndigo">
+            Getting quality & scalable creatives has never been easier
+          </h2>
+          <p className="xl:mt-10 md:mt-6 mt-4 md:px-16 text-xl text-default">
+            We’ll take your vision and bring it to life while staying consistent with
+            your branding and keeping your goals & objectives in mind.
+          </p>
+        </div>
 
-      {/* Steps Section */}
-      <div className="mt-16 space-y-16 w-full">
-        {steps.map((step, index) => (
-          <div
+        {/* Steps Section */}
+        <div className="lg:mt-16 md:mt-10 mt-6 w-full grid grid-cols-1 gap-6">
+          {steps.map((step, index) => (
+            <div
             key={index}
-            className={`flex items-center p-10 pl-20 border gap-20 rounded-xl ${step.bgColor} `}
+            className={`flex flex-col md:flex-row p-6 items-center md:p-10 lg:p-12 xl:pl-20 lg:pl-16 border xl:gap-20 lg:gap-16 md:gap-10 gap-6 rounded-xl ${step.bgColor} `}
           >
-            {/* Icon with Background Circle */}
-            {/* <div className="relative flex items-center justify-center w-32 h-32 mb-8">
-              <div
-                className={`absolute bottom-[-20px] right-[-24px] w-28 h-28 ${step.circleColor} rounded-full`}
-              ></div>
-              {step.icon}
-            </div> */}
-            <div className="w-36 h-36 relative">
+            <div className="md:w-72 lg:w-60 xl:w-36 w-28 h-fit relative">
               <Image 
                 src={step.icon} 
-                alt={step.title} 
-                fill 
+                alt={step.title}
                 className="object-fill" 
               />
             </div>
             {/* Text Content */}
-            <div>
-              <h3 className={`text-3xl md:text-5xl font-semibold ${step.textColor}`}>
+            <div className="text-center md:text-left">
+              <h3 className={`text-3xl lg:text-4xl xl:text-5xl font-bold ${step.textColor}`}>
                 {step.title}
               </h3>
-              <p className="text-default text-xl mt-4">{step.description}</p>
+              <p className="text-default text-lg md:text-xl mt-4">{step.description}</p>
             </div>
           </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

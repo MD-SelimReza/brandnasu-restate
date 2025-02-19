@@ -4,10 +4,11 @@ import React from "react";
 import calender from "../../public/Icons/web_subscription.svg";
 import communication from "../../public/Icons/web_purchases.svg";
 import Image from "next/image";
+import Container from "./Container";
 
 const GradientBackground = () => {
   return (
-    <div className="px-6 md:px-10 lg:px-20 xl:px-0">
+    <Container>
       <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center rounded-2xl justify-center overflow-hidden text-white relative h-auto p-6 py-10 md:p-16 lg:p-16 xl:p-20 my-16 xl:my-44">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-black rounded-2xl"></div>
@@ -31,13 +32,13 @@ const GradientBackground = () => {
             <Image src={calender} alt="Calendar" objectFit="fill" className="w-16 md:w-24" />
             <p className="xl:text-4xl md:text-2xl text-xl font-medium xl:mt-7 mt-4">Subscription-based services</p>
           </div>
-          <div className="w-full xl:p-10 p-6 bg-white text-darkIndigo rounded-xl flex flex-col items-center ">
+          <div className="w-full xl:p-10 p-6 bg-[#E0D9FF] text-darkIndigo rounded-xl flex flex-col items-center ">
             <Image src={communication} alt="communication" objectFit="fill" className="w-16 md:w-24" />
             <p className="xl:text-4xl md:text-2xl text-xl font-medium xl:mt-7 mt-4">One-time purchases</p>
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

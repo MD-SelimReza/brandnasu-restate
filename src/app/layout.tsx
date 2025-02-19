@@ -4,11 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// Replace Geist with Inter, specifying font weights
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"], // Define multiple weights
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {

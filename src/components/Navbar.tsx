@@ -140,7 +140,7 @@ export default function Navbar() {
       <div className='flex items-center justify-between px-6 py-3 max-w-[1440px] mx-auto'>
         {/* Logo */}
         <Link href='/'>
-          <Image src={logo} alt='logo' width={120} height={40} />
+          <Image src={logo} alt='logo' objectFit='fill' className='lg:w-32 md:w-28 w-24' />
         </Link>
 
         <div className='flex items-center space-x-8 text-lg'>
@@ -150,13 +150,13 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Menu */}
-          <div className='hidden xl:flex items-center space-x-8 text-lg text-lightIndigo'>
+          <div className='hidden xl:flex items-center space-x-8 text-base text-lightIndigo'>
             <div className='relative' onMouseEnter={() => toggleDropdown('services')} onMouseLeave={() => toggleDropdown('services')}>
               <button className='flex items-center gap-1 py-4 px-1 group'>
                 Services <IoIosArrowDown className='group-hover:rotate-180 ml-2 transition-all duration-300' />
               </button>
               {activeDropdown === 'services' && (
-                <div className="fixed top-[72px] left-0 w-screen bg-white  z-50">
+                <div className="fixed top-[70px] left-0 w-screen bg-white  z-50">
                   <ServiceMenu />
                 </div>
               )}
@@ -166,7 +166,7 @@ export default function Navbar() {
                 Our Work <IoIosArrowDown className='group-hover:rotate-180 ml-2 transition-all duration-300' />
               </button>
               {activeDropdown === 'works' && (
-                <div className="fixed top-[72px] left-0 w-screen bg-white  z-50">
+                <div className="fixed top-[70px] left-0 w-screen bg-white  z-50">
                   <LearnMenu />
                 </div>
               )}
@@ -177,7 +177,7 @@ export default function Navbar() {
           </div>
 
           {/* Buttons */}
-          <div className='hidden xl:flex space-x-8'>
+          <div className='hidden xl:flex space-x-8 text-base'>
             <button className='px-6 py-2 bg-indigo text-white rounded-full'>Watch A Demo</button>
             <button className='px-6 py-2 border border-lightIndigo text-lightIndigo rounded-full'>Dashboard</button>
           </div>
