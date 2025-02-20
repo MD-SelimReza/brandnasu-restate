@@ -3,8 +3,8 @@ import InfoSection from "@/components/InfoSection";
 import GradientSection from "@/components/GradientBackground";
 import OurWorks from "@/components/OurWorks";
 import DesignProcess from "@/components/DesignProcess";
-import TestimonialsCarousel from "@/components/TestimonialsCarousel";
-import CallToActionSection from "@/components/CallToActionSection";
+// import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+// import CallToActionSection from "@/components/CallToActionSection";
 import FAQSection from "@/components/FAQSection";
 import DesignPlatform from "@/components/DesignPlatform";
 

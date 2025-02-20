@@ -78,6 +78,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Container from "./Container";
+import Image from "next/image";
 
 const videos = [
   { id: 1, thumbnail: "/video-thumbnail1.jpg", src: "/video1.mp4" },
@@ -121,7 +122,7 @@ export default function TestimonialsCarousel() {
                   <SwiperSlide key={video.id}>
                     <div className="bg-gradient-to-b from-indigo to-darkIndigo p-8 rounded-2xl flex items-center justify-center h-[450px] lg:h-[500px] xl:h-[702px] relative aspect-video w-full mx-auto border-2">
                       {/* Video Thumbnail */}
-                      <img
+                      <Image
                         src={video.thumbnail}
                         alt="Video Thumbnail"
                         className="w-full h-full object-cover rounded-2xl border-2 border-red-500"
