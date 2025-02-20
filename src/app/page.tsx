@@ -13,17 +13,17 @@ export default function Home() {
     <div className="flex flex-col justify-start min-h-[calc(100vh-86px)] w-full mx-auto bg-gray-100 max-w-[1440px">
       <AutoSlider />
       {/* <CardSlider /> */}
-      <div className="border-b border-gray-100 xl:-mt-20 -mt-28"></div>
+      {/* <div className="border-b border-gray-100 xl:-mt-20 -mt-28"></div> */}
       <div className="">
         <InfoSection />
         <GradientSection />
         <OurWorks />
         <DesignPlatform />
         <DesignProcess />
-        <TestimonialsCarousel />
+        {/* <TestimonialsCarousel /> */}
         <div id="faq" className="border-b border-gray-100 -mt-2"></div>
         <FAQSection />
-        <CallToActionSection />
+        {/* <CallToActionSection /> */}
       </div>
       <div className="border-b border-gray-100 -mt-8 pb-16 xl:pb-44"></div>
     </div>

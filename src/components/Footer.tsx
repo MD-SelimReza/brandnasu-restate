@@ -100,7 +100,7 @@ const Footer = () => {
         ))}
 
         {/* Contact Info */}
-        <div className='mb-10'>
+        <div className='mt-6'>
           <h3 className="font-medium text-2xl mb-5 flex items-center gap-2">
             <Image src={logo} alt='logo' width={100} height={100} />
           </h3>

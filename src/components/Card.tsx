@@ -20,11 +20,11 @@
 // }
 
 // const cards: Record<BannerKey, CardItem[]> = {
-  // "Banner One": [
-  //   { id: 1, img: D1 },
-  //   { id: 2, img: D2 },
-  //   { id: 3, img: D3 },
-  // ],
+//   "Banner One": [
+//     { id: 1, img: D1 },
+//     { id: 2, img: D2 },
+//     { id: 3, img: D3 },
+//   ],
 //   "Banner Two": [
 //     { id: 1, img: W1 },
 //     { id: 2, img: W2 },
@@ -43,15 +43,15 @@
 
 // const Card: React.FC<CardProps> = ({ banner }) => {
 //   return (
-    // <Container>
-    //   <div className="flex items-center justify-center xl:gap-x-10 md:gap-x-8 gap-x-4 w-full">
-    //     {cards[banner].map((card) => (
-    //       <div key={card.id} className="w-full">
-    //         <Image src={card.img} alt="Card img" loading="lazy" />
-    //       </div>
-    //     ))}
-    //   </div>
-    // </Container>
+//     <Container>
+//       <div className="flex items-center justify-center xl:gap-x-10 md:gap-x-8 gap-x-4 w-full">
+//         {cards[banner].map((card) => (
+//           <div key={card.id} className="w-full">
+//             <Image src={card.img} alt="Card img" loading="lazy" />
+//           </div>
+//         ))}
+//       </div>
+//     </Container>
 //   );
 // };
 
@@ -111,7 +111,8 @@ const CardSlider = () => {
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
-            1024: { slidesPerView: 4 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 },
           }}
           // onSwiper={(swiper) => (swiperRef.current = swiper)} // Save Swiper instance
         >
@@ -144,97 +145,6 @@ const CardSlider = () => {
 };
 
 export default CardSlider;
-
-
-
-// 'use client';
-
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import { Navigation, Autoplay, Pagination } from 'swiper/modules';
-// import Container from './Container';
-// import Image from 'next/image';
-// import D1 from '../../public/D1.png';
-// import D2 from '../../public/D2.png';
-// import D3 from '../../public/D3.png';
-// import W1 from "../../public/W1.png";
-// import W2 from "../../public/W2.png";
-// import W3 from "../../public/W3.png";
-// import S1 from "../../public/S1.png";
-// import S2 from "../../public/S2.png";
-// import S3 from "../../public/S3.png";
-
-// const Banner = [
-//   { id: 1, img: D1 },
-//   { id: 2, img: D2 },
-//   { id: 3, img: D3 },
-//   { id: 4, img: W1 },
-//   { id: 5, img: W2 },
-//   { id: 6, img: W3 },
-// ];
-
-// const CardSlider = () => {
-//   return (
-//     <div className="relative mt-10">
-//       {/* <Container> */}
-//         <div className="relative">
-//           <Swiper
-//             modules={[Navigation, Autoplay, Pagination]}
-//             spaceBetween={10}
-//             slidesPerView={1}
-//             loop={true}
-//             autoplay={{
-//               delay: 3000,
-//               disableOnInteraction: false,
-//             }}
-//             navigation={{
-//               prevEl: '.prev-btn',
-//               nextEl: '.next-btn',
-//             }}
-//             pagination={{ clickable: true }}
-//             breakpoints={{
-//               640: { slidesPerView: 1 },
-//               768: { slidesPerView: 2 },
-//               1024: { slidesPerView: 5 },
-//             }}
-//           >
-//             {Banner.map((card) => (
-//               <SwiperSlide key={card.id}>
-//                 {/* <div className="flex justify-center">
-//                   <div className="w-full max-w-xs"> */}
-//                     <Image
-//                       src={card.img}
-//                       alt="Card img"
-//                       loading="lazy"
-//                       className="rounded-lg shadow-md"
-//                     />
-//                   {/* </div>
-//                 </div> */}
-//               </SwiperSlide>
-//             ))}
-//           </Swiper>
-
-//           {/* Navigation Buttons (Linked to Swiper) */}
-//           <button className="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full">
-//             ❮
-//           </button>
-//           <button className="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full">
-//             ❯
-//           </button>
-//         </div>
-//       {/* </Container> */}
-//     </div>
-//   );
-// };
-
-// export default CardSlider;
-
-
-
-
-
 
 
 // export const ExampleCard = () => {

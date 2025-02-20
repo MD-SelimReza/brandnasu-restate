@@ -17,7 +17,7 @@ const GradientBackground = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold text-lightIndigo lg:max-w-2xl md:max-w-lg mx-auto px-10">
+          <h2 className="text-3xl lg:text-5xl font-bold text-lightIndigo lg:max-w-2xl md:max-w-lg mx-auto md:px-10">
             Need Help Picking the Right Design Plan for You?
           </h2>
           <p className="text-[17px] md:text-xl xl:mt-10 md:mt-6 mt-4 max-w-3xl mx-auto">
