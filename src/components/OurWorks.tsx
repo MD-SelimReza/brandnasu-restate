@@ -90,7 +90,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Cards from './Cards';
 import Container from './Container';
 
@@ -143,27 +143,26 @@ const OurWorks = () => {
   return (
     <Container>
       <div className="w-full my-16 xl:my-44">
-        <div className="w-full max-w-4xl px-6 mx-auto text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold text-darkIndigo">
-            Get a fully dedicated design team for a fraction of the cost
+        <div className="w-full max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl lg:text-4xl xl:text-6xl font-bold text-darkIndigo md:max-w-2xl lg:max-w-full md:px-10 lg:px-0 text-center">
+          Real Estate Branding & Design That Makes an Impact
           </h2>
-          <p className="xl:mt-10 md:mt-6 mt-4 md:px-16 text-xl text-default">
-            Get all your digital, print, and video content created under one roof without
-            the expensive hourly rates or variable costs you’d see from a freelancer.
+          <p className="xl:mt-10 md:mt-6 mt-4 text-sm md:text-xl text-default md:px-16 lg:px-20 text-center">
+          See how our premium branding, design, and web solutions help real estate professionals stand out and grow their business
           </p>
-          <button className="relative inline-flex items-center px-11 mt-10 mb-16 py-2.5 text-lightIndigo overflow-hidden text-base font-medium rounded-full group bg-darkIndigo">
+          {/* <button className="relative inline-flex items-center px-11 mt-10 mb-16 py-2.5 text-lightIndigo overflow-hidden text-base font-medium rounded-full group bg-darkIndigo">
             <span className="absolute left-0 block w-full h-0 transition-all bg-darkIndigo opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
             <span className="absolute right-0 flex items-center justify-center w-20 h-14 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
               <FaArrowRight className="-rotate-45" />
             </span>
-            <span className="relative duration-300 transform translate-x-0 group-hover:-translate-x-4 ease">
+            <span className="relative duration-300 text-lg transform translate-x-0 group-hover:-translate-x-4 ease">
               View our Work
             </span>
-          </button>
+          </button> */}
         </div>
 
         {/* Scrollable Services List */}
-        <div className="relative w-full mx-auto rounded-xl">
+        <div className="relative w-full mx-auto rounded-xl xl:mt-16 md:mt-10 mt-6">
           {canScrollLeft && (
             <div className="absolute left-0 h-full w-28 rounded-l-xl bg-gradient-to-l from-transparent to-lightIndigo/80 pointer-events-none" />
           )}

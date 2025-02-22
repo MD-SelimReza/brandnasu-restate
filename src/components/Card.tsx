@@ -133,10 +133,10 @@ const CardSlider = () => {
         </Swiper>
 
         {/* Navigation Buttons */}
-        <button className="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full">
+        <button className="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2A] text-white p-3 rounded-full">
           ❮
         </button>
-        <button className="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full">
+        <button className="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2A] text-white p-3 rounded-full">
           ❯
         </button>
       </div>

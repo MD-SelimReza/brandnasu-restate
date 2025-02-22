@@ -117,13 +117,12 @@ const DesignProcess = () => {
   return (
     <Container>
       <div className="w-full flex flex-col items-center mb-16 xl:mb-44">
-        <div className="w-full max-w-4xl px-6 mx-auto text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold text-darkIndigo">
-            Getting quality & scalable creatives has never been easier
+        <div className="w-full mx-auto text-center max-w-4xl">
+          <h2 className="text-3xl lg:text-4xl xl:text-6xl font-bold text-darkIndigo md:max-w-2xl lg:max-w-full lg:px-0 md:px-20 text-center">
+          Real Estate Branding & Design That Makes an Impact
           </h2>
-          <p className="xl:mt-10 md:mt-6 mt-4 md:px-16 text-xl text-default">
-            We’ll take your vision and bring it to life while staying consistent with
-            your branding and keeping your goals & objectives in mind.
+          <p className="xl:mt-10 md:mt-6 mt-4 text-sm md:text-xl text-default md:px-16 lg:px-20 text-center">
+          See how our premium branding, design, and web solutions help real estate professionals stand out and grow their business
           </p>
         </div>
 

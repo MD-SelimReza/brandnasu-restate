@@ -22,9 +22,12 @@ const FAQSection = () => {
     <Container>
       <div className="w-full flex lg:gap-10 flex-col lg:flex-row my-16 xl:my-44">
         {/* Left Section (40% width) */}
-        <div className="w-full lg:w-2/5 lg:text-left text-center lg:px-0 px-6">
-          <h2 className="text-3xl lg:text-5xl font-bold max-w-2xl mx-auto text-darkIndigo">Frequently Asked Questions</h2>
-          <p className="xl:mt-10 md:mt-6 mt-4 text-xl text-default mb-10">Get answers to some of the most commonly asked questions we receive from businesses just like yours.
+        <div className="w-full lg:w-2/5 lg:text-left text-center lg:px-0 mb-10">
+          <h2 className="text-3xl lg:text-4xl xl:text-6xl font-bold text-darkIndigo lg:max-w-full lg:px-0 md:px-10 lg:text-left text-center">
+            Frequently Asked Questions
+          </h2>
+          <p className="xl:mt-10 md:mt-6 mt-4 text-sm md:text-xl text-default md:px-16 lg:text-left lg:px-0 text-center">
+            Get answers to some of the most commonly asked questions we receive from businesses just like yours.
           </p>
         </div>
 

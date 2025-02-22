@@ -3,8 +3,8 @@ import InfoSection from "@/components/InfoSection";
 import GradientSection from "@/components/GradientBackground";
 import OurWorks from "@/components/OurWorks";
 import DesignProcess from "@/components/DesignProcess";
-// import TestimonialsCarousel from "@/components/TestimonialsCarousel";
-// import CallToActionSection from "@/components/CallToActionSection";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import CallToActionSection from "@/components/CallToActionSection";
 import FAQSection from "@/components/FAQSection";
 import DesignPlatform from "@/components/DesignPlatform";
 
@@ -20,10 +20,10 @@ export default function Home() {
         <OurWorks />
         <DesignPlatform />
         <DesignProcess />
-        {/* <TestimonialsCarousel /> */}
+        <TestimonialsCarousel />
         <div id="faq" className="border-b border-gray-100 -mt-2"></div>
         <FAQSection />
-        {/* <CallToActionSection /> */}
+        <CallToActionSection />
       </div>
       <div className="border-b border-gray-100 -mt-8 pb-16 xl:pb-44"></div>
     </div>
