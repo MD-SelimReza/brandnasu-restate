@@ -150,21 +150,12 @@ const OurWorks = () => {
           <p className="xl:mt-10 md:mt-6 mt-4 text-sm md:text-xl text-default md:px-16 lg:px-20 text-center">
           See how our premium branding, design, and web solutions help real estate professionals stand out and grow their business
           </p>
-          {/* <button className="relative inline-flex items-center px-11 mt-10 mb-16 py-2.5 text-lightIndigo overflow-hidden text-base font-medium rounded-full group bg-darkIndigo">
-            <span className="absolute left-0 block w-full h-0 transition-all bg-darkIndigo opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
-            <span className="absolute right-0 flex items-center justify-center w-20 h-14 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-              <FaArrowRight className="-rotate-45" />
-            </span>
-            <span className="relative duration-300 text-lg transform translate-x-0 group-hover:-translate-x-4 ease">
-              View our Work
-            </span>
-          </button> */}
         </div>
 
         {/* Scrollable Services List */}
-        <div className="relative w-full mx-auto rounded-xl xl:mt-16 md:mt-10 mt-6">
+        <div className="relative w-full mx-auto rounded-lg xl:mt-16 md:mt-10 mt-6">
           {canScrollLeft && (
-            <div className="absolute left-0 h-full w-28 rounded-l-xl bg-gradient-to-l from-transparent to-lightIndigo/80 pointer-events-none" />
+            <div className="absolute left-0 h-full w-28 rounded-l-lg bg-gradient-to-l from-transparent to-lightIndigo/80 pointer-events-none" />
           )}
           {canScrollLeft && (
             <button
@@ -178,7 +169,7 @@ const OurWorks = () => {
           <div
             ref={scrollRef}
             style={{scrollbarWidth: "none"}}
-            className="flex overflow-x-auto bg-transparent border-gray-300 border rounded-xl items-center scrollbar-hide"
+            className="flex overflow-x-auto bg-transparent border-gray-300 border rounded-lg items-center scrollbar-hide"
           >
             {services.map((service) => (
               <button
@@ -194,7 +185,7 @@ const OurWorks = () => {
           </div>
 
           {canScrollRight && (
-            <div className="absolute right-0 top-0 h-full rounded-r-xl w-28 bg-gradient-to-r from-transparent to-lightIndigo/80 pointer-events-none" />
+            <div className="absolute right-0 top-0 h-full rounded-r-lg w-28 bg-gradient-to-r from-transparent to-lightIndigo/80 pointer-events-none" />
           )}
           {canScrollRight && (
             <button

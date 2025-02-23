@@ -143,7 +143,7 @@ export default function HeroBanner() {
           <h1 className="text-white xl:text-7xl lg:text-6xl text-3xl md:text-5xl !leading-[1.2] md:tracking-wid font-bold md:font-semibold lg:font-black max-w-7xl lg:px-16 text-center mb-6">
             Stand Out, Get Leads & <br /> Sell Faster
           </h1>
-          <p className="text-white font-normal text-sm md:text-xl mt-4 max-w-4xl lg:px-10 xl:px-0 mx-auto">
+          <p className="text-white font-normal text-sm md:text-xl mt-4 max-w-4xl xl:px-0 md:px-10 mx-auto">
             We help real estate professionals attract quality leads and close more deals with expert marketing, branding, and web solutions—so you can focus on selling.
           </p>
         </div>

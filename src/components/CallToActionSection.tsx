@@ -50,11 +50,11 @@ import Container from "./Container";
 const CallToActionSection = () => {
   return (
     <Container>
-      <div className="w-full flex flex-col items-center rounded-2xl justify-center text-white relative h-auto p-6 py-10 md:p-16 lg:p-16 xl:p-20 mb-16 xl:mb-44">
+      <div className="w-full flex flex-col items-center rounded-[20px] justify-center text-white relative h-auto p-6 py-10 md:p-16 lg:p-16 xl:p-20 mb-16 xl:mb-44">
         {/* Background Gradient */}
-        <div className="absolute inset-0 bg-black rounded-2xl"></div>
-        <div className="absolute bottom-0 right-0 w-[50%] h-[100%] bg-gradient-to-tl from-[#451F62] via-transparent to-transparent rounded-b-2xl overflow-hidden"></div>
-        <div className="absolute bottom-0 left-0 w-[50%] h-[100%] bg-gradient-to-tr from-[#123E84] via-transparent to-transparent rounded-2xl overflow-hidden"></div>
+        <div className="absolute inset-0 bg-black rounded-[20px]"></div>
+        <div className="absolute bottom-0 right-0 w-[50%] h-[100%] bg-gradient-to-tl from-[#451F62] via-transparent to-transparent rounded-b-[20px] overflow-hidden"></div>
+        <div className="absolute bottom-0 left-0 w-[50%] h-[100%] bg-gradient-to-tr from-[#123E84] via-transparent to-transparent rounded-[20px] overflow-hidden"></div>
 
         {/* Content */}
         <div className="relative z-10 text-center">
@@ -66,7 +66,7 @@ const CallToActionSection = () => {
               Choose between flexible one-time services or unlimited monthly plans—designed to help real estate professionals grow, attract clients, and close more deals effortlessly.
             </p>
           </div>
-          <div className="lg:mt-20 md:mt-16 mt-10">
+          <div className="lg:mt-20 md:mt-16 mt-10 mb-5">
             <div className="flex items-center flex-col md:flex-row gap-5 w-full z-20 justify-center">
               <button className="relative inline-flex justify-between md:w-fit w-full items-center px-11 py-2.5 text-darkIndigo overflow-hidden text-base font-medium rounded-full group bg-white">
                 <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
@@ -95,11 +95,11 @@ const CallToActionSection = () => {
         </div>
 
         {/* Floating Squares */}
-        <div className="absolute xl:block hidden top-[30%] -left-[8%] z-30 w-[300px] h-52 bg-[#E1F7E1] rounded-2xl"></div>
-        <div className="absolute xl:block hidden top-[10%] -right-[7%] w-[280] h-[170] bg-[#EAE4FC] rounded-2xl"></div>
-        <div className="absolute xl:block hidden bottom-[6%] right-[4%] w-[220px] h-[220px] bg-gradient-to-tr from-[#4E3D5C] to-[#772DD8] rounded-2xl"></div>
-        <div className="absolute xl:block hidden bottom-[7%] left-[3%] w-[250px] h-[250px] bg-gradient-to-tl from-[#4E3D5C] to-[#772DD8] rounded-2xl"></div>
-        <div className="absolute xl:block hidden -bottom-[22%] -right-[9%] w-[300px] h-[300px] bg-[#F9EFE3] rounded-2xl"></div>
+        <div className="absolute xl:block hidden top-[30%] -left-[8%] z-10 w-[300px] h-52 bg-[#E1F7E1] rounded-[20px]"></div>
+        <div className="absolute xl:block hidden top-[10%] -right-[7%] w-[280] h-[170] bg-[#EAE4FC] rounded-[20px]"></div>
+        <div className="absolute xl:block hidden bottom-[6%] right-[4%] w-[220px] h-[220px] bg-gradient-to-tr from-[#4E3D5C] to-[#772DD8] rounded-[20px]"></div>
+        <div className="absolute xl:block hidden bottom-[7%] left-[3%] w-[250px] h-[250px] bg-gradient-to-tl from-[#4E3D5C] to-[#772DD8] rounded-[20px]"></div>
+        <div className="absolute xl:block hidden -bottom-[22%] -right-[9%] w-[300px] h-[300px] bg-[#F9EFE3] rounded-[20px]"></div>
       </div>
     </Container>
   );

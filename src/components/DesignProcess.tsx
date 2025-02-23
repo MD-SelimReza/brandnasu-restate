@@ -131,7 +131,7 @@ const DesignProcess = () => {
           {steps.map((step, index) => (
             <div
             key={index}
-            className={`flex flex-col md:flex-row p-6 items-center md:p-10 lg:p-12 xl:pl-20 lg:pl-16 border xl:gap-20 lg:gap-16 md:gap-10 gap-6 rounded-xl ${step.bgColor} `}
+            className={`flex flex-col md:flex-row p-6 items-center md:p-10 lg:p-12 xl:pl-20 lg:pl-16 xl:gap-20 lg:gap-16 md:gap-10 gap-6 rounded-[20px] ${step.bgColor} `}
           >
             <div className="md:w-72 lg:w-60 xl:w-36 w-28 h-fit relative">
               <Image 

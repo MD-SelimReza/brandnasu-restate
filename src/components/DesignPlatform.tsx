@@ -7,7 +7,7 @@ import Container from "./Container";
 const DesignPlatform = () => {
   return (
     <Container>
-      <div className="w-full h-auto flex flex-col bg-[#E0D9FF] items-center rounded-2xl justify-center overflow-hidden text-white p-6 py-10 md:p-16 lg:p-16 xl:p-20 mb-16 xl:mb-44">
+      <div className="w-full h-auto flex flex-col bg-[#E0D9FF] items-center rounded-[20px] justify-center overflow-hidden text-white p-6 py-10 md:p-16 lg:p-16 xl:p-20 mb-16 xl:mb-44">
         {/* Content */}
         <div className="relative z-10 text-center w-full mx-auto">
           <div className="relative z-10 w-full max-w-5xl mx-auto text-center">

@@ -190,7 +190,7 @@ const Cards: React.FC<CardProps> = ({ service }) => (
     {cardData[service].map((card) => (
       <div key={card.id} className='w-full'>
         <div className="w-full h-full flex items-center justify-center">
-          <Image src={card.img} alt='Card img' objectFit='fill' />
+          <Image src={card.img} alt='Card img' objectFit='fill' className='rounded-[20px]' />
         </div>
       </div>
     ))}

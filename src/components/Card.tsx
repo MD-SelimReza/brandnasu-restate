@@ -126,7 +126,7 @@ const CardSlider = () => {
                 src={card.img}
                 alt="Card img"
                 loading="lazy"
-                className="rounded-lg shadow-md"
+                className="mx-auto"
               />
             </SwiperSlide>
           ))}

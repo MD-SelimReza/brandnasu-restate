@@ -15,7 +15,7 @@ const TestimonialsCarousel = () => {
   return (
     <div className='relative'>
       <Container>
-        <div className="text-center w-full h-fit relative mb-16 xl:mb-44">
+        <div className="text-center w-full h-fit relative mb-16 xl:mb-44 px-2 md:px-0">
           <div className="w-full max-w-4xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl xl:text-6xl font-bold text-darkIndigo md:max-w-2xl lg:max-w-full md:px-10 lg:px-0 text-center">
             Real Estate Branding & Design That Makes an Impact
@@ -42,7 +42,7 @@ const TestimonialsCarousel = () => {
             >
               {[1, 2, 3, 4, 5].map((_, index) => (
                 <SwiperSlide key={index} onClick={() => setPlayingIndex(index)}>
-                  <div className="bg-gradient-to-b from-indigo to-darkIndigo p- rounded-2xl aspect-vide flex items-center justify-center h-[450px] lg:h-[500px] xl:h-[702px]">
+                  <div className="flex items-center justify-center h-[450px] lg:h-[500px] xl:h-[702px]">
                   {playingIndex === index ? (
                       <video className="w-full h-full object-cover aspect-video rounded-[20px]" controls autoPlay>
                         {/* <source src="/video.mp4" type="video/mp4" /> */}
@@ -55,10 +55,10 @@ const TestimonialsCarousel = () => {
                           alt="Video Thumbnail"
                           width={100}
                           height={100}
-                          className="w-full h-full object-cover rounded-lg"
+                          className="w-full h-full object-cover rounded-[20px]"
                         />
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="bg-black/60 rounded-full p-5 md:p-6 flex items-center justify-center">
+                          <div className="bg-black/60 rounded-full p-5 flex items-center justify-center">
                             <FaPlay className="text-white text-2xl md:text-3xl" />
                           </div>
                         </div>
@@ -71,10 +71,10 @@ const TestimonialsCarousel = () => {
 
             {/* Navigation Buttons */}
             <button className="prev-btn z-40 absolute -left-7 md:-left-8 top-1/2 transform -translate-y-1/2 bg-darkIndigo text-white lg:p-5 md:p-4 p-3 rounded-full ">
-              <FaChevronLeft size={40} />
+              <FaChevronLeft size={30} />
             </button>
             <button className="next-btn z-40 absolute -right-7 md:-right-8 top-1/2 transform -translate-y-1/2 bg-darkIndigo text-white lg:p-5 md:p-4 p-3 rounded-full ">
-              <FaChevronRight size={40} />
+              <FaChevronRight size={30} />
             </button>
           </div>
         </div>

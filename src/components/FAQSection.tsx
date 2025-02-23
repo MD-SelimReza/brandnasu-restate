@@ -34,7 +34,7 @@ const FAQSection = () => {
         {/* Right Section - FAQs (60% width) */}
         <div className="w-full lg:w-3/5 space-y-5">
           {faqs.map((faq, index) => (
-            <div onClick={() => toggleFAQ(index)} key={index} className="bg-[#EFEFEF] rounded-2xl md:p-8 p-6">
+            <div onClick={() => toggleFAQ(index)} key={index} className="bg-[#EFEFEF] rounded-[20px] md:p-8 p-6">
               <button
                 className="w-full flex justify-between gap-4 items-baseline text-black text-left font-semibold text-2xl py-2 focus:outline-none"
               >

@@ -90,7 +90,7 @@ const InfoSection = () => {
                   alt="Video Thumbnail"
                   width={100}
                   height={100}
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-full h-full object-cover rounded-[20px]"
                 />
                 {/* Play Button */}
                 <div className="absolute inset-0 flex items-center justify-center">
