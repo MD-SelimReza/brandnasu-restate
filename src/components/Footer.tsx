@@ -6,7 +6,6 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaYoutube } from 
 import logo from '../../public/Logo/light-logo.svg';
 import { FaArrowUp, FaXTwitter } from 'react-icons/fa6';
 import { IoIosArrowDown } from 'react-icons/io';
-import Container from './Container';
 
 const Footer = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -37,7 +36,7 @@ const Footer = () => {
 
   const menuLinks: { [key: string]: { name: string; link: string }[] } = {
     Services: [
-      { name: 'Custom Logo Design', link: '#' },
+      { name: 'Custom Logo Design', link: 'https://client.brandnasu.com/catalog/get-a-premium-logo-that-defines-your-real-estate-brand-1740995963093774/checkout' },
       { name: 'Complete Brand Identity', link: '#' },
       { name: 'Digital Business Card', link: '#' },
       { name: 'Email Signature', link: '#' },
@@ -51,7 +50,7 @@ const Footer = () => {
       { name: 'Landing Page', link: '#' },
       { name: 'Social Media Branding', link: '#' }
     ],
-    Content: [
+    Company: [
       { name: 'Our Work', link: '#' },
       { name: 'Pricing', link: '#' },
       { name: 'Blog', link: '/blog' },
@@ -76,12 +75,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#2F1D66] text-white xl:py-24 md:py-20 py-16">
-      <Container>
-        <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-8 gap-4">
+    <footer className="bg-[#2F1D66] text-white xl:pt-16 pb-4 md:pt-20 pt-16">
+      {/* <Container> */}
+        <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-8 gap-4 px-4">
           {Object.keys(menuLinks).map((section, index) => (
             <div key={index} className='relative'>
-              <h3 onClick={() => toggleDropdown(section.toLowerCase())} className="flex items-center justify-between w-full font-medium text-xl mb-4 md:cursor-auto">
+              <h3 onClick={() => toggleDropdown(section.toLowerCase())} className="flex items-center justify-between w-full font-medium text-xl mb-2 md:cursor-auto">
                 {section}
                 <IoIosArrowDown 
                   className={`md:hidden ${activeDropdown === section.toLowerCase() ? 'rotate-180' : 'rotate-0'} transition-all duration-300`} 
@@ -106,9 +105,9 @@ const Footer = () => {
             <h3 className="font-medium text-2xl mb-5 flex items-center gap-2">
               <Image src={logo} alt='logo' width={100} height={100} />
             </h3>
-            <p className="text-[15px] mb-5">Join thousands of influencers, brands, creators growing their Instagram followers with Path Social.</p>
-            <p className="text-[15px] mb-3">mail@nasu.com</p>
-            <p className="text-[15px] mb-3">+0911 2345 1234</p>
+            <p className="text-[15px] mb-5">Branding, Marketing & Web Solutions for Real Estate Professionals</p>
+            <p className="text-[15px] mb-3">hello@brandnasu.com</p>
+            <p className="text-[15px] mb-3">(505) 575 7863</p>
             <p className="text-[15px]">1209 Mountain Road Pl Ne Ste R, Albuquerque, NM 87110, USA</p>
             {/* Social Icons */}
             <div className="flex flex-wrap gap-3 mt-4">
@@ -136,7 +135,7 @@ const Footer = () => {
         <div className="text-center text-[15px] mt-16 text-lightIndigo">
           Copyright © 2025 nasu. All rights reserved.
         </div>
-      </Container>
+      {/* </Container> */}
     </footer>
   );
 };

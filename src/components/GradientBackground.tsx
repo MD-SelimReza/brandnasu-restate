@@ -17,10 +17,10 @@ const GradientBackground = () => {
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl lg:text-4xl xl:text-6xl font-bold text-lightIndigo lg:max-w-full lg:px-0 text-center">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-lightIndigo lg:max-w-4xl mx-auto lg:px-0 text-center">
           Find the Perfect Real Estate Marketing Plan for Your Business
           </h2>
-          <p className="text-sm md:text-xl xl:mt-10 md:mt-6 mt-4 max-w-3xl mx-auto">
+          <p className="text-sm md:text-xl xl:mt-6 md:mt-5 mt-4 max-w-3xl mx-auto">
           Choose between flexible one-time services or unlimited monthly plans—designed to help real estate professionals grow, attract clients, and close more deals effortlessly.
             {/* Try our Package Survey Tool to choose the types of designs you need, 
             and we&apos;ll recommend the best plan options for you. */}

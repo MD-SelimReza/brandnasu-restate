@@ -86,27 +86,27 @@ import Container from "./Container";
 const steps = [
   {
     icon: request,
-    title: "Submit your design request",
+    title: "Submit Your Request",
     description:
-      "We’ll take your vision and bring it to life while staying consistent with your branding and keeping your goals & objectives in mind.",
+      "Send us your design needs, and we’ll craft high-quality branding, marketing, or web assets tailored to your business.",
     bgColor: "bg-[#E1F7E1]",
     textColor: "text-[#00E04C]",
     circleColor: "bg-[#C3E5C3]",
   },
   {
     icon: feedback,
-    title: "Provide feedback on your design",
+    title: "Review & Provide Feedback",
     description:
-      "Use our visual feedback tool to click and annotate different parts of your design for crystal clear change requests.",
+      "Easily share your thoughts using our feedback tool, ensuring every design aligns perfectly with your vision.",
     bgColor: "bg-[#F9EFE3]",
     textColor: "text-[#FF8C00]",
     circleColor: "bg-[#EADDCE]",
   },
   {
     icon: download,
-    title: "Download & launch your design",
+    title: "Download & Launch",
     description:
-      "Download your new design and source files and launch them online for audiences worldwide to see.",
+      "Get your final files, ready to use for marketing, social media, and beyond—so you can focus on closing more deals.",
     bgColor: "bg-[#EAE4FC]",
     textColor: "text-[#663CD9]",
     circleColor: "bg-[#D3CFE5]",
@@ -118,11 +118,11 @@ const DesignProcess = () => {
     <Container>
       <div className="w-full flex flex-col items-center mb-16 xl:mb-44">
         <div className="w-full mx-auto text-center max-w-4xl">
-          <h2 className="text-3xl lg:text-4xl xl:text-6xl font-bold text-darkIndigo md:max-w-2xl lg:max-w-full lg:px-0 md:px-20 text-center">
-          Real Estate Branding & Design That Makes an Impact
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-darkIndigo lg:max-w-4xl mx-auto lg:px-0 md:px-20 text-center">
+            How It Works—Simple, Fast & Hassle-Free
           </h2>
-          <p className="xl:mt-10 md:mt-6 mt-4 text-sm md:text-xl text-default md:px-16 lg:px-20 text-center">
-          See how our premium branding, design, and web solutions help real estate professionals stand out and grow their business
+          <p className="xl:mt-6 md:mt-5 mt-4 text-sm md:text-xl text-default md:px-16 lg:px-20 text-center">
+            See how real estate professionals like you transformed their branding, marketing, and online presence with our expert solutions.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ const DesignProcess = () => {
             </div>
             {/* Text Content */}
             <div className="text-center md:text-left">
-              <h3 className={`text-3xl lg:text-4xl xl:text-5xl font-bold ${step.textColor}`}>
+              <h3 className={`text-3xl lg:text-4xl xl:text-[42px] font-bold ${step.textColor}`}>
                 {step.title}
               </h3>
               <p className="text-default text-lg md:text-xl mt-4">{step.description}</p>

@@ -137,7 +137,7 @@ export default function Navbar() {
 
   return (
     <nav className="w-full bg-darkIndigo shadow-md sticky top-0 z-50 font-sans">
-      <div className='flex items-center justify-between px-6 py-3 max-w-[1440px] mx-auto'>
+      <div className='flex items-center justify-between px-4 py-3 max-w-[1440px] mx-auto'>
         {/* Logo */}
         <Link href='/'>
           <Image src={logo} alt='logo' objectFit='fill' className='lg:w-32 md:w-28 w-24' />
@@ -150,19 +150,19 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Menu */}
-          <div className='hidden xl:flex items-center space-x-8 text-base text-lightIndigo'>
+          <div className='hidden xl:flex items-center text-base text-lightIndigo'>
             <div className='relative' onMouseEnter={() => toggleDropdown('services')} onMouseLeave={() => toggleDropdown('services')}>
-              <button className='flex items-center gap-1 py-4 px-1 group'>
+              <button className='flex items-center gap-1 py-4 px-4 group'>
                 Services <IoIosArrowDown className='group-hover:rotate-180 ml-2 transition-all duration-300' />
               </button>
               {activeDropdown === 'services' && (
-                <div className="fixed top-[70px] left-0 w-screen bg-white  z-50">
+                <div className="fixed top-[70px] left-0 w-screen bg-white z-50">
                   <ServiceMenu />
                 </div>
               )}
             </div>
             <div className='relative' onMouseEnter={() => toggleDropdown('works')} onMouseLeave={() => toggleDropdown('works')}>
-              <button className='flex items-center gap-1 py-4 px-1 group'>
+              <button className='flex items-center gap-1 py-4 px-4 group'>
                 Our Work <IoIosArrowDown className='group-hover:rotate-180 ml-2 transition-all duration-300' />
               </button>
               {activeDropdown === 'works' && (
@@ -171,9 +171,9 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <Link href='/pricing' className='className="text-lightIndigo px-2 py-3'>Pricing</Link>
-            <Link href='/blog' className='className="text-lightIndigo px-2 py-3'>Blog</Link>
-            <Link href='/about' className='className="text-lightIndigo px-2 py-3'>About</Link>
+            <Link href='/pricing' className='className="text-lightIndigo px-4 py-3'>Pricing</Link>
+            <Link href='/blog' className='className="text-lightIndigo px-4 py-3'>Blog</Link>
+            <Link href='/about' className='className="text-lightIndigo px-4 py-3'>About</Link>
           </div>
 
           {/* Buttons */}

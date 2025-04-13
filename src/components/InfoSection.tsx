@@ -74,7 +74,7 @@ const InfoSection = () => {
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-darkIndigo lg:max-w-full lg:px-0 md:px-10 lg:text-left text-center">
           Branding, marketing & web solutions for real estate professionals like you
           </h2>
-          <p className="xl:mt-10 md:mt-6 mt-4 text-sm md:text-xl text-default md:px-16 lg:text-left lg:px-0 text-center">
+          <p className="xl:mt-6 md:mt-5 mt-4 text-sm md:text-xl text-default md:px-16 lg:text-left lg:px-0 text-center">
           See how we built a flexible, affordable, and scalable real estate marketing model to help you grow in today&apos;s market.
           </p>
         </div>

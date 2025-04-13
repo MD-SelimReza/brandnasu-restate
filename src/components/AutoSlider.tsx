@@ -137,7 +137,7 @@ export default function HeroBanner() {
 
       {/* Static Hero Banner */}
       <div
-        className="relative w-full min-h-[calc(100vh-80px)] bg-[#3B0C7C] bg-center bg-cover bg-no-repeat flex flex-col items-center lg:py-16 py-12 px-6"
+        className="relative w-full min-h-[calc(100vh-80px)] bg-[#3B0C7C] bg-center bg-cover bg-no-repeat flex flex-col items-center lg:py-16 py-12 px-4"
       >
         <div className="text-center text-white max-w-7xl z-20">
           <h1 className="text-white xl:text-7xl lg:text-6xl text-3xl md:text-5xl !leading-[1.2] md:tracking-wid font-bold md:font-semibold lg:font-black max-w-7xl lg:px-16 text-center mb-6">

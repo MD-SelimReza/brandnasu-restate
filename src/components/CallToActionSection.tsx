@@ -46,6 +46,9 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import Container from "./Container";
+import Image from "next/image";
+import { IoIosStar, IoIosStarHalf } from "react-icons/io";
+import clutch from "../../public/clutch-icon .svg";
 
 const CallToActionSection = () => {
   return (
@@ -59,16 +62,16 @@ const CallToActionSection = () => {
         {/* Content */}
         <div className="relative z-10 text-center">
           <div className="relative z-10 w-full max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl xl:text-6xl font-bold text-lightIndigo lg:max-w-full lg:px- text-center">
-              Find the Perfect Real Estate Marketing Plan for Your Business
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-lightIndigo lg:max-w-[940px] mx-auto lg:px- text-center">
+              Your Brand, Your Listings, Your Growth, We Make It Happen.
             </h2>
-            <p className="text-sm md:text-xl xl:mt-10 md:mt-6 mt-4 max-w-3xl mx-auto">
-              Choose between flexible one-time services or unlimited monthly plans—designed to help real estate professionals grow, attract clients, and close more deals effortlessly.
+            <p className="text-sm md:text-xl xl:mt-6 md:mt-5 mt-4 max-w-3xl mx-auto">
+              Stop blending in—get premium branding, marketing, and web solutions for real estate professionals. From one-time designs to unlimited creative support, we help you stand out, attract leads, and close more deals.
             </p>
           </div>
           <div className="lg:mt-20 md:mt-16 mt-10 mb-5">
             <div className="flex items-center flex-col md:flex-row gap-5 w-full z-20 justify-center">
-              <button className="relative inline-flex justify-between md:w-fit w-full items-center px-11 py-2.5 text-darkIndigo overflow-hidden text-base font-medium rounded-full group bg-white">
+              <button className="relative inline-flex justify-between md:w-fit w-40 items-center px-11 py-2.5 text-darkIndigo overflow-hidden text-base font-medium rounded-full group bg-white">
                 <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
                 <span></span>
                 <span className="absolute right-0 hidden md:flex items-center justify-center w-20 h-14 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
@@ -79,7 +82,7 @@ const CallToActionSection = () => {
                 </span>
                 <FaArrowRight className="-rotate-45 block md:hidden" />
               </button>
-              <button className="relative inline-flex justify-between md:w-fit w-full items-center px-11 py-2.5 text-white overflow-hidden text-base font-medium rounded-full group bg-indigo">
+              <button className="relative inline-flex justify-between md:w-fit w-40 items-center px-11 py-2.5 text-white overflow-hidden text-base font-medium rounded-full group bg-indigo">
                 <span className="absolute left-0 block w-full h-0 transition-all bg-indigo opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
                 <span></span>
                 <span className="absolute right-0 hidden md:flex items-center justify-center w-20 h-14 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
@@ -93,13 +96,175 @@ const CallToActionSection = () => {
             </div>
           </div>
         </div>
+        {/* <div className="absolute bottom-[3%] flex justify-between gap-8">
+          <div className="bg-gradient-to-tr from-[#4E3D5C] to-[#772DD8] rounded-[20px] w-full h-[200px] p-4">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-4">
+                <Image src={"/1.jpg"} width={60} height={60} alt="Profile pic" className="rounded-full" />
+                <div>
+                  <p className="text-sm font-semibold text-white">Jason Kelly</p>
+                  <p className="text-xs text-gray-300">CEO, Phoenix AZ Ad Agency</p>
+                </div>            
+              </div>
+              <div className="flex gap-1 text-yellow-400">
+                {[1, 2, 3, 4, 5].map((_, index) => (
+                  <FaRegStar key={index} className="text-lg" />
+                ))}
+              </div>
+            </div>
+            <p className="text-lg mt-4 text-white">Their creativity and attention to detail are unmatched.</p>
+            <div className="flex items-center mt-4 gap-1 text-yellow-400">
+              {[1, 2, 3, 4, 5].map((_, index) => (
+                <FaRegStar key={index} className="text-lg" />
+              ))}
+            </div>
+          </div>
+          <div className="bg-gradient-to-tr from-[#4E3D5C] to-[#772DD8] rounded-[20px] w-full h-[200px] p-4 opacity-70">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-4">
+                <Image src={"/1.jpg"} width={60} height={60} alt="Profile pic" className="rounded-full" />
+                <div>
+                  <p className="text-sm font-semibold text-white">Jason Kelly</p>
+                  <p className="text-xs text-gray-300">CEO, Phoenix AZ Ad Agency</p>
+                </div>            
+              </div>
+              <div className="flex gap-1 text-yellow-400">
+                {[1, 2, 3, 4, 5].map((_, index) => (
+                  <FaRegStar key={index} className="text-lg" />
+                ))}
+              </div>
+            </div>
+            <p className="text-lg mt-4 text-white">Their creativity and attention to detail are unmatched.</p>
+            <div className="flex items-center mt-4 gap-1 text-yellow-400">
+              {[1, 2, 3, 4, 5].map((_, index) => (
+                <FaRegStar key={index} className="text-lg" />
+              ))}
+            </div>
+          </div>
+          <div className="bg-gradient-to-tr from-[#4E3D5C] to-[#772DD8] rounded-[20px] w-full h-[200px] p-4">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-4">
+                <Image src={"/1.jpg"} width={60} height={60} alt="Profile pic" className="rounded-full" />
+                <div>
+                  <p className="text-sm font-semibold text-white">Jason Kelly</p>
+                  <p className="text-xs text-gray-300">CEO, Phoenix AZ Ad Agency</p>
+                </div>            
+              </div>
+              <div className="flex gap-1 text-yellow-400">
+                {[1, 2, 3, 4, 5].map((_, index) => (
+                  <FaRegStar key={index} className="text-lg" />
+                ))}
+              </div>
+            </div>
+            <p className="text-lg mt-4 text-white">Their creativity and attention to detail are unmatched.</p>
+            <div className="flex items-center mt-4 gap-1 text-yellow-400">
+              {[1, 2, 3, 4, 5].map((_, index) => (
+                <FaRegStar key={index} className="text-lg" />
+              ))}
+            </div>
+          </div>
+        </div> */}
 
         {/* Floating Squares */}
-        <div className="absolute xl:block hidden top-[30%] -left-[8%] z-10 w-[300px] h-52 bg-[#E1F7E1] rounded-[20px]"></div>
-        <div className="absolute xl:block hidden top-[10%] -right-[7%] w-[280] h-[170] bg-[#EAE4FC] rounded-[20px]"></div>
+        <div className="absolute xl:block hidden top-[30%] -left-[8%] z-10 w-[300px] h-fit bg-[#E1F7E1] rounded-[20px]">
+          <div className="w-full h-full p-5">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-3">
+                <div className="w-[50px] h-[50px] border-2 border-lightIndigo rounded-full overflow-hidden flex justify-center items-center">
+                  <Image 
+                    src={"/Jason-Kelly.jpg"} 
+                    width={100} 
+                    height={100} 
+                    objectFit="fill"
+                    alt="Jason-Kelly" 
+                    className="object-cover w-[45px] h-[45px] rounded-full"
+                  />
+                </div>
+                <div>
+                  <p className="text-[16px] font-semibold text-black">Jason Kelly</p>
+                  <p className="text-xs text-black">CEO, Phoenix AZ Ad Agency</p>
+                </div>            
+              </div>
+            </div>
+            <p className="text-[16px] mt-3 text-black">Consistently Outstanding – 40+ Projects of Exceptional Branding & Design with BrandNasu!</p>
+            <div className="flex justify-between items-center mt-3">
+              <div className="flex items-center gap-1 text-yellow-400">
+                {[1, 2, 3, 4].map((_, index) => (
+                  <IoIosStar key={index} className="text-lg" />
+                ))}
+                <IoIosStarHalf className="text-lg" />
+              </div>
+              <Image src={clutch} width={24} height={24} alt="Clutch icon" objectFit="fill" className="rounded-2xl" />
+            </div>
+          </div>
+        </div>
+        <div className="absolute xl:block hidden top-[10%] -right-[8%] w-[270px] h-fit bg-[#EAE4FC] rounded-[20px]">
+          <div className="w-full h-full p-5">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-3">
+                <div className="w-[50px] h-[50px] border-2 border-lightIndigo rounded-full overflow-hidden flex justify-center items-center">
+                  <Image 
+                    src={"/Mason-Preddy.jpg"} 
+                    width={100} 
+                    height={100} 
+                    objectFit="fill"
+                    alt="Mason-Preddy" 
+                    className="object-cover w-[45px] h-[45px] rounded-full"
+                  />
+                </div>
+                <div>
+                  <p className="text-[16px] font-semibold text-black">Mason Preddy</p>
+                  <p className="text-xs text-black">Founder & CEO, WhiteBrights</p>
+                </div>            
+              </div>
+            </div>
+            <p className="text-[16px] mt-3 text-black">Transformative Social Media Branding with BrandNasu!</p>
+            <div className="flex justify-between items-center mt-2">
+              <div className="flex items-center gap-1 text-yellow-400">
+                {[1, 2, 3, 4].map((_, index) => (
+                  <IoIosStar key={index} className="text-lg" />
+                ))}
+                <IoIosStarHalf className="text-lg" />
+              </div>
+              <Image src={clutch} width={24} height={24} alt="Clutch icon" objectFit="fill" className="rounded-2xl" />
+            </div>
+          </div>
+        </div>
         <div className="absolute xl:block hidden bottom-[6%] right-[4%] w-[220px] h-[220px] bg-gradient-to-tr from-[#4E3D5C] to-[#772DD8] rounded-[20px]"></div>
-        <div className="absolute xl:block hidden bottom-[7%] left-[3%] w-[250px] h-[250px] bg-gradient-to-tl from-[#4E3D5C] to-[#772DD8] rounded-[20px]"></div>
-        <div className="absolute xl:block hidden -bottom-[22%] -right-[9%] w-[300px] h-[300px] bg-[#F9EFE3] rounded-[20px]"></div>
+        <div className="absolute xl:block hidden bottom-[7%] left-[3%] w-[235px] h-[235px] bg-gradient-to-tl from-[#4E3D5C] to-[#772DD8] rounded-[20px]"></div>
+        <div className="absolute xl:block hidden -bottom-[10%] -right-[9%] w-[230px] h-fit bg-[#F9EFE3] rounded-[20px]">
+          <div className="w-full h-full p-5">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-3">
+                <div className="h-fit">
+                  <div className="w-[50px] h-[50px] border-2 border-lightIndigo rounded-full overflow-hidden flex justify-center items-center">
+                    <Image 
+                      src={"/Khalil-Henry.jpg"} 
+                      width={100} 
+                      height={100} 
+                      objectFit="fill"
+                      alt="Khalil-Henry" 
+                      className="object-cover w-[45px] h-[45px] rounded-full"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-[16px] font-semibold text-black">Khalil Henry</p>
+                  <p className="text-xs text-black">SoldByKhalil.com</p>
+                </div>            
+              </div>
+            </div>
+            <p className="text-[16px] mt-3 text-black">BrandNasu Delivers Exceptional Branding & Design Every Time!</p>
+            <div className="flex justify-between items-center mt-3">
+              <div className="flex items-center gap-1 text-yellow-400">
+                {[1, 2, 3, 4, 5].map((_, index) => (
+                  <IoIosStar key={index} className="text-lg" />
+                ))}
+              </div>
+              <Image src={clutch} width={24} height={24} alt="Clutch icon" objectFit="fill" className="rounded-2xl" />
+            </div>
+          </div>
+        </div>
       </div>
     </Container>
   );

@@ -11,16 +11,14 @@ const DesignPlatform = () => {
         {/* Content */}
         <div className="relative z-10 text-center w-full mx-auto">
           <div className="relative z-10 w-full max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl xl:text-6xl font-bold text-darkIndigo lg:max-w-full lg:px-0 text-center">
-            Real Estate Branding & Design That Makes an Impact
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-darkIndigo lg:max-w-4xl mx-auto lg:px-0 text-center">
+              Real Estate Branding & Design That Makes an Impact
             </h2>
-            <p className="text-sm md:text-xl xl:mt-10 md:mt-6 text-default mt-4 max-w-3xl mx-auto">
-            See how our premium branding, design, and web solutions help real estate professionals stand out and grow their business
-              {/* Try our Package Survey Tool to choose the types of designs you need, 
-              and we&apos;ll recommend the best plan options for you. */}
+            <p className="text-sm md:text-xl xl:mt-6 md:mt-5 text-default mt-4 max-w-3xl mx-auto">
+              See how our premium branding, design, and web solutions help real estate professionals stand out and grow their business.
             </p>
           </div>
-          <div className="flex gap-4 lg:mt-24 md:mt-12 mt-8 justify-center">
+          <div className="flex gap-4 lg:mt-20 md:mt-12 mt-8 justify-center">
             <button className="relative inline-flex justify-between md:w-fit w-full items-center px-11 py-2.5 text-white overflow-hidden text-base font-medium rounded-full group bg-indigo">
               <span className="absolute left-0 block w-full h-0 transition-all bg-indigo opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
               <span></span>

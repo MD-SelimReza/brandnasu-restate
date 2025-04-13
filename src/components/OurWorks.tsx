@@ -144,11 +144,11 @@ const OurWorks = () => {
     <Container>
       <div className="w-full my-16 xl:my-44">
         <div className="w-full max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl lg:text-4xl xl:text-6xl font-bold text-darkIndigo md:max-w-2xl lg:max-w-full md:px-10 lg:px-0 text-center">
-          Real Estate Branding & Design That Makes an Impact
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-darkIndigo lg:max-w-4xl mx-auto md:px-10 lg:px-0 text-center">
+            Powerful Branding, Marketing & Web Solutions in Action
           </h2>
-          <p className="xl:mt-10 md:mt-6 mt-4 text-sm md:text-xl text-default md:px-16 lg:px-20 text-center">
-          See how our premium branding, design, and web solutions help real estate professionals stand out and grow their business
+          <p className="xl:mt-6 md:mt-5 mt-4 text-sm md:text-xl text-default md:px-16 lg:px-20 text-center">
+            See how our expert-designed branding, marketing, and web solutions help real estate professionals stand out, attract leads, and close more deals.
           </p>
         </div>
 

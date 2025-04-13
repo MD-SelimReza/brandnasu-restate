@@ -17,11 +17,11 @@ const TestimonialsCarousel = () => {
       <Container>
         <div className="text-center w-full h-fit relative mb-16 xl:mb-44 px-2 md:px-0">
           <div className="w-full max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl xl:text-6xl font-bold text-darkIndigo md:max-w-2xl lg:max-w-full md:px-10 lg:px-0 text-center">
-            Real Estate Branding & Design That Makes an Impact
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-darkIndigo lg:max-w-4xl mx-auto md:px-10 lg:px-0 text-center">
+              Real Stories. Real Success. Hear from Our Clients!
             </h2>
-            <p className="xl:mt-10 md:mt-6 mt-4 text-sm md:text-xl text-default md:px-16 lg:px-20 text-center">
-            See how our premium branding, design, and web solutions help real estate professionals stand out and grow their business
+            <p className="xl:mt-6 md:mt-5 mt-4 text-sm md:text-xl text-default md:px-16 lg:px-20 text-center">
+              See how real estate professionals like you transformed their branding, marketing, and online presence with our expert solutions.
             </p>
           </div>
           <div className="relative lg:mt-16 md:mt-10 mt-6 ">

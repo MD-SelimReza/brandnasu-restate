@@ -78,9 +78,9 @@ import service9 from "../../public/Icons/Services/Services-09.svg";
 import service10 from "../../public/Icons/Services/Services-10.svg";
 import service11 from "../../public/Icons/Services/Services-11.svg";
 import service12 from "../../public/Icons/Services/Services-12.svg";
-
+import './style.css'
 const services = [
-  { icon: service1, title: "Custom Logo Design", desc: "Unique, professional logo tailored to your brand identity" },
+  { href: "https://client.brandnasu.com/catalog/get-a-premium-logo-that-defines-your-real-estate-brand-1740995963093774/checkout", icon: service1, title: "Custom Logo Design", desc: "Unique, professional logo tailored to your brand identity" },
   { icon: service2, title: "Complete Brand Identity", desc: "Cohesive branding, including typography, color palette, and design guidelines" },
   { icon: service3, title: "Digital Business Card & Email Signature", desc: "Personalized, professional email signatures and digital cards" },
   { icon: service4, title: "Marketing Collateral", desc: "Custom-designed flyers and postcards to showcase listings and promotions" },
@@ -102,40 +102,44 @@ const plans = [
 ];
 
 const ServiceMenu = () => (
-  <div className="w-full bg-white xl:p-6 xl:rounded-lg xl:drop-shadow-xl xl:border-2 my-5 xl:my-0">
-    <div className="max-w-[1440px] mx-auto grid grid-cols-1 xl:grid-cols-3 xl:gap-6 gap-y-10">
-      {/* Services Section */}
-      <div className="col-span-2 pt-5">
-        <p className="font-bold text-darkIndigo text-lg border-b pb-2 mb-3 xl:block hidden">SERVICES</p>
-        <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-2 text-gray-700 text-sm">
-          {services.map(({ icon, title, desc }, index) => (
-            <div
-              key={index}
-              className="xl:p-3 py-5 px-1 rounded-lg hover:bg-gray-100 transition duration-300 ease-in-out h-full"
-            >
-              <div className="flex place-items-start gap-4">
-                <Image src={icon} alt={title} width={20} height={20} />
-                <div className="-mt-1 max-w-52 xl:max-w-full">
-                  <p className="text-darkIndigo/90 text-base font-semibold">{title}</p>
-                  <p className="text-sm text-default">{desc}</p>
-                </div>
+  <div>
+    <div className="w-full bg-white xl:p-6 xl:rounded-lg xl:drop-shadow-xl xl:border-2 my-5 xl:my-0">
+      <div className="max-w-[1440px] mx-auto grid grid-cols-1 xl:grid-cols-3 xl:gap-6 gap-y-10 px-4">
+        {/* Services Section */}
+        <div className="col-span-2 pt-5">
+          <p className="font-bold text-darkIndigo text-lg border-b pb-2 mb-3 xl:block hidden">SERVICES</p>
+          <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-2 text-gray-700 text-sm">
+            {services.map(({ href, icon, title, desc }, index) => (
+              <div
+                key={index}
+                className="xl:p-3 py-5 px-1 rounded-lg hover:bg-gray-100 transition duration-300 ease-in-out h-full"
+              >
+                <a href={href}>
+                  <div className="flex place-items-start gap-4">
+                    <Image className="im"  src={icon} alt={title} width={20} height={20} />
+                    <div className="-mt-1 max-w-52 xl:max-w-full">
+                      <p className="text-darkIndigo/90 text-base font-semibold">{title}</p>
+                      <p className="text-sm text-default">{desc}</p>
+                    </div>
+                  </div>
+                </a>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Plans Section */}
-      <div className="bg-gray-100 p-5 rounded-lg">
-        <p className="font-semibold text-darkIndigo/90 text-sm xl:text-lg border-b pb-2">DESIGN PLANS</p>
-        <ul className="space-y-4 text-gray-700 text-sm mt-3">
-          {plans.map(({ title, desc }, index) => (
-            <li key={index} className="">
-              <p className="text-darkIndigo/90 text-[17px] mb-1 font-semibold">{title}</p>
-              <span className="text-sm text-default">{desc}</span>
-            </li>
-          ))}
-        </ul>
+        {/* Plans Section */}
+        <div className="bg-gray-100 p-5 rounded-lg">
+          <p className="font-semibold text-darkIndigo/90 text-sm xl:text-lg border-b pb-2">DESIGN PLANS</p>
+          <ul className="space-y-4 text-gray-700 text-sm mt-3">
+            {plans.map(({ title, desc }, index) => (
+              <li key={index} className="">
+                <p className="text-darkIndigo/90 text-[17px] mb-1 font-semibold">{title}</p>
+                <span className="text-sm text-default">{desc}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   </div>
