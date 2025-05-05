@@ -189,7 +189,7 @@ const Cards: React.FC<CardProps> = ({ service }) => (
   <div className='grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 lg:gap-x-10 md:gap-x-6 gap-x-4 gap-y-6 lg:gap-y-12 w-full max-w-[1440px] mx-auto px-'>
     {cardData[service].map((card) => (
       <div key={card.id} className='w-full'>
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center shadow rounded-[20px]">
           <Image src={card.img} alt='Card img' objectFit='fill' className='rounded-[20px]' />
         </div>
       </div>

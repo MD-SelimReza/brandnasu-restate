@@ -1,0 +1,9 @@
+{
+  "editor.cursorBlinking": "expand",
+  "editor.cursorStyle": "line",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "cSpell.words": ["offortunities"]
+}

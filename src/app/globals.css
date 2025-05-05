@@ -14,6 +14,48 @@
   }
 }
 
+.filter-purple {
+  filter: brightness(0) saturate(100%) invert(15%) sepia(80%) saturate(1000%)
+    hue-rotate(230deg);
+}
+
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes border-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.truncate-one-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #673DDB;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2E1C6A;
+} */
+
+/* Firefox scrollbar styles */
+/* * {
+  scrollbar-width: thin;
+  scrollbar-color: #673DDB #f1f1f1;
+} */
