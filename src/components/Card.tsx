@@ -122,7 +122,7 @@ const CardSlider = () => {
 
   return (
     <div className="relative mt-10">
-      <div className="relative w-full max-w-[1920px ] mx-auto xl:px-0 lg:px-6 md:px-2">
+      <div className="relative w-full max-w-[1920px] mx-auto xl:px-0 lg:px-6 md:px-2">
         <Swiper
           modules={[Navigation, Autoplay, Pagination]}
           spaceBetween={10}
