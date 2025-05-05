@@ -149,15 +149,15 @@ const About = () => {
       {/* <AboutHero />    */}
 
       <div className="w-full max-w-[1440px] mx-auto px-5">
-        <section className="relative h-screen md:h-[calc(100vh-80px)] bg-darkIndigo flex items-center overflow-hidden">
-          <div className="container mx-auto px-4 lg:px-6 z-10 relative">
+        <section className="relative xl:h-[850px] lg:h-[750px] md:h-[450px] py-20 bg-darkIndigo flex md:flex-row flex-col-reverse gap-20 items-center overflow-hidden">
+          <div className="container mx-auto sm:px-4 lg:px-6 z-10 relative">
             <div className="w-full">
-              <h1 className="text-white text-3xl md:text-5xl font-bold mb-2">
+              <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
                 We are BrandNasu,
               </h1>
-              <div className="text-white text-3xl md:text-5xl font-bold mb-12 flex items-center">
+              <div className="text-white text-3xl tracking-tight sm:tracking-normal sm:text-4xl lg:text-5xl font-bold mb-12 flex items-center">
                 <span>Real Estate D</span>{' '}
-                <span className="text-white text-3xl md:text-5xl font-bold">
+                <span className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold">
                   <TypewriterWithSound
                     text="igital Agency."
                     speed={100}
@@ -170,7 +170,7 @@ const About = () => {
           </div>
 
           <div
-            className={`absolute bg-indigo/70 w-1/2 h-48 z-10 bottom-0 right-0 transition-all duration-700 ease-in-out
+            className={`absolute bg-indigo/70 w-1/2 lg:h-48 h-32 hidden md:block z-10 bottom-0 right-0 transition-all duration-700 ease-in-out
               ${
                 showBox
                   ? 'opacity-0 translate-y-10'
@@ -179,7 +179,7 @@ const About = () => {
               `}
           ></div>
 
-          <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/4 lg:w-[78%]">
+          <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/4 lg:w-[78%] hidden md:block">
             <div className="relative h-full w-full">
               <Image
                 src={thumbnail}
@@ -191,6 +191,15 @@ const About = () => {
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-indigo/70 to-lightIndigo/0" />
+          </div>
+
+          <div className="relative w-full md:hidden h-[300px]">
+            <Image
+              src={thumbnail}
+              alt="About Hero"
+              layout="fill"
+              className="object-cover"
+            />
           </div>
         </section>
 
@@ -246,9 +255,9 @@ const About = () => {
           </div>
         </section> */}
 
-        <section className="flex flex-col lg:flex-row pb-28 pt-20 lg:pt-0">
+        <section className="flex flex-col lg:flex-row pb-28 md:pt-20 lg:pt-0">
           {/* Left Orange Box */}
-          <div className="bg-indigo flex justify-center items-center w-full lg:w-1/2 lg:h-[450px] md:h-[400px] h-[350px] relative">
+          <div className="bg-indigo flex justify-center items-center w-full lg:w-1/2 lg:h-[450px] md:h-[400px] h-[300px] relative">
             <h1 className="text-white xl:text-[10rem] md:text-9xl text-8xl md:font-extrabold font-bold flex items-center mr-16">
               <span>0</span>{' '}
               <span>

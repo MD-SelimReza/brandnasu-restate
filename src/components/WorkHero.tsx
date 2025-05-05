@@ -1,7 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import image1 from '../../public/Banner.png';
+import image1 from '../../public/S1.png';
+import image2 from '../../public/D3.png';
+import image3 from '../../public/W1.png';
+import image4 from '../../public/W3.png';
 import Container from './Container';
 import BookACallSection from './BookACallSection';
 
@@ -89,7 +92,7 @@ const brandList = [
   {
     title: 'PrimeNest Realty – Logo Design',
     description: 'Bold and modern logo crafted for a premium property firm.',
-    image: image1,
+    image: image2,
     slug: 'primenest-realty-logo-design',
     tag: ['Design', 'Logo Design', 'PrimeNest'],
   },
@@ -97,7 +100,7 @@ const brandList = [
     title: 'Skyline Homes – Brand Style Guide',
     description:
       'Defined brand colors, fonts, and visual rules for a consistent identity.',
-    image: image1,
+    image: image2,
     slug: 'skyline-homes-brand-style-guide',
     tag: ['Design', 'Brand Style Guide', 'Skyline Homes'],
   },
@@ -105,7 +108,7 @@ const brandList = [
     title: 'UrbanVista – Brochure Design',
     description:
       'Elegant brochure highlighting key listings and agent expertise.',
-    image: image1,
+    image: image2,
     slug: 'urbanvista-brochure-design',
     tag: ['Design', 'Brochure Design', 'UrbanVista'],
   },
@@ -113,7 +116,7 @@ const brandList = [
     title: 'CozyKeys – Logo Design',
     description:
       'Friendly and minimal logo to reflect a warm property experience.',
-    image: image1,
+    image: image2,
     slug: 'cozykeys-logo-design',
     tag: ['Design', 'Logo Design', 'CozyKeys'],
   },
@@ -121,14 +124,14 @@ const brandList = [
     title: 'VistaEdge – Brand Style Guide',
     description:
       'Clean, strategic design system tailored for digital and print use.',
-    image: image1,
+    image: image2,
     slug: 'vistaedge-brand-style-guide',
     tag: ['Design', 'Brand Style Guide', 'VistaEdge'],
   },
   {
     title: 'BrickLane Agency – Postcard Design',
     description: 'Compact marketing postcard designed for direct mail success.',
-    image: image1,
+    image: image2,
     slug: 'bricklane-agency-postcard-design',
     tag: ['Design', 'Postcard Design', 'BrickLane'],
   },
@@ -136,21 +139,21 @@ const brandList = [
     title: 'NextDoor Living – Logo Design',
     description:
       'Distinctive icon and typography symbolizing neighborhood trust.',
-    image: image1,
+    image: image2,
     slug: 'nextdoor-living-logo-design',
     tag: ['Design', 'Logo Design', 'NextDoor Living'],
   },
   {
     title: 'Elevate Realty – Flyer Design',
     description: 'High-converting flyer designed to boost listing inquiries.',
-    image: image1,
+    image: image2,
     slug: 'elevate-realty-flyer-design',
     tag: ['Design', 'Flyer Design', 'Elevate Realty'],
   },
   {
     title: 'HavenHill – Brand Style Guide',
     description: 'Visual language crafted to unify all brand communication.',
-    image: image1,
+    image: image2,
     slug: 'havenhill-brand-style-guide',
     tag: ['Design', 'Brand Style Guide', 'HavenHill'],
   },
@@ -158,7 +161,7 @@ const brandList = [
     title: 'MetroNest – Brochure & Postcard Design',
     description:
       'Dual-format materials designed for both events and mail campaigns.',
-    image: image1,
+    image: image2,
     slug: 'metronest-brochure-postcard-design',
     tag: ['Design', 'Brochure & Postcard', 'MetroNest'],
   },
@@ -169,7 +172,7 @@ const brandMarketList = [
     title: 'Skyline Realty - Social Media Branding',
     description:
       'Created a unified brand presence across all major social platforms.',
-    image: image1,
+    image: image3,
     slug: 'skyline-realty-social-media-branding',
     tag: ['Marketing', 'Social Media Branding', 'Project'],
   },
@@ -177,7 +180,7 @@ const brandMarketList = [
     title: 'UrbanEdge - Signage Design',
     description:
       'Developed high-impact real estate signage for street visibility.',
-    image: image1,
+    image: image3,
     slug: 'urbanedge-signage-design',
     tag: ['Marketing', 'Signage Design', 'Project'],
   },
@@ -185,7 +188,7 @@ const brandMarketList = [
     title: 'BlueNest - Pitch Deck Design',
     description:
       'Investor-ready pitch deck with strong visual narrative and stats.',
-    image: image1,
+    image: image3,
     slug: 'bluenest-pitch-deck-design',
     tag: ['Marketing', 'Pitch Deck Design', 'Project'],
   },
@@ -193,7 +196,7 @@ const brandMarketList = [
     title: 'OakHill Homes - Social Media Branding',
     description:
       'Built consistent visual identity for daily social engagement.',
-    image: image1,
+    image: image3,
     slug: 'oakhill-homes-social-media-branding',
     tag: ['Marketing', 'Social Media Branding', 'Project'],
   },
@@ -201,7 +204,7 @@ const brandMarketList = [
     title: 'HomeVista - Signage Design',
     description:
       'Designed large-scale signs to promote new property developments.',
-    image: image1,
+    image: image3,
     slug: 'homevista-signage-design',
     tag: ['Marketing', 'Signage Design', 'Project'],
   },
@@ -209,7 +212,7 @@ const brandMarketList = [
     title: 'NestSure - Pitch Deck Design',
     description:
       'Professional deck showcasing business model and funding goals.',
-    image: image1,
+    image: image3,
     slug: 'nestsure-pitch-deck-design',
     tag: ['Marketing', 'Pitch Deck Design', 'Project'],
   },
@@ -217,28 +220,28 @@ const brandMarketList = [
     title: 'BrightBrick - Social Media Branding',
     description:
       'Bold, eye-catching templates for agent promotions and listings.',
-    image: image1,
+    image: image3,
     slug: 'brightbrick-social-media-branding',
     tag: ['Marketing', 'Social Media Branding', 'Project'],
   },
   {
     title: 'NextDoor Living - Signage Design',
     description: 'Directional and promotional signs built for property events.',
-    image: image1,
+    image: image3,
     slug: 'nextdoor-living-signage-design',
     tag: ['Design', 'Signage Design', 'Project'],
   },
   {
     title: 'EstateIQ - Pitch Deck Design',
     description: 'Polished deck tailored for tech-based real estate solution.',
-    image: image1,
+    image: image3,
     slug: 'estateiq-pitch-deck-design',
     tag: ['Marketing', 'Pitch Deck Design', 'Project'],
   },
   {
     title: 'VistaLand - Social Media Branding',
     description: 'Cohesive social media kit aligning with core brand identity.',
-    image: image1,
+    image: image3,
     slug: 'vistaland-social-media-branding',
     tag: ['Marketing', 'Social Media Branding', 'Project'],
   },
@@ -248,7 +251,7 @@ const brandVideoList = [
   {
     title: 'VistaHomes - Branding Video',
     description: 'Told the brand’s story with cinematic visuals and narration.',
-    image: image1,
+    image: image4,
     slug: 'vistahomes-branding-video',
     tag: ['Design', 'Branding Video', 'Project'],
   },
@@ -256,21 +259,21 @@ const brandVideoList = [
     title: 'MetroNest - Listing Video',
     description:
       'Highlighted premium property features for prospective buyers.',
-    image: image1,
+    image: image4,
     slug: 'metronest-listing-video',
     tag: ['Design', 'Listing Video', 'Project'],
   },
   {
     title: 'BlueOak Realty - Video Ads Creative',
     description: 'Crafted short-form video ads for social media campaigns.',
-    image: image1,
+    image: image4,
     slug: 'blueoak-realty-video-ads-creative',
     tag: ['Design', 'Video Ads Creative', 'Project'],
   },
   {
     title: 'DreamBrick - Branding Video',
     description: 'Captured the essence of the brand through lifestyle shots.',
-    image: image1,
+    image: image4,
     slug: 'dreambrick-branding-video',
     tag: ['Design', 'Branding Video', 'Project'],
   },
@@ -278,42 +281,42 @@ const brandVideoList = [
     title: 'RealVista - Listing Video',
     description:
       'Showcased interior and neighborhood appeal with drone footage.',
-    image: image1,
+    image: image4,
     slug: 'realvista-listing-video',
     tag: ['Design', 'Listing Video', 'Project'],
   },
   {
     title: 'ZenSpaces - Video Ads Creative',
     description: 'Produced engaging reels for targeted lead generation.',
-    image: image1,
+    image: image4,
     slug: 'zenspaces-video-ads-creative',
     tag: ['Design', 'Video Ads Creative', 'Project'],
   },
   {
     title: 'UrbanNest - Branding Video',
     description: 'Built emotional connection through story-driven brand film.',
-    image: image1,
+    image: image4,
     slug: 'urbannest-branding-video',
     tag: ['Design', 'Branding Video', 'Project'],
   },
   {
     title: 'NextDwell - Listing Video',
     description: 'Presented home walkthroughs with voiceovers and music.',
-    image: image1,
+    image: image4,
     slug: 'nextdwell-listing-video',
     tag: ['Design', 'Listing Video', 'Project'],
   },
   {
     title: 'EstateWave - Video Ads Creative',
     description: 'Animated video ads to promote open house events online.',
-    image: image1,
+    image: image4,
     slug: 'estatewave-video-ads-creative',
     tag: ['Design', 'Video Ads Creative', 'Project'],
   },
   {
     title: 'BrightNest - Branding Video',
     description: 'Branded visual storytelling tailored for digital platforms.',
-    image: image1,
+    image: image4,
     slug: 'brightnest-branding-video',
     tag: ['Design', 'Branding Video', 'Project'],
   },
@@ -352,11 +355,14 @@ const WorkHero = () => {
             {webList.slice(0, 5).map((web) => (
               <div key={web.slug}>
                 <Link href={`/work/${web.slug}`} className="block mb-10">
-                  <Image
-                    src={web.image}
-                    alt={web.title}
-                    className="aspect-[4/3] object-cover rounded-xl"
-                  />
+                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
+                    <Image
+                      src={web.image}
+                      alt={web.title}
+                      layout="fill"
+                      className="object-cover rounded-xl hover:scale-105 transition duration-300"
+                    />
+                  </div>
                 </Link>
                 <Link href={`/work/${web.slug}`}>
                   <h2 className="text-2xl font-semibold text-darkIndigo">
@@ -413,11 +419,14 @@ const WorkHero = () => {
             {brandList.slice(0, 8).map((brand) => (
               <div key={brand.slug}>
                 <Link href={`/work/${brand.slug}`} className="block mb-10">
-                  <Image
-                    src={brand.image}
-                    alt={brand.title}
-                    className="aspect-[4/3] object-cover rounded-xl"
-                  />
+                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
+                    <Image
+                      src={brand.image}
+                      alt={brand.title}
+                      layout="fill"
+                      className="object-cover rounded-xl hover:scale-105 transition duration-300"
+                    />
+                  </div>
                 </Link>
                 <Link href={`/work/${brand.slug}`}>
                   <h2 className="text-2xl font-semibold text-darkIndigo">
@@ -457,11 +466,14 @@ const WorkHero = () => {
             {brandMarketList.slice(0, 6).map((brand) => (
               <div key={brand.slug}>
                 <Link href={`/work/${brand.slug}`} className="block mb-10">
-                  <Image
-                    src={brand.image}
-                    alt={brand.title}
-                    className="aspect-[4/3] object-cover rounded-xl"
-                  />
+                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
+                    <Image
+                      src={brand.image}
+                      alt={brand.title}
+                      layout="fill"
+                      className="object-cover rounded-xl hover:scale-105 transition duration-300"
+                    />
+                  </div>
                 </Link>
                 <Link href={`/work/${brand.slug}`}>
                   <h2 className="text-2xl font-semibold text-darkIndigo">
@@ -501,11 +513,14 @@ const WorkHero = () => {
             {brandVideoList.slice(0, 6).map((brand) => (
               <div key={brand.slug}>
                 <Link href={`/work/${brand.slug}`} className="block mb-10">
-                  <Image
-                    src={brand.image}
-                    alt={brand.title}
-                    className="aspect-[4/3] object-cover rounded-xl"
-                  />
+                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
+                    <Image
+                      src={brand.image}
+                      alt={brand.title}
+                      layout="fill"
+                      className="object-cover rounded-xl hover:scale-105 transition duration-300"
+                    />
+                  </div>
                 </Link>
                 <Link href={`/work/${brand.slug}`}>
                   <h2 className="text-2xl font-semibold text-darkIndigo">

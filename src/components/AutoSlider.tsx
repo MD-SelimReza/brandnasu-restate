@@ -13,7 +13,7 @@ export default function HeroBanner() {
       <div className="absolute right-0 top-0 h-full w-40 md:w-60 lg:w-80 xl:w-[35%] bg-gradient-to-l from-[#190C2ACC] to-transparent pointer-events-none z-10"></div>
 
       {/* Static Hero Banner */}
-      <div className="relative w-full bg-[#3B0C7C] bg-center bg-cover bg-no-repeat flex flex-col items-center lg:pt-28 lg:pb-12 py-12 px-4">
+      <div className="relative w-full bg-[#3B0C7C] bg-center bg-cover bg-no-repeat flex flex-col items-center xl:pt-28 lg:pb-12 py-12 px-4">
         <div className="text-center text-white max-w-7xl z-20">
           <h1 className="text-white xl:text-7xl lg:text-6xl text-3xl md:text-5xl !leading-[1.2] font-bold md:font-bold max-w-7xl lg:px-16 text-center mb-6">
             Empowering Real Estate Brands with Design Excellence
