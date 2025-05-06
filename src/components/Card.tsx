@@ -103,18 +103,19 @@ import W3 from '../../public/W3.png';
 import S1 from '../../public/S1.png';
 import S2 from '../../public/S2.png';
 import S3 from '../../public/S3.png';
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import Link from 'next/link';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
 const Banner = [
-  { id: 1, img: D1 },
-  { id: 2, img: D2 },
-  { id: 3, img: D3 },
-  { id: 4, img: W1 },
-  { id: 5, img: W2 },
-  { id: 6, img: W3 },
-  { id: 7, img: S1 },
-  { id: 8, img: S2 },
-  { id: 9, img: S3 },
+  { id: 1, img: D1, link: '#' },
+  { id: 2, img: D2, link: '#' },
+  { id: 3, img: D3, link: '#' },
+  { id: 4, img: W1, link: '#' },
+  { id: 5, img: W2, link: '#' },
+  { id: 6, img: W3, link: '#' },
+  { id: 7, img: S1, link: '#' },
+  { id: 8, img: S2, link: '#' },
+  { id: 9, img: S3, link: '#' },
 ];
 
 const CardSlider = () => {
@@ -151,22 +152,24 @@ const CardSlider = () => {
               // onMouseEnter={() => swiperRef.current?.autoplay.stop()} // Stop autoplay on hover
               // onMouseLeave={() => swiperRef.current?.autoplay.start()} // Resume autoplay on mouse leave
             >
-              <Image
-                src={card.img}
-                alt="Card img"
-                loading="lazy"
-                className="mx-auto"
-              />
+              <Link href={card.link}>
+                <Image
+                  src={card.img}
+                  alt="Card img"
+                  loading="lazy"
+                  className="mx-auto"
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* Navigation Buttons */}
-        <button className="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2A] text-muteIndigo p-3 rounded-full">
-          <AiOutlineLeft className="text-2xl" />
+        <button className="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2ACC] text-lightIndigo p-3 rounded-full ">
+          <FaChevronLeft size={30} />
         </button>
-        <button className="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2A] text-muteIndigo p-3 rounded-full">
-          <AiOutlineRight className="text-2xl" />
+        <button className="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2ACC] text-lightIndigo p-3 rounded-full">
+          <FaChevronRight size={30} />
         </button>
       </div>
     </div>

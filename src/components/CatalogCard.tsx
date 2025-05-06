@@ -20,7 +20,7 @@ const CatalogCard = ({
   description,
 }: CatalogItem) => {
   return (
-    <div className="rounded-2xl xl:p-8 p-6 max-w-[440px] bg-white flex flex-col h-full">
+    <div className="rounded-xl xl:p-8 p-6 max-w-[440px] bg-white flex flex-col h-full">
       <Link href={link}>
         <div className="mb-6 relative w-full aspect-[16/9] rounded-lg">
           <Image

@@ -151,7 +151,7 @@ const portfolioInfo = [
 
 const BookADemo = () => {
   return (
-    <div className="px-5 md:px-8 lg:px-10 xl:px-0 bg-[linear-gradient(to_bottom,_#F4F3FF_50%,_#2E1C6A_50%)] py-8 lg:py-12">
+    <div className="px-5 md:px-8 lg:px-10 xl:px-0 bg-[linear-gradient(to_bottom,_#F7F7F7_50%,_#2E1C6A_50%)] py-8 lg:py-12">
       <div className="relative max-w-[1040px] w-full mx-auto p-[2px] rounded-xl overflow-hidden">
         {/* Animated Gradient Border */}
         <div className="absolute inset-0 z-0 animate-border-spin">

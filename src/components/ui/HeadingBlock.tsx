@@ -4,7 +4,8 @@ const HeadingBlock = ({
   title = 'Title',
   description = 'Description',
   textAlignment = 'center',
-  maxWidth = 'max-w-5xl',
+  titleWidth = 'max-w-5xl',
+  descriptionWidth = 'max-w-5xl',
   titleColor = 'text-lightIndigo',
   descriptionColor = 'text-gray-500',
 }) => {
@@ -16,16 +17,14 @@ const HeadingBlock = ({
       : 'text-center';
 
   return (
-    <div
-      className={`relative z-10 w-full mx-auto xl:max-w-5xl lg:max-w-2xl ${maxWidth} ${alignmentClass}`}
-    >
+    <div className={`relative z-10 w-full ${alignmentClass}`}>
       <h2
-        className={`text-3xl lg:text-5xl xl:text-5xl lg:!leading-[57px] font-bold mx-auto lg:px-0 ${titleColor} ${alignmentClass}`}
+        className={`text-3xl lg:text-4xl lg:!leading-[43px] font-bold lg:px-0 ${titleWidth} ${titleColor} ${alignmentClass}`}
       >
         {title}
       </h2>
       <p
-        className={`xl:mt-6 md:mt-5 mt-4 mx-auto ${descriptionColor} ${alignmentClass}`}
+        className={`xl:mt-6 md:mt-5 mt-4 mx-auto ${descriptionWidth} ${descriptionColor} ${alignmentClass}`}
       >
         {description}
       </p>

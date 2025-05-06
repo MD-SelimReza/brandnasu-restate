@@ -99,7 +99,7 @@ export default function PricingPackage() {
           {packages.map((pkg, idx) => (
             <div
               key={idx}
-              className={`flex flex-col justify-between ${pkg.highlightColor} ${pkg.textColor} rounded-2xl pb-14 p-[30px] max-w-[440px] text-left`}
+              className={`flex flex-col justify-between ${pkg.highlightColor} ${pkg.textColor} rounded-xl pb-14 p-[30px] max-w-[440px] text-left`}
             >
               <div>
                 <div

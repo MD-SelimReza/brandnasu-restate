@@ -5,7 +5,6 @@ import DesignProcess from '@/components/DesignProcess';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import CallToActionSection from '@/components/CallToActionSection';
 import FAQSection from '@/components/FAQSection';
-import DesignPlatform from '@/components/DesignPlatform';
 import BookADemo from '@/components/BookADemo';
 import WhatWeHelp from '@/components/WhatWeHelp';
 
@@ -17,11 +16,11 @@ export default function Home() {
       {/* <InfoSection /> */}
       <OurWorks />
       <GradientSection />
-      <DesignPlatform />
+      {/* <DesignPlatform /> */}
       <DesignProcess />
       <TestimonialsCarousel />
-      <FAQSection />
       <CallToActionSection />
+      <FAQSection />
       <BookADemo />
     </div>
   );

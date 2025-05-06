@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { FaChevronUp } from 'react-icons/fa';
 import Container from './Container';
+import HeadingBlock from './ui/HeadingBlock';
 
 const CareerFaq = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -54,14 +55,17 @@ const CareerFaq = () => {
     <Container>
       <div className="w-full flex lg:gap-10 flex-col lg:flex-row py-8 lg:py-12 xl:py-16">
         {/* Left Section (40% width) */}
-        <div className="w-full lg:w-2/5 lg:text-left text-center lg:px-0 mb-10">
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl xl:!leading-[57px] font-bold text-darkIndigo lg:max-w-full lg:px-0 md:px-10 lg:text-left text-center">
-            Frequently Asked Questions
-          </h2>
-          <p className="xl:mt-6 md:mt-5 mt-4 text-darkGray md:px-16 lg:text-left lg:px-0 text-center">
-            Get answers to some of the most commonly asked questions we receive
-            from businesses just like yours.
-          </p>
+        <div className="w-full lg:w-2/5 lg:text-left lg:px-0 mb-10">
+          <HeadingBlock
+            title="Frequently Asked Questions"
+            description="Get answers to some of the most commonly asked questions we receive
+            from businesses just like yours."
+            titleColor="text-darkIndigo"
+            titleWidth="max-w-sm"
+            descriptionColor="text-darkGray"
+            descriptionWidth="max-w-4xl"
+            textAlignment="left"
+          />
         </div>
 
         {/* Right Section - FAQs (60% width) */}

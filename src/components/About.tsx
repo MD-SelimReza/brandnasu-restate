@@ -243,7 +243,7 @@ const About = () => {
 
           <div className="absolute right-0 top-0 bottom-0 w-[78%]">
             <div className="relative w-full min-h-[calc(100vh-80px)]">
-              <Image
+                <Image
                 src={thumbnail}
                 alt="Thumbnail Image"
                 layout="fill"
@@ -255,7 +255,7 @@ const About = () => {
           </div>
         </section> */}
 
-        <section className="flex flex-col lg:flex-row pb-28 md:pt-20 lg:pt-0">
+        <section className="flex flex-col lg:flex-row pb-32 md:pt-20 lg:pt-0">
           {/* Left Orange Box */}
           <div className="bg-indigo flex justify-center items-center w-full lg:w-1/2 lg:h-[450px] md:h-[400px] h-[300px] relative">
             <h1 className="text-white xl:text-[10rem] md:text-9xl text-8xl md:font-extrabold font-bold flex items-center mr-16">
@@ -288,12 +288,7 @@ const About = () => {
                 World Wide <span className="font-light">(countries)</span>
               </h3>
               {/* Progress Bar */}
-              <div className="w-full bg-indigo rounded-full h-1.5 mb-4">
-                <div
-                  className="bg-indigo h-1.5 rounded-full"
-                  style={{ width: '90%' }}
-                ></div>
-              </div>
+              <div className="w-full bg-indigo rounded-full h-[3px] mb-4" />
               <div className="flex items-center gap-5">
                 <div className="text-white xl:text-7xl md:text-6xl text-5xl font-light lg:w-[35%] md:w-[20%] w-[30%] flex items-center">
                   <span>
@@ -318,12 +313,7 @@ const About = () => {
             <div>
               <h3 className="text-white font-semibold text-xl mb-3">Clients</h3>
               {/* Progress Bar */}
-              <div className="w-full bg-indigo rounded-full h-1.5 mb-4">
-                <div
-                  className="bg-indigo h-1.5 rounded-full"
-                  style={{ width: '60%' }}
-                ></div>
-              </div>
+              <div className="w-full bg-indigo rounded-full h-[3px] mb-4" />
               <div className="flex items-center gap-5">
                 <div className="text-white lg:w-[35%] md:w-[20%] w-[30%] xl:text-7xl md:text-6xl text-5xl font-light flex items-center">
                   <span>
@@ -345,7 +335,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="flex flex-col justify-center items-center pb-20">
+        <section className="flex flex-col justify-center items-center pb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-20 text-white md:underline underline-offset-4">
             Trusted by 100+ Real Estate Brands
           </h2>
@@ -428,26 +418,26 @@ const About = () => {
             </div>
 
             {/* Right Div (Image) */}
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 rounded-xl overflow-hidden">
               <Image
                 src={about}
                 alt="Investment analysis"
                 width={700}
                 height={400}
-                className="rounded-xl shadow-md object-cover"
+                className="rounded-xl shadow-md object-cover hover:scale-105 transition duration-500"
               />
             </div>
           </div>
         </section>
 
-        <section className="pt-20">
+        <section className="py-16">
           {/* Services Cards */}
           <div>
             <h1 className="text-2xl text-white font-bold mb-6 border-l-4 border-l-indigo pl-2">
               What We Do
             </h1>
-            <p className="text-base text-lightIndigo text-justify mb-10">
-              We offer flat-rate creative support with services including:
+            <p className="text-3xl font-semibold text-white text-justify mb-10">
+              We offer flat-rate creative support with services including
             </p>
             <div className="w-full grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 xl:gap-10 gap-6">
               {serviceSections.map((service, idx) => (
@@ -464,20 +454,18 @@ const About = () => {
                       height={40}
                       className="service-svg"
                     />
-                    <h2 className="text-xl font-bold text-white">
+                    <h2 className="text-2xl font-bold text-white">
                       {service.title}
                     </h2>
                   </div>
-                  <p className="text-[15px] text-lightIndigo">
-                    {service.description}
-                  </p>
+                  <p className="text-lightIndigo">{service.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="pt-20 pb-36">
+        <section className="pt-16 pb-32">
           <h1 className="text-2xl text-white font-bold mb-6 border-l-4 border-l-indigo pl-2">
             Our Workspace & Environment
           </h1>
@@ -553,11 +541,11 @@ const About = () => {
           </div>
         </section>
 
-        <section className="xl:py-28 py-20 lg:pb-16 px-5 md:px-8 xl:px-16 bg-[#f7f7f7] rounded-xl">
+        <section className="xl:py-20 py-20 lg:pb-16 px-5 md:px-8 xl:px-16 bg-[#f7f7f7] rounded-xl">
           {/* Our Mission */}
           <div className="mx-auto text-center">
             {/* Heading */}
-            <h2 className="md:text-4xl text-3xl font-bold text-darkIndigo mb-4">
+            <h2 className="text-3xl font-bold text-darkIndigo mb-4">
               Our Mission
             </h2>
             <p className="text-darkGray max-w-5xl mx-auto mb-12">
@@ -575,33 +563,33 @@ const About = () => {
               {/* Card 1 */}
               <div className="bg-indigo rounded-xl overflow-hidden flex flex-col h-full md:order-1 lg:order-none">
                 <div className="p-6">
-                  <h3 className="text-lightIndigo font-semibold">
+                  <h3 className="text-lightIndigo">
                     We help agents and teams grow their brand with standout
                     creative, fast, flexible, and consistent.
                   </h3>
                 </div>
-                <div className="flex-1 relative w-full aspect-square">
+                <div className="flex-1 relative w-full aspect-square overflow-hidden">
                   <Image
                     src={mission1}
                     alt="Secure Authentication"
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition duration-500"
                   />
                 </div>
               </div>
 
               {/* Card 2 (center) */}
               <div className="bg-indigo rounded-xl overflow-hidden flex sm:flex-col flex-col-reverse h-full md:order-3 lg:order-none">
-                <div className="relative w-full aspect-square">
+                <div className="relative w-full aspect-square overflow-hidden">
                   <Image
                     src={mission2}
                     alt="Trusted Investors"
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition duration-500"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lightIndigo font-semibold">
+                  <h3 className="text-lightIndigo">
                     Our mission is to remove the design bottleneck by offering
                     unlimited content with on-demand turnaround.
                   </h3>
@@ -611,17 +599,17 @@ const About = () => {
               {/* Card 3 */}
               <div className="bg-indigo rounded-xl overflow-hidden flex flex-col h-full md:order-2 lg:order-none">
                 <div className="p-6">
-                  <h3 className="text-lightIndigo font-semibold">
+                  <h3 className="text-lightIndigo">
                     From new agents to top producers, we scale creative to match
                     your marketing goals and business vision.
                   </h3>
                 </div>
-                <div className="flex-1 relative w-full aspect-square">
+                <div className="flex-1 relative w-full aspect-square overflow-hidden">
                   <Image
                     src={mission3}
                     alt="Data Security"
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition duration-500"
                   />
                 </div>
               </div>
@@ -629,9 +617,9 @@ const About = () => {
           </div>
 
           {/* Our Vision */}
-          <div className="mt-28 mx-auto text-center">
+          <div className="mt-24 mx-auto text-center">
             <div>
-              <h2 className="md:text-4xl text-3xl font-bold text-darkIndigo mb-4">
+              <h2 className="text-3xl font-bold text-darkIndigo mb-4">
                 Our Vision
               </h2>
               <p className="text-darkGray max-w-5xl mx-auto mb-12">
@@ -645,7 +633,7 @@ const About = () => {
               </p>
             </div>
             <div className="grid grid-cols-1 gap-5 text-left">
-              <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center">
+              <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500">
                 <div className="flex md:justify-center items-center">
                   <Image
                     src={branding}
@@ -655,7 +643,7 @@ const About = () => {
                   />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-darkIndigo mb-2">
+                  <h2 className="text-2xl font-bold text-darkIndigo mb-2">
                     Innovation in Real Estate Branding
                   </h2>
                   <p className="text-base text-darkGray text-justify">
@@ -664,12 +652,12 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center">
+              <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500">
                 <div className="flex md:justify-center items-center">
                   <Image src={global} alt="Global" width={100} height={100} />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-darkIndigo mb-2">
+                  <h2 className="text-2xl font-bold text-darkIndigo mb-2">
                     Global Reach, Local Focus
                   </h2>
                   <p className="text-base text-darkGray text-justify">
@@ -678,7 +666,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center">
+              <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500">
                 <div className="flex md:justify-center items-center">
                   <Image
                     src={empowering}
@@ -688,7 +676,7 @@ const About = () => {
                   />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-darkIndigo mb-2">
+                  <h2 className="text-2xl font-bold text-darkIndigo mb-2">
                     Elevating the Industry Standard
                   </h2>
                   <p className="text-base text-darkGray text-justify">
@@ -840,9 +828,9 @@ const About = () => {
           </div>
         </section> */}
 
-        <section className="mt-28 xl:px-16 md:px-8 px-5 py-20 pb-16 bg-gray100 rounded-xl">
+        <section className="mt-32 xl:px-16 md:px-8 px-5 py-20 pb-16 bg-gray100 rounded-xl">
           <div className="mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-darkIndigo mb-4">
+            <h2 className="text-3xl font-bold text-darkIndigo mb-4">
               Meet the Leadership Team
             </h2>
             <p className="text-darkGray max-w-5xl mx-auto mb-12">
@@ -854,7 +842,7 @@ const About = () => {
               {teamMembers.map((member, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl overflow-hidden text-center xl:p-6 p-5 flex flex-col items-center transition-all duration-300 hover:shadow-lg hover:scale-105"
+                  className="bg-white rounded-xl overflow-hidden text-center xl:p-6 p-5 flex flex-col items-center transition-all duration-300 hover:scale-105"
                 >
                   <div className="aspect-[4/3] w-full relative mb-6 rounded-lg overflow-hidden">
                     <Image
@@ -864,10 +852,10 @@ const About = () => {
                       className="object-cover"
                     />
                   </div>
-                  <h4 className="text-darkIndigo text-lg font-semibold mb-1">
+                  <h4 className="text-darkIndigo text-2xl font-semibold mb-1">
                     {member.name}
                   </h4>
-                  <p className="text-darkGray text-sm mb-4">{member.title}</p>
+                  <p className="text-darkGray">{member.title}</p>
                 </div>
               ))}
             </div>

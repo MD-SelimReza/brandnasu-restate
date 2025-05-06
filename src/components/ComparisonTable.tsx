@@ -101,7 +101,7 @@ export default function ComparisonTable() {
           Why Choose BrandNasu Over Freelance Marketplaces
         </h2>
 
-        <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+        <div className="bg-white border border-gray-200 rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
           {/* BrandNasu Column */}
           <div className="border-b lg:border-b-0 lg:border-r border-gray-200">
             <div className="p-6 text-left text-darkIndigo text-2xl font-semibold border-b border-gray-200">

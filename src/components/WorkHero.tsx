@@ -5,7 +5,6 @@ import image1 from '../../public/S1.png';
 import image2 from '../../public/D3.png';
 import image3 from '../../public/W1.png';
 import image4 from '../../public/W3.png';
-import Container from './Container';
 import BookACallSection from './BookACallSection';
 
 const webList = [
@@ -325,33 +324,32 @@ const brandVideoList = [
 const WorkHero = () => {
   return (
     <section className="bg-white">
-      <Container>
-        <div className="text-center mb-10">
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-darkIndigo lg:max-w-4xl md:px-14 mx-auto text-center mb-8">
-            Explore What Our Team Has Executed
-          </h2>
-          <p className="text-darkGray max-w-5xl mx-auto">
-            Each project in this section reflects the strategic thinking and
-            creative execution of our team. These works are not for sale, but
-            presented to demonstrate the quality, precision, and results we
-            consistently deliver for real estate brands.
-          </p>
-        </div>
-      </Container>
+      <div className="mx-auto text-center pt-8 lg:pt-16 xl:pt-24">
+        <h2 className="text-3xl lg:text-4xl xl:text-5xl xl:!leading-[57px] lg:!leading-[48px] font-bold mx-auto lg:px-0 max-w-4xl text-darkIndigo">
+          Explore what our team has executed for real estate
+        </h2>
+        <p className="xl:mt-6 md:mt-5 mt-4 mx-auto text-darkGray max-w-6xl text-lg">
+          Each project in this section reflects the strategic thinking and
+          creative execution of our team. These works are not for sale, but
+          presented to demonstrate the quality, precision, and results we
+          consistently deliver for real estate brands.
+        </p>
+      </div>
 
-      <div className="space-y-10 mx-auto max-w-[1920px]">
+      <div className="space-y- mx-auto max-w-[1920px]">
         {/* Web Development */}
-        <div>
+        <div id="website" className="pt-32">
           <div className="w-full flex flex-col items-start px-6 mb-4">
             <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
               Web Development
             </h1>
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkGray">
-              Showcasing high-end website development projects for real estate
+            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+              Smart, scalable websites tailored for real estate brands to
+              convert visitors into leads.
             </h3>
           </div>
 
-          <div className="pb-24 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
             {webList.slice(0, 5).map((web) => (
               <div key={web.slug}>
                 <Link href={`/work/${web.slug}`} className="block mb-10">
@@ -405,17 +403,18 @@ const WorkHero = () => {
         </div>
 
         {/* Web Design */}
-        <div>
+        <div id="brand-design" className="pt-32">
           <div className="w-full flex flex-col items-start px-6 mb-4">
             <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
               Brand Design
             </h1>
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkGray">
-              Showcasing high-end website development projects for real estate
+            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+              Visually compelling brand identities that create trust and set
+              your business apart.
             </h3>
           </div>
 
-          <div className="pb-24 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
             {brandList.slice(0, 8).map((brand) => (
               <div key={brand.slug}>
                 <Link href={`/work/${brand.slug}`} className="block mb-10">
@@ -452,17 +451,18 @@ const WorkHero = () => {
         </div>
 
         {/* Brand Marketing */}
-        <div>
+        <div id="brand-marketing" className="pt-32">
           <div className="w-full flex flex-col items-start px-6 mb-4">
             <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
               Brand Marketing
             </h1>
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkGray">
-              Showcasing high-end website development projects for real estate
+            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+              Strategic campaigns and content that grow your brand visibility
+              across platforms.
             </h3>
           </div>
 
-          <div className="pb-24 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
             {brandMarketList.slice(0, 6).map((brand) => (
               <div key={brand.slug}>
                 <Link href={`/work/${brand.slug}`} className="block mb-10">
@@ -499,17 +499,18 @@ const WorkHero = () => {
         </div>
 
         {/* Brand Video */}
-        <div>
+        <div id="brand-video" className="pt-32 pb-32">
           <div className="w-full flex flex-col items-start px-6 mb-4">
             <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
               Brand Video
             </h1>
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkGray">
-              Showcasing high-end website development projects for real estate
+            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+              High-quality visuals and storytelling that connect emotionally and
+              sell effectively.
             </h3>
           </div>
 
-          <div className="pb-24 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
             {brandVideoList.slice(0, 6).map((brand) => (
               <div key={brand.slug}>
                 <Link href={`/work/${brand.slug}`} className="block mb-10">
@@ -547,7 +548,7 @@ const WorkHero = () => {
       </div>
 
       <div className="bg-indigo100">
-        <div className="text-center max-w-[1440px] w-full mx-auto lg:py-36 py-20 px-5">
+        <div className="text-center max-w-[1440px] w-full mx-auto lg:py-32 py-20 px-5">
           <BookACallSection />
         </div>
       </div>

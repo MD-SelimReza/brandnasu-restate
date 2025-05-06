@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { FaChevronUp } from 'react-icons/fa';
 import Container from './Container';
+import HeadingBlock from './ui/HeadingBlock';
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -51,53 +52,58 @@ const FAQSection = () => {
   ];
 
   return (
-    <Container>
-      <div className="w-full flex lg:gap-10 flex-col lg:flex-row pt-8 lg:pt-12 xl:pt-16">
-        {/* Left Section (40% width) */}
-        <div className="w-full lg:w-2/5 lg:text-left text-center lg:px-0 mb-10">
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-darkIndigo lg:max-w-full lg:px-0 md:px-10 lg:text-left text-center">
-            Frequently Asked Questions
-          </h2>
-          <p className="xl:mt-6 md:mt-5 mt-4 text-sm md:text-xl text-default md:px-16 lg:text-left lg:px-0 text-center">
-            Get answers to some of the most commonly asked questions we receive
-            from businesses just like yours.
-          </p>
-        </div>
+    <div className="bg-gray100">
+      <Container>
+        <div className="w-full flex lg:gap-10 flex-col lg:flex-row pt-8 lg:pt-12">
+          {/* Left Section (40% width) */}
+          <div className="w-full lg:w-2/5 lg:text-left text-center lg:px-0 mb-10">
+            <HeadingBlock
+              title="Frequently Asked Questions"
+              description="Get answers to some of the most commonly asked questions we receive
+            from businesses just like yours."
+              titleColor="text-darkIndigo"
+              titleWidth="max-w-sm"
+              descriptionColor="text-darkGray"
+              descriptionWidth="max-w-4xl"
+              textAlignment="left"
+            />
+          </div>
 
-        {/* Right Section - FAQs (60% width) */}
-        <div className="w-full lg:w-3/5 space-y-5">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border-b border-gray-300 pb-3 cursor-pointer"
-            >
+          {/* Right Section - FAQs (60% width) */}
+          <div className="w-full lg:w-3/5 space-y-5">
+            {faqs.map((faq, index) => (
               <div
-                className="flex justify-between items-center gap-8 py-3"
-                onClick={() => toggleFAQ(index)}
+                key={index}
+                className="border-b border-gray-300 pb-3 cursor-pointer"
               >
-                <p className="w-full flex justify-between gap-4 items-baseline text-black text-left font-bold text-xl py-2 focus:outline-none">
-                  {faq.question}
-                </p>
-                <FaChevronUp
-                  className={`w-5 h-5 text-gray-500 transition-all duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
+                <div
+                  className="flex justify-between items-center gap-8 py-3"
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <p className="w-full flex justify-between gap-4 items-baseline text-darkIndigo text-left font-bold text-2xl py-2 focus:outline-none">
+                    {faq.question}
+                  </p>
+                  <FaChevronUp
+                    className={`w-5 h-5 text-gray-500 transition-all duration-300 ${
+                      openIndex === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </div>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    openIndex === index
+                      ? 'max-h-40 opacity-100 mb-4'
+                      : 'max-h-0 opacity-0'
                   }`}
-                />
+                >
+                  <p className="text-darkGray">{faq.answer}</p>
+                </div>
               </div>
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index
-                    ? 'max-h-40 opacity-100 mb-4'
-                    : 'max-h-0 opacity-0'
-                }`}
-              >
-                <p className="text-default text-lg">{faq.answer}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

@@ -18,18 +18,11 @@ export default function BookACallSection() {
     }
   );
   return (
-    <section className="bg-darkIndigo text-white lg:p-16 md:p-10 p-6 rounded-2xl">
+    <section className="bg-darkIndigo text-white lg:p-16 md:p-10 p-6 rounded-xl">
       <div className="grid lg:grid-cols-2 grid-cols-1 md:gap-20 gap-16">
         {/* Left Section */}
         <div className="text-left h-full flex flex-col">
-          {/* <h2 className="text-4xl font-bold mb-4">Book a Call</h2>
-          <p className="text-lightIndigo mb-6">
-            Have a frank chat with our Customer Success Manager and Design
-            Director for fun. Straightforward discussion of your ideas – no
-            overwhelming tech jargon unless you&apos;re into that!
-          </p> */}
-
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-white mb-4">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl xl:!leading-[57px] lg:!leading-[48px] font-bold text-white mb-4">
             Book a Call
           </h2>
           <p className="text-lightIndigo max-w-5xl mx-auto mb-6">

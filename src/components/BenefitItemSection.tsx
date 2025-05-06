@@ -110,7 +110,7 @@ const BenefitsItemSection = () => {
         <h1 className="text-2xl text-white font-bold mb-6 border-l-4 border-l-indigo pl-2">
           Employee Benefits
         </h1>
-        <h3 className="text-3xl md:text-5xl xl:!leading-[57px] font-semibold mb-8 text-white">
+        <h3 className="lg:text-4xl text-3xl font-semibold mb-8 text-white">
           We take care of our team, so they can take care of great work.
         </h3>
 

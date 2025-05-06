@@ -57,7 +57,7 @@ const TeamBenefits = () => {
           <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
             Being Our Teammate
           </h1>
-          <h3 className="text-3xl md:text-5xl xl:!leading-[57px] font-semibold mb-8 text-darkIndigo">
+          <h3 className="text-3xl lg:text-4xl font-semibold mb-8 text-darkIndigo">
             Where Your Talent Meets Belonging
           </h3>
         </div>
