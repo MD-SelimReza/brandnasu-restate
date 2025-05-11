@@ -56,7 +56,7 @@ const MemberShip = () => {
               Ongoing Creative Assets
             </h3>
             <p className="text-darkGray text-lg font-light max-w-44">
-              From social media designs to marketing materials — enjoy a steady
+              From social media designs to marketing materials , enjoy a steady
               flow of fresh visuals and branding assets.
             </p>
           </div>

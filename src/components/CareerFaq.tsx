@@ -16,7 +16,7 @@ const CareerFaq = () => {
     {
       question: 'What types of real estate professionals do you work with?',
       answer:
-        'We work with realtors, brokers, agencies, property managers, and real estate coaches—helping them build a strong brand, attract leads, and grow their business.',
+        'We work with realtors, brokers, agencies, property managers, and real estate coaches, helping them build a strong brand, attract leads, and grow their business.',
     },
     {
       question: 'What services do you offer?',
@@ -32,12 +32,12 @@ const CareerFaq = () => {
     {
       question: 'How does the subscription model work?',
       answer:
-        'With our subscription plans, you get unlimited branding, marketing, and design requests. Simply submit your requests, and we’ll deliver high-quality designs fast—no hourly rates or hidden fees.',
+        'With our subscription plans, you get unlimited branding, marketing, and design requests. Simply submit your requests, and we’ll deliver high-quality designs fast, no hourly rates or hidden fees.',
     },
     {
       question: 'How does the subscription model work?',
       answer:
-        'With our subscription plans, you get unlimited branding, marketing, and design requests. Simply submit your requests, and we’ll deliver high-quality designs fast—no hourly rates or hidden fees.',
+        'With our subscription plans, you get unlimited branding, marketing, and design requests. Simply submit your requests, and we’ll deliver high-quality designs fast, no hourly rates or hidden fees.',
     },
     {
       question: 'Can I request custom services that aren’t listed?',
@@ -47,7 +47,7 @@ const CareerFaq = () => {
     {
       question: 'How do I get started?',
       answer:
-        'It’s simple! Choose a one-time service or subscription plan, submit your request, and we’ll take care of the rest—so you can focus on closing more deals.',
+        'It’s simple! Choose a one-time service or subscription plan, submit your request, and we’ll take care of the rest, so you can focus on closing more deals.',
     },
   ];
 

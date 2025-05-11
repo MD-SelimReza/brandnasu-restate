@@ -5,7 +5,8 @@ import CareersPage from '@/components/CareersPage';
 import Gallery from '@/components/Gallery';
 import TeamBenefits from '@/components/TeamBenefits';
 // import TeamTestimonials from '@/components/TeamTestimonials';
-import CareerFaq from '@/components/CareerFaq';
+import FAQSection from '@/components/FAQSection';
+import { faqsData } from '@/data';
 
 const CareerPage = () => {
   return (
@@ -16,7 +17,11 @@ const CareerPage = () => {
       <Gallery />
       <TeamBenefits />
       {/* <TeamTestimonials /> */}
-      <CareerFaq />
+      <FAQSection
+        title="Frequently Asked Questions"
+        description="Get answers to some of the most commonly asked questions we receive from businesses just like yours."
+        faqs={faqsData}
+      />
     </div>
   );
 };

@@ -1,18 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import image1 from '../../public/S1.png';
+import image1 from '../../public/brand-video.jpg';
 import image2 from '../../public/D3.png';
 import image3 from '../../public/W1.png';
 import image4 from '../../public/W3.png';
-import BookACallSection from './BookACallSection';
+import CtaSection from './CtaSection';
 
 const webList = [
   {
     title: 'UrbanNest - Website Development',
     description:
       'IDX-integrated real estate site crafted for seamless property search.',
-    image: image1,
+    image:
+      'https://img.freepik.com/free-photo/homepage-seen-computer-screen_23-2149416723.jpg',
     slug: 'urbannest-website-development',
     tag: ['Development', 'Website Development', 'Project'],
   },
@@ -20,7 +21,8 @@ const webList = [
     title: 'SkyVista - Landing Page Design',
     description:
       'High-converting landing page focused on generating quality leads.',
-    image: image1,
+    image:
+      'https://img.freepik.com/free-vector/flat-design-real-estate-project-landing-page_23-2149908746.jpg',
     slug: 'skyvista-landing-page-design',
     tag: ['Development', 'Landing Page', 'Project'],
   },
@@ -28,7 +30,8 @@ const webList = [
     title: 'HavenSpace - UI/UX Design',
     description:
       'Modern UI/UX optimized for intuitive browsing and engagement.',
-    image: image1,
+    image:
+      'https://img.freepik.com/premium-vector/programming-web-banner-best-programming-languages-social-media-creative-concept-idea-desktop-pc_122058-1961.jpg',
     slug: 'havenspace-ui-ux-design',
     tag: ['Development', 'UI/UX', 'Project'],
   },
@@ -36,14 +39,16 @@ const webList = [
     title: 'MetroCity - Website Development',
     description:
       'Mobile-responsive site with listing management and lead capture.',
-    image: image1,
+    image:
+      'https://img.freepik.com/premium-psd/dream-house-sale-landing-page_872901-1688.jpg',
     slug: 'metrocity-website-development',
     tag: ['Development', 'Website Development', 'Project'],
   },
   {
     title: 'GreenBrick - Landing Page Design',
     description: 'Conversion-focused landing page tailored for local realtors.',
-    image: image1,
+    image:
+      'https://img.freepik.com/free-vector/flat-abstract-real-estate-landing-page_23-2149034508.jpg',
     slug: 'greenbrick-landing-page-design',
     tag: ['Development', 'Landing Page', 'Project'],
   },
@@ -91,7 +96,8 @@ const brandList = [
   {
     title: 'PrimeNest Realty – Logo Design',
     description: 'Bold and modern logo crafted for a premium property firm.',
-    image: image2,
+    image:
+      'https://img.freepik.com/free-vector/real-estate-logo-template_1156-724.jpg',
     slug: 'primenest-realty-logo-design',
     tag: ['Design', 'Logo Design', 'PrimeNest'],
   },
@@ -99,7 +105,8 @@ const brandList = [
     title: 'Skyline Homes – Brand Style Guide',
     description:
       'Defined brand colors, fonts, and visual rules for a consistent identity.',
-    image: image2,
+    image:
+      'https://fliphtml5.com/learning-center/wp-content/uploads/2023/04/Two-Toned-Brand-Guideline-Template.webp',
     slug: 'skyline-homes-brand-style-guide',
     tag: ['Design', 'Brand Style Guide', 'Skyline Homes'],
   },
@@ -107,7 +114,8 @@ const brandList = [
     title: 'UrbanVista – Brochure Design',
     description:
       'Elegant brochure highlighting key listings and agent expertise.',
-    image: image2,
+    image:
+      'https://designshack.net/wp-content/uploads/bold-company-profile-brochure-template-823-1.jpg',
     slug: 'urbanvista-brochure-design',
     tag: ['Design', 'Brochure Design', 'UrbanVista'],
   },
@@ -115,7 +123,8 @@ const brandList = [
     title: 'CozyKeys – Logo Design',
     description:
       'Friendly and minimal logo to reflect a warm property experience.',
-    image: image2,
+    image:
+      'https://img.freepik.com/premium-vector/free-vector-yellow-black-real-estate-logo_883906-1659.jpg',
     slug: 'cozykeys-logo-design',
     tag: ['Design', 'Logo Design', 'CozyKeys'],
   },
@@ -123,14 +132,16 @@ const brandList = [
     title: 'VistaEdge – Brand Style Guide',
     description:
       'Clean, strategic design system tailored for digital and print use.',
-    image: image2,
+    image:
+      'https://silber-consult.com/wp-content/uploads/2022/10/Brand-Style-Guideline-by-Smotrow-1024x683.jpg',
     slug: 'vistaedge-brand-style-guide',
     tag: ['Design', 'Brand Style Guide', 'VistaEdge'],
   },
   {
     title: 'BrickLane Agency – Postcard Design',
     description: 'Compact marketing postcard designed for direct mail success.',
-    image: image2,
+    image:
+      'https://uicreative.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2019/11/23165623/postcard-digital-development.jpg',
     slug: 'bricklane-agency-postcard-design',
     tag: ['Design', 'Postcard Design', 'BrickLane'],
   },
@@ -138,14 +149,16 @@ const brandList = [
     title: 'NextDoor Living – Logo Design',
     description:
       'Distinctive icon and typography symbolizing neighborhood trust.',
-    image: image2,
+    image:
+      'https://img.freepik.com/premium-vector/free-vector-yellow-black-real-estate-logo_883906-1659.jpghttps://img.freepik.com/free-vector/house-logo-icon-negative-space-style_126523-692.jpg',
     slug: 'nextdoor-living-logo-design',
     tag: ['Design', 'Logo Design', 'NextDoor Living'],
   },
   {
     title: 'Elevate Realty – Flyer Design',
     description: 'High-converting flyer designed to boost listing inquiries.',
-    image: image2,
+    image:
+      'https://brandpacks.com/wp-content/uploads/2018/09/free-festival-poster-templates.jpg',
     slug: 'elevate-realty-flyer-design',
     tag: ['Design', 'Flyer Design', 'Elevate Realty'],
   },
@@ -171,7 +184,8 @@ const brandMarketList = [
     title: 'Skyline Realty - Social Media Branding',
     description:
       'Created a unified brand presence across all major social platforms.',
-    image: image3,
+    image:
+      'https://img.freepik.com/premium-vector/social-media-post-design-facebook-cover-template-design-professional-creative-designs_756056-21.jpg',
     slug: 'skyline-realty-social-media-branding',
     tag: ['Marketing', 'Social Media Branding', 'Project'],
   },
@@ -179,7 +193,7 @@ const brandMarketList = [
     title: 'UrbanEdge - Signage Design',
     description:
       'Developed high-impact real estate signage for street visibility.',
-    image: image3,
+    image: 'https://realtysigns.org/wp-content/uploads/sandwich-board001.jpg',
     slug: 'urbanedge-signage-design',
     tag: ['Marketing', 'Signage Design', 'Project'],
   },
@@ -187,7 +201,8 @@ const brandMarketList = [
     title: 'BlueNest - Pitch Deck Design',
     description:
       'Investor-ready pitch deck with strong visual narrative and stats.',
-    image: image3,
+    image:
+      'https://cdn.kwork.com/files/portfolio/t3/77/252c23c6dd62c19fc4b117810c06657e143fa023-1710744178.jpg',
     slug: 'bluenest-pitch-deck-design',
     tag: ['Marketing', 'Pitch Deck Design', 'Project'],
   },
@@ -195,7 +210,8 @@ const brandMarketList = [
     title: 'OakHill Homes - Social Media Branding',
     description:
       'Built consistent visual identity for daily social engagement.',
-    image: image3,
+    image:
+      'https://img.freepik.com/premium-vector/creative-modern-business-facebook-cover-design-web-banner-template_627383-623.jpg',
     slug: 'oakhill-homes-social-media-branding',
     tag: ['Marketing', 'Social Media Branding', 'Project'],
   },
@@ -203,7 +219,8 @@ const brandMarketList = [
     title: 'HomeVista - Signage Design',
     description:
       'Designed large-scale signs to promote new property developments.',
-    image: image3,
+    image:
+      'https://fiverr-res.cloudinary.com/t_mobile_web_2, q_auto, f_auto/gigs/370901000/original/460ab6a5279b988acc8c4b79e8efe1a909b6f280.jpg',
     slug: 'homevista-signage-design',
     tag: ['Marketing', 'Signage Design', 'Project'],
   },
@@ -211,7 +228,8 @@ const brandMarketList = [
     title: 'NestSure - Pitch Deck Design',
     description:
       'Professional deck showcasing business model and funding goals.',
-    image: image3,
+    image:
+      'https://designshack.net/wp-content/uploads/Voute-Pitch-Deck-Powerpoint-Template.jpg',
     slug: 'nestsure-pitch-deck-design',
     tag: ['Marketing', 'Pitch Deck Design', 'Project'],
   },
@@ -250,7 +268,7 @@ const brandVideoList = [
   {
     title: 'VistaHomes - Branding Video',
     description: 'Told the brand’s story with cinematic visuals and narration.',
-    image: image4,
+    image: 'https://homejab.com/wp-content/uploads/2021/02/360hero.jpg',
     slug: 'vistahomes-branding-video',
     tag: ['Design', 'Branding Video', 'Project'],
   },
@@ -258,21 +276,24 @@ const brandVideoList = [
     title: 'MetroNest - Listing Video',
     description:
       'Highlighted premium property features for prospective buyers.',
-    image: image4,
+    image:
+      'https://f.vimeocdn.com/cms-images/2021/07/0702_Brand-Videos-Ideas-Blog-Header_1920x1080.jpeg',
     slug: 'metronest-listing-video',
     tag: ['Design', 'Listing Video', 'Project'],
   },
   {
     title: 'BlueOak Realty - Video Ads Creative',
     description: 'Crafted short-form video ads for social media campaigns.',
-    image: image4,
+    image:
+      'https://nestscale.com/wp-content/uploads/2022/12/745x400-TikTok-ad-creative-Specs-elements.jpg',
     slug: 'blueoak-realty-video-ads-creative',
     tag: ['Design', 'Video Ads Creative', 'Project'],
   },
   {
     title: 'DreamBrick - Branding Video',
     description: 'Captured the essence of the brand through lifestyle shots.',
-    image: image4,
+    image:
+      'https://www.appletoncreative.com/wp-content/uploads/2017/08/Real-Estate-Video.jpg',
     slug: 'dreambrick-branding-video',
     tag: ['Design', 'Branding Video', 'Project'],
   },
@@ -280,14 +301,15 @@ const brandVideoList = [
     title: 'RealVista - Listing Video',
     description:
       'Showcased interior and neighborhood appeal with drone footage.',
-    image: image4,
+    image: 'https://i.ytimg.com/vi/mgn6myt_Ok8/hq720.jpg',
     slug: 'realvista-listing-video',
     tag: ['Design', 'Listing Video', 'Project'],
   },
   {
     title: 'ZenSpaces - Video Ads Creative',
     description: 'Produced engaging reels for targeted lead generation.',
-    image: image4,
+    image:
+      'https://www.mastroke.com/wp-content/uploads/2023/03/Digital-Video-Advertising-Is-The-Future-1.jpg',
     slug: 'zenspaces-video-ads-creative',
     tag: ['Design', 'Video Ads Creative', 'Project'],
   },
@@ -336,222 +358,209 @@ const WorkHero = () => {
         </p>
       </div>
 
-      <div className="space-y- mx-auto max-w-[1920px]">
+      <div className="space-y- ">
         {/* Web Development */}
-        <div id="website" className="pt-32">
-          <div className="w-full flex flex-col items-start px-6 mb-4">
-            <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
-              Web Development
-            </h1>
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
-              Smart, scalable websites tailored for real estate brands to
-              convert visitors into leads.
-            </h3>
-          </div>
+        <div className="bg-white">
+          <div id="website" className="py-32 mx-auto max-w-[1440px]">
+            <div className="w-full flex flex-col items-start px-6 mb-4">
+              <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
+                Web Development
+              </h1>
+              <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+                Smart, scalable websites tailored for real estate brands to
+                convert visitors into leads.
+              </h3>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-            {webList.slice(0, 5).map((web) => (
-              <div key={web.slug}>
-                <Link href={`/work/${web.slug}`} className="block mb-10">
-                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
-                    <Image
-                      src={web.image}
-                      alt={web.title}
-                      layout="fill"
-                      className="object-cover rounded-xl hover:scale-105 transition duration-300"
-                    />
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+              {webList.slice(0, 5).map((web) => (
+                <div key={web.slug}>
+                  <Link href={`/work/${web.slug}`} className="block mb-10">
+                    <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
+                      <Image
+                        src={web.image}
+                        alt={web.title}
+                        layout="fill"
+                        className="object-cover hover:scale-105 transition duration-300"
+                      />
+                    </div>
+                  </Link>
+                  <Link href={`/work/${web.slug}`}>
+                    <h2 className="text-2xl font-semibold text-darkIndigo">
+                      {web.title}
+                    </h2>
+                  </Link>
+                  <p className="mt-4 text-darkGray truncate-one-line">
+                    {web.description}
+                  </p>
+                  <div className="mt-6 gap-3 flex flex-wrap">
+                    {web.tag.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </Link>
-                <Link href={`/work/${web.slug}`}>
-                  <h2 className="text-2xl font-semibold text-darkIndigo">
-                    {web.title}
-                  </h2>
-                </Link>
-                <p className="mt-4 text-darkGray truncate-one-line">
-                  {web.description}
-                </p>
-                <div className="mt-6 gap-3 flex flex-wrap">
-                  {web.tag.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-lightGray text-darkGray px-4 py-2 rounded-full font-regular"
-                    >
-                      {tag}
-                    </span>
-                  ))}
                 </div>
-              </div>
-              // <Link
-              //   href={`/work/${work.slug}`}
-              //   key={work.slug}
-              //   className="bg-white rounded-xl overflow-hidden"
-              // >
-              //   <Image
-              //     src={work.image}
-              //     alt={work.title}
-              //     className="w-full h-48 object-cover"
-              //   />
-              //   <div className="p-4">
-              //     <h2 className="text-xl font-semibold text-darkGray">
-              //       {work.title}
-              //     </h2>
-              //     <p className="mt-2 text-darkGray">{work.description}</p>
-              //   </div>
-              // </Link>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Web Design */}
-        <div id="brand-design" className="pt-32">
-          <div className="w-full flex flex-col items-start px-6 mb-4">
-            <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
-              Brand Design
-            </h1>
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
-              Visually compelling brand identities that create trust and set
-              your business apart.
-            </h3>
-          </div>
+        <div className="bg-gray100">
+          <div id="brand-design" className="py-32 mx-auto max-w-[1440px]">
+            <div className="w-full flex flex-col items-start px-6 mb-4">
+              <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
+                Brand Design
+              </h1>
+              <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+                Visually compelling brand identities that create trust and set
+                your business apart.
+              </h3>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-            {brandList.slice(0, 8).map((brand) => (
-              <div key={brand.slug}>
-                <Link href={`/work/${brand.slug}`} className="block mb-10">
-                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
-                    <Image
-                      src={brand.image}
-                      alt={brand.title}
-                      layout="fill"
-                      className="object-cover rounded-xl hover:scale-105 transition duration-300"
-                    />
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+              {brandList.slice(0, 8).map((brand) => (
+                <div key={brand.slug}>
+                  <Link href={`/work/${brand.slug}`} className="block mb-10">
+                    <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
+                      <Image
+                        src={brand.image}
+                        alt={brand.title}
+                        layout="fill"
+                        className="object-cover hover:scale-105 transition duration-300"
+                      />
+                    </div>
+                  </Link>
+                  <Link href={`/work/${brand.slug}`}>
+                    <h2 className="text-2xl font-semibold text-darkIndigo">
+                      {brand.title}
+                    </h2>
+                  </Link>
+                  <p className="mt-4 text-darkGray truncate-one-line">
+                    {brand.description}
+                  </p>
+                  <div className="mt-6  gap-3 flex flex-wrap">
+                    {brand.tag.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </Link>
-                <Link href={`/work/${brand.slug}`}>
-                  <h2 className="text-2xl font-semibold text-darkIndigo">
-                    {brand.title}
-                  </h2>
-                </Link>
-                <p className="mt-4 text-darkGray truncate-one-line">
-                  {brand.description}
-                </p>
-                <div className="mt-6  gap-3 flex flex-wrap">
-                  {brand.tag.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-lightGray text-darkGray px-4 py-2 rounded-full font-regular"
-                    >
-                      {tag}
-                    </span>
-                  ))}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Brand Marketing */}
-        <div id="brand-marketing" className="pt-32">
-          <div className="w-full flex flex-col items-start px-6 mb-4">
-            <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
-              Brand Marketing
-            </h1>
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
-              Strategic campaigns and content that grow your brand visibility
-              across platforms.
-            </h3>
-          </div>
+        <div className="bg-white">
+          <div id="brand-marketing" className="py-32 mx-auto max-w-[1440px]">
+            <div className="w-full flex flex-col items-start px-6 mb-4">
+              <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
+                Brand Marketing
+              </h1>
+              <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+                Strategic campaigns and content that grow your brand visibility
+                across platforms.
+              </h3>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-            {brandMarketList.slice(0, 6).map((brand) => (
-              <div key={brand.slug}>
-                <Link href={`/work/${brand.slug}`} className="block mb-10">
-                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
-                    <Image
-                      src={brand.image}
-                      alt={brand.title}
-                      layout="fill"
-                      className="object-cover rounded-xl hover:scale-105 transition duration-300"
-                    />
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+              {brandMarketList.slice(0, 6).map((brand) => (
+                <div key={brand.slug}>
+                  <Link href={`/work/${brand.slug}`} className="block mb-10">
+                    <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
+                      <Image
+                        src={brand.image}
+                        alt={brand.title}
+                        layout="fill"
+                        className="object-cover hover:scale-105 transition duration-300"
+                      />
+                    </div>
+                  </Link>
+                  <Link href={`/work/${brand.slug}`}>
+                    <h2 className="text-2xl font-semibold text-darkIndigo">
+                      {brand.title}
+                    </h2>
+                  </Link>
+                  <p className="mt-4 text-darkGray truncate-one-line">
+                    {brand.description}
+                  </p>
+                  <div className="mt-6  gap-3 flex flex-wrap">
+                    {brand.tag.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </Link>
-                <Link href={`/work/${brand.slug}`}>
-                  <h2 className="text-2xl font-semibold text-darkIndigo">
-                    {brand.title}
-                  </h2>
-                </Link>
-                <p className="mt-4 text-darkGray truncate-one-line">
-                  {brand.description}
-                </p>
-                <div className="mt-6  gap-3 flex flex-wrap">
-                  {brand.tag.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-lightGray text-darkGray px-4 py-2 rounded-full font-regular"
-                    >
-                      {tag}
-                    </span>
-                  ))}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Brand Video */}
-        <div id="brand-video" className="pt-32 pb-32">
-          <div className="w-full flex flex-col items-start px-6 mb-4">
-            <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
-              Brand Video
-            </h1>
-            <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
-              High-quality visuals and storytelling that connect emotionally and
-              sell effectively.
-            </h3>
-          </div>
+        <div className="bg-gray100">
+          <div id="brand-video" className="py-32 mx-auto max-w-[1440px]">
+            <div className="w-full flex flex-col items-start px-6 mb-4">
+              <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
+                Brand Video
+              </h1>
+              <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+                High-quality visuals and storytelling that connect emotionally
+                and sell effectively.
+              </h3>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-            {brandVideoList.slice(0, 6).map((brand) => (
-              <div key={brand.slug}>
-                <Link href={`/work/${brand.slug}`} className="block mb-10">
-                  <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
-                    <Image
-                      src={brand.image}
-                      alt={brand.title}
-                      layout="fill"
-                      className="object-cover rounded-xl hover:scale-105 transition duration-300"
-                    />
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+              {brandVideoList.slice(0, 6).map((brand) => (
+                <div key={brand.slug}>
+                  <Link href={`/work/${brand.slug}`} className="block mb-10">
+                    <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
+                      <Image
+                        src={brand.image}
+                        alt={brand.title}
+                        layout="fill"
+                        className="object-cover hover:scale-105 transition duration-300"
+                      />
+                    </div>
+                  </Link>
+                  <Link href={`/work/${brand.slug}`}>
+                    <h2 className="text-2xl font-semibold text-darkIndigo">
+                      {brand.title}
+                    </h2>
+                  </Link>
+                  <p className="mt-4 text-darkGray truncate-one-line">
+                    {brand.description}
+                  </p>
+                  <div className="mt-6  gap-3 flex flex-wrap">
+                    {brand.tag.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </Link>
-                <Link href={`/work/${brand.slug}`}>
-                  <h2 className="text-2xl font-semibold text-darkIndigo">
-                    {brand.title}
-                  </h2>
-                </Link>
-                <p className="mt-4 text-darkGray truncate-one-line">
-                  {brand.description}
-                </p>
-                <div className="mt-6  gap-3 flex flex-wrap">
-                  {brand.tag.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-lightGray text-darkGray px-4 py-2 rounded-full font-regular"
-                    >
-                      {tag}
-                    </span>
-                  ))}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-indigo100">
-        <div className="text-center max-w-[1440px] w-full mx-auto lg:py-32 py-20 px-5">
-          <BookACallSection />
-        </div>
-      </div>
+      <CtaSection />
     </section>
   );
 };

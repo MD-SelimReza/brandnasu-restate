@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
 import google from '../../public/Icons/google.svg';
 import clutch from '../../public/Icons/clutch.svg';
 import Link from 'next/link';
@@ -10,13 +9,6 @@ import { IoIosStar } from 'react-icons/io';
 import bookACall from '../../public/book-a-call.svg';
 
 export default function BookACallSection() {
-  const CalendlyInlineWidget = dynamic(
-    () => import('react-calendly').then((mod) => mod.InlineWidget),
-    {
-      ssr: false,
-      loading: () => <p className="text-center p-4">Loading calendar...</p>,
-    }
-  );
   return (
     <section className="bg-darkIndigo text-white lg:p-16 md:p-10 p-6 rounded-xl">
       <div className="grid lg:grid-cols-2 grid-cols-1 md:gap-20 gap-16">
@@ -74,7 +66,7 @@ export default function BookACallSection() {
 
         {/* Right Section (Calendly) */}
         <div className="bg-white rounded-xl overflow-hidden shadow-lg">
-          <CalendlyInlineWidget
+          {/* <CalendlyInlineWidget
             url="https://calendly.com/your-calendly-link"
             styles={{
               height: '700px',
@@ -86,6 +78,13 @@ export default function BookACallSection() {
               hideEventTypeDetails: false,
               hideLandingPageDetails: false,
             }}
+          /> */}
+          <iframe
+            src="https://tidycal.com/brandnasu/strategy-call"
+            width="100%"
+            height="600"
+            className="rounded-md border"
+            allow="camera; microphone; fullscreen; clipboard-read; clipboard-write"
           />
         </div>
       </div>

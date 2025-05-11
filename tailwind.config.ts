@@ -9,6 +9,19 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        blink: 'blink 1s steps(1) infinite',
+        'gradient-move': 'gradientMove 4s linear infinite',
+      },
+      keyframes: {
+        blink: {
+          '50%': { opacity: '0' },
+        },
+        gradientMove: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '100% 50%' },
+        },
+      },
       colors: {
         darkIndigo: '#2E1C6A',
         indigo: '#673DDB',

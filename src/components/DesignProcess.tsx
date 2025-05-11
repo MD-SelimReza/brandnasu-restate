@@ -29,7 +29,7 @@ const steps = [
     icon: download,
     title: 'Download & Launch',
     description:
-      'Get your final files, ready to use for marketing, social media, and beyond—so you can focus on closing more deals.',
+      'Get your final files, ready to use for marketing, social media, and beyond, so you can focus on closing more deals.',
     bgColor: 'bg-muteIndigo/80',
     textColor: 'text-darkIndigo',
   },
@@ -42,7 +42,7 @@ const DesignProcess = () => {
         <div className="w-full flex flex-col items-center">
           <div className="w-full mx-auto text-center">
             <HeadingBlock
-              title="How It Works—Simple, Fast & Hassle-Free"
+              title="How It Works: Simple, Fast & Hassle-Free"
               description="See how real estate professionals like you transformed their
               branding, marketing, and online presence with our expert
               solutions."

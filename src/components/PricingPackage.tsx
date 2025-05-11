@@ -93,7 +93,7 @@ export default function PricingPackage() {
         className="text-center max-w-[1440px] w-full mx-auto lg:py-36 py-20 px-5"
       >
         <h2 className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-darkIndigo lg:max-w-5xl md:px-14 mx-auto text-center lg:mb-20 md:mb-16 mb-10">
-          Power Your Listings with a Creative Team—One Flat Monthly Fee
+          Power Your Listings with a Creative Team, One Flat Monthly Fee
         </h2>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-10 gap-6 w-full mb-20">
           {packages.map((pkg, idx) => (
@@ -212,7 +212,7 @@ export default function PricingPackage() {
           </h2>
           <p className="text-darkGray max-w-5xl mx-auto mb-12">
             Not ready for a monthly plan? No problem. With our one-time purchase
-            packages, you get exactly what you need — whether it&apos;s a
+            packages, you get exactly what you need , whether it&apos;s a
             professional logo, brand identity, or a single marketing asset. No
             ongoing costs, no long-term commitments. Just high-quality,
             done-for-you services designed to elevate your real estate brand in

@@ -26,7 +26,6 @@ import catalog9 from '../../public/catalog9.jpg';
 import catalog10 from '../../public/catalog10.jpg';
 import catalog11 from '../../public/catalog11.jpg';
 import catalog12 from '../../public/catalog12.jpg';
-import image1 from '../../public/S1.png';
 
 export const serviceSections = [
   {
@@ -150,7 +149,7 @@ export const catalogItems = [
     price: '$95 - $195',
     paymentType: 'One time payment',
     description:
-      'Your real estate website should do more than just look good—it should generate leads and drive sales.',
+      'Your real estate website should do more than just look good, it should generate leads and drive sales.',
   },
   {
     id: 3,
@@ -170,7 +169,7 @@ export const catalogItems = [
     price: '$125 - $295',
     paymentType: 'One time payment',
     description:
-      'A powerful real estate brand starts with a strong, strategic logo. At BrandNasu, we craft custom-designed, high-quality logos tailored specifically for real estate professionals, brokers, and agencies. No generic templates—just original, market-ready designs that enhance trust and recognition.',
+      'A powerful real estate brand starts with a strong, strategic logo. At BrandNasu, we craft custom-designed, high-quality logos tailored specifically for real estate professionals, brokers, and agencies. No generic templates, just original, market-ready designs that enhance trust and recognition.',
   },
   {
     id: 5,
@@ -180,7 +179,7 @@ export const catalogItems = [
     price: '$145 - $495',
     paymentType: 'One time payment',
     description:
-      'Consistency is key in real estate branding. A Brand Style Guide ensures that your logo, colors, typography, and design elements are used cohesively across all platforms—creating a strong, professional, and trustworthy brand identity.',
+      'Consistency is key in real estate branding. A Brand Style Guide ensures that your logo, colors, typography, and design elements are used cohesively across all platforms, creating a strong, professional, and trustworthy brand identity.',
   },
   {
     id: 6,
@@ -256,80 +255,163 @@ export const catalogItems = [
 
 export const webList = [
   {
-    title: 'UrbanNest - Website Development',
+    title: 'MetroCity - Website Development',
     description:
-      'IDX-integrated real estate site crafted for seamless property search.',
-    image: image1,
-    slug: 'urbannest-website-development',
-    tag: ['Development', 'Website Development', 'Project'],
+      'Mobile-responsive site with listing management and lead capture.',
+    image:
+      'https://img.freepik.com/premium-psd/dream-house-sale-landing-page_872901-1688.jpg',
+    slug: 'metrocity-website-development',
+    tag: ['Website', 'Development', 'Design'],
+  },
+  {
+    title: 'UrbanScape - Website Redesign',
+    description:
+      'Revamped layout with improved accessibility and faster performance.',
+    image:
+      'https://img.freepik.com/free-photo/website-layout-ideas_53876-164261.jpg',
+    slug: 'urbanscape-website-redesign',
+    tag: ['Website'],
+  },
+  {
+    title: 'EstateHub - Real Estate Website',
+    description: 'Feature-rich site with map integration and property filters.',
+    image:
+      'https://img.freepik.com/free-photo/responsive-web-design_53876-167031.jpg',
+    slug: 'estatehub-website',
+    tag: ['Website'],
   },
   {
     title: 'SkyVista - Landing Page Design',
     description:
       'High-converting landing page focused on generating quality leads.',
-    image: image1,
+    image:
+      'https://img.freepik.com/free-vector/flat-design-real-estate-project-landing-page_23-2149908746.jpg',
     slug: 'skyvista-landing-page-design',
-    tag: ['Development', 'Landing Page', 'Project'],
+    tag: ['Landing Page'],
   },
   {
     title: 'HavenSpace - UI/UX Design',
     description:
       'Modern UI/UX optimized for intuitive browsing and engagement.',
-    image: image1,
+    image:
+      'https://img.freepik.com/premium-vector/programming-web-banner-best-programming-languages-social-media-creative-concept-idea-desktop-pc_122058-1961.jpg',
     slug: 'havenspace-ui-ux-design',
-    tag: ['Development', 'UI/UX', 'Project'],
+    tag: ['UI/UX'],
   },
   {
-    title: 'MetroCity - Website Development',
+    title: 'LogoGenix - Logo Design',
     description:
-      'Mobile-responsive site with listing management and lead capture.',
-    image: image1,
-    slug: 'metrocity-website-development',
-    tag: ['Development', 'Website Development', 'Project'],
+      'Crafted a minimalist logo that reinforces real estate credibility.',
+    image:
+      'https://img.freepik.com/free-vector/flat-design-logo-construction-company_23-2149493753.jpg',
+    slug: 'logogenix-logo-design',
+    tag: ['Logo Design'],
   },
   {
-    title: 'GreenBrick - Landing Page Design',
-    description: 'Conversion-focused landing page tailored for local realtors.',
-    image: image1,
-    slug: 'greenbrick-landing-page-design',
-    tag: ['Development', 'Landing Page', 'Project'],
-  },
-  {
-    title: 'VistaZone - UI/UX Design',
+    title: 'BrandCore - Brand Guideline',
     description:
-      'Clean and consistent interface improving user experience across devices.',
-    image: image1,
-    slug: 'vistazone-ui-ux-design',
-    tag: ['Development', 'UI/UX', 'Project'],
+      'Created visual brand standards for consistency across platforms.',
+    image:
+      'https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo_53876-167137.jpg',
+    slug: 'brandcore-guidelines',
+    tag: ['Brand Guideline'],
   },
   {
-    title: 'BoldNest - Website Development',
-    description: 'Full-featured IDX-ready site designed for brand authority.',
-    image: image1,
-    slug: 'boldnest-website-development',
-    tag: ['Development', 'Website Development', 'Project'],
-  },
-  {
-    title: 'ElevateHaus - Landing Page Design',
+    title: 'PrintNest - Printing Services',
     description:
-      'Attention-grabbing real estate landing page for open house promotions.',
-    image: image1,
-    slug: 'elevatehaus-landing-page-design',
-    tag: ['Development', 'Landing Page', 'Project'],
+      'Flyers and signage print material designed for local campaigns.',
+    image:
+      'https://img.freepik.com/free-vector/flyer-template-real-estate-business_23-2148927810.jpg',
+    slug: 'printnest-printing',
+    tag: ['Printing'],
   },
   {
-    title: 'PrimeNest - UI/UX Design',
-    description: 'Intuitive layout and branding that elevates client trust.',
-    image: image1,
-    slug: 'primenest-ui-ux-design',
-    tag: ['Development', 'UI/UX', 'Project'],
+    title: 'SocialNest - Social Media Branding',
+    description: 'Developed branded templates for Instagram and Facebook.',
+    image:
+      'https://img.freepik.com/free-vector/social-media-agency-facebook-cover_23-2149448072.jpg',
+    slug: 'socialnest-social-media-branding',
+    tag: ['Social Media Branding'],
   },
   {
-    title: 'CoreVista - Website Development',
+    title: 'SignaPro - Signage Design',
     description:
-      'Feature-rich website tailored for showcasing exclusive listings.',
-    image: image1,
-    slug: 'corevista-website-development',
-    tag: ['Development', 'Website Development', 'Project'],
+      'High-visibility signage for property listings and sales events.',
+    image:
+      'https://img.freepik.com/free-vector/real-estate-sign-template_23-2148570123.jpg',
+    slug: 'signapro-signage',
+    tag: ['Signage'],
+  },
+  {
+    title: 'PitchCraft - Pitch Deck Design',
+    description: 'Investor-ready pitch deck with compelling visuals and data.',
+    image:
+      'https://img.freepik.com/free-vector/business-presentation-pitch-deck-template_23-2148830863.jpg',
+    slug: 'pitchcraft-pitch-deck',
+    tag: ['Pitch Deck'],
+  },
+  {
+    title: 'BrandVid - Branding Video',
+    description:
+      'High-production branding video with voice-over and animations.',
+    image:
+      'https://img.freepik.com/free-photo/digital-marketing-strategy-multichannel-online-ads_53876-124228.jpg',
+    slug: 'brandvid-branding-video',
+    tag: ['Branding Video'],
+  },
+  {
+    title: 'ListVid - Listing Video',
+    description: 'Showcase-style property video tour with motion graphics.',
+    image:
+      'https://img.freepik.com/free-photo/real-estate-virtual-tour_53876-128674.jpg',
+    slug: 'listvid-listing-video',
+    tag: ['Listing Video'],
+  },
+  {
+    title: 'AdSpark - Video Ads',
+    description: '30-second social ad highlighting a featured property.',
+    image:
+      'https://img.freepik.com/free-photo/video-marketing-digital-concept_53876-164046.jpg',
+    slug: 'adspark-video-ads',
+    tag: ['Video Ads'],
+  },
+];
+
+export const faqsData = [
+  {
+    question: 'What types of real estate professionals do you work with?',
+    answer:
+      'We work with realtors, brokers, agencies, property managers, and real estate coaches, helping them build a strong brand, attract leads, and grow their business.',
+  },
+  {
+    question: 'What services do you offer?',
+    answer:
+      'We offer branding and marketing services, including logo design, digital business cards, and website development.',
+  },
+  {
+    question:
+      'What’s the difference between one-time services and subscription plans?',
+    answer:
+      'Our one-time services are perfect for real estate professionals who need branding, marketing, or web solutions as a single project. Our subscription plans offer unlimited design and marketing support to keep your business growing month after month.',
+  },
+  {
+    question: 'How does the subscription model work?',
+    answer:
+      'With our subscription plans, you get unlimited branding, marketing, and design requests. Simply submit your requests, and we’ll deliver high-quality designs fast, no hourly rates or hidden fees.',
+  },
+  {
+    question: 'How does the subscription model work?',
+    answer:
+      'With our subscription plans, you get unlimited branding, marketing, and design requests. Simply submit your requests, and we’ll deliver high-quality designs fast, no hourly rates or hidden fees.',
+  },
+  {
+    question: 'Can I request custom services that aren’t listed?',
+    answer:
+      'Yes! If you need a custom branding, marketing, or web solution, let us know. We’ll work with you to create a tailored strategy that fits your goals.',
+  },
+  {
+    question: 'How do I get started?',
+    answer:
+      'It’s simple! Choose a one-time service or subscription plan, submit your request, and we’ll take care of the rest, so you can focus on closing more deals.',
   },
 ];

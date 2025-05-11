@@ -328,7 +328,7 @@ const About = () => {
                 <p className="text-lightIndigo lg:w-[65%] md:w-[80%] w-[70%] text-justify">
                   With over 300+ clients served, BandNasu has earned the trust
                   of real estate professionals across the globe. Our experience
-                  drives results — your success is our mission.
+                  drives results , your success is our mission.
                 </p>
               </div>
             </div>
@@ -553,7 +553,7 @@ const About = () => {
               real estate professionals, delivering high-quality design work at
               lightning speed on a flat-rate basis. We aim to remove the
               marketing hurdles for agents and brokers by providing consistent,
-              on-brand visuals—from social media posts and listing graphics to
+              on-brand visuals, from social media posts and listing graphics to
               branding and short videos. Our support elevates your brand,
               allowing you to focus on what you do best.
             </p>

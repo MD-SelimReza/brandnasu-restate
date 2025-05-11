@@ -23,7 +23,7 @@ const GradientBackground = () => {
             <HeadingBlock
               title="Find the Perfect Real Estate Marketing Plan for Your Business"
               description="Choose between flexible one-time services or unlimited monthly
-              plans—designed to help real estate professionals grow, attract
+              plans, designed to help real estate professionals grow, attract
               clients, and close more deals effortlessly."
               titleColor="text-white"
               titleWidth="max-w-3xl mx-auto"
@@ -48,7 +48,7 @@ const GradientBackground = () => {
                 Subscription-Based
               </h1>
               <p className="text-darkGray text-center mt-3">
-                Stay consistent with ongoing support for your brand—monthly
+                Stay consistent with ongoing support for your brand, monthly
                 deliverables, dedicated team, and long-term growth.
               </p>
             </Link>
@@ -66,7 +66,7 @@ const GradientBackground = () => {
                 One-Time Purchase
               </h1>
               <p className="text-darkGray text-center mt-3">
-                Need something quick and focused? Get exactly what you need—no
+                Need something quick and focused? Get exactly what you need, no
                 commitment, just great results.
               </p>
             </Link>

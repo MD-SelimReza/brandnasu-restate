@@ -110,7 +110,7 @@ const TestimonialsCarousel = () => {
           descriptionWidth="max-w-6xl w-full"
         />
       </div>
-      <div className="lg:mt-16 md:mt-10 mt-6 bg-[linear-gradient(to_bottom,_#F4F3FF_25%,_#2E1C6A_25%)] pb-32">
+      <div className="lg:mt-16 md:mt-10 mt-6 bg-[linear-gradient(to_bottom,_#F4F3FF_25%,_#2E1C6A_25%)] lg:pb-32 pb-16 px-5">
         <div className="relative max-w-[1400px] mx-auto">
           <Swiper
             modules={[Navigation]}
@@ -145,10 +145,10 @@ const TestimonialsCarousel = () => {
           </Swiper>
 
           {/* Navigation Buttons */}
-          <button className="prev-btn z-40 absolute -left-7 md:-left-8 top-1/2 transform -translate-y-1/2 bg-indigo/80 text-white md:p-4 p-3 rounded-full">
+          <button className="prev-btn z-40 absolute -left-5 md:-left-5 lg:-left-6 top-1/2 transform -translate-y-1/2 bg-indigo/80 text-white md:p-4 p-3 rounded-full">
             <FaChevronLeft size={30} />
           </button>
-          <button className="next-btn z-40 absolute -right-7 md:-right-8 top-1/2 transform -translate-y-1/2 bg-indigo/80 text-white md:p-4 p-3 rounded-full">
+          <button className="next-btn z-40 absolute -right-5 md:-right-5 lg:-right-6 top-1/2 transform -translate-y-1/2 bg-indigo/80 text-white md:p-4 p-3 rounded-full">
             <FaChevronRight size={30} />
           </button>
         </div>

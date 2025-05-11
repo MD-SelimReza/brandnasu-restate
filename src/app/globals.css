@@ -23,9 +23,33 @@ html {
   scroll-behavior: smooth;
 }
 
-@keyframes border-spin {
-  to {
-    transform: rotate(360deg);
+.tiptap {
+  outline: none;
+}
+
+.ProseMirror ul[data-type='taskList'] {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ProseMirror ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ProseMirror li[data-type='taskItem'] > label {
+  margin-right: 0.5rem;
+}
+
+@layer components {
+  .tiptap-taskItem {
+    @apply flex flex-row items-center gap-2;
+  }
+
+  .tiptap-taskList {
+    @apply list-none pl-0;
   }
 }
 
@@ -35,27 +59,71 @@ html {
   text-overflow: ellipsis;
 }
 
-/* ::-webkit-scrollbar {
-  width: 15px;
+.border-animation {
+  padding: 3px;
+  background: linear-gradient(
+    45deg,
+    #7b2ff7,
+    #afa5ff,
+    #f107a3,
+    #00f0ff,
+    #7b2ff7
+  );
+  background-size: 300% 300%;
+  animation: borderAnimation 6s ease infinite;
+  border-radius: 18px;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.border-animation::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: inherit;
+  z-index: -1;
+  filter: blur(15px);
+  border-radius: inherit;
+  animation: borderAnimation 6s ease infinite;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #673DDB;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  background-clip: content-box;
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #2E1C6A;
-} */
+.scene {
+  /* width: 100vw; */
+  /* height: 100vh; */
+  transform-style: preserve-3d;
+  position: relative;
+}
 
-/* Firefox scrollbar styles */
-/* * {
-  scrollbar-width: thin;
-  scrollbar-color: #673DDB #f1f1f1;
-} */
+.shuttle {
+  /* position: absolute; */
+  /* width: 150px; */
+  /* top: 50%; */
+  /* left: 50%; */
+  transform-style: preserve-3d;
+  animation: fly3D 8s linear infinite;
+}
+
+@keyframes fly3D {
+  0% {
+    transform: translate3d(-50vw, 50vh, 0px) rotateY(0deg) rotateX(0deg);
+  }
+  50% {
+    transform: translate3d(0vw, -20vh, 300px) rotateY(180deg) rotateX(20deg);
+  }
+  100% {
+    transform: translate3d(50vw, 50vh, 0px) rotateY(360deg) rotateX(0deg);
+  }
+}
