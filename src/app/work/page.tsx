@@ -1,4 +1,3 @@
-import React from 'react';
 import WorkHero from '@/components/WorkHero';
 
 const WorkPage = () => {

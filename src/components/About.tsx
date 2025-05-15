@@ -764,68 +764,73 @@ const About = () => {
                 data-aos="fade-up"
                 data-aos-easing="ease"
                 data-aos-duration="400"
-                className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500"
               >
-                <div className="flex md:justify-center items-center">
-                  <Image
-                    src={branding}
-                    alt="Branding"
-                    width={100}
-                    height={100}
-                  />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-darkIndigo mb-2">
-                    Innovation in Real Estate Branding
-                  </h2>
-                  <p className="text-base text-darkGray text-justify">
-                    We&apos;re building the most efficient creative system for
-                    real estate, fast, scalable, and built for daily execution.
-                  </p>
+                <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500">
+                  <div className="flex md:justify-center items-center">
+                    <Image
+                      src={branding}
+                      alt="Branding"
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-darkIndigo mb-2">
+                      Innovation in Real Estate Branding
+                    </h2>
+                    <p className="text-base text-darkGray text-justify">
+                      We&apos;re building the most efficient creative system for
+                      real estate, fast, scalable, and built for daily
+                      execution.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div
                 data-aos="fade-up"
                 data-aos-easing="ease"
                 data-aos-duration="400"
-                className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500"
               >
-                <div className="flex md:justify-center items-center">
-                  <Image src={global} alt="Global" width={100} height={100} />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-darkIndigo mb-2">
-                    Global Reach, Local Focus
-                  </h2>
-                  <p className="text-base text-darkGray text-justify">
-                    We serve agents and teams worldwide while tailoring content
-                    to reflect each market&apos;s unique style and audience.
-                  </p>
+                <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500">
+                  <div className="flex md:justify-center items-center">
+                    <Image src={global} alt="Global" width={100} height={100} />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-darkIndigo mb-2">
+                      Global Reach, Local Focus
+                    </h2>
+                    <p className="text-base text-darkGray text-justify">
+                      We serve agents and teams worldwide while tailoring
+                      content to reflect each market&apos;s unique style and
+                      audience.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div
                 data-aos="fade-up"
                 data-aos-easing="ease"
                 data-aos-duration="400"
-                className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500"
               >
-                <div className="flex md:justify-center items-center">
-                  <Image
-                    src={empowering}
-                    alt="Empowering"
-                    width={100}
-                    height={100}
-                  />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-darkIndigo mb-2">
-                    Elevating the Industry Standard
-                  </h2>
-                  <p className="text-base text-darkGray text-justify">
-                    Our vision is to raise the creative bar for real estate
-                    marketing, making high-quality design accessible to all
-                    agents.
-                  </p>
+                <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500">
+                  <div className="flex md:justify-center items-center">
+                    <Image
+                      src={empowering}
+                      alt="Empowering"
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-darkIndigo mb-2">
+                      Elevating the Industry Standard
+                    </h2>
+                    <p className="text-base text-darkGray text-justify">
+                      Our vision is to raise the creative bar for real estate
+                      marketing, making high-quality design accessible to all
+                      agents.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

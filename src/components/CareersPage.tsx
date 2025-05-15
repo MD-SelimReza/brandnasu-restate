@@ -60,7 +60,7 @@ const getDeadlineStatus = (deadline: string): string => {
   const diffInMs = endDate.getTime() - now.getTime();
   const daysLeft = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
 
-  return daysLeft < 0
+  return daysLeft <= 0
     ? 'has passed'
     : `${daysLeft} day${daysLeft === 1 ? '' : 's'}`;
 };

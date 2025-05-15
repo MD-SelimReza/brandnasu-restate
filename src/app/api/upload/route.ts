@@ -48,11 +48,10 @@ export async function POST(req: NextRequest) {
     );
   } catch (error: unknown) {
     console.error('Upload Error:', error);
+    const errorMessage =
+      error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(
-      {
-        message: 'File upload failed',
-        error: error instanceof Error ? error.message : 'Unknown error',
-      },
+      { message: 'File upload failed', error: errorMessage },
       { status: 500 }
     );
   }

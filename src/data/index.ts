@@ -509,6 +509,59 @@ export const faqsData = [
   },
 ];
 
+export const careerFaq = [
+  {
+    question: 'What’s it like to work at BrandNasu?',
+    answer:
+      'It’s collaborative, fast-moving, and full of creativity. Whether you work remotely or on-site, you’ll be part of a team that values quality, innovation, and good vibes. We’re all about getting things done—together.',
+  },
+  {
+    question: 'What kind of benefits do you offer to full-time team members?',
+    answer:
+      'We offer flexible schedules, mental health resources, performance bonuses, internet and workspace allowances, emergency loan facilities, coffee & snacks (on-site), prayer time, and a healthy culture that puts people first.',
+  },
+  {
+    question: 'Do you offer remote, on-site, or hybrid roles?',
+    answer:
+      'We offer all three—remote, on-site, and hybrid positions—depending on the role and location. Each job post will mention the preferred setup. We support flexibility as long as the work gets done.',
+  },
+  {
+    question: 'Do I need to be in the real estate industry to apply?',
+    answer:
+      'Not at all. We work with real estate professionals, but we’re open to talents from any industry who bring creative skills, fresh ideas, and solid work ethic.',
+  },
+  {
+    question: 'How does the application and hiring process work?',
+    answer:
+      'Click “Apply Now” on a role that fits you. We’ll review your application and reach out for a call or interview if you’re shortlisted. Depending on the role, there may be a small task or portfolio review.',
+  },
+  {
+    question: 'What’s the work culture like at BrandNasu?',
+    answer:
+      'Supportive, flexible, and growth-driven. We believe in giving team members freedom and responsibility. Whether remote or on-site, you’ll feel like part of something bigger—without any corporate drama.',
+  },
+  {
+    question: 'Can I apply for multiple roles at once?',
+    answer:
+      'Absolutely. If more than one role fits your skills, go ahead and apply to each. Just personalize your application so we understand where you’d thrive most.',
+  },
+  {
+    question: 'How do you support creative growth and learning?',
+    answer:
+      'Through real projects, mentorship, and resources. You’ll get hands-on experience with branding, design, content, and campaigns—and we’re always open to new ideas and tools to help you grow.',
+  },
+  {
+    question: 'What does a typical day look like for your team?',
+    answer:
+      'Remote folks usually check in via Slack, work async, and join quick team huddles. On-site members collaborate face-to-face more often. Either way, we keep meetings minimal and focus on deep work.',
+  },
+  {
+    question: 'How soon will I hear back after applying?',
+    answer:
+      'Usually within 5–7 business days. If there’s a fit, we’ll contact you with next steps. If not, just know we appreciate your interest and energy.',
+  },
+];
+
 export const termsLastUpdated = 'May 13, 2025';
 
 export const termsSections = [

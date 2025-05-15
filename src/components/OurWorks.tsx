@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { webList } from '@/data';
 import Link from 'next/link';
 import Image from 'next/image';
 import HeadingBlock from './ui/HeadingBlock';
 import Button from './ui/Button';
+import { useProjects } from '@/hooks/useProjects';
 
 const services = [
   'Website',
@@ -24,7 +24,6 @@ const services = [
 
 type ServiceType = (typeof services)[number];
 
-// Map services to section anchors
 const serviceRedirectMap: Record<ServiceType, string> = {
   Website: 'website',
   'Landing Page': 'website',
@@ -45,22 +44,21 @@ const serviceRedirectMap: Record<ServiceType, string> = {
 
 const OurWorks = () => {
   const [activeService, setActiveService] = useState<ServiceType>('Website');
-  const filteredWebList = webList.filter((web) =>
-    web.tag.includes(activeService)
+  const { projects, loading, error } = useProjects();
+
+  const filteredProjects = projects.filter((project) =>
+    project.tag.includes(activeService)
   );
 
-  // console.log(filteredWebList);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div className="lg:py-32 md:py-20 py-16 bg-white px-5">
-      {/* Section Heading */}
       <div className="text-center mb-10">
         <HeadingBlock
           title="Explore what our team has executed for real estate"
-          description="Each project in this section reflects the strategic thinking and
-          creative execution of our team. These works are not for sale, but
-          presented to demonstrate the quality, precision, and results we
-          consistently deliver for real estate brands."
+          description="Each project in this section reflects the strategic thinking and creative execution of our team. These works are not for sale, but presented to demonstrate the quality, precision, and results we consistently deliver for real estate brands."
           titleColor="text-darkIndigo"
           titleWidth="max-w-3xl mx-auto"
           descriptionColor="text-darkGray"
@@ -68,10 +66,9 @@ const OurWorks = () => {
           textAlignment="center"
         />
 
-        {/* Service Tags */}
+        {/* Service Filter */}
         <div
           data-aos="fade-up"
-          // data-aos-delay="50"
           data-aos-easing="ease"
           data-aos-duration="400"
           className="mt-16 gap-3 flex flex-wrap mx-auto justify-center"
@@ -93,38 +90,37 @@ const OurWorks = () => {
         </div>
       </div>
 
-      {/* Display Web Projects (dummy limited to first 3 for sample) */}
+      {/* Project Grid */}
       <div className="max-w-[1920px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-          {filteredWebList.length > 0 ? (
-            filteredWebList.map((web) => (
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project) => (
               <div
-                key={web.slug}
+                key={project.slug}
                 data-aos="fade-up"
                 data-aos-easing="ease"
-                // data-aos-delay={50 + index * 50}
                 data-aos-duration="400"
               >
-                <Link href={`/work/${web.slug}`} className="block mb-10">
+                <Link href={`/work/${project.slug}`} className="block mb-10">
                   <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                     <Image
-                      src={web.image}
-                      alt={web.title}
+                      src={project.image}
+                      alt={project.title}
                       layout="fill"
                       className="object-cover rounded-xl hover:scale-105 transition duration-300"
                     />
                   </div>
                 </Link>
-                <Link href={`/work/${web.slug}`}>
+                <Link href={`/work/${project.slug}`}>
                   <h2 className="text-2xl font-semibold text-darkIndigo">
-                    {web.title}
+                    {project.title}
                   </h2>
                 </Link>
                 <p className="mt-4 text-darkGray truncate-one-line">
-                  {web.description}
+                  {project.description}
                 </p>
                 <div className="mt-6 gap-3 flex flex-wrap">
-                  {web.tag.map((tag, index) => (
+                  {project.tag.map((tag, index) => (
                     <span
                       key={index}
                       className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
