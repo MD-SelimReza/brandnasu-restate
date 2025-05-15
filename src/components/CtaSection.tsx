@@ -5,7 +5,7 @@ import shuttle from '../../public/shuttle.svg';
 
 const CtaSection = () => {
   return (
-    <div className="lg:py-32 py-8">
+    <div className="lg:py-32 md:py-24 py-16 px-5">
       <div className="w-full mx-auto max-w-[1400px] flex flex-col items-center rounded-xl justify-center text-white relative h-auto p-6 py-10 md:p-16 lg:p-16 xl:p-20">
         {/* Background Gradients */}
         <div className="absolute inset-0 bg-black rounded-xl" />
@@ -33,7 +33,7 @@ const CtaSection = () => {
                 bgColor="bg-lightIndigo"
                 textColor="text-darkIndigo"
                 label="Book a Call"
-                href="/pricing/#book-a-call"
+                href="/pricing/#book-call"
               />
               <Button
                 bgColor="bg-indigo"
@@ -44,12 +44,11 @@ const CtaSection = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-10 right-10">
+        <div className="absolute lg:w-[350px] lg:h-[350px] md:w-[150px] md:h-[150px] w-[130px] h-[130px] bottom-10 lg:right-10 md:right-4 right-2">
           <Image
             src={shuttle}
             alt="Shuttle"
-            width={350}
-            height={350}
+            layout="fill"
             className="object-cover"
           />
         </div>

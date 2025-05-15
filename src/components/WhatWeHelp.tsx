@@ -90,31 +90,54 @@ const WhatWeHelp = () => {
       ref={containerRef}
       className="relative max-w-[1440px] w-full mx-auto px-5 bg-indigo100"
     >
-      <div className="relative flex lg:flex-row flex-col gap-10 items-start">
+      <div className="relative flex lg:flex-row flex-col md:gap-10 items-start">
         {/* Sticky Sidebar */}
-        <div className="lg:w-1/3 w-full lg:sticky lg:top-[86px] mb-10 lg:mb-0 py-16 lg:py-24 xl:py-32 self-start">
+        <div className="lg:w-1/3 w-full lg:sticky lg:top-[86px] pt-16 lg:py-24 xl:py-32 self-start">
           <div className="relative mb-6">
-            <h1 className="text-2xl text-darkIndigo font-bold mb-2 border-l-4 border-l-indigo pl-2">
+            <h1
+              data-aos="fade-up"
+              data-aos-easing="ease"
+              data-aos-duration="400"
+              className="text-2xl text-darkIndigo font-bold mb-2 border-l-4 border-l-indigo pl-2"
+            >
               Who We Help
             </h1>
           </div>
 
-          <h1 className="relative text-3xl lg:text-4xl lg:!leading-[43px] font-bold text-left text-darkIndigo capitalize mb-4">
+          <h1
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="relative text-3xl lg:text-4xl lg:!leading-[43px] font-bold text-left text-darkIndigo capitalize mb-4"
+          >
             Empowering Every Corner of Real Estate
             <motion.div
               style={{ width: borderWidth }}
               className="h-[2px] bg-indigo transition-all duration-500"
             />
           </h1>
-          <p className="text-left lg:mb-32 md:mb-16 mb-10 text-darkGray">
+
+          <p
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="text-left lg:mb-32 md:mb-16 mb-10 text-darkGray"
+          >
             We serve every corner of the real estate industry with on-demand
             creative and marketing solutions tailored to your role.
           </p>
-          <Button
-            label="Get Started"
-            bgColor="bg-indigo hover:bg-darkIndigo"
-            href="/pricing"
-          />
+
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+          >
+            <Button
+              label="Get Started"
+              bgColor="bg-indigo hover:bg-darkIndigo"
+              href="/pricing"
+            />
+          </div>
         </div>
 
         {/* Scrollable Content */}

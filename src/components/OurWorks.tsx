@@ -49,7 +49,7 @@ const OurWorks = () => {
     web.tag.includes(activeService)
   );
 
-  console.log(filteredWebList);
+  // console.log(filteredWebList);
 
   return (
     <div className="lg:py-32 md:py-20 py-16 bg-white px-5">
@@ -69,7 +69,13 @@ const OurWorks = () => {
         />
 
         {/* Service Tags */}
-        <div className="mt-16 gap-3 flex flex-wrap mx-auto justify-center">
+        <div
+          data-aos="fade-up"
+          // data-aos-delay="50"
+          data-aos-easing="ease"
+          data-aos-duration="400"
+          className="mt-16 gap-3 flex flex-wrap mx-auto justify-center"
+        >
           {services.map((tag) => (
             <span
               key={tag}
@@ -92,7 +98,13 @@ const OurWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
           {filteredWebList.length > 0 ? (
             filteredWebList.map((web) => (
-              <div key={web.slug}>
+              <div
+                key={web.slug}
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                // data-aos-delay={50 + index * 50}
+                data-aos-duration="400"
+              >
                 <Link href={`/work/${web.slug}`} className="block mb-10">
                   <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                     <Image

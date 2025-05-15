@@ -141,7 +141,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
   return (
     <div className="bg-gray100">
       <Container>
-        <div className="w-full flex lg:gap-10 flex-col lg:flex-row pt-8 lg:pt-12">
+        <div className="w-full flex lg:gap-10 flex-col lg:flex-row py-8 lg:pt-12">
           {/* Left Section (Title + Description) */}
           <div className="w-full lg:w-2/5 lg:text-left text-center lg:px-0 mb-10">
             <HeadingBlock
@@ -160,6 +160,10 @@ const FAQSection: React.FC<FAQSectionProps> = ({
             {faqs.map((faq, index) => (
               <div
                 key={index}
+                data-aos="fade-up"
+                // data-delay={300 + index * 100}
+                data-aos-easing="ease"
+                data-duration="400"
                 className="border-b border-gray-300 pb-3 cursor-pointer"
               >
                 <div

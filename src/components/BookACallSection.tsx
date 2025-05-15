@@ -10,14 +10,24 @@ import bookACall from '../../public/book-a-call.svg';
 
 export default function BookACallSection() {
   return (
-    <section className="bg-darkIndigo text-white lg:p-16 md:p-10 p-6 rounded-xl">
+    <section className="bg-darkIndigo text-white lg:p-16 md:p-10 p-5 rounded-xl">
       <div className="grid lg:grid-cols-2 grid-cols-1 md:gap-20 gap-16">
         {/* Left Section */}
         <div className="text-left h-full flex flex-col">
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl xl:!leading-[57px] lg:!leading-[48px] font-bold text-white mb-4">
+          <h2
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="text-3xl lg:text-4xl xl:text-5xl xl:!leading-[57px] lg:!leading-[48px] font-bold text-white mb-4"
+          >
             Book a Call
           </h2>
-          <p className="text-lightIndigo max-w-5xl mx-auto mb-6">
+          <p
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="text-lightIndigo max-w-5xl mx-auto mb-6"
+          >
             Have a frank chat with our Customer Success Manager and Design
             Director for fun. Straightforward discussion of your ideas - no
             overwhelming tech jargon unless you&apos;re into that!
@@ -34,7 +44,12 @@ export default function BookACallSection() {
           </div>
 
           {/* Rating buttons pushed to bottom */}
-          <div className="mt-auto flex md:flex-row flex-col items-center lg:justify-normal justify-center gap-8">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="mt-auto flex md:flex-row flex-col items-center lg:justify-normal justify-center gap-8"
+          >
             <Link
               href=""
               target="_blank"
@@ -49,7 +64,7 @@ export default function BookACallSection() {
               <span className="text-darkGray font-bold">5.0</span>
             </Link>
             <Link
-              href=""
+              href="https://clutch.co/profile/brandnasu"
               target="_blank"
               className="flex gap-3 justify-center items-center bg-white rounded-full py-4 px-6"
             >
@@ -65,20 +80,12 @@ export default function BookACallSection() {
         </div>
 
         {/* Right Section (Calendly) */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-lg">
-          {/* <CalendlyInlineWidget
-            url="https://calendly.com/your-calendly-link"
-            styles={{
-              height: '700px',
-            }}
-            pageSettings={{
-              primaryColor: '0069ff',
-              textColor: '4d5055',
-              backgroundColor: 'ffffff',
-              hideEventTypeDetails: false,
-              hideLandingPageDetails: false,
-            }}
-          /> */}
+        <div
+          data-aos="fade-up"
+          data-aos-easing="ease"
+          data-aos-duration="400"
+          className="bg-white rounded-xl overflow-hidden shadow-lg"
+        >
           <iframe
             src="https://tidycal.com/brandnasu/strategy-call"
             width="100%"

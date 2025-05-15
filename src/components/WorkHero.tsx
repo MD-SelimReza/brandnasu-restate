@@ -1,11 +1,10 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import image1 from '../../public/brand-video.jpg';
-import image2 from '../../public/D3.png';
-import image3 from '../../public/W1.png';
-import image4 from '../../public/W3.png';
 import CtaSection from './CtaSection';
+import { motion } from 'framer-motion';
 
 const webList = [
   {
@@ -15,7 +14,7 @@ const webList = [
     image:
       'https://img.freepik.com/free-photo/homepage-seen-computer-screen_23-2149416723.jpg',
     slug: 'urbannest-website-development',
-    tag: ['Development', 'Website Development', 'Project'],
+    tag: ['Development', 'Website', 'Project'],
   },
   {
     title: 'SkyVista - Landing Page Design',
@@ -42,7 +41,7 @@ const webList = [
     image:
       'https://img.freepik.com/premium-psd/dream-house-sale-landing-page_872901-1688.jpg',
     slug: 'metrocity-website-development',
-    tag: ['Development', 'Website Development', 'Project'],
+    tag: ['Development', 'Website', 'Project'],
   },
   {
     title: 'GreenBrick - Landing Page Design',
@@ -51,44 +50,6 @@ const webList = [
       'https://img.freepik.com/free-vector/flat-abstract-real-estate-landing-page_23-2149034508.jpg',
     slug: 'greenbrick-landing-page-design',
     tag: ['Development', 'Landing Page', 'Project'],
-  },
-  {
-    title: 'VistaZone - UI/UX Design',
-    description:
-      'Clean and consistent interface improving user experience across devices.',
-    image: image1,
-    slug: 'vistazone-ui-ux-design',
-    tag: ['Development', 'UI/UX', 'Project'],
-  },
-  {
-    title: 'BoldNest - Website Development',
-    description: 'Full-featured IDX-ready site designed for brand authority.',
-    image: image1,
-    slug: 'boldnest-website-development',
-    tag: ['Development', 'Website Development', 'Project'],
-  },
-  {
-    title: 'ElevateHaus - Landing Page Design',
-    description:
-      'Attention-grabbing real estate landing page for open house promotions.',
-    image: image1,
-    slug: 'elevatehaus-landing-page-design',
-    tag: ['Development', 'Landing Page', 'Project'],
-  },
-  {
-    title: 'PrimeNest - UI/UX Design',
-    description: 'Intuitive layout and branding that elevates client trust.',
-    image: image1,
-    slug: 'primenest-ui-ux-design',
-    tag: ['Development', 'UI/UX', 'Project'],
-  },
-  {
-    title: 'CoreVista - Website Development',
-    description:
-      'Feature-rich website tailored for showcasing exclusive listings.',
-    image: image1,
-    slug: 'corevista-website-development',
-    tag: ['Development', 'Website Development', 'Project'],
   },
 ];
 
@@ -108,7 +69,7 @@ const brandList = [
     image:
       'https://fliphtml5.com/learning-center/wp-content/uploads/2023/04/Two-Toned-Brand-Guideline-Template.webp',
     slug: 'skyline-homes-brand-style-guide',
-    tag: ['Design', 'Brand Style Guide', 'Skyline Homes'],
+    tag: ['Design', 'Brand Guideline', 'Skyline Homes'],
   },
   {
     title: 'UrbanVista – Brochure Design',
@@ -117,7 +78,7 @@ const brandList = [
     image:
       'https://designshack.net/wp-content/uploads/bold-company-profile-brochure-template-823-1.jpg',
     slug: 'urbanvista-brochure-design',
-    tag: ['Design', 'Brochure Design', 'UrbanVista'],
+    tag: ['Design', 'Printing', 'UrbanVista'],
   },
   {
     title: 'CozyKeys – Logo Design',
@@ -135,7 +96,7 @@ const brandList = [
     image:
       'https://silber-consult.com/wp-content/uploads/2022/10/Brand-Style-Guideline-by-Smotrow-1024x683.jpg',
     slug: 'vistaedge-brand-style-guide',
-    tag: ['Design', 'Brand Style Guide', 'VistaEdge'],
+    tag: ['Design', 'Brand Guideline', 'VistaEdge'],
   },
   {
     title: 'BrickLane Agency – Postcard Design',
@@ -143,7 +104,7 @@ const brandList = [
     image:
       'https://uicreative.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2019/11/23165623/postcard-digital-development.jpg',
     slug: 'bricklane-agency-postcard-design',
-    tag: ['Design', 'Postcard Design', 'BrickLane'],
+    tag: ['Design', 'Printing', 'BrickLane'],
   },
   {
     title: 'NextDoor Living – Logo Design',
@@ -160,22 +121,7 @@ const brandList = [
     image:
       'https://brandpacks.com/wp-content/uploads/2018/09/free-festival-poster-templates.jpg',
     slug: 'elevate-realty-flyer-design',
-    tag: ['Design', 'Flyer Design', 'Elevate Realty'],
-  },
-  {
-    title: 'HavenHill – Brand Style Guide',
-    description: 'Visual language crafted to unify all brand communication.',
-    image: image2,
-    slug: 'havenhill-brand-style-guide',
-    tag: ['Design', 'Brand Style Guide', 'HavenHill'],
-  },
-  {
-    title: 'MetroNest – Brochure & Postcard Design',
-    description:
-      'Dual-format materials designed for both events and mail campaigns.',
-    image: image2,
-    slug: 'metronest-brochure-postcard-design',
-    tag: ['Design', 'Brochure & Postcard', 'MetroNest'],
+    tag: ['Design', 'Printing', 'Elevate Realty'],
   },
 ];
 
@@ -195,7 +141,7 @@ const brandMarketList = [
       'Developed high-impact real estate signage for street visibility.',
     image: 'https://realtysigns.org/wp-content/uploads/sandwich-board001.jpg',
     slug: 'urbanedge-signage-design',
-    tag: ['Marketing', 'Signage Design', 'Project'],
+    tag: ['Marketing', 'Signage', 'Project'],
   },
   {
     title: 'BlueNest - Pitch Deck Design',
@@ -204,7 +150,7 @@ const brandMarketList = [
     image:
       'https://cdn.kwork.com/files/portfolio/t3/77/252c23c6dd62c19fc4b117810c06657e143fa023-1710744178.jpg',
     slug: 'bluenest-pitch-deck-design',
-    tag: ['Marketing', 'Pitch Deck Design', 'Project'],
+    tag: ['Marketing', 'Pitch Deck', 'Project'],
   },
   {
     title: 'OakHill Homes - Social Media Branding',
@@ -222,7 +168,7 @@ const brandMarketList = [
     image:
       'https://fiverr-res.cloudinary.com/t_mobile_web_2, q_auto, f_auto/gigs/370901000/original/460ab6a5279b988acc8c4b79e8efe1a909b6f280.jpg',
     slug: 'homevista-signage-design',
-    tag: ['Marketing', 'Signage Design', 'Project'],
+    tag: ['Marketing', 'Signage', 'Project'],
   },
   {
     title: 'NestSure - Pitch Deck Design',
@@ -231,36 +177,7 @@ const brandMarketList = [
     image:
       'https://designshack.net/wp-content/uploads/Voute-Pitch-Deck-Powerpoint-Template.jpg',
     slug: 'nestsure-pitch-deck-design',
-    tag: ['Marketing', 'Pitch Deck Design', 'Project'],
-  },
-  {
-    title: 'BrightBrick - Social Media Branding',
-    description:
-      'Bold, eye-catching templates for agent promotions and listings.',
-    image: image3,
-    slug: 'brightbrick-social-media-branding',
-    tag: ['Marketing', 'Social Media Branding', 'Project'],
-  },
-  {
-    title: 'NextDoor Living - Signage Design',
-    description: 'Directional and promotional signs built for property events.',
-    image: image3,
-    slug: 'nextdoor-living-signage-design',
-    tag: ['Design', 'Signage Design', 'Project'],
-  },
-  {
-    title: 'EstateIQ - Pitch Deck Design',
-    description: 'Polished deck tailored for tech-based real estate solution.',
-    image: image3,
-    slug: 'estateiq-pitch-deck-design',
-    tag: ['Marketing', 'Pitch Deck Design', 'Project'],
-  },
-  {
-    title: 'VistaLand - Social Media Branding',
-    description: 'Cohesive social media kit aligning with core brand identity.',
-    image: image3,
-    slug: 'vistaland-social-media-branding',
-    tag: ['Marketing', 'Social Media Branding', 'Project'],
+    tag: ['Marketing', 'Pitch Deck', 'Project'],
   },
 ];
 
@@ -287,7 +204,7 @@ const brandVideoList = [
     image:
       'https://nestscale.com/wp-content/uploads/2022/12/745x400-TikTok-ad-creative-Specs-elements.jpg',
     slug: 'blueoak-realty-video-ads-creative',
-    tag: ['Design', 'Video Ads Creative', 'Project'],
+    tag: ['Design', 'Video Ads', 'Project'],
   },
   {
     title: 'DreamBrick - Branding Video',
@@ -311,62 +228,64 @@ const brandVideoList = [
     image:
       'https://www.mastroke.com/wp-content/uploads/2023/03/Digital-Video-Advertising-Is-The-Future-1.jpg',
     slug: 'zenspaces-video-ads-creative',
-    tag: ['Design', 'Video Ads Creative', 'Project'],
-  },
-  {
-    title: 'UrbanNest - Branding Video',
-    description: 'Built emotional connection through story-driven brand film.',
-    image: image4,
-    slug: 'urbannest-branding-video',
-    tag: ['Design', 'Branding Video', 'Project'],
-  },
-  {
-    title: 'NextDwell - Listing Video',
-    description: 'Presented home walkthroughs with voiceovers and music.',
-    image: image4,
-    slug: 'nextdwell-listing-video',
-    tag: ['Design', 'Listing Video', 'Project'],
-  },
-  {
-    title: 'EstateWave - Video Ads Creative',
-    description: 'Animated video ads to promote open house events online.',
-    image: image4,
-    slug: 'estatewave-video-ads-creative',
-    tag: ['Design', 'Video Ads Creative', 'Project'],
-  },
-  {
-    title: 'BrightNest - Branding Video',
-    description: 'Branded visual storytelling tailored for digital platforms.',
-    image: image4,
-    slug: 'brightnest-branding-video',
-    tag: ['Design', 'Branding Video', 'Project'],
+    tag: ['Design', 'Video Ads', 'Project'],
   },
 ];
 
 const WorkHero = () => {
+  const [animateOnce, setAnimateOnce] = useState(false);
+
+  useEffect(() => {
+    setAnimateOnce(true);
+  }, []);
+
   return (
     <section className="bg-white">
-      <div className="mx-auto text-center pt-8 lg:pt-16 xl:pt-24">
-        <h2 className="text-3xl lg:text-4xl xl:text-5xl xl:!leading-[57px] lg:!leading-[48px] font-bold mx-auto lg:px-0 max-w-4xl text-darkIndigo">
-          Explore what our team has executed for real estate
-        </h2>
-        <p className="xl:mt-6 md:mt-5 mt-4 mx-auto text-darkGray max-w-6xl text-lg">
-          Each project in this section reflects the strategic thinking and
-          creative execution of our team. These works are not for sale, but
-          presented to demonstrate the quality, precision, and results we
-          consistently deliver for real estate brands.
-        </p>
+      <div className="mx-auto text-center pt-16 lg:pt-24 xl:pt-32 px-5">
+        <div className="relative overflow-hidden">
+          <motion.h1
+            initial={{ opacity: 0, y: '50%' }}
+            animate={animateOnce ? { opacity: 1, y: '0%' } : {}}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="text-3xl lg:text-4xl xl:text-5xl xl:!leading-[57px] lg:!leading-[48px] font-bold mx-auto lg:px-0 max-w-4xl text-darkIndigo"
+          >
+            Explore what our team has executed for real estate
+          </motion.h1>
+        </div>
+        <div className="relative overflow-hidden xl:mt-6 md:mt-5 mt-4 ">
+          <motion.p
+            initial={{ opacity: 0, y: '100%' }}
+            animate={animateOnce ? { opacity: 1, y: '0%' } : {}}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="mx-auto text-darkGray max-w-6xl text-lg"
+          >
+            Each project in this section reflects the strategic thinking and
+            creative execution of our team. These works are not for sale, but
+            presented to demonstrate the quality, precision, and results we
+            consistently deliver for real estate brands.
+          </motion.p>
+        </div>
       </div>
 
-      <div className="space-y- ">
+      <div>
         {/* Web Development */}
         <div className="bg-white">
-          <div id="website" className="py-32 mx-auto max-w-[1440px]">
+          <div id="website" className="lg:py-32 py-24 mx-auto max-w-[1440px]">
             <div className="w-full flex flex-col items-start px-6 mb-4">
-              <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
+              <h1
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="400"
+                className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2"
+              >
                 Web Development
               </h1>
-              <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+              <h3
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="400"
+                className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo"
+              >
                 Smart, scalable websites tailored for real estate brands to
                 convert visitors into leads.
               </h3>
@@ -374,7 +293,12 @@ const WorkHero = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
               {webList.slice(0, 5).map((web) => (
-                <div key={web.slug}>
+                <div
+                  key={web.slug}
+                  data-aos="fade-up"
+                  data-aos-easing="ease"
+                  data-aos-duration="400"
+                >
                   <Link href={`/work/${web.slug}`} className="block mb-10">
                     <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                       <Image
@@ -411,12 +335,25 @@ const WorkHero = () => {
 
         {/* Web Design */}
         <div className="bg-gray100">
-          <div id="brand-design" className="py-32 mx-auto max-w-[1440px]">
+          <div
+            id="brand-design"
+            className="lg:py-32 py-24 mx-auto max-w-[1440px]"
+          >
             <div className="w-full flex flex-col items-start px-6 mb-4">
-              <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
+              <h1
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="400"
+                className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2"
+              >
                 Brand Design
               </h1>
-              <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+              <h3
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="400"
+                className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo"
+              >
                 Visually compelling brand identities that create trust and set
                 your business apart.
               </h3>
@@ -424,7 +361,12 @@ const WorkHero = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
               {brandList.slice(0, 8).map((brand) => (
-                <div key={brand.slug}>
+                <div
+                  data-aos="fade-up"
+                  data-aos-easing="ease"
+                  data-aos-duration="400"
+                  key={brand.slug}
+                >
                   <Link href={`/work/${brand.slug}`} className="block mb-10">
                     <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                       <Image
@@ -461,12 +403,25 @@ const WorkHero = () => {
 
         {/* Brand Marketing */}
         <div className="bg-white">
-          <div id="brand-marketing" className="py-32 mx-auto max-w-[1440px]">
+          <div
+            id="brand-marketing"
+            className="lg:py-32 py-24 mx-auto max-w-[1440px]"
+          >
             <div className="w-full flex flex-col items-start px-6 mb-4">
-              <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
+              <h1
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="400"
+                className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2"
+              >
                 Brand Marketing
               </h1>
-              <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+              <h3
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="400"
+                className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo"
+              >
                 Strategic campaigns and content that grow your brand visibility
                 across platforms.
               </h3>
@@ -474,7 +429,12 @@ const WorkHero = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
               {brandMarketList.slice(0, 6).map((brand) => (
-                <div key={brand.slug}>
+                <div
+                  data-aos="fade-up"
+                  data-aos-easing="ease"
+                  data-aos-duration="400"
+                  key={brand.slug}
+                >
                   <Link href={`/work/${brand.slug}`} className="block mb-10">
                     <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                       <Image
@@ -511,12 +471,25 @@ const WorkHero = () => {
 
         {/* Brand Video */}
         <div className="bg-gray100">
-          <div id="brand-video" className="py-32 mx-auto max-w-[1440px]">
+          <div
+            id="brand-video"
+            className="lg:py-32 py-24 mx-auto max-w-[1440px]"
+          >
             <div className="w-full flex flex-col items-start px-6 mb-4">
-              <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
+              <h1
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="400"
+                className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2"
+              >
                 Brand Video
               </h1>
-              <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo">
+              <h3
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="400"
+                className="text-3xl md:text-4xl font-semibold mb-6 text-darkIndigo"
+              >
                 High-quality visuals and storytelling that connect emotionally
                 and sell effectively.
               </h3>
@@ -524,7 +497,12 @@ const WorkHero = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
               {brandVideoList.slice(0, 6).map((brand) => (
-                <div key={brand.slug}>
+                <div
+                  data-aos="fade-up"
+                  data-aos-easing="ease"
+                  data-aos-duration="400"
+                  key={brand.slug}
+                >
                   <Link href={`/work/${brand.slug}`} className="block mb-10">
                     <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                       <Image
@@ -560,7 +538,9 @@ const WorkHero = () => {
         </div>
       </div>
 
-      <CtaSection />
+      <div data-aos="fade-up" data-aos-easing="ease" data-aos-duration="400">
+        <CtaSection />
+      </div>
     </section>
   );
 };

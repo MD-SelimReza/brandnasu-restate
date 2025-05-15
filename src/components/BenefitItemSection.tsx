@@ -107,10 +107,20 @@ const BenefitsItemSection = () => {
   return (
     <section className="bg-darkIndigo py-10">
       <Container>
-        <h1 className="text-2xl text-white font-bold mb-6 border-l-4 border-l-indigo pl-2">
+        <h1
+          data-aos="fade-up"
+          data-aos-easing="ease"
+          data-aos-duration="400"
+          className="text-2xl text-white font-bold mb-6 border-l-4 border-l-indigo pl-2"
+        >
           Employee Benefits
         </h1>
-        <h3 className="lg:text-4xl text-3xl font-semibold mb-8 text-white">
+        <h3
+          data-aos="fade-up"
+          data-aos-easing="ease"
+          data-aos-duration="400"
+          className="lg:text-4xl text-3xl font-semibold mb-8 text-white"
+        >
           We take care of our team, so they can take care of great work.
         </h3>
 
@@ -118,18 +128,22 @@ const BenefitsItemSection = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="rounded-xl bg-gray100 hover:bg-indigo100 hover:scale-105 transition-scale duration-500"
+              data-aos="fade-up"
+              data-aos-easing="ease"
+              data-aos-duration="400"
             >
-              <BenefitItem
-                icon={benefit.icon}
-                title={benefit.title}
-                desc={benefit.desc}
-              />
+              <div className="rounded-xl bg-gray100 hover:bg-indigo100 hover:scale-105 transition-scale duration-500">
+                <BenefitItem
+                  icon={benefit.icon}
+                  title={benefit.title}
+                  desc={benefit.desc}
+                />
+              </div>
             </div>
           ))}
         </div>
       </Container>
-      <div id="career"></div>
+      <div id="apply-now"></div>
     </section>
   );
 };

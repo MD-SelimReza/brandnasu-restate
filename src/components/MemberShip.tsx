@@ -8,17 +8,30 @@ const MemberShip = () => {
   return (
     <section className="lg:py-16 bg-darkIndigo">
       <div className="text-center">
-        <h2 className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-white lg:max-w-5xl md:px-14 mx-auto lg:mb-20 md:mb-16 mb-10">
+        <h2
+          data-aos="fade-up"
+          data-aos-easing="ease"
+          data-aos-duration="400"
+          className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-white lg:max-w-5xl md:px-14 mx-auto lg:mb-20 md:mb-16 mb-10"
+        >
           Benefits of Membership with BrandNasu
         </h2>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-4 grid-cols-1 xl:gap-10 gap-6 text-left">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="ease"
+          data-aos-duration="400"
+          className="grid lg:grid-cols-3 md:grid-cols-4 grid-cols-1 xl:gap-10 gap-6 text-left"
+        >
           {/* 1. Brand Presence */}
           <div
             className="md:col-span-2 bg-indigo rounded-xl lg:pt-8 pt-6 lg:pl-8 pl-6 pb-6 bg-no-repeat bg-right-bottom xl:bg-[length:auto_85%] lg:bg-[length:40%_auto] bg-[length:50%_auto]"
             style={{
               backgroundImage: `url(${member1.src})`,
             }}
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
           >
             <h3 className="xl:text-5xl md:text-4xl text-3xl lg:max-w-md max-w-sm font-medium xl:!leading-[57px] text-white lg:mb-8 mb-6 pr-6">
               Consistent Brand Presence
@@ -35,6 +48,9 @@ const MemberShip = () => {
             style={{
               backgroundImage: `url(${member2.src})`,
             }}
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
           >
             <h3 className="xl:text-5xl md:text-4xl text-3xl font-medium xl:!leading-[57px] text-darkIndigo lg:mb-8 mb-6 pr-6">
               Priority Support
@@ -51,6 +67,9 @@ const MemberShip = () => {
             style={{
               backgroundImage: `url(${member3.src})`,
             }}
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
           >
             <h3 className="xl:text-5xl md:text-4xl text-3xl font-medium xl:!leading-[57px] tracking-tight text-darkIndigo mb-6 pr-6">
               Ongoing Creative Assets
@@ -67,6 +86,9 @@ const MemberShip = () => {
             style={{
               backgroundImage: `url(${member4.src})`,
             }}
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
           >
             <h3 className="xl:text-5xl md:text-4xl text-3xl font-medium xl:!leading-[57px] text-white lg:mb-8 mb-6 pr-6 lg:max-w-md">
               Scalable Strategy & Guidance

@@ -1,142 +1,5 @@
 'use client';
 
-// import Image from 'next/image';
-// import React, { useEffect, useState } from 'react';
-// import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaYoutube } from 'react-icons/fa';
-// import logo from '../../public/Logo/light-logo.svg';
-// import { FaArrowUp, FaXTwitter } from 'react-icons/fa6';
-// import { IoIosArrowDown } from 'react-icons/io';
-
-// const Footer = () => {
-//   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-//   const [showBackToTop, setShowBackToTop] = useState(false);
-
-// const toggleDropdown = (menu: string) => {
-//   if (window.innerWidth < 768) {
-//     setActiveDropdown(activeDropdown === menu ? null : menu);
-//   }
-// };
-
-// useEffect(() => {
-//   const handleScroll = () => {
-//     if (window.scrollY > window.innerHeight + 200) {
-//       setShowBackToTop(true);
-//     } else {
-//       setShowBackToTop(false);
-//     }
-//   };
-
-//   window.addEventListener('scroll', handleScroll);
-//   return () => window.removeEventListener('scroll', handleScroll);
-// }, []);
-
-// const scrollToTop = () => {
-//   window.scrollTo({ top: 0, behavior: 'smooth' });
-// };
-
-// const menuLinks: { [key: string]: { name: string; link: string }[] } = {
-//   Services: [
-//     { name: 'Custom Logo Design', link: 'https://client.brandnasu.com/catalog/get-a-premium-logo-that-defines-your-real-estate-brand-1740995963093774/checkout' },
-//     { name: 'Complete Brand Identity', link: '#' },
-//     { name: 'Digital Business Card', link: '#' },
-//     { name: 'Email Signature', link: '#' },
-//     { name: 'Marketing Collateral', link: '#' },
-//     { name: 'Branding Flyer', link: '#' },
-//     { name: 'Pitch Deck', link: '#' },
-//     { name: 'Signage Design', link: '#' },
-//     { name: 'Listing Video', link: '#' },
-//     { name: 'Branding Video', link: '#' },
-//     { name: 'Custom Website', link: '#' },
-//     { name: 'Landing Page', link: '#' },
-//     { name: 'Social Media Branding', link: '#' }
-//   ],
-//   Company: [
-//     { name: 'Our Work', link: '#' },
-//     { name: 'Pricing', link: '#' },
-//     { name: 'Blog', link: '/blog' },
-//     { name: 'FAQ', link: '/#faq' },
-//     { name: 'Contact', link: '/contact' },
-//     { name: 'About', link: '/about' }
-//   ],
-//   Legal: [
-//     { name: 'Terms and Condition', link: '/terms-condition' },
-//     { name: 'Privacy Policy', link: '/privacy-policy' },
-//     { name: 'Refund Policy', link: '/refund-policy' }
-//   ]
-// };
-
-// const socialLinks = [
-//   { icon: FaFacebookF, link: 'https://www.facebook.com' },
-//   { icon: FaXTwitter, link: 'https://twitter.com' },
-//   { icon: FaInstagram, link: 'https://www.instagram.com' },
-//   { icon: FaLinkedinIn, link: 'https://www.linkedin.com' },
-//   { icon: FaPinterestP, link: 'https://www.pinterest.com' },
-//   { icon: FaYoutube, link: 'https://www.youtube.com' }
-// ];
-
-//   return (
-//     <footer className="bg-[#2F1D66] text-white xl:pt-16 pb-4 md:pt-20 pt-16">
-//       {/* <Container> */}
-//         <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-8 gap-4 md:px-8 px-5">
-// {Object.keys(menuLinks).map((section, index) => (
-//   <div key={index} className='relative'>
-//     <h3 onClick={() => toggleDropdown(section.toLowerCase())} className="flex items-center justify-between w-full font-medium text-xl mb-2 md:cursor-auto">
-//       {section}
-//       <IoIosArrowDown
-//         className={`md:hidden ${activeDropdown === section.toLowerCase() ? 'rotate-180' : 'rotate-0'} transition-all duration-300`}
-//       />
-//     </h3>
-//     <div className={`overflow-hidden transition-all duration-700 ease-in-out ${activeDropdown === section.toLowerCase() ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'} md:max-h-full md:opacity-100`}>
-//       <ul className="space-y-1 text-[15px] font-light text-lightIndigo">
-//         {menuLinks[section].map((item, i) => (
-//           <li key={i}>
-//             <a href={item.link} className="hover:text-lightIndigo hover:underline cursor-pointer">
-//               {item.name}
-//             </a>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   </div>
-// ))}
-
-//           {/* Contact Info */}
-// <div className='mt-6 md:mt-0'>
-//   <h3 className="font-medium text-2xl mb-5 flex items-center gap-2">
-//     <Image src={logo} alt='logo' width={100} height={100} />
-//   </h3>
-// <p className="text-[15px] mb-5">Branding, Marketing & Web Solutions for Real Estate Professionals</p>
-// <p className="text-[15px] mb-3">hello@brandnasu.com</p>
-// <p className="text-[15px] mb-3">(505) 575 7863</p>
-// <p className="text-[15px]">1209 Mountain Road Pl Ne Ste R, Albuquerque, NM 87110, USA</p>
-//   {/* Social Icons */}
-// <div className="flex flex-wrap gap-3 mt-4">
-//   {socialLinks.map(({ icon: Icon, link }, index) => (
-//     <a key={index} href={link} target="_blank" rel="noopener noreferrer" className="bg-lightIndigo/90 rounded-md p-2 hover:bg-lightIndigo">
-//       <Icon className="text-darkIndigo text-lg" />
-//     </a>
-//   ))}
-// </div>
-// </div>
-//         </div>
-// {showBackToTop && (
-//   <button
-//     onClick={scrollToTop}
-//     className="fixed bottom-6 right-6 bg-indigo p-3 rounded-full shadow-md hover:bg-darkIndigo transition-all animate-bounce"
-//   >
-//     <FaArrowUp className="text-white text-xl" />
-//   </button>
-// )}
-// <div className="text-center text-[15px] mt-16 text-lightIndigo">
-//   Copyright © 2025 nasu. All rights reserved.
-// </div>
-//       {/* </Container> */}
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
@@ -153,11 +16,11 @@ import logo from '../../public/Logo/light-logo.svg';
 import { FiMail } from 'react-icons/fi';
 
 const socialLinks = [
-  { icon: FaFacebookF, link: 'https://www.facebook.com' },
-  { icon: FaXTwitter, link: 'https://twitter.com' },
-  { icon: FaInstagram, link: 'https://www.instagram.com' },
-  { icon: FaLinkedinIn, link: 'https://www.linkedin.com' },
-  { icon: FaPinterestP, link: 'https://www.pinterest.com' },
+  { icon: FaFacebookF, link: 'https://www.facebook.com/brandnasu' },
+  { icon: FaXTwitter, link: 'https://x.com/brandnasu' },
+  { icon: FaInstagram, link: 'https://www.instagram.com/brandnasu' },
+  { icon: FaLinkedinIn, link: 'http://linkedin.com/company/brandnasu' },
+  { icon: FaPinterestP, link: 'https://www.pinterest.com/brandnasu' },
 ];
 
 const menuLinks: { [key: string]: { name: string; link: string }[] } = {
@@ -301,31 +164,6 @@ const Footer = () => {
               ))}
             </div>
           </div>
-
-          {/* Right Section */}
-          {/* <div className="lg:w-1/2 grid md:grid-cols-3 grid-cols-1 md:gap-8 gap-4">
-            {Object.keys(menuLinks).map((section, index) => (
-              <div key={index} className={`${section === "Services" ? "col-span-2" : "col-span-1"}`}>
-                <h3 onClick={() => toggleDropdown(section.toLowerCase())} className="flex items-center pb-3 border-b-[0.1px] border-b-lightIndigo/25 justify-between w-full text-xl mb-3 md:cursor-auto">
-                  {section}
-                  <IoIosArrowDown 
-                    className={`md:hidden ${activeDropdown === section.toLowerCase() ? 'rotate-180' : 'rotate-0'} transition-all duration-300`} 
-                  />
-                </h3>
-                <div className={`overflow-hidden transition-all duration-700 ease-in-out ${activeDropdown === section.toLowerCase() ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'} md:max-h-full md:opacity-100`}>
-                  <ul className="space-y-1 text-[15px] font-light text-lightIndigo">
-                    {menuLinks[section].map((item, i) => (
-                      <li key={i}>
-                        <a href={item.link} className="hover:text-lightIndigo hover:underline cursor-pointer">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div> */}
 
           <div className="lg:w-[60%] grid md:grid-cols-3 grid-cols-1 lg:gap-20 md:gap-16 gap-6">
             {Object.keys(menuLinks).map((section, index) => (

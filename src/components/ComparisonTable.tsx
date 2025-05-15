@@ -104,16 +104,31 @@ export default function ComparisonTable() {
   return (
     <section className="lg:py-16">
       <div className="w-full">
-        <h2 className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-darkIndigo lg:max-w-5xl md:px-14 mx-auto text-center mb-4">
+        <h2
+          data-aos="fade-up"
+          data-aos-easing="ease"
+          data-aos-duration="400"
+          className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-darkIndigo lg:max-w-5xl md:px-14 mx-auto text-center mb-4"
+        >
           Why Choose BrandNasu Over Freelance Marketplaces?
         </h2>
-        <p className="text-darkGray max-w-5xl mx-auto mb-12">
+        <p
+          data-aos="fade-up"
+          data-aos-easing="ease"
+          data-aos-duration="400"
+          className="text-darkGray max-w-5xl mx-auto mb-12"
+        >
           With BrandNasu, you get a real partner, not just a task-taker. We know
           the real estate space, understand your goals, and deliver consistently
           branded creative at the speed your business moves.
         </p>
 
-        <div className="bg-white border border-gray-200 rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="ease"
+          data-aos-duration="400"
+          className="bg-white border border-gray-200 rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2"
+        >
           {/* BrandNasu Column */}
           <div className="border-b lg:border-b-0 lg:border-r border-gray-200">
             <div className="p-6 text-left text-darkIndigo text-2xl font-semibold border-b border-gray-200">

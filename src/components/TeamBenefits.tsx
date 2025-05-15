@@ -54,10 +54,20 @@ const TeamBenefits = () => {
     <section className="relative bg-white xl:py-36 py-20 text-darkIndigo px-5 overflow-hidden">
       <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-10">
         <div className="xl:w-1/4 lg:w-1/3">
-          <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
+          <h1
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2"
+          >
             Being Our Teammate
           </h1>
-          <h3 className="text-3xl lg:text-4xl font-semibold mb-8 text-darkIndigo">
+          <h3
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="text-3xl lg:text-4xl font-semibold mb-8 text-darkIndigo"
+          >
             Where Your Talent Meets Belonging
           </h3>
         </div>
@@ -66,6 +76,9 @@ const TeamBenefits = () => {
             {benefits.map((item, idx) => (
               <div
                 key={idx}
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="400"
                 className={`flex flex-col items-start rounded-xl px-6 py-8 md:px-8 md:py-10 ${
                   idx === 0 || idx === 3 || idx === 4
                     ? 'hover:bg-indigo100 bg-gray100'

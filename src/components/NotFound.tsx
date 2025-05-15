@@ -9,7 +9,7 @@ const NotFound = () => {
 
   return (
     <section className="bg-white lg:min-h-[calc(100vh-80px)] flex justify-center">
-      <div className="mx-auto w-full space-y-24 pt-36">
+      <div className="mx-auto w-full space-y-24 lg:py-32 md:py-24 py-16 px-5 text-center">
         {/* Illustration */}
         <div className="mx-auto w-full">
           <Image
@@ -31,7 +31,7 @@ const NotFound = () => {
             some helpful links:
           </p>
 
-          <div className="flex items-center mt-6 gap-x-3">
+          <div className="flex justify-center items-center mt-6 gap-x-3 w-full">
             {/* Go Back Button */}
             <button
               onClick={() => router.back()}

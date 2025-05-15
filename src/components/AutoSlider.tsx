@@ -1,15 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CardSlider from './Card';
 import Button from './ui/Button';
 import { AiOutlineClose } from 'react-icons/ai';
+import { motion } from 'framer-motion';
 
 export default function HeroBanner() {
+  const [animateOnce, setAnimateOnce] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setAnimateOnce(true);
+  }, []);
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
+
   return (
     <>
       <div className="relative w-full">
@@ -22,25 +29,46 @@ export default function HeroBanner() {
         {/* Static Hero Banner */}
         <div className="relative w-full bg-[#3B0C7C] bg-center bg-cover bg-no-repeat flex flex-col items-center xl:pt-28 lg:pb-12 py-12 px-4">
           <div className="text-center text-white max-w-7xl z-20">
-            <h1 className="text-white xl:text-7xl lg:text-6xl text-3xl md:text-5xl !leading-[1.2] font-bold md:font-bold max-w-7xl lg:px-16 text-center mb-6">
-              Empowering Real Estate Brands with Creative Excellence
-              {/* Stand Out, Get Leads & <br /> Sell Faster */}
-            </h1>
-            <p className="text-lightIndigo font-normal text-sm md:text-2xl mt-4 max-w-5xl xl:px-0 md:px-10 mx-auto">
-              We help real estate professionals attract quality leads and close
-              more deals with expert marketing, branding, and web solutions, so
-              you can focus on selling.
-            </p>
+            <div className="relative overflow-hidden mb-6">
+              <motion.h1
+                initial={{ opacity: 0, y: '50%' }}
+                animate={animateOnce ? { opacity: 1, y: '0%' } : {}}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                className="text-white xl:text-7xl lg:text-6xl text-3xl md:text-5xl !leading-[1.2] font-bold md:font-bold max-w-7xl lg:px-16 text-center"
+              >
+                Empowering Real Estate Brands with Creative Excellence
+              </motion.h1>
+            </div>
+
+            <div className="relative overflow-hidden mt-4">
+              <motion.p
+                initial={{ opacity: 0, y: '100%' }}
+                animate={animateOnce ? { opacity: 1, y: '0%' } : {}}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                className="text-lightIndigo font-normal text-sm md:text-2xl max-w-5xl xl:px-0 md:px-10 mx-auto"
+              >
+                We help real estate professionals attract quality leads and
+                close more deals with expert marketing, branding, and web
+                solutions, so you can focus on selling.
+              </motion.p>
+            </div>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex items-center flex-col md:flex-row gap-5 w-full mt-10 z-20 justify-center">
-            <Button
-              bgColor="bg-lightIndigo"
-              textColor="text-darkIndigo"
-              label="Get Started"
-              href="/pricing"
-            />
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="flex items-center flex-col md:flex-row gap-5 w-full z-20 justify-center mt-10"
+          >
+            <div className="w-fit">
+              <Button
+                bgColor="bg-lightIndigo"
+                textColor="text-darkIndigo"
+                label="Get Started"
+                href="/pricing"
+              />
+            </div>
             <div onClick={openModal} className="w-fit">
               <Button
                 bgColor="bg-indigo border border-indigo"
@@ -51,13 +79,22 @@ export default function HeroBanner() {
           </div>
 
           {/* CardSlider Positioned at the Center */}
-          <div className="w-full mt-4 md:mt-6 z-20 xl:px-5">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="w-full mt-4 md:mt-6 z-20 xl:px-5"
+          >
             <CardSlider />
           </div>
         </div>
       </div>
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-4">
+        <div
+          data-aos="zoom-out"
+          data-aos-duration="500"
+          className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-4"
+        >
           <div className="bg-white rounded-lg w-full max-w-3xl relative p-4">
             <button
               onClick={closeModal}

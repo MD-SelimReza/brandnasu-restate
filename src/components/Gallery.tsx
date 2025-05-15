@@ -4,12 +4,19 @@ import React from 'react';
 import Image from 'next/image';
 
 const galleryImages = [
-  { title: 'Image 1', icon: '/mission1.jpg' },
-  { title: 'Image 2', icon: '/mission2.jpg' },
-  { title: 'Image 3', icon: '/mission3.jpg' },
-  { title: 'Image 1', icon: '/mission1.jpg' },
-  { title: 'Image 2', icon: '/mission2.jpg' },
-  { title: 'Image 3', icon: '/mission3.jpg' },
+  { title: 'Image 1', icon: '/career1.jpg' },
+  { title: 'Image 2', icon: '/career2.jpg' },
+  { title: 'Image 3', icon: '/career3.jpg' },
+  { title: 'Image 4', icon: '/career4.jpg' },
+  { title: 'Image 5', icon: '/career5.jpg' },
+  { title: 'Image 6', icon: '/career6.jpg' },
+  { title: 'Image 7', icon: '/career7.jpg' },
+  { title: 'Image 8', icon: '/career8.jpg' },
+  { title: 'Image 9', icon: '/career9.jpg' },
+  { title: 'Image 10', icon: '/career10.jpg' },
+  { title: 'Image 11', icon: '/career11.jpg' },
+  { title: 'Image 12', icon: '/career12.jpg' },
+  { title: 'Image 13', icon: '/career13.jpg' },
 ];
 
 const Gallery = () => {
@@ -17,10 +24,20 @@ const Gallery = () => {
     <section className="bg-gray100 px-5 py-20 xl:py-36">
       <main className="w-full mx-auto">
         <div className="mb-10 max-w-[1440px] mx-auto xl:px-5">
-          <h1 className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2">
+          <h1
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="text-2xl text-darkIndigo font-bold mb-6 border-l-4 border-l-indigo pl-2"
+          >
             Gallery
           </h1>
-          <h3 className="text-3xl lg:text-4xl font-semibold mb-8 text-darkIndigo">
+          <h3
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="text-3xl lg:text-4xl font-semibold mb-8 text-darkIndigo"
+          >
             Inside BrandNasu: Moments That Matter
           </h3>
         </div>
@@ -96,11 +113,11 @@ const Gallery = () => {
           }
 
           .animate-marquee-left {
-            animation: marquee-left 80s linear infinite;
+            animation: marquee-left 150s linear infinite;
           }
 
           .animate-marquee-right {
-            animation: marquee-right 80s linear infinite;
+            animation: marquee-right 150s linear infinite;
           }
         `}</style>
       </main>

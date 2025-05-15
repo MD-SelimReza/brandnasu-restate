@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import { GiCheckMark } from 'react-icons/gi';
 import { catalogItems } from '@/data';
 import CatalogCard from './CatalogCard';
@@ -6,6 +8,7 @@ import MemberShip from './MemberShip';
 import ComparisonTable from './ComparisonTable';
 import BookACallSection from './BookACallSection';
 import Button from './ui/Button';
+import { motion } from 'framer-motion';
 
 const packages = [
   {
@@ -86,19 +89,33 @@ const packages = [
 ];
 
 export default function PricingPackage() {
+  const [animateOnce, setAnimateOnce] = useState(false);
+
+  useEffect(() => {
+    setAnimateOnce(true);
+  }, []);
+
   return (
     <div className="w-full bg-indigo100">
       <div
         id="subscription"
-        className="text-center max-w-[1440px] w-full mx-auto lg:py-36 py-20 px-5"
+        className="text-center max-w-[1440px] w-full mx-auto lg:py-32 md:py-24 py-16 px-5"
       >
-        <h2 className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-darkIndigo lg:max-w-5xl md:px-14 mx-auto text-center lg:mb-20 md:mb-16 mb-10">
+        <motion.h1
+          initial={{ opacity: 0, y: '50%' }}
+          animate={animateOnce ? { opacity: 1, y: '0%' } : {}}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-darkIndigo lg:max-w-5xl md:px-14 mx-auto text-center lg:mb-20 md:mb-16 mb-10"
+        >
           Power Your Listings with a Creative Team, One Flat Monthly Fee
-        </h2>
+        </motion.h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-10 gap-6 w-full mb-20">
           {packages.map((pkg, idx) => (
             <div
               key={idx}
+              data-aos="fade-up"
+              data-aos-easing="ease"
+              data-aos-duration="400"
               className={`flex flex-col justify-between ${pkg.highlightColor} ${pkg.textColor} rounded-xl pb-14 p-[30px] max-w-[440px] text-left`}
             >
               <div>
@@ -185,12 +202,15 @@ export default function PricingPackage() {
             </div>
           ))}
         </div>
-        <Button
-          bgColor="bg-indigo hover:bg-darkIndigo"
-          textColor="text-white"
-          label="Book A Demo"
-          width="w-full"
-        />
+        <div data-aos="fade-up" data-aos-easing="ease" data-aos-duration="400">
+          <Button
+            bgColor="bg-indigo hover:bg-darkIndigo"
+            textColor="text-white"
+            label="Book A Call"
+            width="w-full"
+            href="#book-call"
+          />
+        </div>
       </div>
       <div className="bg-white">
         <div className="text-center max-w-[1440px] w-full mx-auto py-20 px-5">
@@ -207,10 +227,20 @@ export default function PricingPackage() {
           id="on-time"
           className="text-center max-w-[1440px] w-full mx-auto lg:py-36 py-20 px-5"
         >
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-darkIndigo lg:max-w-5xl md:px-14 mx-auto text-center mb-4">
+          <h2
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="text-3xl lg:text-4xl xl:text-5xl lg:!leading-[57px] font-bold text-darkIndigo lg:max-w-5xl md:px-14 mx-auto text-center mb-4"
+          >
             One-Time Purchase, Lifetime Value
           </h2>
-          <p className="text-darkGray max-w-5xl mx-auto mb-12">
+          <p
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="400"
+            className="text-darkGray max-w-5xl mx-auto mb-12"
+          >
             Not ready for a monthly plan? No problem. With our one-time purchase
             packages, you get exactly what you need , whether it&apos;s a
             professional logo, brand identity, or a single marketing asset. No
@@ -221,13 +251,20 @@ export default function PricingPackage() {
           <div className="mt-5 lg:mt-10">
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 xl:gap-10 gap-6">
               {catalogItems.map((item) => (
-                <CatalogCard key={item.id} {...item} />
+                <div
+                  key={item.id}
+                  data-aos="fade-up"
+                  data-aos-easing="ease"
+                  data-aos-duration="400"
+                >
+                  <CatalogCard {...item} />
+                </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-      <div id="book-a-call" className="bg-white">
+      <div id="book-call" className="bg-white">
         <div className="text-center max-w-[1440px] w-full mx-auto lg:py-36 py-20 px-5">
           <BookACallSection />
         </div>

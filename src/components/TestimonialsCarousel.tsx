@@ -99,8 +99,8 @@ const videoIds = [
 
 const TestimonialsCarousel = () => {
   return (
-    <div className="relative lg:pt-32">
-      <div className="w-full mx-auto text-center">
+    <div className="relative lg:pt-32 pt-16">
+      <div className="w-full mx-auto text-center px-3">
         <HeadingBlock
           title="Real Stories. Real Success. Hear from Our Clients!"
           description="See how real estate professionals like you transformed their branding, marketing, and online presence with our expert solutions."
@@ -129,7 +129,13 @@ const TestimonialsCarousel = () => {
           >
             {videoIds.map((id, index) => (
               <SwiperSlide key={index}>
-                <div className="flex items-center justify-center aspect-[9/16]">
+                <div
+                  className="flex items-center justify-center aspect-[9/16]"
+                  data-aos="zoom-in"
+                  // data-aos-delay={300 + index * 100}
+                  data-aos-easing="ease"
+                  data-aos-duration="400"
+                >
                   <iframe
                     width="100%"
                     height="100%"

@@ -7,8 +7,8 @@ const WorkDetails = () => {
     <div>
       <div className="bg-white pt-16 pb-32">
         <div className="max-w-[1440px] mx-auto px-5">
-          <div className="flex justify-between items-end mb-4">
-            <h2 className="lg:w-2/3 w-full text-5xl !leading-[57px] font-semibold text-darkIndigo">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-4">
+            <h2 className="lg:w-2/3 w-full text-3xl md:text-4xl xl:text-5xl xl:!leading-[57px] font-semibold text-darkIndigo">
               UrbanNest - Website Development
             </h2>
             <div className="lg:w-1/3 w-full mt-6 gap-3 flex flex-wrap justify-end">

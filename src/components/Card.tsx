@@ -103,7 +103,6 @@ import W3 from '../../public/W3.png';
 import S1 from '../../public/S1.png';
 import S2 from '../../public/S2.png';
 import S3 from '../../public/S3.png';
-import Link from 'next/link';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
 const Banner = [
@@ -119,8 +118,6 @@ const Banner = [
 ];
 
 const CardSlider = () => {
-  // const swiperRef = useRef<any>(null); // Store Swiper instance persistently
-
   return (
     <div className="relative mt-10">
       <div className="relative w-full max-w-[1920px] mx-auto xl:px-0 lg:px-6 md:px-2">
@@ -128,6 +125,7 @@ const CardSlider = () => {
           modules={[Navigation, Autoplay, Pagination]}
           spaceBetween={10}
           slidesPerView={1}
+          grabCursor={true}
           loop={true}
           autoplay={{
             delay: 3000,
@@ -144,33 +142,33 @@ const CardSlider = () => {
             1024: { slidesPerView: 3 },
             1280: { slidesPerView: 5 },
           }}
-          // onSwiper={(swiper) => (swiperRef.current = swiper)} // Save Swiper instance
+          className="cursor-grab active:cursor-grabbing"
         >
           {Banner.map((card) => (
-            <SwiperSlide
-              key={card.id}
-              // onMouseEnter={() => swiperRef.current?.autoplay.stop()} // Stop autoplay on hover
-              // onMouseLeave={() => swiperRef.current?.autoplay.start()} // Resume autoplay on mouse leave
-            >
-              <Link href={card.link}>
+            <SwiperSlide key={card.id}>
+              <div>
                 <Image
                   src={card.img}
                   alt="Card img"
                   loading="lazy"
                   className="mx-auto"
                 />
-              </Link>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* Navigation Buttons */}
-        <button className="prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2ACC] text-lightIndigo p-3 rounded-full ">
-          <FaChevronLeft size={30} />
-        </button>
-        <button className="next-btn absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2ACC] text-lightIndigo p-3 rounded-full">
-          <FaChevronRight size={30} />
-        </button>
+        <div className="absolute top-1/2 transform -translate-y-1/2 z-10 w-40 h-full group left-0">
+          <button className="opacity-0 group-hover:opacity-100 transition duration-500 prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2ACC] text-lightIndigo p-3 rounded-full ">
+            <FaChevronLeft size={30} />
+          </button>
+        </div>
+        <div className="absolute top-1/2 transform -translate-y-1/2 z-10 w-40 h-full group right-0">
+          <button className="opacity-0 group-hover:opacity-100 transition duration-500 next-btn absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2ACC] text-lightIndigo p-3 rounded-full">
+            <FaChevronRight size={30} />
+          </button>
+        </div>
       </div>
     </div>
   );

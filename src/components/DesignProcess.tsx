@@ -58,21 +58,27 @@ const DesignProcess = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`flex flex-col md:flex-row p-6 items-center md:p-10 lg:p-12 xl:pl-20 lg:pl-16 xl:gap-20 lg:gap-16 md:gap-10 gap-6 rounded-xl ${step.bgColor} hover:scale-[1.02] transition duration-500`}
+                data-aos="fade-up"
+                data-aos-easing="ease"
+                data-aos-duration="400"
               >
-                <div className="md:w-72 lg:w-60 xl:w-36 w-28 h-fit relative">
-                  <Image
-                    src={step.icon}
-                    alt={step.title}
-                    className="object-fill"
-                  />
-                </div>
-                {/* Text Content */}
-                <div className="text-center md:text-left">
-                  <h3 className={`text-4xl font-bold ${step.textColor}`}>
-                    {step.title}
-                  </h3>
-                  <p className="text-darkGray mt-4">{step.description}</p>
+                <div
+                  className={`flex flex-col md:flex-row p-6 items-center md:p-10 lg:p-12 xl:pl-20 lg:pl-16 xl:gap-20 lg:gap-16 md:gap-10 gap-6 rounded-xl ${step.bgColor} hover:scale-[1.02] transition duration-500`}
+                >
+                  <div className="md:w-72 lg:w-60 xl:w-36 w-28 h-fit relative">
+                    <Image
+                      src={step.icon}
+                      alt={step.title}
+                      className="object-fill"
+                    />
+                  </div>
+                  {/* Text Content */}
+                  <div className="text-center md:text-left">
+                    <h3 className={`text-4xl font-bold ${step.textColor}`}>
+                      {step.title}
+                    </h3>
+                    <p className="text-darkGray mt-4">{step.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
