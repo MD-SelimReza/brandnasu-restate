@@ -12,29 +12,31 @@ export interface Project {
   tag: string[];
 }
 
-export const useProjects = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
+export const useProjectById = (id: string) => {
+  const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    if (!id) return;
+
+    const fetchProject = async () => {
       try {
-        const res = await axios.get('/api/projects');
-        setProjects(res.data);
+        const res = await axios.get(`/api/projects/${id}`);
+        setProject(res.data);
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);
         } else {
-          setError('Failed to fetch projects');
+          setError('Failed to fetch project');
         }
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProjects();
-  }, []);
+    fetchProject();
+  }, [id]);
 
-  return { projects, loading, error };
+  return { project, loading, error };
 };

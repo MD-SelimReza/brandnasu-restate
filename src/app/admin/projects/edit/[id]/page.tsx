@@ -1,20 +1,26 @@
+'use client';
+
 import RichTextEditor from '@/components/RichTextEditor';
-import { getProjectById } from '@/hooks/getProjectById';
-import { notFound } from 'next/navigation';
+import { useProjectById } from '@/hooks/useProjectById';
+import { useParams } from 'next/navigation';
 
-interface EditPageProps {
-  params: Promise<{ id: string }> | { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
+export default function EditPage() {
+  const params = useParams();
+  const projectId = typeof params.id === 'string' ? params.id : '';
+  const { project, loading } = useProjectById(projectId);
 
-export default async function EditPage(props: EditPageProps) {
-  const params =
-    props.params instanceof Promise ? await props.params : props.params;
-  const projectId = params.id;
-
-  const project = await getProjectById(projectId);
-
-  if (!project) return notFound();
+  if (loading)
+    return (
+      <p className="min-h-[calc(100vh-85px)] flex justify-center items-center">
+        Loading...
+      </p>
+    );
+  if (!project)
+    return (
+      <p className="min-h-[calc(100vh-85px)] flex justify-center items-center">
+        Project not found
+      </p>
+    );
 
   return (
     <div className="px-4 md:px-8">

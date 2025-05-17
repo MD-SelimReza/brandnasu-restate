@@ -5,6 +5,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 export default function ProjectsAdmin() {
   const { projects, loading, error } = useProjects();
@@ -16,14 +17,12 @@ export default function ProjectsAdmin() {
   }, [projects]);
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this project?')) return;
-
     try {
       await axios.delete(`/api/projects/${id}`);
       setCurrentProjects((prev) => prev.filter((p) => p._id !== id));
-    } catch (err) {
-      console.error('Delete error:', err);
-      alert('Failed to delete project');
+      toast.success('Project deleted successfully');
+    } catch {
+      toast.error('Failed to delete project');
     }
   };
 
@@ -70,9 +69,6 @@ export default function ProjectsAdmin() {
                   Image
                 </th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                  Slug
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
                   Tags
                 </th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
@@ -99,9 +95,6 @@ export default function ProjectsAdmin() {
                         loading="lazy"
                       />
                     </div>
-                  </td>
-                  <td className="px-4 py-3 text-sm text-gray-900">
-                    {project.slug}
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-700">
                     {project.tag.join(', ')}

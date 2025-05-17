@@ -200,9 +200,8 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
       } else {
         toast.error(res.data.message || 'Something went wrong!');
       }
-    } catch (error: unknown) {
+    } catch {
       toast.error('Error submitting form');
-      console.error('Submission error:', error);
     }
   };
 

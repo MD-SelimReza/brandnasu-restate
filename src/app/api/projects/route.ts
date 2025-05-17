@@ -9,8 +9,7 @@ export async function GET() {
   try {
     const projects = await Project.find().sort({ createdAt: -1 });
     return NextResponse.json(projects, { status: 200 });
-  } catch (error) {
-    console.error('GET Error:', error);
+  } catch {
     return NextResponse.json(
       { message: 'Failed to fetch projects' },
       { status: 500 }
@@ -49,8 +48,7 @@ export async function POST(req: Request) {
       tag,
     });
     return NextResponse.json(newProject, { status: 201 });
-  } catch (error) {
-    console.error('POST Error:', error);
+  } catch {
     return NextResponse.json(
       { message: 'Internal Server Error' },
       { status: 500 }

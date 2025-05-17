@@ -4,7 +4,6 @@ import BenefitsItemSection from '@/components/BenefitItemSection';
 import CareersPage from '@/components/CareersPage';
 import Gallery from '@/components/Gallery';
 import TeamBenefits from '@/components/TeamBenefits';
-// import TeamTestimonials from '@/components/TeamTestimonials';
 import FAQSection from '@/components/FAQSection';
 import { careerFaq } from '@/data';
 
@@ -16,7 +15,6 @@ const CareerPage = () => {
       <CareersPage />
       <Gallery />
       <TeamBenefits />
-      {/* <TeamTestimonials /> */}
       <FAQSection
         title="Frequently Asked Questions"
         description="Get answers to some of the most commonly asked questions we receive from businesses just like yours."

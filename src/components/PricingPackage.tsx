@@ -9,12 +9,14 @@ import ComparisonTable from './ComparisonTable';
 import BookACallSection from './BookACallSection';
 import Button from './ui/Button';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const packages = [
   {
     name: 'Starter Plan',
     price: '$295',
     period: '/month',
+    link: 'https://buy.stripe.com/5kA4gx8K48hj9xu149',
     highlight:
       'Perfect for new agents needing steady, pro-quality content to build their brand.',
     features: [
@@ -40,6 +42,7 @@ const packages = [
     name: 'Agent Plan',
     price: '$495',
     period: '/month',
+    link: 'https://buy.stripe.com/14k00h5xSfJL7pm6ou',
     highlight:
       'Designed for busy agents managing multiple listings and growing their presence.',
     features: [
@@ -65,6 +68,7 @@ const packages = [
     name: 'Broker Plan',
     price: '$795',
     period: '/month',
+    link: 'https://buy.stripe.com/14kdR7bWg557cJG14b',
     highlight:
       'High-output creative support for top agents or teams needing fast, consistent content.',
     features: [
@@ -162,15 +166,17 @@ export default function PricingPackage() {
                 <p className={`text-base font-regular mb-10 ${pkg.readColor}`}>
                   Cancel any time.
                 </p>
-                <button
-                  className={`w-full py-2 rounded-full font-semibold text-2xl ${
-                    pkg.highlightColor === 'bg-indigo'
-                      ? 'bg-lightIndigo text-darkIndigo hover:bg-darkIndigo hover:text-white'
-                      : 'bg-indigo text-white hover:bg-darkIndigo transition duration-500'
-                  }`}
-                >
-                  Purchase
-                </button>
+                <Link href={pkg.link}>
+                  <button
+                    className={`w-full py-2 rounded-full font-semibold text-2xl ${
+                      pkg.highlightColor === 'bg-indigo'
+                        ? 'bg-lightIndigo text-darkIndigo hover:bg-darkIndigo hover:text-white'
+                        : 'bg-indigo text-white hover:bg-darkIndigo transition duration-500'
+                    }`}
+                  >
+                    Purchase
+                  </button>
+                </Link>
                 <ul className={`mt-11 space-y-3 text-base ${pkg.readColor}`}>
                   {pkg.features.map((feature, i) => (
                     <li key={i} className="flex items-baseline">
