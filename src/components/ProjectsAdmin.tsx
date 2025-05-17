@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import ConfirmDeleteDialog from './ConfirmDeleteDialog';
 
 export default function ProjectsAdmin() {
   const { projects, loading, error } = useProjects();
@@ -16,13 +17,25 @@ export default function ProjectsAdmin() {
     setCurrentProjects(projects);
   }, [projects]);
 
-  const handleDelete = async (id: string) => {
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [deleteId, setDeleteId] = useState<string | null>(null);
+
+  const confirmDelete = (id: string) => {
+    setDeleteId(id);
+    setShowConfirm(true);
+  };
+
+  const handleConfirmDelete = async () => {
+    if (!deleteId) return;
     try {
-      await axios.delete(`/api/projects/${id}`);
-      setCurrentProjects((prev) => prev.filter((p) => p._id !== id));
+      await axios.delete(`/api/projects/${deleteId}`);
+      setCurrentProjects((prev) => prev.filter((p) => p._id !== deleteId));
       toast.success('Project deleted successfully');
     } catch {
       toast.error('Failed to delete project');
+    } finally {
+      setShowConfirm(false);
+      setDeleteId(null);
     }
   };
 
@@ -99,16 +112,16 @@ export default function ProjectsAdmin() {
                   <td className="px-4 py-3 text-sm text-gray-700">
                     {project.tag.join(', ')}
                   </td>
-                  <td className="px-4 py-3 flex items-center gap-2">
+                  <td className="px-4 py-3 flex items-center gap-8">
                     <button
                       onClick={() => handleEdit(project._id)}
-                      className="px-3 py-1 rounded-md bg-green-600 text-white hover:bg-green-700 transition"
+                      className="px-3 bg-gray100 text-darkGray py-1.5 w-20 rounded-md hover:bg-gray-100"
                     >
                       Edit
                     </button>
                     <button
-                      onClick={() => handleDelete(project._id)}
-                      className="px-3 py-1 rounded-md bg-red-600 text-white hover:bg-red-700 transition"
+                      onClick={() => confirmDelete(project._id)}
+                      className="px-3 py-1.5 w-20 rounded-md bg-gray100 text-[#f62447] hover:bg-red-100"
                     >
                       Delete
                     </button>
@@ -119,6 +132,11 @@ export default function ProjectsAdmin() {
           </table>
         </div>
       </div>
+      <ConfirmDeleteDialog
+        isOpen={showConfirm}
+        onCancel={() => setShowConfirm(false)}
+        onConfirm={handleConfirmDelete}
+      />
     </div>
   );
 }

@@ -27,7 +27,6 @@ import TaskItem from '@tiptap/extension-task-item';
 import ListItem from '@tiptap/extension-list-item';
 import Text from '@tiptap/extension-text';
 import BulletList from '@tiptap/extension-bullet-list';
-import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import Image from 'next/image';
@@ -46,11 +45,6 @@ interface RichTextEditorProps {
   };
 }
 
-interface FormData {
-  title: string;
-  shortDesc: string;
-}
-
 const serviceRedirectMap = [
   'Website',
   'Landing Page',
@@ -67,17 +61,16 @@ const serviceRedirectMap = [
 ];
 
 const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
-  const [tags, setTags] = useState<string[]>(initialData?.tag || []);
-  const [isOpen, setIsOpen] = useState(false);
-  const [firstTagSelected, setFirstTagSelected] = useState(
-    (initialData?.tag ?? []).length > 0
-  );
-  const [tagInput, setTagInput] = useState('');
+  const [title, setTitle] = useState(initialData?.title || '');
+  const [shortDesc, setShortDesc] = useState(initialData?.description || '');
   const [uploadedImageUrl, setUploadedImageUrl] = useState<string | null>(
     initialData?.image || null
   );
-  const [tagError, setTagError] = useState('');
-  const [imageError, setImageError] = useState('');
+  const [tags, setTags] = useState<string[]>(initialData?.tag || []);
+  const [tagInput, setTagInput] = useState('');
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isOpen, setIsOpen] = useState(false);
+  const [firstTagSelected, setFirstTagSelected] = useState(tags.length > 0);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const editor = useEditor({
@@ -111,17 +104,6 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
     content: initialData?.description || '',
   });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>({
-    defaultValues: {
-      title: initialData?.title || '',
-      shortDesc: initialData?.description || '',
-    },
-  });
-
   useEffect(() => {
     if (initialData && editor) {
       editor.commands.setContent(initialData.description || '');
@@ -135,6 +117,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
       if (!tags.includes(tagInput.trim())) {
         setTags([...tags, tagInput.trim()]);
         setTagInput('');
+        clearFieldError('tags');
       }
     }
   };
@@ -143,12 +126,14 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
     const newTags = [...tags];
     newTags.splice(index, 1);
     setTags(newTags);
+    if (newTags.length === 0) setFirstTagSelected(false);
   };
 
   const handleSelect = (value: string) => {
     if (!tags.includes(value)) {
       setTags([...tags, value]);
       setFirstTagSelected(true);
+      clearFieldError('tags');
     }
     setIsOpen(false);
   };
@@ -158,31 +143,39 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
     if (!file) return;
     const uploadedUrl = await uploadImageToR2(file);
     setUploadedImageUrl(uploadedUrl);
+    clearFieldError('image');
   };
 
-  const onSubmit = async (data: FormData) => {
-    let isValid = true;
-    setTagError('');
-    setImageError('');
+  const clearFieldError = (field: string) => {
+    setErrors((prev) => {
+      const newErrors = { ...prev };
+      delete newErrors[field];
+      return newErrors;
+    });
+  };
 
-    if (tags.length === 0) {
-      setTagError('Select at least one tag');
-      isValid = false;
-    }
-    if (!uploadedImageUrl) {
-      setImageError('Upload an image');
-      isValid = false;
-    }
-    if (!isValid) return;
+  const validateForm = () => {
+    const newErrors: { [key: string]: string } = {};
+    if (!title.trim()) newErrors.title = 'Title is required';
+    if (!shortDesc.trim()) newErrors.shortDesc = 'Description is required';
+    if (!uploadedImageUrl) newErrors.image = 'Upload an image';
+    if (tags.length === 0) newErrors.tags = 'Select at least one tag';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
-    const slug = data.title
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    const slug = title
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)+/g, '');
 
     const formattedData = {
-      title: data.title.trim(),
-      description: data.shortDesc.trim(),
+      title: title.trim(),
+      description: shortDesc.trim(),
       image: uploadedImageUrl,
       slug,
       tag: tags,
@@ -205,11 +198,27 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
     }
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   if (!editor) return null;
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit}
       className="bg-white p-6 pt-16 pb-32 min-h-[calc(100vh-85px)] relative"
     >
       <div className="max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
@@ -218,12 +227,16 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
             <div className="w-2/3">
               <input
                 type="text"
-                {...register('title', { required: 'Title is required' })}
                 placeholder="Title"
+                value={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                  if (e.target.value.trim()) clearFieldError('title');
+                }}
                 className="w-full border rounded-lg p-3 outline-none text-base font-medium"
               />
               {errors.title && (
-                <p className="text-[#E05858] text-sm">{errors.title.message}</p>
+                <p className="text-[#E05858] text-sm">{errors.title}</p>
               )}
             </div>
 
@@ -246,10 +259,10 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
                 ))}
 
                 {!firstTagSelected ? (
-                  <div className="relative" ref={dropdownRef}>
+                  <div className="relative w-full" ref={dropdownRef}>
                     <button
                       onClick={() => setIsOpen(!isOpen)}
-                      className="text-gray-400"
+                      className="text-gray-400 text-left w-full"
                     >
                       Select a service tag
                     </button>
@@ -278,7 +291,9 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
                   />
                 ) : null}
               </div>
-              {tagError && <p className="text-[#E05858] text-sm">{tagError}</p>}
+              {errors.tags && (
+                <p className="text-[#E05858] text-sm">{errors.tags}</p>
+              )}
             </div>
           </div>
 
@@ -286,16 +301,17 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
             <div className="w-full">
               <input
                 type="text"
-                {...register('shortDesc', {
-                  required: 'Description is required',
-                })}
                 placeholder="Short Description"
+                value={shortDesc}
+                onChange={(e) => {
+                  setShortDesc(e.target.value);
+                  if (e.target.value.trim()) clearFieldError('shortDesc');
+                }}
                 className="w-full border rounded-lg p-3 outline-none text-base"
               />
+
               {errors.shortDesc && (
-                <p className="text-[#E05858] text-sm">
-                  {errors.shortDesc.message}
-                </p>
+                <p className="text-[#E05858] text-sm">{errors.shortDesc}</p>
               )}
             </div>
 
@@ -315,8 +331,8 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
                 <FiUpload className="text-lg" />
                 Upload Image
               </button>
-              {imageError && (
-                <p className="text-[#E05858] text-sm mt-1">{imageError}</p>
+              {errors.image && (
+                <p className="text-[#E05858] text-sm mt-1">{errors.image}</p>
               )}
             </div>
           </div>
