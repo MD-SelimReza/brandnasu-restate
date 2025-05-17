@@ -27,12 +27,12 @@ import TaskItem from '@tiptap/extension-task-item';
 import ListItem from '@tiptap/extension-list-item';
 import Text from '@tiptap/extension-text';
 import BulletList from '@tiptap/extension-bullet-list';
-import { toast } from 'react-toastify';
 import axios from 'axios';
 import Image from 'next/image';
 import { FiUpload } from 'react-icons/fi';
 import MenuBar from './ui/MenuBar';
 import { uploadImageToR2 } from '@/lib/upload';
+import { useRouter } from 'next/navigation';
 
 interface RichTextEditorProps {
   initialData?: {
@@ -45,7 +45,7 @@ interface RichTextEditorProps {
   };
 }
 
-const serviceRedirectMap = [
+const services = [
   'Website',
   'Landing Page',
   'UI/UX',
@@ -60,6 +60,24 @@ const serviceRedirectMap = [
   'Video Ads',
 ];
 
+const serviceRedirectMap: Record<string, string> = {
+  Website: 'website',
+  'Landing Page': 'website',
+  'UI/UX': 'website',
+
+  'Logo Design': 'brand-design',
+  'Brand Guideline': 'brand-design',
+  Printing: 'brand-design',
+
+  'Social Media Branding': 'brand-marketing',
+  Signage: 'brand-marketing',
+  'Pitch Deck': 'brand-marketing',
+
+  'Branding Video': 'brand-video',
+  'Listing Video': 'brand-video',
+  'Video Ads': 'brand-video',
+};
+
 const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
   const [title, setTitle] = useState(initialData?.title || '');
   const [shortDesc, setShortDesc] = useState(initialData?.description || '');
@@ -72,6 +90,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [firstTagSelected, setFirstTagSelected] = useState(tags.length > 0);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
 
   const editor = useEditor({
     extensions: [
@@ -187,14 +206,22 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
         : await axios.post('/api/projects', formattedData);
 
       if (res.status === 200 || res.status === 201) {
-        toast.success(
-          `Project ${initialData ? 'updated' : 'created'} successfully!`
-        );
+        // 👇 REDIRECT based on first tag
+        const activeService = tags[0];
+        const section = serviceRedirectMap[activeService];
+        if (section) {
+          router.push(`/work?section=${section}`);
+        } else {
+          router.push('/work');
+        }
+        setErrors({});
+
+        return;
       } else {
-        toast.error(res.data.message || 'Something went wrong!');
+        return;
       }
     } catch {
-      toast.error('Error submitting form');
+      return;
     }
   };
 
@@ -261,6 +288,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
                 {!firstTagSelected ? (
                   <div className="relative w-full" ref={dropdownRef}>
                     <button
+                      type="button"
                       onClick={() => setIsOpen(!isOpen)}
                       className="text-gray-400 text-left w-full"
                     >
@@ -268,7 +296,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
                     </button>
                     {isOpen && (
                       <ul className="absolute z-10 top-full -left-3 mt-3 w-48 bg-white border rounded-md shadow-lg text-sm">
-                        {serviceRedirectMap.map((option, i) => (
+                        {services.map((option, i) => (
                           <li
                             key={i}
                             onClick={() => handleSelect(option)}
@@ -287,7 +315,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
                     onChange={(e) => setTagInput(e.target.value)}
                     onKeyDown={handleTagKeyDown}
                     className="flex-1 w-full outline-none text-base bg-transparent"
-                    placeholder="Type a tag and press Enter"
+                    placeholder="Type a tag"
                   />
                 ) : null}
               </div>

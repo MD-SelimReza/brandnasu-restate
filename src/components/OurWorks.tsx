@@ -144,7 +144,7 @@ const OurWorks = () => {
             label="See More"
             bgColor="bg-indigo hover:bg-darkIndigo"
             textColor="text-white"
-            href={`/work/#${serviceRedirectMap[activeService]}`}
+            href={`/work?section=${serviceRedirectMap[activeService]}`}
           />
         </div>
       </div>

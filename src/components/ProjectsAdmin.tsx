@@ -5,7 +5,6 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { toast } from 'react-toastify';
 import ConfirmDeleteDialog from './ConfirmDeleteDialog';
 
 export default function ProjectsAdmin() {
@@ -30,9 +29,8 @@ export default function ProjectsAdmin() {
     try {
       await axios.delete(`/api/projects/${deleteId}`);
       setCurrentProjects((prev) => prev.filter((p) => p._id !== deleteId));
-      toast.success('Project deleted successfully');
     } catch {
-      toast.error('Failed to delete project');
+      return;
     } finally {
       setShowConfirm(false);
       setDeleteId(null);

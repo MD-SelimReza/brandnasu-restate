@@ -3,7 +3,6 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import DataAosProvider from '@/components/DataAosProvider';
-import { ToastContainer } from 'react-toastify';
 
 export const metadata: Metadata = {
   title: 'BrandNasu Real State',
@@ -20,7 +19,6 @@ export default function RootLayout({
       <body className="bg-gray100">
         <Navbar />
         <DataAosProvider>{children}</DataAosProvider>
-        <ToastContainer />
         <Footer />
       </body>
     </html>
