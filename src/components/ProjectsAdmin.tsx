@@ -63,41 +63,49 @@ export default function ProjectsAdmin() {
     );
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-white">
       <div className="max-w-[1440px] px-5 mx-auto lg:py-32 md:py-24 py-16">
-        <h1 className="text-3xl font-bold mb-6">Projects Admin</h1>
-        <div className="overflow-x-auto">
-          <table className="min-w-full border border-gray-200 divide-y divide-gray-200">
+        <h1 className="text-3xl font-bold border-x border-t px-4 py-5 rounded-t-lg border-gray-200">
+          Projects Admin
+        </h1>
+        <div className="overflow-x-auto rounded-b-lg border border-gray-200">
+          <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
+                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 w-60">
                   Title
                 </th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
                   Description
                 </th>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 w-60">
+                  Tags
+                </th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
                   Image
                 </th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                  Tags
+                  Edit
                 </th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                  Actions
+                  Delete
                 </th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {currentProjects.map((project) => (
                 <tr key={project._id}>
-                  <td className="px-4 py-3 text-sm text-gray-900">
+                  <td className="px-4 py-3 text-sm text-gray-900 w-60">
                     {project.title}
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-700 max-w-xs truncate">
                     {project.description}
                   </td>
-                  <td className="px-4 py-1">
-                    <div className="relative w-24 h-16">
+                  <td className="px-4 py-3 text-sm text-gray-700 w-60">
+                    {project.tag.join(', ')}
+                  </td>
+                  <td className="px-4 py-1 w-20">
+                    <div className="relative w-[60px] h-10">
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -107,16 +115,15 @@ export default function ProjectsAdmin() {
                       />
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-sm text-gray-700">
-                    {project.tag.join(', ')}
-                  </td>
-                  <td className="px-4 py-3 flex items-center gap-8">
+                  <td className="px-4 py-3 w-28">
                     <button
                       onClick={() => handleEdit(project._id)}
                       className="px-3 bg-gray100 text-darkGray py-1.5 w-20 rounded-md hover:bg-gray-100"
                     >
                       Edit
                     </button>
+                  </td>
+                  <td className="px-4 py-3 w-28">
                     <button
                       onClick={() => confirmDelete(project._id)}
                       className="px-3 py-1.5 w-20 rounded-md bg-gray100 text-[#f62447] hover:bg-red-100"

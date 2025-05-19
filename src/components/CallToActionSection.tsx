@@ -38,8 +38,6 @@ const CallToActionSection = () => {
     };
   }, []);
 
-  // const openModal = () => setIsOpen(true);
-  // const closeModal = () => setIsOpen(false);
   const sectionRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -103,7 +101,6 @@ const CallToActionSection = () => {
             {/* Floating Review Cards (Scroll synced) */}
             <motion.div
               data-aos="fade-up"
-              // data-delay="400"
               data-aos-easing="ease"
               data-duration="400"
               className="absolute top-[20%] -left-[8%] z-10 w-[300px] h-fit bg-[#E1F7E1] rounded-xl xl:block hidden"
@@ -120,7 +117,6 @@ const CallToActionSection = () => {
 
             <motion.div
               data-aos="fade-up"
-              // data-delay="500"
               data-aos-easing="ease"
               data-duration="400"
               className="absolute top-[0%] -right-[5%] w-[270px] h-fit bg-[#EAE4FC] rounded-xl z-10 xl:block hidden"
@@ -137,7 +133,6 @@ const CallToActionSection = () => {
 
             <motion.div
               data-aos="fade-up"
-              // data-delay="600"
               data-duration="400"
               className="absolute -bottom-[10%] -right-[9%] w-[230px] h-fit bg-[#F9EFE3] rounded-xl z-10 xl:block hidden"
               style={{ y }}
@@ -154,15 +149,14 @@ const CallToActionSection = () => {
             {/* Decorative Gradient Blocks */}
             <div
               data-aos="fade-up"
-              // data-delay="700"
               data-aos-easing="ease"
               data-duration="400"
               className="absolute bottom-[6%] right-[4%] w-[220px] h-[220px] bg-gradient-to-tr from-[#4E3D5C] to-[#772DD8] rounded-xl xl:block hidden"
             >
               <ReviewCard
-                name="Sandra Liu"
-                role="Broker, LuxeNest Realty"
-                text="BrandNasu leveled up our look, fast and flawless!"
+                name="Jordan Malik"
+                role="Realtor, Skyline Properties"
+                text="BrandNasu completely transformed my real estate business, Recommended!"
                 stars={5}
                 image="/Khalil-Henry.jpg"
                 nameColor="text-white"
@@ -171,7 +165,6 @@ const CallToActionSection = () => {
             </div>
             <div
               data-aos="fade-up"
-              // data-delay="800"
               data-aos-easing="ease"
               data-duration="400"
               className="absolute bottom-[7%] left-[3%] w-[220px] h-[220px] bg-gradient-to-tl from-[#4E3D5C] to-[#772DD8] rounded-xl xl:block hidden"
@@ -243,14 +236,22 @@ const ReviewCard = ({
     <div className="w-full h-full p-5 text-black flex flex-col justify-between">
       <div>
         <div className="flex items-center gap-3">
-          <div className="w-[50px] h-[50px] border-2 border-lightIndigo rounded-full overflow-hidden flex justify-center items-center">
-            <Image
-              src={image}
-              width={100}
-              height={100}
-              alt={name}
-              className="object-cover w-[45px] h-[45px] rounded-full"
-            />
+          <div className="border-2 border-lightIndigo rounded-full overflow-hidden flex justify-center items-center">
+            {name === 'Jordan Malik' ? (
+              <div className="h-[40px] w-[45px] rounded-full bg-lightIndigo text-darkIndigo text-2xl font-bold flex justify-center items-center">
+                J
+              </div>
+            ) : (
+              <Image
+                src={image}
+                width={100}
+                height={100}
+                alt={name}
+                className={`object-cover w-[45px] ${
+                  name === 'Marcus Dean' ? 'h-[35px]' : 'h-[45px]'
+                }  rounded-full`}
+              />
+            )}
           </div>
           <div>
             <p className={`text-[16px] font-semibold ${nameColor}`}>{name}</p>

@@ -13,15 +13,15 @@ const steps = [
     icon: request,
     title: 'Submit Your Request',
     description:
-      'Send us your design needs, and we’ll craft high-quality branding, marketing, or web assets tailored to your business.',
+      'Tell us what you need, from listing posts to branded templates. We’ll handle the creative, so you don’t have to.',
     bgColor: 'bg-indigo100',
     textColor: 'text-darkIndigo',
   },
   {
     icon: feedback,
-    title: 'Review & Provide Feedback',
+    title: 'Review & Refine',
     description:
-      'Easily share your thoughts using our feedback tool, ensuring every design aligns perfectly with your vision.',
+      'Get your first draft within 1–2 business days. Share feedback directly, we’ll revise until it feels just right.',
     bgColor: 'bg-lightIndigo',
     textColor: 'text-darkIndigo',
   },
@@ -29,7 +29,7 @@ const steps = [
     icon: download,
     title: 'Download & Launch',
     description:
-      'Get your final files, ready to use for marketing, social media, and beyond, so you can focus on closing more deals.',
+      'Grab your ready-to-use files and start using them across social, print, or email, no delays, no design stress.',
     bgColor: 'bg-muteIndigo/80',
     textColor: 'text-darkIndigo',
   },
@@ -43,9 +43,7 @@ const DesignProcess = () => {
           <div className="w-full mx-auto text-center">
             <HeadingBlock
               title="How It Works: Simple, Fast & Hassle-Free"
-              description="See how real estate professionals like you transformed their
-              branding, marketing, and online presence with our expert
-              solutions."
+              description="Get high-quality designs in three easy steps, no stress, no delays, just results."
               titleColor="text-darkIndigo"
               titleWidth="max-w-3xl mx-auto"
               descriptionColor="text-darkGray"

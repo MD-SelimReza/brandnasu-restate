@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import FadeInSection from '@/components/ui/FadeInSection';
 import { termsLastUpdated, termsSections } from '@/data';
-// import { termsSections, termsLastUpdated } from '@/content/termsContent';
 
 const TermsPage = () => {
   return (

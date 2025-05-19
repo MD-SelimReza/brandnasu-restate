@@ -132,12 +132,19 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
   const handleTagKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if ((e.key === 'Enter' || e.key === ',') && tagInput.trim()) {
       e.preventDefault();
-      if (tags.length >= 3) return;
-      if (!tags.includes(tagInput.trim())) {
-        setTags([...tags, tagInput.trim()]);
-        setTagInput('');
-        clearFieldError('tags');
-      }
+
+      // Split input by commas, trim whitespace
+      const newTags = tagInput
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter((tag) => tag.length > 0 && !tags.includes(tag));
+
+      // Limit to 3 tags total
+      const combinedTags = [...tags, ...newTags].slice(0, 3);
+
+      setTags(combinedTags);
+      setTagInput('');
+      clearFieldError('tags');
     }
   };
 

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import HeadingBlock from './ui/HeadingBlock';
 import Button from './ui/Button';
@@ -44,14 +43,14 @@ const serviceRedirectMap: Record<ServiceType, string> = {
 
 const OurWorks = () => {
   const [activeService, setActiveService] = useState<ServiceType>('Website');
-  const { projects, loading, error } = useProjects();
+  const { projects, loading } = useProjects();
 
   const filteredProjects = projects.filter((project) =>
     project.tag.includes(activeService)
   );
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading)
+    return <p className="flex justify-center items-center h-60">Loading...</p>;
 
   return (
     <div className="lg:py-32 md:py-20 py-16 bg-white px-5">
@@ -101,7 +100,7 @@ const OurWorks = () => {
                 data-aos-easing="ease"
                 data-aos-duration="400"
               >
-                <Link href={`/work/${project.slug}`} className="block mb-10">
+                <div className="block mb-10">
                   <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                     <Image
                       src={project.image}
@@ -110,12 +109,10 @@ const OurWorks = () => {
                       className="object-cover rounded-xl hover:scale-105 transition duration-300"
                     />
                   </div>
-                </Link>
-                <Link href={`/work/${project.slug}`}>
-                  <h2 className="text-2xl font-semibold text-darkIndigo">
-                    {project.title}
-                  </h2>
-                </Link>
+                </div>
+                <h2 className="text-2xl font-semibold text-darkIndigo">
+                  {project.title}
+                </h2>
                 <p className="mt-4 text-darkGray truncate-one-line">
                   {project.description}
                 </p>

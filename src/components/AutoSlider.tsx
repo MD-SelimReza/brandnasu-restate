@@ -28,15 +28,15 @@ export default function HeroBanner() {
 
         {/* Static Hero Banner */}
         <div className="relative w-full bg-[#3B0C7C] bg-center bg-cover bg-no-repeat flex flex-col items-center xl:pt-28 lg:pb-12 py-12 px-4">
-          <div className="text-center text-white max-w-7xl z-20">
+          <div className="text-center text-white max-w-[1340px] z-20">
             <div className="relative overflow-hidden mb-6">
               <motion.h1
                 initial={{ opacity: 0, y: '50%' }}
                 animate={animateOnce ? { opacity: 1, y: '0%' } : {}}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="text-white xl:text-7xl lg:text-6xl text-3xl md:text-5xl !leading-[1.2] font-bold md:font-bold max-w-7xl lg:px-16 text-center"
+                className="text-white xl:text-7xl lg:text-6xl text-3xl md:text-5xl !leading-[1.2] font-bold md:font-bold max-w-full lg:px-16 text-center"
               >
-                Empowering Real Estate Brands with Creative Excellence
+                Empowering Real Estate Business with Creative Excellence
               </motion.h1>
             </div>
 
@@ -59,7 +59,7 @@ export default function HeroBanner() {
             data-aos="fade-up"
             data-aos-easing="ease"
             data-aos-duration="400"
-            className="flex items-center flex-col md:flex-row gap-5 w-full z-20 justify-center mt-10"
+            className="flex items-center flex-col md:flex-row gap-5 w-full z-20 justify-center mt-16"
           >
             <div className="w-fit">
               <Button
@@ -83,7 +83,7 @@ export default function HeroBanner() {
             data-aos="fade-up"
             data-aos-easing="ease"
             data-aos-duration="400"
-            className="w-full mt-4 md:mt-6 z-20 xl:px-5"
+            className="w-full mt-4 md:mt-10 z-20 xl:px-5"
           >
             <CardSlider />
           </div>

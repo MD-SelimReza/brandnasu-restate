@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import CtaSection from './CtaSection';
 import { motion } from 'framer-motion';
 import { useProjects } from '@/hooks/useProjects';
@@ -15,10 +14,10 @@ const WorkHero = () => {
     setAnimateOnce(true);
   }, []);
 
-  const { projects, loading, error } = useProjects();
+  const { projects, loading } = useProjects();
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading)
+    return <p className="flex justify-center items-center h-60">Loading...</p>;
   const webTags = ['Development', 'Website', 'Landing Page', 'UI/UX'];
   const designTags = ['Design', 'Logo Design', 'Brand Guideline', 'Printing'];
   const marketingTags = [
@@ -111,7 +110,7 @@ const WorkHero = () => {
                     data-aos-easing="ease"
                     data-aos-duration="400"
                   >
-                    <Link href={`/work/${web.slug}`} className="block mb-10">
+                    <div className="block mb-10">
                       <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                         <Image
                           src={web.image}
@@ -120,12 +119,10 @@ const WorkHero = () => {
                           className="object-cover hover:scale-105 transition duration-300"
                         />
                       </div>
-                    </Link>
-                    <Link href={`/work/${web.slug}`}>
-                      <h2 className="text-2xl font-semibold text-darkIndigo">
-                        {web.title}
-                      </h2>
-                    </Link>
+                    </div>
+                    <h2 className="text-2xl font-semibold text-darkIndigo">
+                      {web.title}
+                    </h2>
                     <p className="mt-4 text-darkGray truncate-one-line">
                       {web.description}
                     </p>
@@ -179,7 +176,7 @@ const WorkHero = () => {
                     data-aos-duration="400"
                     key={brand.slug}
                   >
-                    <Link href={`/work/${brand.slug}`} className="block mb-10">
+                    <div className="block mb-10">
                       <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                         <Image
                           src={brand.image}
@@ -188,12 +185,10 @@ const WorkHero = () => {
                           className="object-cover hover:scale-105 transition duration-300"
                         />
                       </div>
-                    </Link>
-                    <Link href={`/work/${brand.slug}`}>
-                      <h2 className="text-2xl font-semibold text-darkIndigo">
-                        {brand.title}
-                      </h2>
-                    </Link>
+                    </div>
+                    <h2 className="text-2xl font-semibold text-darkIndigo">
+                      {brand.title}
+                    </h2>
                     <p className="mt-4 text-darkGray truncate-one-line">
                       {brand.description}
                     </p>
@@ -247,7 +242,7 @@ const WorkHero = () => {
                     data-aos-duration="400"
                     key={brand.slug}
                   >
-                    <Link href={`/work/${brand.slug}`} className="block mb-10">
+                    <div className="block mb-10">
                       <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                         <Image
                           src={brand.image}
@@ -256,12 +251,10 @@ const WorkHero = () => {
                           className="object-cover hover:scale-105 transition duration-300"
                         />
                       </div>
-                    </Link>
-                    <Link href={`/work/${brand.slug}`}>
-                      <h2 className="text-2xl font-semibold text-darkIndigo">
-                        {brand.title}
-                      </h2>
-                    </Link>
+                    </div>
+                    <h2 className="text-2xl font-semibold text-darkIndigo">
+                      {brand.title}
+                    </h2>
                     <p className="mt-4 text-darkGray truncate-one-line">
                       {brand.description}
                     </p>
@@ -315,7 +308,7 @@ const WorkHero = () => {
                     data-aos-duration="400"
                     key={brand.slug}
                   >
-                    <Link href={`/work/${brand.slug}`} className="block mb-10">
+                    <div className="block mb-10">
                       <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                         <Image
                           src={brand.image}
@@ -324,12 +317,10 @@ const WorkHero = () => {
                           className="object-cover hover:scale-105 transition duration-300"
                         />
                       </div>
-                    </Link>
-                    <Link href={`/work/${brand.slug}`}>
-                      <h2 className="text-2xl font-semibold text-darkIndigo">
-                        {brand.title}
-                      </h2>
-                    </Link>
+                    </div>
+                    <h2 className="text-2xl font-semibold text-darkIndigo">
+                      {brand.title}
+                    </h2>
                     <p className="mt-4 text-darkGray truncate-one-line">
                       {brand.description}
                     </p>

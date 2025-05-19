@@ -23,7 +23,7 @@ export default function EditPage() {
     );
 
   return (
-    <div className="px-4 md:px-8">
+    <div>
       <RichTextEditor initialData={project} />
     </div>
   );
