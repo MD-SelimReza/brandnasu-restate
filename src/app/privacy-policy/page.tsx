@@ -7,7 +7,7 @@ import { privacyPolicyEffectiveDate, privacyPolicySections } from '@/data';
 
 const PrivacyPage = () => {
   return (
-    <main className="lg:py-16 py-12 max-w-[1440px] mx-auto lg:px-10 px-5 min-h-[calc(100vh-80px)]">
+    <main className="lg:py-32 md:py-24 py-16 max-w-[1440px] mx-auto lg:px-10 px-5 min-h-[calc(100vh-80px)]">
       <FadeInSection>
         <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800">
           Privacy Policy

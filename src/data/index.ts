@@ -562,7 +562,7 @@ export const careerFaq = [
   },
 ];
 
-export const termsLastUpdated = 'May 13, 2025';
+export const termsLastUpdated = 'May 22, 2025';
 
 export const termsSections = [
   {
@@ -652,19 +652,19 @@ export const termsSections = [
       'These Terms are governed by and construed in accordance with the laws of the State of [Insert U.S. State], without regard to conflict of law principles. You agree to submit to the exclusive jurisdiction of the courts located in [Insert County, State] for any dispute arising from these Terms.',
     ],
   },
-  {
-    heading: 'Contact Us',
-    paragraphs: [
-      'For questions or concerns regarding these Terms, please contact:',
-      'BrandNasu LLC',
-      'Registered in New Mexico, USA',
-      '📧 Email: hello@brandnasu.com',
-      '🌐 Website: https://brandnasu.com/',
-    ],
-  },
+  // {
+  //   heading: 'Contact Us',
+  //   paragraphs: [
+  //     'For questions or concerns regarding these Terms, please contact:',
+  //     'BrandNasu LLC',
+  //     'Registered in New Mexico, USA',
+  //     '📧 Email: hello@brandnasu.com',
+  //     '🌐 Website: https://brandnasu.com/',
+  //   ],
+  // },
 ];
 
-export const privacyPolicyEffectiveDate = 'May 13, 2025';
+export const privacyPolicyEffectiveDate = 'May 22, 2025';
 
 export const privacyPolicySections = [
   {
@@ -772,14 +772,14 @@ export const privacyPolicySections = [
       'We may update this policy periodically. When we do, we’ll revise the “Effective Date” above. Continued use of the site or services implies acceptance of any updates.',
     ],
   },
-  {
-    heading: 'Contact Information',
-    paragraphs: [
-      'For privacy-related inquiries, contact:',
-      'BrandNasu LLC',
-      'Registered in New Mexico, USA',
-      '📧 Email: hello@brandnasu.com',
-      '🌐 Website: https://brandnasu.com/',
-    ],
-  },
+  // {
+  //   heading: 'Contact Information',
+  //   paragraphs: [
+  //     'For privacy-related inquiries, contact:',
+  //     'BrandNasu LLC',
+  //     'Registered in New Mexico, USA',
+  //     '📧 Email: hello@brandnasu.com',
+  //     '🌐 Website: https://brandnasu.com/',
+  //   ],
+  // },
 ];
