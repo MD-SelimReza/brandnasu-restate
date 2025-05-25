@@ -144,12 +144,12 @@ export default function Navbar() {
 
           {/* Buttons */}
           {/* <div className="hidden xl:flex text-base border-2  border-red-500"> */}
-          <Link
+          {/* <Link
             href="/admin/projects/add"
             className="px-4 py-1 block bg-indigo text-white border-[0.1px] border-indigo transition-all duration-200 rounded-full"
           >
             Add Project
-          </Link>
+          </Link> */}
           <Link
             href="https://client.brandnasu.com/sign-in"
             className="hidden xl:block px-4 py-1 border-[0.1px] hover:bg-indigo hover:border-indigo transition-all duration-200 border-lightIndigo/25 text-lightIndigo rounded-full"

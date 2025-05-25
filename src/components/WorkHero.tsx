@@ -14,43 +14,6 @@ const WorkHero = () => {
     setAnimateOnce(true);
   }, []);
 
-  // const { projects, loading } = useProjects();
-
-  // console.log(projects);
-
-  // if (loading)
-  //   return <p className="flex justify-center items-center h-60">Loading...</p>;
-  // const webTags = ['Development', 'Website', 'Landing Page', 'UI/UX'];
-  // const designTags = ['Design', 'Logo Design', 'Brand Guideline', 'Printing'];
-  // const marketingTags = [
-  //   'Marketing',
-  //   'Pitch Deck',
-  //   'Social Media Branding',
-  //   'Signage',
-  // ];
-  // const videoTags = ['Branding Video', 'Listing Video', 'Video Ads'];
-
-  // const webProjects = projects.filter((p) =>
-  //   p.tag.some((tag) => webTags.includes(tag))
-  // );
-  // const designProjects = projects.filter(
-  //   (p) =>
-  //     !webProjects.includes(p) && p.tag.some((tag) => designTags.includes(tag))
-  // );
-  // const marketingProjects = projects.filter(
-  //   (p) =>
-  //     !webProjects.includes(p) &&
-  //     !designProjects.includes(p) &&
-  //     p.tag.some((tag) => marketingTags.includes(tag))
-  // );
-  // const videoProjects = projects.filter(
-  //   (p) =>
-  //     !webProjects.includes(p) &&
-  //     !designProjects.includes(p) &&
-  //     !marketingProjects.includes(p) &&
-  //     p.tag.some((tag) => videoTags.includes(tag))
-  // );
-
   const { projects, loading } = useProjects();
 
   if (loading)

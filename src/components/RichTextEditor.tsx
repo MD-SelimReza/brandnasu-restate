@@ -172,6 +172,8 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
     clearFieldError('image');
   };
 
+  console.log(uploadedImageUrl);
+
   const clearFieldError = (field: string) => {
     setErrors((prev) => {
       const newErrors = { ...prev };
@@ -272,7 +274,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
       <div className="max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
         <div>
           <div className="flex justify-between gap-6 mb-4">
-            <div className="w-2/3">
+            <div className="w-[60%]">
               <input
                 type="text"
                 placeholder="Title"
@@ -288,7 +290,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
               )}
             </div>
 
-            <div className="w-full md:w-1/3">
+            <div className="w-full md:w-[40%]">
               <div className="border rounded-lg p-3 flex flex-wrap gap-2 items-center relative">
                 {tags.map((tag, index) => (
                   <span
