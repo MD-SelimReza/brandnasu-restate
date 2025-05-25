@@ -93,7 +93,7 @@ const OurWorks = () => {
       <div className="max-w-[1920px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
           {filteredProjects.length > 0 ? (
-            filteredProjects.map((project) => (
+            filteredProjects.slice(0, 3).map((project) => (
               <div
                 key={project.slug}
                 data-aos="fade-up"

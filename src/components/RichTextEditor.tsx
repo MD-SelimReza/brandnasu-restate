@@ -213,16 +213,30 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
         : await axios.post('/api/projects', formattedData);
 
       if (res.status === 200 || res.status === 201) {
-        // 👇 REDIRECT based on first tag
         const activeService = tags[0];
         const section = serviceRedirectMap[activeService];
-        if (section) {
-          router.push(`/work?section=${section}`);
-        } else {
-          router.push('/work');
-        }
-        setErrors({});
+        const targetUrl = section ? `/work?section=${section}` : '/work';
 
+        // ✅ Open new tab
+        window.open(targetUrl, '_blank');
+
+        // ✅ Reset form fields
+        setTitle('');
+        setShortDesc('');
+        setUploadedImageUrl(null);
+        setTags([]);
+        setTagInput('');
+        setFirstTagSelected(false);
+        if (editor) {
+          editor.commands.clearContent();
+        }
+
+        // ✅ Redirect current page
+        if (initialData) {
+          router.push('/admin/projects');
+        }
+
+        setErrors({});
         return;
       } else {
         return;
