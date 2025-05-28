@@ -1,5 +1,9 @@
 import { NextRequest } from 'next/server';
 import AWS from 'aws-sdk';
+import dotenv from 'dotenv';
+dotenv.config();
+
+export const runtime = 'nodejs';
 
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
@@ -36,7 +40,7 @@ export async function POST(req: NextRequest) {
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (err) {
-    console.error(err);
+    console.error('Upload error:', err);
     return new Response(JSON.stringify({ error: 'Upload failed' }), {
       status: 500,
     });
