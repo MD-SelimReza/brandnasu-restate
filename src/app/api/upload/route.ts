@@ -3,8 +3,6 @@ import AWS from 'aws-sdk';
 import dotenv from 'dotenv';
 dotenv.config();
 
-export const runtime = 'nodejs';
-
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
   const file = formData.get('file') as File;
