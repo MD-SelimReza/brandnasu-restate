@@ -1,65 +1,44 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { PutObjectCommand } from '@aws-sdk/client-s3';
-import { s3Client, BUCKET_NAME, R2_ENDPOINT_DEV } from '@/lib/s3Client';
-import FileModel from '@/models/fileModel';
-import { connectDB } from '@/lib/mongo';
+import { NextRequest } from 'next/server';
+import AWS from 'aws-sdk';
 
 export async function POST(req: NextRequest) {
+  const formData = await req.formData();
+  const file = formData.get('file') as File;
+
+  if (!file) {
+    return new Response(JSON.stringify({ error: 'No file uploaded' }), {
+      status: 400,
+    });
+  }
+
+  const arrayBuffer = await file.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+
+  const s3 = new AWS.S3({
+    endpoint: new AWS.Endpoint('https://nyc3.digitaloceanspaces.com'),
+    accessKeyId: process.env.DO_SPACES_KEY,
+    secretAccessKey: process.env.DO_SPACES_SECRET,
+    region: 'nyc3',
+  });
+
+  const params = {
+    Bucket: 'brandnasu-space',
+    Key: `uploads/${file.name}`,
+    Body: buffer,
+    ACL: 'public-read',
+    ContentType: file.type,
+  };
+
   try {
-    await connectDB();
-
-    // Get form data
-    const formData = await req.formData();
-    const file = formData.get('files') as File | null;
-
-    if (!file) {
-      return NextResponse.json(
-        { message: 'No file uploaded' },
-        { status: 400 }
-      );
-    }
-
-    const buffer = Buffer.from(await file.arrayBuffer());
-    const fileName = `${BUCKET_NAME}/${Date.now()}-${file.name}`;
-
-    // Upload to Cloudflare R2
-    const command = new PutObjectCommand({
-      Bucket: BUCKET_NAME,
-      Key: fileName,
-      Body: buffer,
-      ContentType: file.type,
+    const data = await s3.upload(params).promise();
+    return new Response(JSON.stringify({ url: data.Location }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
     });
-
-    await s3Client.send(command);
-
-    // Include bucket name in the file URL
-    const fileUrl = `${R2_ENDPOINT_DEV}/${fileName}`;
-
-    // Save to DB
-    const savedFile = await FileModel.create({
-      filename: fileName,
-      url: fileUrl,
-      bucket: BUCKET_NAME,
+  } catch (err) {
+    console.error(err);
+    return new Response(JSON.stringify({ error: 'Upload failed' }), {
+      status: 500,
     });
-
-    return NextResponse.json(
-      { message: 'File uploaded', file: savedFile },
-      { status: 201 }
-    );
-  } catch (error: unknown) {
-    let errorMessage = 'Unknown error';
-    if (error instanceof Error) {
-      errorMessage = error.message;
-    }
-    return NextResponse.json(
-      { message: 'File upload failed', error: errorMessage },
-      { status: 500 }
-    );
   }
 }
-
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};

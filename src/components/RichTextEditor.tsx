@@ -31,7 +31,6 @@ import axios from 'axios';
 import Image from 'next/image';
 import { FiUpload } from 'react-icons/fi';
 import MenuBar from './ui/MenuBar';
-import { uploadImageToR2 } from '@/lib/upload';
 import { useRouter } from 'next/navigation';
 
 interface RichTextEditorProps {
@@ -167,12 +166,25 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
   const handleBannerUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    const uploadedUrl = await uploadImageToR2(file);
-    setUploadedImageUrl(uploadedUrl);
-    clearFieldError('image');
-  };
 
-  console.log(uploadedImageUrl);
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) throw new Error('Failed to upload');
+
+      const data = await res.json();
+      setUploadedImageUrl(data.url);
+      clearFieldError('image');
+    } catch (err) {
+      console.error('Upload failed:', err);
+    }
+  };
 
   const clearFieldError = (field: string) => {
     setErrors((prev) => {
