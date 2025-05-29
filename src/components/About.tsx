@@ -61,25 +61,25 @@ const portfolioInfo = [
 const teamMembers = [
   {
     name: 'Suvas Bin Monir',
-    title: 'Senior Executive Officer',
+    title: 'Chief Executive Officer',
     image:
       'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/team-suvo.jpg',
   },
   {
     name: 'Ab Hadi',
-    title: 'Senior UI/UX Designer',
+    title: 'Senior Graphic Designer',
     image:
       'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/team-abhadi.jpg',
   },
   {
     name: 'Saikat Somir',
-    title: 'Senior Full Stack Web Developer',
+    title: 'Web Developer',
     image:
       'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/team-saikat.jpg',
   },
   {
     name: 'Md. Selim Reza',
-    title: 'Full Stack Web Developer',
+    title: 'Web Developer',
     image:
       'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/team-selim-reza.jpg',
   },
