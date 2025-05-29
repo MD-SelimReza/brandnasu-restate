@@ -26,7 +26,7 @@ const CatalogCard = ({
         <div className="mb-6 relative w-full aspect-[16/9] rounded-lg">
           <Image
             src={image}
-            layout="fill"
+            fill
             alt={title}
             className="rounded-lg object-cover"
           />

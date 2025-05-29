@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 
 export default function ScrollToSectionClient() {
   const searchParams = useSearchParams();
-  const section = searchParams.get('section');
+  const section = searchParams?.get('section');
 
   useEffect(() => {
     if (section) {

@@ -150,8 +150,8 @@ const WhatWeHelp = () => {
               <Image
                 src={item.image}
                 alt="Image"
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
               />
 
               {/* Gradient overlay at bottom */}

@@ -205,7 +205,7 @@ const About = () => {
             <Image
               src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/hero.jpg"
               alt="About Hero"
-              layout="fill"
+              fill
               className="object-cover"
             />
           </div>
@@ -861,7 +861,7 @@ const About = () => {
                       <Image
                         src={member.image}
                         alt={member.name}
-                        layout="fill"
+                        fill
                         className="object-cover"
                       />
                     </div>

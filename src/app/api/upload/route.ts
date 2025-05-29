@@ -1,6 +1,8 @@
 import { NextRequest } from 'next/server';
-import AWS from 'aws-sdk';
+import { S3Client } from '@aws-sdk/client-s3';
+import { Upload } from '@aws-sdk/lib-storage';
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 export async function POST(req: NextRequest) {
@@ -16,24 +18,33 @@ export async function POST(req: NextRequest) {
   const arrayBuffer = await file.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
 
-  const s3 = new AWS.S3({
-    endpoint: new AWS.Endpoint('https://nyc3.digitaloceanspaces.com'),
-    accessKeyId: process.env.DO_SPACES_KEY,
-    secretAccessKey: process.env.DO_SPACES_SECRET,
+  const client = new S3Client({
+    endpoint: 'https://nyc3.digitaloceanspaces.com',
     region: 'nyc3',
+    credentials: {
+      accessKeyId: process.env.DO_SPACES_KEY!,
+      secretAccessKey: process.env.DO_SPACES_SECRET!,
+    },
+    forcePathStyle: false,
   });
 
-  const params = {
+  const uploadParams = {
     Bucket: 'brandnasu-space',
     Key: `uploads/${file.name}`,
     Body: buffer,
-    ACL: 'public-read',
+    ACL: 'public-read' as const,
     ContentType: file.type,
   };
 
   try {
-    const data = await s3.upload(params).promise();
-    return new Response(JSON.stringify({ url: data.Location }), {
+    const uploader = new Upload({
+      client,
+      params: uploadParams,
+    });
+
+    const result = await uploader.done();
+
+    return new Response(JSON.stringify({ url: result.Location }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });

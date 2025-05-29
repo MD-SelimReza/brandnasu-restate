@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Image from 'next/image';
 import CtaSection from './CtaSection';
 import { motion } from 'framer-motion';
@@ -121,7 +121,7 @@ const WorkHero = () => {
                         <Image
                           src={web.image}
                           alt={web.title}
-                          layout="fill"
+                          fill
                           className="object-cover hover:scale-105 transition duration-300"
                         />
                       </div>
@@ -187,7 +187,7 @@ const WorkHero = () => {
                         <Image
                           src={brand.image}
                           alt={brand.title}
-                          layout="fill"
+                          fill
                           className="object-cover hover:scale-105 transition duration-300"
                         />
                       </div>
@@ -253,7 +253,7 @@ const WorkHero = () => {
                         <Image
                           src={brand.image}
                           alt={brand.title}
-                          layout="fill"
+                          fill
                           className="object-cover hover:scale-105 transition duration-300"
                         />
                       </div>
@@ -319,7 +319,7 @@ const WorkHero = () => {
                         <Image
                           src={brand.image}
                           alt={brand.title}
-                          layout="fill"
+                          fill
                           className="object-cover hover:scale-105 transition duration-300"
                         />
                       </div>
@@ -351,7 +351,9 @@ const WorkHero = () => {
           <CtaSection />
         </div>
       </section>
-      <ScrollToSectionClient />
+      <Suspense fallback={null}>
+        <ScrollToSectionClient />
+      </Suspense>
     </>
   );
 };

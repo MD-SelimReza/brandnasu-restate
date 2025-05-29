@@ -41,12 +41,9 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-5 py-4 max-w-[1440px] mx-auto relative">
         {/* Logo */}
         <Link href="/">
-          <Image
-            src={logo}
-            alt="logo"
-            objectFit="fill"
-            className="lg:w-32 md:w-28 w-24"
-          />
+          <div className="relative lg:w-32 md:w-28 w-24">
+            <Image src={logo} alt="logo" className="object-cover" />
+          </div>
         </Link>
 
         <div className="flex items-center space-x-4 text-lg">

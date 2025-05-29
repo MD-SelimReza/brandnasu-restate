@@ -45,12 +45,7 @@ const CtaSection = () => {
           </div>
         </div>
         <div className="absolute lg:w-[350px] lg:h-[350px] md:w-[150px] md:h-[150px] w-[130px] h-[130px] bottom-10 lg:right-10 md:right-4 right-2">
-          <Image
-            src={shuttle}
-            alt="Shuttle"
-            layout="fill"
-            className="object-cover"
-          />
+          <Image src={shuttle} alt="Shuttle" fill className="object-cover" />
         </div>
       </div>
     </div>

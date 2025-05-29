@@ -109,7 +109,7 @@ export default function ProjectsAdmin() {
                       <Image
                         src={project.image}
                         alt={project.title}
-                        layout="fill"
+                        fill
                         className="object-cover"
                         loading="lazy"
                       />

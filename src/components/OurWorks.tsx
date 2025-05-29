@@ -102,7 +102,7 @@ const OurWorks = () => {
                     <Image
                       src={project.image}
                       alt={project.title}
-                      layout="fill"
+                      fill
                       className="object-cover rounded-xl hover:scale-105 transition duration-300"
                     />
                   </div>
