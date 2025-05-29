@@ -4,10 +4,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Button from './ui/Button';
 import Image from 'next/image';
-import image1 from '../../public/real-estate-agent.jpeg';
-import image2 from '../../public/teams-brokers.jpeg';
-import image3 from '../../public/marketing-manager.png';
-import image4 from '../../public/dev-investor.jpeg';
 import { useInView } from 'react-intersection-observer';
 
 const contentItems = [
@@ -15,25 +11,29 @@ const contentItems = [
     title: 'Real Estate Agents',
     desc: `From new agents building a personal brand to experienced professionals managing multiple listings, we deliver consistent, high-quality marketing and design that helps you stay visible and close more deals.`,
     className: '',
-    image: image1,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/real-estate-agent.jpeg',
   },
   {
     title: 'Real Estate Teams & Brokers',
     desc: `We help teams and brokerages maintain a strong, unified brand across agents and platforms by providing scalable creative support without the overhead of an in-house team.`,
     className: 'lg:mt-48',
-    image: image2,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/teams-brokers.jpeg',
   },
   {
     title: 'Marketing Managers',
     desc: `In-house marketing teams rely on us to handle listing promotions, brand materials, and campaign visuals, so deadlines are met and quality is never compromised.`,
     className: 'lg:-mt-48',
-    image: image3,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/marketing-manager.png',
   },
   {
     title: 'Developers & Investors',
     desc: `We help real estate developers and investors launch, fund, and promote their projects through branding, pitch decks, landing pages, and high-converting marketing assets that impress buyers, partners, and stakeholders.`,
     className: '',
-    image: image4,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/dev-investor.jpeg',
   },
 ];
 

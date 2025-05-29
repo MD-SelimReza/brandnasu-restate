@@ -1,9 +1,10 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { MdPriceChange } from 'react-icons/md';
 
 type CatalogItem = {
-  image: StaticImageData;
+  id: number;
+  image: string;
   title: string;
   link: string;
   price: string;

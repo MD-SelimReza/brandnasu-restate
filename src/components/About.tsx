@@ -1,12 +1,6 @@
 'use client';
 
 import React from 'react';
-import thumbnail from '../../public/hero.jpg';
-import image1 from '../../public/gallery2.jpg';
-import image2 from '../../public/gallery4.jpg';
-import image3 from '../../public/gallery3.jpg';
-import image4 from '../../public/gallery1.jpg';
-import about from '../../public/about.jpg';
 import brand1 from '../../public/Logo/l1.svg';
 import brand2 from '../../public/Logo/l2.svg';
 import brand3 from '../../public/Logo/l3.svg';
@@ -24,12 +18,6 @@ import empowering from '../../public/Icons/empowering.svg';
 import graphic from '../../public/whiteicon_graphic.svg';
 import marketing from '../../public/whiteicon_marketing.svg';
 import video from '../../public/whiteicon_video.svg';
-import mission1 from '../../public/mission1.jpg';
-import mission2 from '../../public/mission2.jpg';
-import mission3 from '../../public/mission3.jpg';
-import team1 from '../../public/team1.jpg';
-import team2 from '../../public/team2.jpg';
-import team3 from '../../public/team3.jpg';
 import team4 from '../../public/team4.jpg';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -73,19 +61,22 @@ const portfolioInfo = [
 
 const teamMembers = [
   {
-    name: 'Serhiy Yaroslav',
-    title: 'Investment Analyst',
-    image: team1,
+    name: 'Suvas Bin Monir',
+    title: 'Senior Executive Officer',
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Shuvo-Vai-Shadow.jpg',
   },
   {
-    name: 'Pavlo Bohdan',
-    title: 'Financial Advisor',
-    image: team2,
+    name: 'AB Hadi',
+    title: 'Senior UI/UX Designer',
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Ab-Hadi.jpg',
   },
   {
-    name: 'Emma Sophia',
-    title: 'Fund Manager',
-    image: team3,
+    name: 'Md. Selim Reza',
+    title: 'Full Stack Web Developer',
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Selim-Reza.jpg',
   },
   {
     name: 'Jordan Eugenio',
@@ -199,7 +190,7 @@ const About = () => {
           <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/4 lg:w-[80%] hidden md:block">
             <div className="relative h-full w-full">
               <Image
-                src={thumbnail}
+                src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/hero.jpg"
                 alt="Thumbnail Image"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 78vw"
@@ -212,7 +203,7 @@ const About = () => {
 
           <div className="relative w-full md:hidden h-[300px]">
             <Image
-              src={thumbnail}
+              src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/hero.jpg"
               alt="About Hero"
               layout="fill"
               className="object-cover"
@@ -464,7 +455,7 @@ const About = () => {
             {/* Right Div (Image) */}
             <div className="w-full lg:w-1/2 rounded-xl overflow-hidden">
               <Image
-                src={about}
+                src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/about.jpg"
                 alt="Investment analysis"
                 width={700}
                 height={400}
@@ -571,7 +562,7 @@ const About = () => {
                 className="relative overflow-hidden rounded-xl"
               >
                 <Image
-                  src={image1}
+                  src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/gallery2.jpg"
                   alt="Portfolio Image 1"
                   width={2048}
                   height={2048}
@@ -587,7 +578,7 @@ const About = () => {
                 className="relative overflow-hidden rounded-xl"
               >
                 <Image
-                  src={image2}
+                  src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/gallery4.jpg"
                   alt="Portfolio Image 2"
                   width={2048}
                   height={2048}
@@ -606,7 +597,7 @@ const About = () => {
                 className="relative overflow-hidden rounded-xl"
               >
                 <Image
-                  src={image4}
+                  src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/gallery1.jpg"
                   alt="Portfolio Image 3"
                   width={2048}
                   height={2048}
@@ -622,7 +613,7 @@ const About = () => {
                 className="relative overflow-hidden rounded-xl"
               >
                 <Image
-                  src={image3}
+                  src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/gallery3.jpg"
                   alt="Portfolio Image 4"
                   width={2048}
                   height={2048}
@@ -677,7 +668,7 @@ const About = () => {
                 </div>
                 <div className="flex-1 relative w-full aspect-square overflow-hidden">
                   <Image
-                    src={mission1}
+                    src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/mission1.jpg"
                     alt="Secure Authentication"
                     fill
                     className="object-cover hover:scale-105 transition duration-500 object-right-top"
@@ -694,7 +685,7 @@ const About = () => {
               >
                 <div className="relative w-full aspect-square overflow-hidden">
                   <Image
-                    src={mission2}
+                    src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/mission2.jpg"
                     alt="Trusted Investors"
                     fill
                     className="object-cover hover:scale-105 transition duration-500 object-top"
@@ -723,7 +714,7 @@ const About = () => {
                 </div>
                 <div className="flex-1 relative w-full aspect-square overflow-hidden">
                   <Image
-                    src={mission3}
+                    src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/mission3.jpg"
                     alt="Data Security"
                     fill
                     className="object-cover hover:scale-105 transition duration-500 object-right-bottom"

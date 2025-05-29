@@ -4,19 +4,58 @@ import React from 'react';
 import Image from 'next/image';
 
 const galleryImages = [
-  { title: 'Image 1', icon: '/career1.jpg' },
-  { title: 'Image 2', icon: '/career2.jpg' },
-  { title: 'Image 3', icon: '/career3.jpg' },
-  { title: 'Image 4', icon: '/career4.jpg' },
-  { title: 'Image 5', icon: '/career5.jpg' },
-  { title: 'Image 6', icon: '/career6.jpg' },
-  { title: 'Image 7', icon: '/career7.jpg' },
-  { title: 'Image 8', icon: '/career8.jpg' },
-  { title: 'Image 9', icon: '/career9.jpg' },
-  { title: 'Image 10', icon: '/career10.jpg' },
-  { title: 'Image 11', icon: '/career11.jpg' },
-  { title: 'Image 12', icon: '/career12.jpg' },
-  { title: 'Image 13', icon: '/career13.jpg' },
+  {
+    title: 'Image 1',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career1.jpg',
+  },
+  {
+    title: 'Image 2',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career2.jpg',
+  },
+  {
+    title: 'Image 3',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career3.jpg',
+  },
+  {
+    title: 'Image 4',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career4.jpg',
+  },
+  {
+    title: 'Image 5',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career5.jpg',
+  },
+  {
+    title: 'Image 6',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career6.jpg',
+  },
+  {
+    title: 'Image 7',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career7.jpg',
+  },
+  {
+    title: 'Image 8',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career8.jpg',
+  },
+  {
+    title: 'Image 9',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career9.jpg',
+  },
+  {
+    title: 'Image 10',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career10.jpg',
+  },
+  {
+    title: 'Image 11',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career11.jpg',
+  },
+  {
+    title: 'Image 12',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career12.jpg',
+  },
+  {
+    title: 'Image 13',
+    icon: 'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/career13.jpg',
+  },
 ];
 
 const Gallery = () => {

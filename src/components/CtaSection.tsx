@@ -30,16 +30,16 @@ const CtaSection = () => {
           <div className="lg:mt-20 md:mt-16 mt-10 mb-5">
             <div className="flex flex-col md:flex-row gap-5 justify-normal mt-10 z-20">
               <Button
-                bgColor="bg-lightIndigo"
-                textColor="text-darkIndigo"
-                label="Book a Call"
-                href="/pricing/#book-call"
-              />
-              <Button
                 bgColor="bg-indigo"
                 textColor="text-white"
                 label="Get Started"
                 href="/pricing"
+              />
+              <Button
+                bgColor="bg-lightIndigo"
+                textColor="text-darkIndigo"
+                label="Book a Call"
+                href="/pricing/#book-call"
               />
             </div>
           </div>

@@ -14,18 +14,6 @@ import web from '../../public/Icons/web.svg';
 import graphic from '../../public/Icons/graphic.svg';
 import marketing from '../../public/Icons/marketing.svg';
 import video from '../../public/Icons/video.svg';
-import catalog1 from '../../public/catalog1.jpg';
-import catalog2 from '../../public/catalog2.jpg';
-import catalog3 from '../../public/catalog3.jpg';
-import catalog4 from '../../public/catalog4.jpg';
-import catalog5 from '../../public/catalog5.jpg';
-import catalog6 from '../../public/catalog6.jpg';
-import catalog7 from '../../public/catalog7.jpg';
-import catalog8 from '../../public/catalog8.jpg';
-import catalog9 from '../../public/catalog9.jpg';
-import catalog10 from '../../public/catalog10.jpg';
-import catalog11 from '../../public/catalog11.jpg';
-import catalog12 from '../../public/catalog12.jpg';
 
 export const serviceSections = [
   {
@@ -133,7 +121,8 @@ export const serviceSections = [
 export const catalogItems = [
   {
     id: 1,
-    image: catalog1,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog1.jpg',
     title: 'Real Estate - UI/UX Design',
     link: 'https://client.brandnasu.com/catalog/real-estate-ulux-design-1745304233591512/checkout',
     price: '$195 - $495',
@@ -143,7 +132,8 @@ export const catalogItems = [
   },
   {
     id: 2,
-    image: catalog2,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog2.jpg',
     title: 'Real Estate - Custom Website Development',
     link: 'https://client.brandnasu.com/catalog/real-estate-custom-website-development-1745302418147241/checkout',
     price: '$95 - $195',
@@ -153,7 +143,8 @@ export const catalogItems = [
   },
   {
     id: 3,
-    image: catalog3,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog3.jpg',
     title: 'Real Estate - Landing Page Development',
     link: 'https://client.brandnasu.com/catalog/real-estate-landing-page-development-1745301112487468/checkout',
     price: '$75 - $125',
@@ -163,7 +154,8 @@ export const catalogItems = [
   },
   {
     id: 4,
-    image: catalog4,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog4.jpg',
     title: 'Real Estate - Logo Design',
     link: 'https://client.brandnasu.com/catalog/real-estate-logo-design-1745222839236304/checkout',
     price: '$125 - $295',
@@ -173,7 +165,8 @@ export const catalogItems = [
   },
   {
     id: 5,
-    image: catalog5,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog5.jpg',
     title: 'Real Estate - Brand Style Guide',
     link: 'https://client.brandnasu.com/catalog/real-estate-brand-style-guide-1745213216131538/checkout',
     price: '$145 - $495',
@@ -183,7 +176,8 @@ export const catalogItems = [
   },
   {
     id: 6,
-    image: catalog6,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog6.jpg',
     title: 'Real Estate - Social Media Branding',
     link: 'https://client.brandnasu.com/catalog/social-media-branding-1745211112790372/checkout',
     price: '$95 - $195',
@@ -193,7 +187,8 @@ export const catalogItems = [
   },
   {
     id: 7,
-    image: catalog7,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog7.jpg',
     title: 'Real Estate - Flyer, Brochure & Postcard Design',
     link: 'https://client.brandnasu.com/catalog/real-estate-flyer-brochure-and-postcard-design-1745055401831160/checkout',
     price: '$95 - $395',
@@ -203,7 +198,8 @@ export const catalogItems = [
   },
   {
     id: 8,
-    image: catalog8,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog8.jpg',
     title: 'Real Estate - Signage Design',
     link: 'https://client.brandnasu.com/catalog/real-estate-signage-design-1745054144198136/checkout',
     price: '$145 - $495',
@@ -213,7 +209,8 @@ export const catalogItems = [
   },
   {
     id: 9,
-    image: catalog9,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog9.jpg',
     title: 'Real Estate - Pitch Deck Design',
     link: 'https://client.brandnasu.com/catalog/real-estate-pitch-deck-design-1745052563160132/checkout',
     price: '$195 - $695',
@@ -223,7 +220,8 @@ export const catalogItems = [
   },
   {
     id: 10,
-    image: catalog10,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog10.jpg',
     title: 'Real Estate - Branding Video',
     link: 'https://client.brandnasu.com/catalog/real-estate-branding-video-1745046042160171/checkout',
     price: '$245 - $695',
@@ -233,7 +231,8 @@ export const catalogItems = [
   },
   {
     id: 11,
-    image: catalog11,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog11.jpg',
     title: 'Real Estate - Listing Video',
     link: 'https://client.brandnasu.com/catalog/real-estate-listing-videos-1745044921997631/checkout',
     price: '$195 - $595',
@@ -243,230 +242,14 @@ export const catalogItems = [
   },
   {
     id: 12,
-    image: catalog12,
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog12.jpg',
     title: 'Real Estate - Video Ads Creative',
     link: 'https://client.brandnasu.com/catalog/real-estate-video-ads-creative-1745040881594561/checkout',
     price: '$145 - $495',
     paymentType: 'One time payment',
     description:
       'Supercharge your marketing with creative, high-quality ad videos that connect with your audience and drive results.',
-  },
-];
-
-export const webList = [
-  {
-    title: 'UrbanNest - Website Development',
-    description:
-      'IDX-integrated real estate site crafted for seamless property search.',
-    image:
-      'https://img.freepik.com/free-photo/homepage-seen-computer-screen_23-2149416723.jpg',
-    slug: 'urbannest-website-development',
-    tag: ['Development', 'Website', 'Project'],
-  },
-  {
-    title: 'SkyVista - Landing Page Design',
-    description:
-      'High-converting landing page focused on generating quality leads.',
-    image:
-      'https://img.freepik.com/free-vector/flat-design-real-estate-project-landing-page_23-2149908746.jpg',
-    slug: 'skyvista-landing-page-design',
-    tag: ['Development', 'Landing Page', 'Project'],
-  },
-  {
-    title: 'HavenSpace - UI/UX Design',
-    description:
-      'Modern UI/UX optimized for intuitive browsing and engagement.',
-    image:
-      'https://img.freepik.com/premium-vector/programming-web-banner-best-programming-languages-social-media-creative-concept-idea-desktop-pc_122058-1961.jpg',
-    slug: 'havenspace-ui-ux-design',
-    tag: ['Development', 'UI/UX', 'Project'],
-  },
-  {
-    title: 'MetroCity - Website Development',
-    description:
-      'Mobile-responsive site with listing management and lead capture.',
-    image:
-      'https://img.freepik.com/premium-psd/dream-house-sale-landing-page_872901-1688.jpg',
-    slug: 'metrocity-website-development',
-    tag: ['Development', 'Website', 'Project'],
-  },
-  {
-    title: 'GreenBrick - Landing Page Design',
-    description: 'Conversion-focused landing page tailored for local realtors.',
-    image:
-      'https://img.freepik.com/free-vector/flat-abstract-real-estate-landing-page_23-2149034508.jpg',
-    slug: 'greenbrick-landing-page-design',
-    tag: ['Development', 'Landing Page', 'Project'],
-  },
-  {
-    title: 'PrimeNest Realty – Logo Design',
-    description: 'Bold and modern logo crafted for a premium property firm.',
-    image:
-      'https://img.freepik.com/free-vector/real-estate-logo-template_1156-724.jpg',
-    slug: 'primenest-realty-logo-design',
-    tag: ['Design', 'Logo Design', 'PrimeNest'],
-  },
-  {
-    title: 'Skyline Homes – Brand Style Guide',
-    description:
-      'Defined brand colors, fonts, and visual rules for a consistent identity.',
-    image:
-      'https://fliphtml5.com/learning-center/wp-content/uploads/2023/04/Two-Toned-Brand-Guideline-Template.webp',
-    slug: 'skyline-homes-brand-style-guide',
-    tag: ['Design', 'Brand Guideline', 'Skyline Homes'],
-  },
-  {
-    title: 'UrbanVista – Brochure Design',
-    description:
-      'Elegant brochure highlighting key listings and agent expertise.',
-    image:
-      'https://designshack.net/wp-content/uploads/bold-company-profile-brochure-template-823-1.jpg',
-    slug: 'urbanvista-brochure-design',
-    tag: ['Design', 'Printing', 'UrbanVista'],
-  },
-  {
-    title: 'CozyKeys – Logo Design',
-    description:
-      'Friendly and minimal logo to reflect a warm property experience.',
-    image:
-      'https://img.freepik.com/premium-vector/free-vector-yellow-black-real-estate-logo_883906-1659.jpg',
-    slug: 'cozykeys-logo-design',
-    tag: ['Design', 'Logo Design', 'CozyKeys'],
-  },
-  {
-    title: 'VistaEdge – Brand Style Guide',
-    description:
-      'Clean, strategic design system tailored for digital and print use.',
-    image:
-      'https://silber-consult.com/wp-content/uploads/2022/10/Brand-Style-Guideline-by-Smotrow-1024x683.jpg',
-    slug: 'vistaedge-brand-style-guide',
-    tag: ['Design', 'Brand Guideline', 'VistaEdge'],
-  },
-  {
-    title: 'BrickLane Agency – Postcard Design',
-    description: 'Compact marketing postcard designed for direct mail success.',
-    image:
-      'https://uicreative.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2019/11/23165623/postcard-digital-development.jpg',
-    slug: 'bricklane-agency-postcard-design',
-    tag: ['Design', 'Printing', 'BrickLane'],
-  },
-  {
-    title: 'NextDoor Living – Logo Design',
-    description:
-      'Distinctive icon and typography symbolizing neighborhood trust.',
-    image:
-      'https://img.freepik.com/premium-vector/free-vector-yellow-black-real-estate-logo_883906-1659.jpghttps://img.freepik.com/free-vector/house-logo-icon-negative-space-style_126523-692.jpg',
-    slug: 'nextdoor-living-logo-design',
-    tag: ['Design', 'Logo Design', 'NextDoor Living'],
-  },
-  {
-    title: 'Elevate Realty – Flyer Design',
-    description: 'High-converting flyer designed to boost listing inquiries.',
-    image:
-      'https://brandpacks.com/wp-content/uploads/2018/09/free-festival-poster-templates.jpg',
-    slug: 'elevate-realty-flyer-design',
-    tag: ['Design', 'Printing', 'Elevate Realty'],
-  },
-  {
-    title: 'Skyline Realty - Social Media Branding',
-    description:
-      'Created a unified brand presence across all major social platforms.',
-    image:
-      'https://img.freepik.com/premium-vector/social-media-post-design-facebook-cover-template-design-professional-creative-designs_756056-21.jpg',
-    slug: 'skyline-realty-social-media-branding',
-    tag: ['Marketing', 'Social Media Branding', 'Project'],
-  },
-  {
-    title: 'UrbanEdge - Signage Design',
-    description:
-      'Developed high-impact real estate signage for street visibility.',
-    image: 'https://realtysigns.org/wp-content/uploads/sandwich-board001.jpg',
-    slug: 'urbanedge-signage-design',
-    tag: ['Marketing', 'Signage', 'Project'],
-  },
-  {
-    title: 'BlueNest - Pitch Deck Design',
-    description:
-      'Investor-ready pitch deck with strong visual narrative and stats.',
-    image:
-      'https://cdn.kwork.com/files/portfolio/t3/77/252c23c6dd62c19fc4b117810c06657e143fa023-1710744178.jpg',
-    slug: 'bluenest-pitch-deck-design',
-    tag: ['Marketing', 'Pitch Deck', 'Project'],
-  },
-  {
-    title: 'OakHill Homes - Social Media Branding',
-    description:
-      'Built consistent visual identity for daily social engagement.',
-    image:
-      'https://img.freepik.com/premium-vector/creative-modern-business-facebook-cover-design-web-banner-template_627383-623.jpg',
-    slug: 'oakhill-homes-social-media-branding',
-    tag: ['Marketing', 'Social Media Branding', 'Project'],
-  },
-  {
-    title: 'HomeVista - Signage Design',
-    description:
-      'Designed large-scale signs to promote new property developments.',
-    image:
-      'https://fiverr-res.cloudinary.com/t_mobile_web_2, q_auto, f_auto/gigs/370901000/original/460ab6a5279b988acc8c4b79e8efe1a909b6f280.jpg',
-    slug: 'homevista-signage-design',
-    tag: ['Marketing', 'Signage', 'Project'],
-  },
-  {
-    title: 'NestSure - Pitch Deck Design',
-    description:
-      'Professional deck showcasing business model and funding goals.',
-    image:
-      'https://designshack.net/wp-content/uploads/Voute-Pitch-Deck-Powerpoint-Template.jpg',
-    slug: 'nestsure-pitch-deck-design',
-    tag: ['Marketing', 'Pitch Deck', 'Project'],
-  },
-  {
-    title: 'VistaHomes - Branding Video',
-    description: 'Told the brand’s story with cinematic visuals and narration.',
-    image: 'https://homejab.com/wp-content/uploads/2021/02/360hero.jpg',
-    slug: 'vistahomes-branding-video',
-    tag: ['Design', 'Branding Video', 'Project'],
-  },
-  {
-    title: 'MetroNest - Listing Video',
-    description:
-      'Highlighted premium property features for prospective buyers.',
-    image:
-      'https://f.vimeocdn.com/cms-images/2021/07/0702_Brand-Videos-Ideas-Blog-Header_1920x1080.jpeg',
-    slug: 'metronest-listing-video',
-    tag: ['Design', 'Listing Video', 'Project'],
-  },
-  {
-    title: 'BlueOak Realty - Video Ads Creative',
-    description: 'Crafted short-form video ads for social media campaigns.',
-    image:
-      'https://nestscale.com/wp-content/uploads/2022/12/745x400-TikTok-ad-creative-Specs-elements.jpg',
-    slug: 'blueoak-realty-video-ads-creative',
-    tag: ['Design', 'Video Ads', 'Project'],
-  },
-  {
-    title: 'DreamBrick - Branding Video',
-    description: 'Captured the essence of the brand through lifestyle shots.',
-    image:
-      'https://www.appletoncreative.com/wp-content/uploads/2017/08/Real-Estate-Video.jpg',
-    slug: 'dreambrick-branding-video',
-    tag: ['Design', 'Branding Video', 'Project'],
-  },
-  {
-    title: 'RealVista - Listing Video',
-    description:
-      'Showcased interior and neighborhood appeal with drone footage.',
-    image: 'https://i.ytimg.com/vi/mgn6myt_Ok8/hq720.jpg',
-    slug: 'realvista-listing-video',
-    tag: ['Design', 'Listing Video', 'Project'],
-  },
-  {
-    title: 'ZenSpaces - Video Ads Creative',
-    description: 'Produced engaging reels for targeted lead generation.',
-    image:
-      'https://www.mastroke.com/wp-content/uploads/2023/03/Digital-Video-Advertising-Is-The-Future-1.jpg',
-    slug: 'zenspaces-video-ads-creative',
-    tag: ['Design', 'Video Ads', 'Project'],
   },
 ];
 
