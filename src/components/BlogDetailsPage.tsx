@@ -1,7 +1,6 @@
 import TableOfContents from '@/components/TableOfContents';
 import Subscription from './Subscription';
 import Image from 'next/image';
-import blogImage from '../../public/mission3.jpg';
 
 const logoCostData = [
   {
@@ -87,7 +86,7 @@ export default function BlogDetailsPage() {
           </h2>
           <div className="space-y-5">
             <Image
-              src={blogImage}
+              src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/mission3.jpg"
               alt="Blog Hero Image"
               width={2048}
               height={2048}
@@ -161,7 +160,7 @@ export default function BlogDetailsPage() {
           </h2>
           <div className="space-y-5">
             <Image
-              src={blogImage}
+              src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/mission3.jpg"
               alt="Blog Hero Image"
               width={2048}
               height={2048}
@@ -215,7 +214,7 @@ export default function BlogDetailsPage() {
             </h3>
             <div className="space-y-6">
               <Image
-                src={blogImage}
+                src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/mission3.jpg"
                 alt="Blog Hero Image"
                 width={2048}
                 height={2048}
@@ -323,7 +322,7 @@ export default function BlogDetailsPage() {
             </h3>
             <div className="space-y-6">
               <Image
-                src={blogImage}
+                src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/mission3.jpg"
                 alt="Blog Hero Image"
                 width={2048}
                 height={2048}
@@ -431,7 +430,7 @@ export default function BlogDetailsPage() {
             </h3>
             <div className="space-y-6">
               <Image
-                src={blogImage}
+                src="https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/mission3.jpg"
                 alt="Blog Hero Image"
                 width={2048}
                 height={2048}
