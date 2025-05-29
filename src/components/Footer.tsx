@@ -251,7 +251,6 @@ const Footer = () => {
                         <li key={i}>
                           <Link
                             href={item.link}
-                            // target="_blank"
                             className="before:w-0 hover:before:w-full text-[#afa5ff] before:bg-lightIndigo before:h-[1px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-0.1px] hover:text-lightIndigo transition-all duration-300 before:left-0 cursor-pointer capitalize"
                           >
                             {item.name}
@@ -269,7 +268,7 @@ const Footer = () => {
         {showBackToTop && (
           <button
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 bg-indigo p-3 rounded-full hover:bg-darkIndigo transition-all duration-500 animate-bounce"
+            className="fixed z-50 bottom-6 right-6 bg-indigo p-3 rounded-full hover:bg-darkIndigo transition-all duration-500 animate-bounce"
           >
             <FaArrowUp className="text-white text-xl" />
           </button>

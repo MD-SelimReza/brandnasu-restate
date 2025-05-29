@@ -63,25 +63,25 @@ const teamMembers = [
     name: 'Suvas Bin Monir',
     title: 'Senior Executive Officer',
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Shuvo-Vai-Shadow.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/team-suvo.jpg',
   },
   {
     name: 'Ab Hadi',
     title: 'Senior UI/UX Designer',
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Ab-Hadi.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/team-abhadi.jpg',
   },
   {
     name: 'Saikat Somir',
     title: 'Senior Full Stack Web Developer',
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Soikat.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/team-saikat.jpg',
   },
   {
     name: 'Md. Selim Reza',
     title: 'Full Stack Web Developer',
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Selim-Reza.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/team-selim-reza.jpg',
   },
 ];
 
@@ -144,7 +144,7 @@ const About = () => {
   return (
     <div className="bg-darkIndigo">
       <div className="w-full max-w-[1440px] mx-auto px-5">
-        <section className="relative xl:h-[850px] lg:h-[750px] md:h-[450px] py-20 bg-darkIndigo flex md:flex-row flex-col-reverse gap-10 md:gap-20 items-center overflow-hidden">
+        <section className="relative xl:h-[850px] lg:h-[750px] md:h-[450px] pt-20 bg-darkIndigo flex md:flex-row flex-col-reverse gap-10 md:gap-20 items-center overflow-hidden">
           <div className="container mx-auto sm:px-4 lg:px-6 z-10 relative">
             <div className="w-full">
               <div className="relative overflow-hidden mb-2">
@@ -484,7 +484,7 @@ const About = () => {
             >
               We offer flat-rate creative support with services including
             </p>
-            <div className="w-full grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 xl:gap-10 gap-6">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-8">
               {serviceSections.map((service, idx) => (
                 <div
                   data-aos="fade-up"
@@ -652,7 +652,7 @@ const About = () => {
             </p>
 
             {/* Cards */}
-            <div className="grid lg:grid-cols-3 sm:grid-cols-2 xl:gap-10 gap-6">
+            <div className="grid lg:grid-cols-3 sm:grid-cols-2 xl:gap-8 gap-6">
               {/* Card 1 */}
               <div
                 data-aos="fade-up"
@@ -756,7 +756,7 @@ const About = () => {
                 data-aos-easing="ease"
                 data-aos-duration="400"
               >
-                <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500">
+                <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-105 md:hover:scale-[1.03] transition duration-500">
                   <div className="flex md:justify-center items-center">
                     <Image
                       src={branding}
@@ -782,7 +782,7 @@ const About = () => {
                 data-aos-easing="ease"
                 data-aos-duration="400"
               >
-                <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500">
+                <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-105 md:hover:scale-[1.03] transition duration-500">
                   <div className="flex md:justify-center items-center">
                     <Image src={global} alt="Global" width={100} height={100} />
                   </div>
@@ -803,7 +803,7 @@ const About = () => {
                 data-aos-easing="ease"
                 data-aos-duration="400"
               >
-                <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-[1.02] transition duration-500">
+                <div className="p-6 rounded-xl bg-white flex flex-col md:flex-row md:gap-10 gap-6 md:items-center hover:scale-105 md:hover:scale-[1.03] transition duration-500">
                   <div className="flex md:justify-center items-center">
                     <Image
                       src={empowering}
@@ -857,7 +857,7 @@ const About = () => {
                   data-aos-duration="400"
                 >
                   <div className="bg-white rounded-xl overflow-hidden text-center xl:p-6 p-5 flex flex-col items-center transition duration-300 hover:scale-105">
-                    <div className="aspect-[4/3] w-full relative mb-6 rounded-lg overflow-hidden">
+                    <div className="aspect-[3/4] w-full relative mb-6 rounded-lg overflow-hidden">
                       <Image
                         src={member.image}
                         alt={member.name}

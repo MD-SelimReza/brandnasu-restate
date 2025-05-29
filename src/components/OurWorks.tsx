@@ -76,7 +76,7 @@ const OurWorks = () => {
             <span
               key={tag}
               onClick={() => setActiveService(tag)}
-              className={`px-4 py-2 rounded-full cursor-pointer transition-colors duration-200 border 
+              className={`md:px-4 md:py-2 px-3 py-1 md:text-base text-sm rounded-full cursor-pointer transition-colors duration-200 border 
                 ${
                   activeService === tag
                     ? 'bg-indigo text-white border-indigo'

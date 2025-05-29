@@ -122,7 +122,7 @@ export const catalogItems = [
   {
     id: 1,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog1.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/4.%20UI-UX%20Design.png',
     title: 'Real Estate - UI/UX Design',
     link: 'https://client.brandnasu.com/catalog/real-estate-ulux-design-1745304233591512/checkout',
     price: '$195 - $495',
@@ -133,7 +133,7 @@ export const catalogItems = [
   {
     id: 2,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog2.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/5.%20Website%20Design.png',
     title: 'Real Estate - Custom Website Development',
     link: 'https://client.brandnasu.com/catalog/real-estate-custom-website-development-1745302418147241/checkout',
     price: '$95 - $195',
@@ -144,7 +144,7 @@ export const catalogItems = [
   {
     id: 3,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog3.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/6.%20Landing%20Page.png',
     title: 'Real Estate - Landing Page Development',
     link: 'https://client.brandnasu.com/catalog/real-estate-landing-page-development-1745301112487468/checkout',
     price: '$75 - $125',
@@ -155,7 +155,7 @@ export const catalogItems = [
   {
     id: 4,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog4.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/7.%20Custom%20Logo.png',
     title: 'Real Estate - Logo Design',
     link: 'https://client.brandnasu.com/catalog/real-estate-logo-design-1745222839236304/checkout',
     price: '$125 - $295',
@@ -166,7 +166,7 @@ export const catalogItems = [
   {
     id: 5,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog5.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/8.%20Brand%20Guide.png',
     title: 'Real Estate - Brand Style Guide',
     link: 'https://client.brandnasu.com/catalog/real-estate-brand-style-guide-1745213216131538/checkout',
     price: '$145 - $495',
@@ -177,7 +177,7 @@ export const catalogItems = [
   {
     id: 6,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog6.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/9.%20Social%20Media%20Branding.png',
     title: 'Real Estate - Social Media Branding',
     link: 'https://client.brandnasu.com/catalog/social-media-branding-1745211112790372/checkout',
     price: '$95 - $195',
@@ -188,7 +188,7 @@ export const catalogItems = [
   {
     id: 7,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog7.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/10.%20Flyer%20-%20Brochure%20-%20Postcard.png',
     title: 'Real Estate - Flyer, Brochure & Postcard Design',
     link: 'https://client.brandnasu.com/catalog/real-estate-flyer-brochure-and-postcard-design-1745055401831160/checkout',
     price: '$95 - $395',
@@ -199,7 +199,7 @@ export const catalogItems = [
   {
     id: 8,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog8.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/11.%20Signage%20Design.png',
     title: 'Real Estate - Signage Design',
     link: 'https://client.brandnasu.com/catalog/real-estate-signage-design-1745054144198136/checkout',
     price: '$145 - $495',
@@ -210,7 +210,7 @@ export const catalogItems = [
   {
     id: 9,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog9.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/12.%20Pitch%20Deck.png',
     title: 'Real Estate - Pitch Deck Design',
     link: 'https://client.brandnasu.com/catalog/real-estate-pitch-deck-design-1745052563160132/checkout',
     price: '$195 - $695',
@@ -221,7 +221,7 @@ export const catalogItems = [
   {
     id: 10,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog10.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/13.%20Branding%20Video.png',
     title: 'Real Estate - Branding Video',
     link: 'https://client.brandnasu.com/catalog/real-estate-branding-video-1745046042160171/checkout',
     price: '$245 - $695',
@@ -232,7 +232,7 @@ export const catalogItems = [
   {
     id: 11,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog11.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/14.%20Listing%20Video.png',
     title: 'Real Estate - Listing Video',
     link: 'https://client.brandnasu.com/catalog/real-estate-listing-videos-1745044921997631/checkout',
     price: '$195 - $595',
@@ -243,7 +243,7 @@ export const catalogItems = [
   {
     id: 12,
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/catalog12.jpg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/15.%20Ads%20Creative%20Videos.png',
     title: 'Real Estate - Video Ads Creative',
     link: 'https://client.brandnasu.com/catalog/real-estate-video-ads-creative-1745040881594561/checkout',
     price: '$145 - $495',

@@ -61,7 +61,7 @@ const DesignProcess = () => {
                 data-aos-duration="400"
               >
                 <div
-                  className={`flex flex-col md:flex-row p-6 items-center md:p-10 lg:p-12 xl:pl-20 lg:pl-16 xl:gap-20 lg:gap-16 md:gap-10 gap-6 rounded-xl ${step.bgColor} hover:scale-[1.02] transition duration-500`}
+                  className={`flex flex-col md:flex-row p-6 items-center md:p-10 lg:p-12 xl:pl-20 lg:pl-16 xl:gap-20 lg:gap-16 md:gap-10 gap-6 rounded-xl ${step.bgColor} md:hover:scale-[1.03] hover:scale-105 transition duration-500`}
                 >
                   <div className="md:w-72 lg:w-60 xl:w-36 w-28 h-fit relative">
                     <Image

@@ -12,28 +12,28 @@ const contentItems = [
     desc: `From new agents building a personal brand to experienced professionals managing multiple listings, we deliver consistent, high-quality marketing and design that helps you stay visible and close more deals.`,
     className: '',
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/real-estate-agent.jpeg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/real-estate-agent.jpg',
   },
   {
     title: 'Real Estate Teams & Brokers',
     desc: `We help teams and brokerages maintain a strong, unified brand across agents and platforms by providing scalable creative support without the overhead of an in-house team.`,
     className: 'lg:mt-48',
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/teams-brokers.jpeg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/teams-brokers.jpg',
   },
   {
     title: 'Marketing Managers',
     desc: `In-house marketing teams rely on us to handle listing promotions, brand materials, and campaign visuals, so deadlines are met and quality is never compromised.`,
     className: 'lg:-mt-48',
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/marketing-manager.png',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/marketing-manager.jpg',
   },
   {
     title: 'Developers & Investors',
     desc: `We help real estate developers and investors launch, fund, and promote their projects through branding, pitch decks, landing pages, and high-converting marketing assets that impress buyers, partners, and stakeholders.`,
     className: '',
     image:
-      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/dev-investor.jpeg',
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/dev-investor.jpg',
   },
 ];
 

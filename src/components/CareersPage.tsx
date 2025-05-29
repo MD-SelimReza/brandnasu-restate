@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Container from './Container';
 import Button from './ui/Button';
 
@@ -70,16 +69,13 @@ const JobCard: React.FC<{ job: JobOpening }> = ({ job }) => {
   const isExpired = deadlineStatus === 'has passed';
 
   return (
-    <div className="hover:bg-indigo100 bg-gray100 rounded-xl p-6 mb-4 hover:scale-[1.02] transition-scale duration-700">
+    <div className="hover:bg-indigo100 bg-gray100 rounded-xl p-6 mb-4 hover:scale-105 md:hover:scale-[1.03] transition-scale duration-500">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center lg:pr-12">
         <div className="mb-4 md:mb-0">
           <p className="text-darkGray md:mb-10 mb-8">{job.category}</p>
-          <Link
-            href={`job/${job.slug}`}
-            className="text-2xl font-bold text-darkIndigo mb-3"
-          >
+          <h2 className="text-2xl font-bold text-darkIndigo mb-3 cursor-default">
             {job.title}
-          </Link>
+          </h2>
           <p className="text-darkGray mt-1 flex items-center gap-2">
             <span>{job.sit}</span>
             <span>•</span>
