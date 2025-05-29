@@ -16,9 +16,6 @@ const WorkHero = () => {
 
   const { projects, loading } = useProjects();
 
-  if (loading)
-    return <p className="flex justify-center items-center h-60">Loading...</p>;
-
   // Ensure Project type has updatedAt: string or Date
   type ProjectWithUpdatedAt = typeof projects extends (infer U)[]
     ? U & { updatedAt: string | Date }
@@ -110,44 +107,47 @@ const WorkHero = () => {
                   convert visitors into leads.
                 </h3>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-                {webProjects.slice(0, 5).map((web) => (
-                  <div
-                    key={web.slug}
-                    data-aos="fade-up"
-                    data-aos-easing="ease"
-                    data-aos-duration="400"
-                  >
-                    <div className="block mb-10">
-                      <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
-                        <Image
-                          src={web.image}
-                          alt={web.title}
-                          layout="fill"
-                          className="object-cover hover:scale-105 transition duration-300"
-                        />
+              {loading ? (
+                <p className="h-20 flex justify-center items-center"></p>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+                  {webProjects.slice(0, 5).map((web) => (
+                    <div
+                      key={web.slug}
+                      data-aos="fade-up"
+                      data-aos-easing="ease"
+                      data-aos-duration="400"
+                    >
+                      <div className="block mb-10">
+                        <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
+                          <Image
+                            src={web.image}
+                            alt={web.title}
+                            layout="fill"
+                            className="object-cover hover:scale-105 transition duration-300"
+                          />
+                        </div>
+                      </div>
+                      <h2 className="text-2xl font-semibold text-darkIndigo">
+                        {web.title}
+                      </h2>
+                      <p className="mt-4 text-darkGray truncate-one-line">
+                        {web.description}
+                      </p>
+                      <div className="mt-6 gap-3 flex flex-wrap">
+                        {web.tag.map((tag, index) => (
+                          <span
+                            key={index}
+                            className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                    <h2 className="text-2xl font-semibold text-darkIndigo">
-                      {web.title}
-                    </h2>
-                    <p className="mt-4 text-darkGray truncate-one-line">
-                      {web.description}
-                    </p>
-                    <div className="mt-6 gap-3 flex flex-wrap">
-                      {web.tag.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -177,43 +177,47 @@ const WorkHero = () => {
                 </h3>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-                {designProjects.slice(0, 8).map((brand) => (
-                  <div
-                    data-aos="fade-up"
-                    data-aos-easing="ease"
-                    data-aos-duration="400"
-                    key={brand.slug}
-                  >
-                    <div className="block mb-10">
-                      <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
-                        <Image
-                          src={brand.image}
-                          alt={brand.title}
-                          layout="fill"
-                          className="object-cover hover:scale-105 transition duration-300"
-                        />
+              {loading ? (
+                <p className="h-20 flex justify-center items-center"></p>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+                  {designProjects.slice(0, 8).map((brand) => (
+                    <div
+                      data-aos="fade-up"
+                      data-aos-easing="ease"
+                      data-aos-duration="400"
+                      key={brand.slug}
+                    >
+                      <div className="block mb-10">
+                        <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
+                          <Image
+                            src={brand.image}
+                            alt={brand.title}
+                            layout="fill"
+                            className="object-cover hover:scale-105 transition duration-300"
+                          />
+                        </div>
+                      </div>
+                      <h2 className="text-2xl font-semibold text-darkIndigo">
+                        {brand.title}
+                      </h2>
+                      <p className="mt-4 text-darkGray truncate-one-line">
+                        {brand.description}
+                      </p>
+                      <div className="mt-6  gap-3 flex flex-wrap">
+                        {brand.tag.map((tag, index) => (
+                          <span
+                            key={index}
+                            className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                    <h2 className="text-2xl font-semibold text-darkIndigo">
-                      {brand.title}
-                    </h2>
-                    <p className="mt-4 text-darkGray truncate-one-line">
-                      {brand.description}
-                    </p>
-                    <div className="mt-6  gap-3 flex flex-wrap">
-                      {brand.tag.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -243,43 +247,47 @@ const WorkHero = () => {
                 </h3>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-                {marketingProjects.slice(0, 6).map((brand) => (
-                  <div
-                    data-aos="fade-up"
-                    data-aos-easing="ease"
-                    data-aos-duration="400"
-                    key={brand.slug}
-                  >
-                    <div className="block mb-10">
-                      <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
-                        <Image
-                          src={brand.image}
-                          alt={brand.title}
-                          layout="fill"
-                          className="object-cover hover:scale-105 transition duration-300"
-                        />
+              {loading ? (
+                <p className="h-20 flex justify-center items-center"></p>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+                  {marketingProjects.slice(0, 6).map((brand) => (
+                    <div
+                      data-aos="fade-up"
+                      data-aos-easing="ease"
+                      data-aos-duration="400"
+                      key={brand.slug}
+                    >
+                      <div className="block mb-10">
+                        <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
+                          <Image
+                            src={brand.image}
+                            alt={brand.title}
+                            layout="fill"
+                            className="object-cover hover:scale-105 transition duration-300"
+                          />
+                        </div>
+                      </div>
+                      <h2 className="text-2xl font-semibold text-darkIndigo">
+                        {brand.title}
+                      </h2>
+                      <p className="mt-4 text-darkGray truncate-one-line">
+                        {brand.description}
+                      </p>
+                      <div className="mt-6  gap-3 flex flex-wrap">
+                        {brand.tag.map((tag, index) => (
+                          <span
+                            key={index}
+                            className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                    <h2 className="text-2xl font-semibold text-darkIndigo">
-                      {brand.title}
-                    </h2>
-                    <p className="mt-4 text-darkGray truncate-one-line">
-                      {brand.description}
-                    </p>
-                    <div className="mt-6  gap-3 flex flex-wrap">
-                      {brand.tag.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -309,43 +317,47 @@ const WorkHero = () => {
                 </h3>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-                {videoProjects.slice(0, 6).map((brand) => (
-                  <div
-                    data-aos="fade-up"
-                    data-aos-easing="ease"
-                    data-aos-duration="400"
-                    key={brand.slug}
-                  >
-                    <div className="block mb-10">
-                      <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
-                        <Image
-                          src={brand.image}
-                          alt={brand.title}
-                          layout="fill"
-                          className="object-cover hover:scale-105 transition duration-300"
-                        />
+              {loading ? (
+                <p className="h-20 flex justify-center items-center"></p>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+                  {videoProjects.slice(0, 6).map((brand) => (
+                    <div
+                      data-aos="fade-up"
+                      data-aos-easing="ease"
+                      data-aos-duration="400"
+                      key={brand.slug}
+                    >
+                      <div className="block mb-10">
+                        <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
+                          <Image
+                            src={brand.image}
+                            alt={brand.title}
+                            layout="fill"
+                            className="object-cover hover:scale-105 transition duration-300"
+                          />
+                        </div>
+                      </div>
+                      <h2 className="text-2xl font-semibold text-darkIndigo">
+                        {brand.title}
+                      </h2>
+                      <p className="mt-4 text-darkGray truncate-one-line">
+                        {brand.description}
+                      </p>
+                      <div className="mt-6  gap-3 flex flex-wrap">
+                        {brand.tag.map((tag, index) => (
+                          <span
+                            key={index}
+                            className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                    <h2 className="text-2xl font-semibold text-darkIndigo">
-                      {brand.title}
-                    </h2>
-                    <p className="mt-4 text-darkGray truncate-one-line">
-                      {brand.description}
-                    </p>
-                    <div className="mt-6  gap-3 flex flex-wrap">
-                      {brand.tag.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

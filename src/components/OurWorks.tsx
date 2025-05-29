@@ -49,9 +49,6 @@ const OurWorks = () => {
     project.tag.includes(activeService)
   );
 
-  if (loading)
-    return <p className="flex justify-center items-center h-60">Loading...</p>;
-
   return (
     <div className="lg:py-32 md:py-20 py-16 bg-white px-5">
       <div className="text-center mb-10">
@@ -90,61 +87,65 @@ const OurWorks = () => {
       </div>
 
       {/* Project Grid */}
-      <div className="max-w-[1920px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-          {filteredProjects.length > 0 ? (
-            filteredProjects.slice(0, 3).map((project) => (
-              <div
-                key={project.slug}
-                data-aos="fade-up"
-                data-aos-easing="ease"
-                data-aos-duration="400"
-              >
-                <div className="block mb-10">
-                  <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      layout="fill"
-                      className="object-cover rounded-xl hover:scale-105 transition duration-300"
-                    />
+      {loading ? (
+        <p className="h-20 flex justify-center items-center"></p>
+      ) : (
+        <div className="max-w-[1920px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+            {filteredProjects.length > 0 ? (
+              filteredProjects.slice(0, 3).map((project) => (
+                <div
+                  key={project.slug}
+                  data-aos="fade-up"
+                  data-aos-easing="ease"
+                  data-aos-duration="400"
+                >
+                  <div className="block mb-10">
+                    <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        layout="fill"
+                        className="object-cover rounded-xl hover:scale-105 transition duration-300"
+                      />
+                    </div>
+                  </div>
+                  <h2 className="text-2xl font-semibold text-darkIndigo">
+                    {project.title}
+                  </h2>
+                  <p className="mt-4 text-darkGray truncate-one-line">
+                    {project.description}
+                  </p>
+                  <div className="mt-6 gap-3 flex flex-wrap">
+                    {project.tag.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
-                <h2 className="text-2xl font-semibold text-darkIndigo">
-                  {project.title}
-                </h2>
-                <p className="mt-4 text-darkGray truncate-one-line">
-                  {project.description}
-                </p>
-                <div className="mt-6 gap-3 flex flex-wrap">
-                  {project.tag.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-[#DEE0E2] text-darkGray px-3 py-1 rounded-full font-regular text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))
-          ) : (
-            <p className="text-center col-span-full text-darkGray">
-              No projects available for this tag.
-            </p>
-          )}
-        </div>
+              ))
+            ) : (
+              <p className="text-center col-span-full text-darkGray">
+                No projects available for this tag.
+              </p>
+            )}
+          </div>
 
-        {/* See All Button */}
-        <div className="mt-20 flex justify-center">
-          <Button
-            label="See More"
-            bgColor="bg-indigo hover:bg-darkIndigo"
-            textColor="text-white"
-            href={`/work?section=${serviceRedirectMap[activeService]}`}
-          />
+          {/* See All Button */}
+          <div className="mt-20 flex justify-center">
+            <Button
+              label="See More"
+              bgColor="bg-indigo hover:bg-darkIndigo"
+              textColor="text-white"
+              href={`/work?section=${serviceRedirectMap[activeService]}`}
+            />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
