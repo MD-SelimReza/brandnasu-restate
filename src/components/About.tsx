@@ -18,7 +18,6 @@ import empowering from '../../public/Icons/empowering.svg';
 import graphic from '../../public/whiteicon_graphic.svg';
 import marketing from '../../public/whiteicon_marketing.svg';
 import video from '../../public/whiteicon_video.svg';
-import team4 from '../../public/team4.jpg';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import TypewriterWithSound from './TypewriterWithSound';
@@ -67,21 +66,22 @@ const teamMembers = [
       'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Shuvo-Vai-Shadow.jpg',
   },
   {
-    name: 'AB Hadi',
+    name: 'Ab Hadi',
     title: 'Senior UI/UX Designer',
     image:
       'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Ab-Hadi.jpg',
+  },
+  {
+    name: 'Saikat Somir',
+    title: 'Senior Full Stack Web Developer',
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Soikat.jpg',
   },
   {
     name: 'Md. Selim Reza',
     title: 'Full Stack Web Developer',
     image:
       'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Selim-Reza.jpg',
-  },
-  {
-    name: 'Jordan Eugenio',
-    title: 'Retirement Planner',
-    image: team4,
   },
 ];
 
@@ -848,7 +848,7 @@ const About = () => {
               deliver marketing that actually drives results.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 xl:gap-10 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
               {teamMembers.map((member, index) => (
                 <div
                   key={index}
