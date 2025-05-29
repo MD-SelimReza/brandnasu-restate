@@ -57,7 +57,7 @@ const OfficeLocation = () => {
     isDay: boolean;
     label: string;
   }) => (
-    <div className="text-4xl text-darkIndigo font-medium flex flex-col items-end max-w-[200px] w-full">
+    <div className="text-4xl text-darkIndigo font-medium flex flex-col md:items-end items-center max-w-[200px] w-full md:mx-0 mx-auto">
       <div className="mb-6">
         {isDay ? (
           <IoSunny size={60} className="text-yellow-500" title="Daytime" />
@@ -76,10 +76,10 @@ const OfficeLocation = () => {
 
   return (
     <div className="bg-white lg:pb-32 md:pb-24 pb-16">
-      <div className="max-w-[1440px] px-5 mx-auto space-y-32">
+      <div className="max-w-[1440px] px-5 mx-auto lg:space-y-32 md:space-y-24 space-y-20">
         {/* Bangladesh Office */}
-        <div className="flex justify-between">
-          <div className="relative">
+        <div className="flex md:flex-row flex-col gap-y-10 justify-between">
+          <div className="relative md:mx-0 mx-auto">
             <Image src={bd} alt="Bangladesh" width={350} height={264} />
           </div>
           <div className="text-darkGray max-w-xl w-full">
@@ -103,8 +103,8 @@ const OfficeLocation = () => {
         <hr className="bg-gray-300 h-[2px]" />
 
         {/* USA Office */}
-        <div className="flex justify-between">
-          <div className="relative">
+        <div className="flex md:flex-row flex-col gap-y-10 justify-between">
+          <div className="relative md:mx-0 mx-auto">
             <Image src={usa} alt="USA" width={350} height={264} />
           </div>
           <div className="text-darkGray max-w-xl w-full">

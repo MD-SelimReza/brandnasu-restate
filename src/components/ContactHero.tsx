@@ -19,10 +19,12 @@ const ContactHero = () => {
             website. Let&apos;s build something impactful together.
           </p>
         </div>
-        <div className="flex items-center pt-14">
-          <div className="space-y-28 max-w-lg w-full">
+        <div className="flex flex-col-reverse md:flex-row items-center pt-10 lg:pt-14 gap-10">
+          {/* Left side - contact info */}
+          <div className="space-y-16 max-w-lg w-full px-4 lg:px-0">
             <div className="space-y-8">
-              <div className="space-y-5">
+              {/* WhatsApp Contact */}
+              <div className="space-y-4">
                 <p className="text-lightIndigo">Chat directly with our team</p>
                 <h3 className="text-2xl md:text-3xl text-white flex items-center gap-2">
                   <FaWhatsapp />
@@ -36,7 +38,9 @@ const ContactHero = () => {
                   </a>
                 </h3>
               </div>
-              <div className="space-y-5">
+
+              {/* Email Contact */}
+              <div className="space-y-4">
                 <h3 className="text-2xl md:text-3xl text-white flex items-center gap-2">
                   <FiMail />
                   <a
@@ -49,8 +53,9 @@ const ContactHero = () => {
               </div>
             </div>
 
+            {/* Website Link */}
             <div>
-              <p className="text-lightIndigo mb-5">Explore more</p>
+              <p className="text-lightIndigo mb-3">Explore more</p>
               <h3 className="text-2xl md:text-3xl text-white flex items-center gap-2">
                 <TfiWorld />
                 <a
@@ -65,12 +70,14 @@ const ContactHero = () => {
             </div>
           </div>
 
-          <div className="relative w-full flex justify-center top-10">
+          {/* Right side - image */}
+          <div className="w-full flex justify-center">
             <Image
               src={contactHero}
               alt="Contact Hero"
               width={320}
               height={320}
+              className="object-contain"
             />
           </div>
         </div>

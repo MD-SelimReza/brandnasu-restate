@@ -73,7 +73,7 @@ const OurWorks = () => {
             <span
               key={tag}
               onClick={() => setActiveService(tag)}
-              className={`px-4 py-2 rounded-full cursor-pointer transition-colors duration-200 border 
+              className={`md:px-4 md:py-2 md:text-base text-sm px-3 py-1 rounded-full cursor-pointer transition-colors duration-200 border 
                 ${
                   activeService === tag
                     ? 'bg-indigo text-white border-indigo'
@@ -88,7 +88,7 @@ const OurWorks = () => {
 
       {/* Project Grid */}
       <div className="max-w-[1920px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10">
           {filteredProjects.length > 0 ? (
             filteredProjects.slice(0, 3).map((project) => (
               <div
