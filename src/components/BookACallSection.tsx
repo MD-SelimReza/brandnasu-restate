@@ -18,6 +18,7 @@ export default function BookACallSection() {
             data-aos="fade-up"
             data-aos-easing="ease"
             data-aos-duration="400"
+            aria-label="Book a Call"
             className="text-3xl lg:text-4xl xl:text-5xl xl:!leading-[57px] lg:!leading-[48px] font-bold text-white mb-4"
           >
             Book a Call
@@ -51,8 +52,9 @@ export default function BookACallSection() {
             className="mt-auto flex md:flex-row flex-col items-center lg:justify-normal justify-center gap-8"
           >
             <Link
-              href=""
+              href="https://clutch.co/profile/brandnasu"
               target="_blank"
+              aria-label="Explore our clutch"
               className="flex gap-3 justify-center items-center bg-white rounded-full py-4 px-6"
             >
               <Image src={clutch} alt="Clutch Logo" width={80} height={80} />
@@ -64,8 +66,9 @@ export default function BookACallSection() {
               <span className="text-darkGray font-bold">5.0</span>
             </Link>
             <Link
-              href="https://clutch.co/profile/brandnasu"
+              href=""
               target="_blank"
+              aria-label="Explore our google"
               className="flex gap-3 justify-center items-center bg-white rounded-full py-4 px-6"
             >
               <Image src={google} alt="Google Logo" width={80} height={80} />
@@ -88,8 +91,10 @@ export default function BookACallSection() {
         >
           <iframe
             src="https://tidycal.com/brandnasu/strategy-call"
+            title="Strategy Call Booking Form"
             width="100%"
             height="600"
+            loading="lazy"
             className="rounded-md border"
             allow="camera; microphone; fullscreen; clipboard-read; clipboard-write"
           />

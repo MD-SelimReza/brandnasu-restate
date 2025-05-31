@@ -30,19 +30,17 @@ const OneTimePurchaseItem = () => {
           done-for-you services designed to elevate your real estate brand in
           one go.
         </p>
-        <div className="mt-5 lg:mt-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 xl:gap-10 gap-6">
-            {catalogItems.map((item) => (
-              <div
-                key={item.id}
-                data-aos="fade-up"
-                data-aos-easing="ease"
-                data-aos-duration="400"
-              >
-                <CatalogCard {...item} />
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 xl:gap-10 gap-6 mt-5 lg:mt-10">
+          {catalogItems.map((item) => (
+            <div
+              key={item.id}
+              data-aos="fade-up"
+              data-aos-easing="ease"
+              data-aos-duration="400"
+            >
+              <CatalogCard {...item} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
