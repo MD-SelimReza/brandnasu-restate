@@ -64,7 +64,7 @@ const CardSlider = () => {
                 <Image
                   src={card.img}
                   alt="Card img"
-                  loading="lazy"
+                  priority
                   className="mx-auto"
                 />
               </div>
@@ -75,12 +75,18 @@ const CardSlider = () => {
         {/* Navigation Buttons */}
         <div className="hidden md:block">
           <div className="absolute top-1/2 transform -translate-y-1/2 z-10 w-40 h-full group left-0">
-            <button className="opacity-0 group-hover:opacity-100 transition duration-500 prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2ACC] text-lightIndigo p-3 rounded-full ">
+            <button
+              aria-label="Previous slide"
+              className="opacity-0 group-hover:opacity-100 transition duration-500 prev-btn absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2ACC] text-lightIndigo p-3 rounded-full"
+            >
               <FaChevronLeft size={30} />
             </button>
           </div>
           <div className="absolute top-1/2 transform -translate-y-1/2 z-10 w-40 h-full group right-0">
-            <button className="opacity-0 group-hover:opacity-100 transition duration-500 next-btn absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2ACC] text-lightIndigo p-3 rounded-full">
+            <button
+              aria-label="Next slide"
+              className="opacity-0 group-hover:opacity-100 transition duration-500 next-btn absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#190C2ACC] text-lightIndigo p-3 rounded-full"
+            >
               <FaChevronRight size={30} />
             </button>
           </div>

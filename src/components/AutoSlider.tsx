@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import CardSlider from './Card';
+import dynamic from 'next/dynamic';
+const CardSlider = dynamic(() => import('./Card'), { ssr: false });
 import Button from './ui/Button';
 import { AiOutlineClose } from 'react-icons/ai';
 import { motion } from 'framer-motion';
@@ -90,19 +91,16 @@ export default function HeroBanner() {
         </div>
       </div>
       {isOpen && (
-        <div
-          data-aos="zoom-out"
-          data-aos-duration="500"
-          className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-4"
-        >
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg w-full max-w-3xl relative p-4">
             <button
               onClick={closeModal}
-              className="absolute -top-8 right-3 text-white hover:text-gray100 text-xl font-bold"
+              className="absolute -top-8 right-3 text-white hover:text-gray100"
             >
               <AiOutlineClose size={24} />
             </button>
             <iframe
+              loading="lazy"
               src="https://tidycal.com/brandnasu/strategy-call"
               className="w-full h-[500px] lg:h-[600px] rounded-md border-0"
               allow="camera; microphone; fullscreen; clipboard-read; clipboard-write"

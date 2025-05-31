@@ -44,7 +44,7 @@ export default function ProjectsAdmin() {
   if (loading)
     return (
       <div className="flex justify-center items-center h-64">
-        <p className="text-gray-500 text-lg">Loading projects...</p>
+        <p className="text-gray-500 text-lg">Loading...</p>
       </div>
     );
 

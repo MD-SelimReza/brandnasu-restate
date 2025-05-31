@@ -16,11 +16,31 @@ import logo from '../../public/Logo/light-logo.svg';
 import { FiMail } from 'react-icons/fi';
 
 const socialLinks = [
-  { icon: FaFacebookF, link: 'https://www.facebook.com/brandnasu' },
-  { icon: FaXTwitter, link: 'https://x.com/brandnasu' },
-  { icon: FaInstagram, link: 'https://www.instagram.com/brandnasu' },
-  { icon: FaLinkedinIn, link: 'http://linkedin.com/company/brandnasu' },
-  { icon: FaPinterestP, link: 'https://www.pinterest.com/brandnasu' },
+  {
+    icon: FaFacebookF,
+    link: 'https://www.facebook.com/brandnasu',
+    label: 'Visit our Facebook page',
+  },
+  {
+    icon: FaXTwitter,
+    link: 'https://x.com/brandnasu',
+    label: 'Visit our Twitter/X page',
+  },
+  {
+    icon: FaInstagram,
+    link: 'https://www.instagram.com/brandnasu',
+    label: 'Visit our Instagram page',
+  },
+  {
+    icon: FaLinkedinIn,
+    link: 'http://linkedin.com/company/brandnasu',
+    label: 'Visit our LinkedIn page',
+  },
+  {
+    icon: FaPinterestP,
+    link: 'https://www.pinterest.com/brandnasu',
+    label: 'Visit our Pinterest page',
+  },
 ];
 
 const menuLinks: { [key: string]: { name: string; link: string }[] } = {
@@ -152,12 +172,13 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex flex-wrap gap-5">
-              {socialLinks.map(({ icon: Icon, link }, index) => (
+              {socialLinks.map(({ icon: Icon, link, label }, index) => (
                 <Link
                   key={index}
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={label}
                 >
                   <Icon className="text-[#afa5ff] hover:text-lightIndigo text-xl" />
                 </Link>

@@ -51,13 +51,14 @@ const TestimonialsCarousel = () => {
                   className="flex items-center justify-center aspect-[9/16]"
                   data-aos="zoom-in"
                   data-aos-easing="ease"
-                  data-aos-duration="400"
+                  data-aos-duration="500"
                 >
                   <iframe
                     width="100%"
                     height="100%"
+                    loading="lazy"
                     className="w-full h-full rounded-xl"
-                    src={`https://www.youtube.com/embed/${id}`}
+                    src={`https://www.youtube-nocookie.com/embed/${id}`}
                     title={`YouTube video ${index + 1}`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -68,10 +69,16 @@ const TestimonialsCarousel = () => {
           </Swiper>
 
           {/* Navigation Buttons */}
-          <button className="prev-btn z-40 absolute -left-5 md:-left-5 lg:-left-6 top-1/2 transform -translate-y-1/2 bg-indigo/80 text-white md:p-4 p-3 rounded-full">
+          <button
+            aria-label="Previous slide"
+            className="prev-btn z-40 absolute -left-5 md:-left-5 lg:-left-6 top-1/2 transform -translate-y-1/2 bg-indigo/80 text-white md:p-4 p-3 rounded-full"
+          >
             <FaChevronLeft size={30} />
           </button>
-          <button className="next-btn z-40 absolute -right-5 md:-right-5 lg:-right-6 top-1/2 transform -translate-y-1/2 bg-indigo/80 text-white md:p-4 p-3 rounded-full">
+          <button
+            aria-label="Next slide"
+            className="next-btn z-40 absolute -right-5 md:-right-5 lg:-right-6 top-1/2 transform -translate-y-1/2 bg-indigo/80 text-white md:p-4 p-3 rounded-full"
+          >
             <FaChevronRight size={30} />
           </button>
         </div>

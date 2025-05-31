@@ -6,7 +6,7 @@ import { useProjectById } from '@/hooks/useProjectById';
 export default function EditProjectPage({ id }: { id: string }) {
   const { project, loading } = useProjectById(id);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p></p>;
   if (!project) return <p>Project not found</p>;
 
   return (

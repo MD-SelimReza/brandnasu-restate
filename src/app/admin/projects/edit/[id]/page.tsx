@@ -11,9 +11,7 @@ export default function EditPage() {
 
   if (loading)
     return (
-      <p className="min-h-[calc(100vh-85px)] flex justify-center items-center">
-        Loading...
-      </p>
+      <p className="min-h-[calc(100vh-85px)] flex justify-center items-center"></p>
     );
   if (!project)
     return (

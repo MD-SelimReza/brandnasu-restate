@@ -196,6 +196,7 @@ const CallToActionSection = () => {
               <AiOutlineClose size={24} />
             </button>
             <iframe
+              loading="lazy"
               src="https://tidycal.com/brandnasu/strategy-call"
               className="w-full h-[500px] lg:h-[600px] rounded-md border-0"
               allow="camera; microphone; fullscreen; clipboard-read; clipboard-write"

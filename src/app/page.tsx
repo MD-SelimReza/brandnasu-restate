@@ -14,11 +14,8 @@ export default function Home() {
     <div className="flex flex-col justify-start min-h-[calc(100vh-86px)] w-full mx-auto bg-indigo100 max-w-[1440px">
       <AutoSlider />
       <WhatWeHelp />
-      {/* <WhyThisCourse /> */}
-      {/* <InfoSection /> */}
       <OurWorks />
       <GradientSection />
-      {/* <DesignPlatform /> */}
       <DesignProcess />
       <TestimonialsCarousel />
       <CallToActionSection />

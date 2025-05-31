@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import request from '../../public/Icons/request.svg';
 import feedback from '../../public/Icons/feedback.svg';
