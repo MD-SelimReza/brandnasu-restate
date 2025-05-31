@@ -61,12 +61,7 @@ const CardSlider = () => {
           {Banner.map((card) => (
             <SwiperSlide key={card.id}>
               <div>
-                <Image
-                  src={card.img}
-                  alt="Card img"
-                  priority
-                  className="mx-auto"
-                />
+                <Image src={card.img} alt="Card img" className="mx-auto" />
               </div>
             </SwiperSlide>
           ))}

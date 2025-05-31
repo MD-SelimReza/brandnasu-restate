@@ -91,11 +91,15 @@ export default function HeroBanner() {
         </div>
       </div>
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-4">
+        <div
+          data-aos="zoom-out"
+          data-aos-duration="500"
+          className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-4"
+        >
           <div className="bg-white rounded-lg w-full max-w-3xl relative p-4">
             <button
               onClick={closeModal}
-              className="absolute -top-8 right-3 text-white hover:text-gray100"
+              className="absolute -top-8 right-3 text-white hover:text-gray100 text-xl font-bold"
             >
               <AiOutlineClose size={24} />
             </button>

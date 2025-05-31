@@ -50,7 +50,11 @@ const CatalogCard = ({
             {description.split(' ').length > 20 && '...'}
           </p>
         </div>
-        <Link href={link} className="block w-full mt-6">
+        <Link
+          href={link}
+          rel="noopener noreferrer"
+          className="block w-full mt-6"
+        >
           <button className="py-2.5 px-8 w-full text-lg font-bold bg-indigo text-white hover:bg-darkIndigo transition-all duration-500 rounded-lg">
             Purchase
           </button>
