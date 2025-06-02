@@ -1,28 +1,25 @@
-'use client';
-
-import RichTextEditor from '@/components/RichTextEditor';
-import { useProjectById } from '@/hooks/useProjectById';
-import { useParams } from 'next/navigation';
+import UpdateProjectEditor from '@/components/ui/UpdateProjectEditor';
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Edit Project | BrandNasu',
+  description:
+    'Edit your project details in the BrandNasu admin panel. Update project information, images, and more to keep your portfolio current.',
+  keywords: [
+    'edit project',
+    'project management',
+    'update project',
+    'admin panel',
+    'portfolio management',
+  ],
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
+};
 
 export default function EditPage() {
-  const params = useParams();
-  const projectId = typeof params.id === 'string' ? params.id : '';
-  const { project, loading } = useProjectById(projectId);
-
-  if (loading)
-    return (
-      <p className="min-h-[calc(100vh-85px)] flex justify-center items-center"></p>
-    );
-  if (!project)
-    return (
-      <p className="min-h-[calc(100vh-85px)] flex justify-center items-center">
-        Project not found
-      </p>
-    );
-
   return (
     <div>
-      <RichTextEditor initialData={project} />
+      <UpdateProjectEditor />
     </div>
   );
 }

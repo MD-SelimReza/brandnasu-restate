@@ -4,6 +4,23 @@ import ComparisonTable from '@/components/ComparisonTable';
 import MemberShip from '@/components/MemberShip';
 import BookACallSection from '@/components/BookACallSection';
 import OneTimePurchaseItem from '@/components/OneTimePurchaseItem';
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Pricing | BrandNasu',
+  description:
+    'Explore our pricing plans for web design and branding services. Choose the best package that fits your needs and budget.',
+  keywords: [
+    'pricing',
+    'web design pricing',
+    'branding services',
+    'pricing plans',
+    'affordable web design',
+    'brand nasu pricing',
+  ],
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
+};
 
 const Page = () => {
   return (

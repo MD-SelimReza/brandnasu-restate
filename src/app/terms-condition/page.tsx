@@ -1,9 +1,25 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import FadeInSection from '@/components/ui/FadeInSection';
 import { termsLastUpdated, termsSections } from '@/data';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms and Conditions | BrandNasu',
+  description:
+    'Read the terms and conditions for using BrandNasu services, including user responsibilities, intellectual property rights, and limitations of liability.',
+  keywords: [
+    'terms and conditions',
+    'terms of service',
+    'user agreement',
+    'user responsibilities',
+    'intellectual property',
+    'liability limitations',
+  ],
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
+};
 
 const TermsPage = () => {
   return (

@@ -6,6 +6,24 @@ import Gallery from '@/components/Gallery';
 import TeamBenefits from '@/components/TeamBenefits';
 import FAQSection from '@/components/FAQSection';
 import { careerFaq } from '@/data';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Careers | BrandNasu',
+  description:
+    'Join the BrandNasu team! Explore our career opportunities and learn about the benefits of working with us. We are looking for talented individuals to help us create exceptional digital experiences.',
+  keywords: [
+    'careers',
+    'job openings',
+    'join our team',
+    'work with us',
+    'BrandNasu careers',
+    'digital design jobs',
+  ],
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
+};
 
 const CareerPage = () => {
   return (

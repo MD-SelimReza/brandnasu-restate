@@ -1,9 +1,27 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import FadeInSection from '@/components/ui/FadeInSection';
 import { privacyPolicyEffectiveDate, privacyPolicySections } from '@/data';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | BrandNasu',
+  description:
+    'Read our privacy policy to understand how we collect, use, and protect your personal information.',
+  keywords: [
+    'privacy policy',
+    'data protection',
+    'user privacy',
+    'personal information',
+    'data collection',
+    'data usage',
+    'cookies policy',
+    'user rights',
+  ],
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
+};
 
 const PrivacyPage = () => {
   return (

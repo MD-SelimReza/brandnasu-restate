@@ -1,4 +1,20 @@
 import JobDetails from '@/components/JobDetails';
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Job Details | BrandNasu',
+  description:
+    'Explore the job details for the Full Stack Web Development position at BrandNasu. Learn about the responsibilities, qualifications, and benefits of joining our team.',
+  keywords: [
+    'job details',
+    'full stack web development',
+    'UI/UX design',
+    'career opportunities',
+    'BrandNasu jobs',
+  ],
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
+};
 
 export default function JobPage() {
   return (
