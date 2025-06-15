@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useProjects } from '@/hooks/useProjects';
 import Button from './Button';
+import Link from 'next/link';
 
 const services = [
   'Website',
@@ -94,7 +95,7 @@ const OurWorksClient = () => {
                 data-aos-easing="ease"
                 data-aos-duration="400"
               >
-                <div className="block mb-10">
+                <Link href={`/work/${project.slug}`} className="block mb-10">
                   <div className="relative overflow-hidden rounded-xl aspect-[3/2]">
                     <Image
                       key={project.image}
@@ -105,10 +106,12 @@ const OurWorksClient = () => {
                       className="object-cover rounded-xl hover:scale-105 transition duration-300"
                     />
                   </div>
-                </div>
-                <h2 className="text-2xl font-semibold text-darkIndigo">
-                  {project.title}
-                </h2>
+                </Link>
+                <Link href={`/work/${project.slug}`}>
+                  <h2 className="text-2xl font-semibold text-darkIndigo">
+                    {project.title}
+                  </h2>
+                </Link>
                 <p className="mt-4 text-darkGray truncate-one-line">
                   {project.description}
                 </p>

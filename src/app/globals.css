@@ -23,34 +23,110 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Base Tiptap Styles */
 .tiptap {
   outline: none;
 }
 
-.ProseMirror ul[data-type='taskList'] {
-  list-style: none;
-  padding-left: 0;
+/* Checklist-Like Base */
+.checklist {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
 }
 
-.ProseMirror ul li {
+/* Custom Bullet List */
+.custom-bullet-list {
+  list-style-type: disc;
+}
+
+/* Custom Ordered List */
+.custom-ordered-list {
+  list-style-type: decimal;
+}
+
+/* Task List Overrides */
+.tiptap [data-type='taskList'] li {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
 }
 
-.ProseMirror li[data-type='taskItem'] > label {
-  margin-right: 0.5rem;
+/* Code Block */
+.custom-codeblock,
+pre {
+  background: #e1e3e7;
+  border-radius: 0.5rem;
+  color: #000;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
 }
 
-@layer components {
-  .tiptap-taskItem {
-    @apply flex flex-row items-center gap-2;
-  }
+.custom-codeblock code,
+pre code {
+  background: none;
+  color: black;
+  padding: 0;
+}
 
-  .tiptap-taskList {
-    @apply list-none pl-0;
-  }
+/* Blockquote */
+.custom-blockquote,
+blockquote {
+  border-left: 3px solid #d1d5db;
+  padding-left: 1rem;
+  color: #111;
+  font-style: italic;
+}
+
+.ProseMirror a {
+  color: #3b82f6; /* Tailwind 'blue-500' */
+  font-weight: 500;
+  text-decoration: underline;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.ProseMirror a:hover {
+  color: #6366f1; /* Tailwind 'indigo-500' */
+  text-decoration: none;
+}
+
+.tiptap [data-type='taskList'] li {
+  margin-bottom: -1.25rem;
+}
+
+.tiptap [data-type='taskList'] li:first-child {
+  margin-top: -1.25rem;
+}
+
+/* Add vertical spacing between block-level elements */
+.tiptap p,
+.tiptap ul,
+.tiptap ol,
+.tiptap pre,
+.tiptap blockquote {
+  line-height: 1.25;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 12px 0;
+}
+.image-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.full-width-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 16px 0;
+  object-fit: cover;
 }
 
 .truncate-one-line {
@@ -97,33 +173,5 @@ html {
   }
   100% {
     background-position: 0% 50%;
-  }
-}
-
-.scene {
-  /* width: 100vw; */
-  /* height: 100vh; */
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-.shuttle {
-  /* position: absolute; */
-  /* width: 150px; */
-  /* top: 50%; */
-  /* left: 50%; */
-  transform-style: preserve-3d;
-  animation: fly3D 8s linear infinite;
-}
-
-@keyframes fly3D {
-  0% {
-    transform: translate3d(-50vw, 50vh, 0px) rotateY(0deg) rotateX(0deg);
-  }
-  50% {
-    transform: translate3d(0vw, -20vh, 300px) rotateY(180deg) rotateX(20deg);
-  }
-  100% {
-    transform: translate3d(50vw, 50vh, 0px) rotateY(360deg) rotateX(0deg);
   }
 }

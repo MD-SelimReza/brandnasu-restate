@@ -5,10 +5,8 @@ import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Underline from '@tiptap/extension-underline';
 import TextAlign from '@tiptap/extension-text-align';
-import Placeholder from '@tiptap/extension-placeholder';
 import Subscript from '@tiptap/extension-subscript';
 import Superscript from '@tiptap/extension-superscript';
-import Link from '@tiptap/extension-link';
 import TiptapImage from '@tiptap/extension-image';
 import TextStyle from '@tiptap/extension-text-style';
 import Color from '@tiptap/extension-color';
@@ -32,6 +30,10 @@ import Image from 'next/image';
 import { FiUpload } from 'react-icons/fi';
 import MenuBar from './ui/MenuBar';
 import { useRouter } from 'next/navigation';
+import OrderedList from '@tiptap/extension-ordered-list';
+import Blockquote from '@tiptap/extension-blockquote';
+import Link from '@tiptap/extension-link';
+import { ImageGrid } from '@/extensions/ImageGrid';
 
 interface RichTextEditorProps {
   initialData?: {
@@ -41,6 +43,7 @@ interface RichTextEditorProps {
     image: string;
     tag: string[];
     slug?: string;
+    content?: string;
   };
 }
 
@@ -63,15 +66,12 @@ const serviceRedirectMap: Record<string, string> = {
   Website: 'website',
   'Landing Page': 'website',
   'UI/UX': 'website',
-
   'Logo Design': 'brand-design',
   'Brand Guideline': 'brand-design',
   Printing: 'brand-design',
-
   'Social Media Branding': 'brand-marketing',
   Signage: 'brand-marketing',
   'Pitch Deck': 'brand-marketing',
-
   'Branding Video': 'brand-video',
   'Listing Video': 'brand-video',
   'Video Ads': 'brand-video',
@@ -87,58 +87,105 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
   const [tagInput, setTagInput] = useState('');
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isOpen, setIsOpen] = useState(false);
-  const [firstTagSelected, setFirstTagSelected] = useState(tags.length > 0);
+  const [firstTagSelected, setFirstTagSelected] = useState(
+    (initialData?.tag?.length || 0) > 0
+  );
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
 
   const editor = useEditor({
     extensions: [
+      ImageGrid,
       Document,
       Paragraph,
       Text,
       Heading.configure({ levels: [1, 2, 3, 4] }),
       TextStyle,
       Color,
+      Highlight,
       FontFamily,
       FontSize,
-      Highlight,
       Underline,
       Strike,
-      Link.configure({ openOnClick: false }),
-      TiptapImage,
       Subscript,
       Superscript,
       CodeBlock,
+      Blockquote,
       HorizontalRule,
       HardBreak,
       TextAlign.configure({ types: ['heading', 'paragraph'] }),
+      BulletList,
+      OrderedList,
+      BulletList.configure({
+        HTMLAttributes: {
+          class: 'custom-bullet-list checklist',
+        },
+      }),
+      OrderedList.configure({
+        HTMLAttributes: {
+          class: 'custom-ordered-list checklist',
+        },
+      }),
+      TaskList.configure({
+        HTMLAttributes: {
+          class: 'custom-task-list checklist',
+        },
+      }),
+      TaskItem.configure({
+        nested: true,
+        HTMLAttributes: {
+          class: 'custom-task-item',
+        },
+      }),
+      ListItem.configure({
+        HTMLAttributes: {
+          class: 'custom-list-item',
+        },
+      }),
+      Blockquote.configure({
+        HTMLAttributes: {
+          class: 'custom-blockquote',
+        },
+      }),
+      CodeBlock.configure({
+        HTMLAttributes: {
+          class: 'custom-codeblock',
+        },
+      }),
+      ListItem,
       TaskList,
       TaskItem.configure({ nested: true }),
-      Placeholder.configure({ placeholder: 'Write your message here...' }),
-      BulletList,
-      ListItem,
-      StarterKit.configure({ codeBlock: false }),
+      Link.configure({ openOnClick: false }),
+      TiptapImage.configure({ HTMLAttributes: { class: 'full-width-image' } }),
+      StarterKit.configure({
+        codeBlock: false,
+        blockquote: false,
+        bulletList: false,
+        orderedList: false,
+        listItem: false,
+        paragraph: {
+          HTMLAttributes: {
+            class: 'custom-paragraph',
+          },
+        },
+      }),
     ],
-    content: initialData?.description || '',
+    content: initialData?.content || '',
+    autofocus: true,
+    onUpdate: ({ editor }) => {
+      console.log('Editor updated:', editor.getHTML());
+    },
   });
-
-  useEffect(() => {
-    if (initialData && editor) {
-      editor.commands.setContent(initialData.description || '');
-    }
-  }, [initialData, editor]);
 
   const handleTagKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if ((e.key === 'Enter' || e.key === ',') && tagInput.trim()) {
       e.preventDefault();
 
-      // Split input by commas, trim whitespace
       const newTags = tagInput
         .split(',')
         .map((tag) => tag.trim())
         .filter((tag) => tag.length > 0 && !tags.includes(tag));
 
-      // Limit to 3 tags total
       const combinedTags = [...tags, ...newTags].slice(0, 3);
 
       setTags(combinedTags);
@@ -206,7 +253,16 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateForm()) return;
+    if (!editor || !validateForm()) return;
+
+    const content = editor.getHTML();
+
+    console.log('Submitting HTML:', content);
+
+    if (!content || content === '<p></p>') {
+      alert('Please write some blog content.');
+      return;
+    }
 
     const slug = title
       .toLowerCase()
@@ -219,10 +275,11 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
       image: uploadedImageUrl,
       slug,
       tag: tags,
+      content: content,
     };
 
     try {
-      const res = initialData
+      const res = initialData?._id
         ? await axios.patch(`/api/projects/${initialData._id}`, formattedData)
         : await axios.post('/api/projects', formattedData);
 
@@ -231,32 +288,31 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
         const section = serviceRedirectMap[activeService];
         const targetUrl = section ? `/work?section=${section}` : '/work';
 
-        // ✅ Open new tab
+        // Open new tab
         window.open(targetUrl, '_blank');
 
-        // ✅ Reset form fields
-        setTitle('');
-        setShortDesc('');
-        setUploadedImageUrl(null);
-        setTags([]);
-        setTagInput('');
-        setFirstTagSelected(false);
-        if (editor) {
-          editor.commands.clearContent();
+        // Reset form fields for a new entry
+        if (!initialData?._id) {
+          setTitle('');
+          setShortDesc('');
+          setUploadedImageUrl(null);
+          setTags([]);
+          setTagInput('');
+          setFirstTagSelected(false);
+          if (editor) {
+            editor.commands.clearContent();
+          }
         }
 
-        // ✅ Redirect current page
-        if (initialData) {
+        // Redirect current page after editing
+        if (initialData?._id) {
           router.push('/admin/projects');
         }
 
         setErrors({});
-        return;
-      } else {
-        return;
       }
-    } catch {
-      return;
+    } catch (err) {
+      console.error('Failed to save project:', err);
     }
   };
 
@@ -276,12 +332,12 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
     };
   }, []);
 
-  if (!editor) return null;
+  if (!editor) return <div className="min-h-screen"></div>;
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-6 pt-16 pb-32 min-h-[calc(100vh-85px)] relative"
+      className="bg-white p-6 pt-16 min-h-[calc(100vh-95px)] relative"
     >
       <div className="max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
         <div>
@@ -400,11 +456,11 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
             </div>
           </div>
 
-          <div
-            onClick={() => editor.chain().focus().run()}
-            className="border rounded-lg mt-4 p-3 h-[600px] overflow-y-auto prose max-w-none prose-headings:my-2 prose-p:my-1 outline-none cursor-text"
-          >
-            <EditorContent editor={editor} className="focus:outline-none" />
+          <div className="border rounded-lg mt-4 p-3 h-[600px] overflow-y-auto prose max-w-none prose-headings:my-2 prose-p:my-1 outline-none cursor-text">
+            <EditorContent
+              editor={editor}
+              className="focus:outline-none tiptap tiptap-custom"
+            />
           </div>
         </div>
 

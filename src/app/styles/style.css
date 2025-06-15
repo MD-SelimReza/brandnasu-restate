@@ -1,0 +1,39 @@
+/* Custom Anchor Styles */
+.tiptap a {
+  color: #3b82f6; /* Tailwind blue-500 */
+  font-weight: 500;
+  text-decoration: underline;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.tiptap a:hover {
+  color: #6366f1; /* Tailwind indigo-500 */
+  text-decoration: none;
+}
+
+.tiptap [data-type='taskList'] li {
+  margin-bottom: -1.25rem;
+}
+
+.tiptap [data-type='taskList'] li:first-child {
+  margin-top: -1.25rem;
+}
+
+/* Add vertical spacing between block-level elements */
+.tiptap p,
+.tiptap ul,
+.tiptap ol,
+.tiptap pre,
+.tiptap blockquote {
+  line-height: 1.25;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.tiptap br {
+  line-height: 2;
+  content: '';
+  display: block;
+  margin-bottom: 0.5rem;
+}

@@ -265,190 +265,370 @@ const ToolbarButton = ({
 );
 
 const MenuBar = ({ editor }: { editor: Editor | null }) => {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isLinkModalOpen, setIsLinkModalOpen] = useState(false);
+  const [linkUrl, setLinkUrl] = useState('');
+  const fileUploadRef = useRef<HTMLInputElement>(null);
+
   if (!editor) return null;
 
-  const setLink = () => {
-    const url = window.prompt('Enter URL');
-    if (url) {
-      editor
-        .chain()
-        .focus()
-        .extendMarkRange('link')
-        .setLink({ href: url })
-        .run();
+  const openLinkModal = () => {
+    const { empty } = editor.state.selection;
+    if (empty) {
+      alert('Please select text first.');
+      return;
     }
+
+    setIsLinkModalOpen(true);
   };
 
-  const insertImage = () => {
-    const url = window.prompt('Enter image URL');
-    if (url) {
-      editor.chain().focus().setImage({ src: url }).run();
+  const applyLink = () => {
+    if (!linkUrl || !editor) return;
+
+    editor
+      .chain()
+      .extendMarkRange('link')
+      .setLink({ href: linkUrl })
+      .focus()
+      .run();
+
+    setIsLinkModalOpen(false);
+    setLinkUrl('');
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || !editor) return;
+
+    const formData = new FormData();
+    Array.from(files).forEach((file) => formData.append('file', file));
+
+    try {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) throw new Error('Upload failed');
+
+      const data = await res.json();
+      if (!data.urls || !Array.isArray(data.urls)) {
+        throw new Error('Invalid response format');
+      }
+
+      const imageNodes = data.urls.map((url: string) => ({
+        type: 'image',
+        attrs: {
+          src: url,
+          alt: 'Uploaded Image',
+          class: 'full-width-image',
+          contenteditable: false,
+        },
+      }));
+
+      if (data.urls.length === 1) {
+        // Insert single image directly
+        editor.chain().focus().insertContent(imageNodes[0]).run();
+      } else {
+        // Wrap multiple images in custom imageGrid node
+        editor
+          .chain()
+          .focus()
+          .insertContent({
+            type: 'imageGrid',
+            content: imageNodes,
+          })
+          .run();
+      }
+    } catch (err) {
+      console.error('Image upload error:', err);
+    }
+
+    e.target.value = '';
+  };
+
+  const handleFileAttachmentUpload = async (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    const formData = new FormData();
+    // Append all files to FormData
+    for (const file of Array.from(files)) {
+      formData.append('file', file);
+    }
+
+    try {
+      const res = await fetch('/api/file-upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) throw new Error('Upload failed');
+
+      const data = await res.json();
+      if (!data.urls || !Array.isArray(data.urls))
+        throw new Error('Invalid response');
+
+      // Insert multiple file links into the editor content
+      data.urls.forEach((url: string, index: number) => {
+        const fileName = files[index]?.name || 'file';
+        editor
+          .chain()
+          .focus()
+          .insertContent(
+            `<a href="${url}" target="_blank" rel="noopener noreferrer">${fileName}</a><br/>`
+          )
+          .run();
+      });
+    } catch (err) {
+      console.error('File upload error:', err);
     }
   };
 
   return (
-    <div className="w-full border-gray-300 rounded-lg items-center">
-      <h1 className="text-darkGray p-2 pr-0 border-t border-x rounded-t-lg">
-        Toolbar
-      </h1>
-      <div className="grid grid-cols-3">
-        <Dropdown
-          icon={<TypeIcon size={16} />}
-          items={FONT_SIZE_OPTIONS}
-          onSelect={(value) => editor.chain().focus().setFontSize(value).run()}
-        />
+    <>
+      <div className="w-full border-gray-300 rounded-lg items-center">
+        <h1 className="text-darkGray p-2 pr-0 border-t border-x rounded-t-lg">
+          Toolbar
+        </h1>
+        <div className="grid grid-cols-3">
+          <Dropdown
+            icon={<TypeIcon size={16} />}
+            items={FONT_SIZE_OPTIONS}
+            onSelect={(value) =>
+              editor.chain().focus().setFontSize(value).run()
+            }
+          />
 
-        <ColorPicker
-          editor={editor}
-          type="text"
-          icon={<Baseline size={16} />}
-        />
+          <ColorPicker
+            editor={editor}
+            type="text"
+            icon={<Baseline size={16} />}
+          />
 
-        <ColorPicker
-          editor={editor}
-          type="background"
-          icon={<PaintBucket size={16} />}
-        />
+          <ColorPicker
+            editor={editor}
+            type="background"
+            icon={<PaintBucket size={16} />}
+          />
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().toggleBold().run()}
-          // onClick={() => editor.chain().focus().toggleBold().run()}
-          disabled={!editor.can().chain().focus().toggleBold().run()}
-          active={editor.isActive('bold')}
-          title="Bold"
-        >
-          <Bold size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => editor.chain().focus().toggleBold().run()}
+            disabled={!editor.can().chain().focus().toggleBold().run()}
+            active={editor.isActive('bold')}
+            title="Bold"
+          >
+            <Bold size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().toggleItalic().run()}
-          active={editor.isActive('italic')}
-          title="Italic"
-        >
-          <Italic size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => editor.chain().focus().toggleItalic().run()}
+            active={editor.isActive('italic')}
+            title="Italic"
+          >
+            <Italic size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().toggleUnderline().run()}
-          active={editor.isActive('underline')}
-          title="Underline"
-        >
-          <UnderlineIcon size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => editor.chain().focus().toggleUnderline().run()}
+            active={editor.isActive('underline')}
+            title="Underline"
+          >
+            <UnderlineIcon size={16} />
+          </ToolbarButton>
 
-        <Dropdown
-          icon={<AlignJustify size={16} />}
-          items={ALIGN_OPTIONS.map(({ icon, value }) => ({
-            label: '',
-            value,
-            icon,
-          }))}
-          onSelect={(value) =>
-            editor
-              .chain()
-              .focus()
-              .setTextAlign(value as 'left' | 'center' | 'right' | 'justify')
-              .run()
-          }
-        />
+          <Dropdown
+            icon={<AlignJustify size={16} />}
+            items={ALIGN_OPTIONS.map(({ icon, value }) => ({
+              label: '',
+              value,
+              icon,
+            }))}
+            onSelect={(value) =>
+              editor
+                .chain()
+                .focus()
+                .setTextAlign(value as 'left' | 'center' | 'right' | 'justify')
+                .run()
+            }
+          />
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().toggleBulletList().run()}
-          active={editor.isActive('bulletList')}
-          title="Bullet List"
-        >
-          <List size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => editor.chain().focus().toggleBulletList().run()}
+            active={editor.isActive('bulletList')}
+            title="Bullet List"
+          >
+            <List size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().toggleOrderedList().run()}
-          active={editor.isActive('orderedList')}
-          title="Ordered List"
-        >
-          <ListOrdered size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => editor.chain().focus().toggleOrderedList().run()}
+            active={editor.isActive('orderedList')}
+            title="Ordered List"
+          >
+            <ListOrdered size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().toggleTaskList().run()}
-          active={editor.isActive('taskList')}
-          title="Task List"
-        >
-          <ListChecks size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => editor.chain().focus().toggleTaskList().run()}
+            active={editor.isActive('taskList')}
+            title="Task List"
+          >
+            <ListChecks size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().sinkListItem('listItem').run()}
-          title="Indent"
-        >
-          <Indent size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => {
+              if (editor.isActive('listItem')) {
+                editor.chain().focus().sinkListItem('listItem').run();
+              } else if (editor.isActive('taskItem')) {
+                editor.chain().focus().sinkListItem('taskItem').run();
+              }
+            }}
+            title="Indent"
+            disabled={
+              !editor.can().sinkListItem('listItem') &&
+              !editor.can().sinkListItem('taskItem')
+            }
+          >
+            <Indent size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().liftListItem('listItem').run()}
-          title="Outdent"
-        >
-          <Outdent size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => {
+              if (editor.isActive('listItem')) {
+                editor.chain().focus().liftListItem('listItem').run();
+              } else if (editor.isActive('taskItem')) {
+                editor.chain().focus().liftListItem('taskItem').run();
+              }
+            }}
+            title="Outdent"
+            disabled={
+              !editor.can().liftListItem('listItem') &&
+              !editor.can().liftListItem('taskItem')
+            }
+          >
+            <Outdent size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton onClick={() => insertImage} title="Insert Image">
-          <ImageIcon size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => fileInputRef.current?.click()}
+            title="Insert Image"
+          >
+            <ImageIcon size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton onClick={setLink} title="Insert Link">
-          <LinkIcon size={16} />
-        </ToolbarButton>
+          <input
+            type="file"
+            ref={fileInputRef}
+            accept="image/*"
+            onChange={handleImageUpload}
+            multiple
+            className="hidden"
+          />
 
-        <ToolbarButton onClick={() => {}} title="Attach">
-          <Paperclip size={16} />
-        </ToolbarButton>
+          <ToolbarButton onClick={openLinkModal} title="Insert Link">
+            <LinkIcon size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().toggleBlockquote().run()}
-          active={editor.isActive('blockquote')}
-          title="Blockquote"
-        >
-          <Quote size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => fileUploadRef.current?.click()}
+            title="Attach File"
+          >
+            <Paperclip size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-          active={editor.isActive('codeBlock')}
-          title="Code Block"
-        >
-          <Code size={16} />
-        </ToolbarButton>
+          <input
+            type="file"
+            accept=".pdf,.zip,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.rar,.7z"
+            ref={fileUploadRef}
+            onChange={handleFileAttachmentUpload}
+            className="hidden"
+            multiple
+          />
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().toggleStrike().run()}
-          active={editor.isActive('strike')}
-          title="Strike"
-        >
-          <Strikethrough size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => editor.chain().focus().toggleBlockquote().run()}
+            active={editor.isActive('blockquote')}
+            title="Blockquote"
+          >
+            <Quote size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton onClick={() => {}} title="Emoji">
-          <Smile size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+            active={editor.isActive('codeBlock')}
+            title="Code Block"
+          >
+            <Code size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().undo().run()}
-          title="Undo"
-        >
-          <Undo size={16} />
-        </ToolbarButton>
+          <ToolbarButton
+            onClick={() => editor.chain().focus().toggleStrike().run()}
+            active={editor.isActive('strike')}
+            title="Strike"
+          >
+            <Strikethrough size={16} />
+          </ToolbarButton>
 
-        <ToolbarButton
-          onClick={() => editor.chain().focus().redo().run()}
-          title="Redo"
-        >
-          <Redo size={16} />
-        </ToolbarButton>
+          <ToolbarButton onClick={() => {}} title="Emoji">
+            <Smile size={16} />
+          </ToolbarButton>
+
+          <ToolbarButton
+            onClick={() => editor.chain().focus().undo().run()}
+            title="Undo"
+          >
+            <Undo size={16} />
+          </ToolbarButton>
+
+          <ToolbarButton
+            onClick={() => editor.chain().focus().redo().run()}
+            title="Redo"
+          >
+            <Redo size={16} />
+          </ToolbarButton>
+        </div>
+
+        <button className="px-4 py-3 tracking-wide rounded-lg bg-indigo text-white hover:bg-darkIndigo transition duration-500 w-full mt-4">
+          Submit
+        </button>
       </div>
 
-      <button className="px-4 py-3 tracking-wide rounded-lg bg-indigo text-white hover:bg-darkIndigo transition duration-500 w-full mt-4">
-        Submit
-      </button>
-    </div>
+      {/* Link Modal */}
+      {isLinkModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center min-h-screen">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+            <h2 className="text-lg font-semibold mb-4">Insert Link</h2>
+            <input
+              type="text"
+              placeholder="https://example.com"
+              value={linkUrl}
+              onChange={(e) => setLinkUrl(e.target.value)}
+              onMouseDown={(e) => e.stopPropagation()}
+              autoFocus
+              className="w-full border border-gray-300 rounded px-3 py-2 mb-4"
+            />
+            <div className="flex justify-end gap-2">
+              <button
+                onClick={() => setIsLinkModalOpen(false)}
+                className="text-gray-600 hover:text-gray-800"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={applyLink}
+                className="bg-indigo text-white px-4 py-2 rounded hover:bg-darkIndigo"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

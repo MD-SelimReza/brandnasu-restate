@@ -23,20 +23,12 @@ export async function POST(req: Request) {
 
   try {
     const body = await req.json();
-    const { title, description, image, slug, tag } = body;
+    const { title, description, image, slug, tag, content } = body;
 
-    if (!title || !description || !image || !slug || !tag || tag.length === 0) {
+    if (!title || !description || !image || !slug || !tag?.length || !content) {
       return NextResponse.json(
         { message: 'All fields are required.' },
         { status: 400 }
-      );
-    }
-
-    const existing = await Project.findOne({ slug });
-    if (existing) {
-      return NextResponse.json(
-        { message: 'Project with this title already exists.' },
-        { status: 409 }
       );
     }
 
@@ -46,7 +38,9 @@ export async function POST(req: Request) {
       image,
       slug,
       tag,
+      content,
     });
+
     return NextResponse.json(newProject, { status: 201 });
   } catch {
     return NextResponse.json(

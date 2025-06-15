@@ -39,9 +39,17 @@ export async function PATCH(
 
   try {
     const body = await req.json();
-    const { title, description, image, slug, tag } = body;
+    const { title, description, image, slug, tag, content } = body;
 
-    if (!title || !description || !image || !slug || !tag || tag.length === 0) {
+    if (
+      !title ||
+      !description ||
+      !image ||
+      !slug ||
+      !tag ||
+      tag.length === 0 ||
+      !content
+    ) {
       return NextResponse.json(
         { message: 'All fields are required.' },
         { status: 400 }
@@ -50,7 +58,7 @@ export async function PATCH(
 
     const updated = await Project.findByIdAndUpdate(
       id,
-      { title, description, image, slug, tag },
+      { title, description, image, slug, tag, content },
       { new: true }
     );
 
