@@ -26,8 +26,6 @@ import {
   ListChecks,
 } from 'lucide-react';
 import { Editor } from '@tiptap/react';
-import Picker from '@emoji-mart/react';
-import data from '@emoji-mart/data';
 
 const COLOR_GRID = [
   '#000000',
@@ -272,28 +270,6 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
   const [linkUrl, setLinkUrl] = useState('');
   const fileUploadRef = useRef<HTMLInputElement>(null);
 
-  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const emojiPickerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        emojiPickerRef.current &&
-        !emojiPickerRef.current.contains(event.target as Node)
-      ) {
-        setShowEmojiPicker(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const insertEmoji = (emoji: { native: string }) => {
-    if (!editor) return;
-    editor.chain().focus().insertContent(emoji.native).run();
-    setShowEmojiPicker(false);
-  };
-
   if (!editor) return null;
 
   const openLinkModal = () => {
@@ -413,15 +389,6 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
 
   return (
     <>
-      {showEmojiPicker && (
-        <div
-          ref={emojiPickerRef}
-          className="absolute top-full z-50 -mt-16 w-[300px] border-2 border-red-500"
-        >
-          <Picker data={data} onEmojiSelect={insertEmoji} theme="light" />
-        </div>
-      )}
-
       <div className="w-full border-gray-300 rounded-lg items-center">
         <h1 className="text-darkGray p-2 pr-0 border-t border-x rounded-t-lg">
           Toolbar
@@ -606,10 +573,7 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
             <Strikethrough size={16} />
           </ToolbarButton>
 
-          <ToolbarButton
-            onClick={() => setShowEmojiPicker((prev) => !prev)}
-            title="Emoji"
-          >
+          <ToolbarButton onClick={() => {}} title="Emoji">
             <Smile size={16} />
           </ToolbarButton>
 
