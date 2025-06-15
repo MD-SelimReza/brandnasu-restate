@@ -113,7 +113,7 @@ blockquote {
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 12px 0;
+  /* margin: 12px 0; */
 }
 .image-grid img {
   width: 100%;
@@ -125,7 +125,7 @@ blockquote {
   width: 100%;
   height: auto;
   display: block;
-  margin: 16px 0;
+  /* margin: 16px 0; */
   object-fit: cover;
 }
 

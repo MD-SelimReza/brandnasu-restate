@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
 
       const uploadParams = {
         Bucket: 'brandnasu-space',
-        Key: `uploads/${Date.now()}-${file.name}`, // timestamp prefix for uniqueness
+        Key: `uploads/${Date.now()}-${file.name}`,
         Body: buffer,
         ACL: 'public-read' as const,
         ContentType: file.type,

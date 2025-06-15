@@ -211,11 +211,11 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
   };
 
   const handleBannerUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
 
     const formData = new FormData();
-    formData.append('file', file);
+    Array.from(files).forEach((file) => formData.append('file', file));
 
     try {
       const res = await fetch('/api/upload', {
@@ -226,11 +226,18 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
       if (!res.ok) throw new Error('Failed to upload');
 
       const data = await res.json();
-      setUploadedImageUrl(data.url);
-      clearFieldError('image');
+
+      if (Array.isArray(data.urls) && data.urls[0]) {
+        setUploadedImageUrl(data.urls[0]);
+        clearFieldError('image');
+      } else {
+        throw new Error('No valid image URL returned');
+      }
     } catch (err) {
       console.error('Upload failed:', err);
     }
+
+    e.target.value = '';
   };
 
   const clearFieldError = (field: string) => {
