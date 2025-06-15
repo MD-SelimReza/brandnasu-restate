@@ -10,7 +10,7 @@ import Superscript from '@tiptap/extension-superscript';
 import TiptapImage from '@tiptap/extension-image';
 import TextStyle from '@tiptap/extension-text-style';
 import Color from '@tiptap/extension-color';
-import Highlight from '@tiptap/extension-highlight';
+// import Highlight from '@tiptap/extension-highlight';
 import FontFamily from '@tiptap/extension-font-family';
 import FontSize from 'tiptap-extension-font-size';
 import Strike from '@tiptap/extension-strike';
@@ -34,6 +34,7 @@ import OrderedList from '@tiptap/extension-ordered-list';
 import Blockquote from '@tiptap/extension-blockquote';
 import Link from '@tiptap/extension-link';
 import { ImageGrid } from '@/extensions/ImageGrid';
+import { CustomHighlight } from '@/extensions/CustomHighlight';
 
 interface RichTextEditorProps {
   initialData?: {
@@ -95,14 +96,14 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
 
   const editor = useEditor({
     extensions: [
+      TextStyle,
+      Color,
+      CustomHighlight.configure({ multicolor: true }),
       ImageGrid,
       Document,
       Paragraph,
       Text,
       Heading.configure({ levels: [1, 2, 3, 4] }),
-      TextStyle,
-      Color,
-      Highlight,
       FontFamily,
       FontSize,
       Underline,
@@ -114,8 +115,6 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
       HorizontalRule,
       HardBreak,
       TextAlign.configure({ types: ['heading', 'paragraph'] }),
-      BulletList,
-      OrderedList,
       BulletList.configure({
         HTMLAttributes: {
           class: 'custom-bullet-list checklist',
@@ -152,9 +151,6 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
           class: 'custom-codeblock',
         },
       }),
-      ListItem,
-      TaskList,
-      TaskItem.configure({ nested: true }),
       Link.configure({ openOnClick: false }),
       TiptapImage.configure({ HTMLAttributes: { class: 'full-width-image' } }),
       StarterKit.configure({
@@ -172,9 +168,6 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
     ],
     content: initialData?.content || '',
     autofocus: true,
-    onUpdate: ({ editor }) => {
-      console.log('Editor updated:', editor.getHTML());
-    },
   });
 
   const handleTagKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -263,8 +256,6 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
     if (!editor || !validateForm()) return;
 
     const content = editor.getHTML();
-
-    console.log('Submitting HTML:', content);
 
     if (!content || content === '<p></p>') {
       alert('Please write some blog content.');

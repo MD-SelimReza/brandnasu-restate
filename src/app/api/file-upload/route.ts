@@ -62,8 +62,7 @@ export async function POST(req: NextRequest) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (error) {
-    console.error('Upload failed:', error);
+  } catch {
     return new Response(JSON.stringify({ error: 'Upload failed' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },

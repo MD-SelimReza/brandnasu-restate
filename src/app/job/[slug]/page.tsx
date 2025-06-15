@@ -23,7 +23,7 @@ export default function JobPage() {
       sit="Onsite"
       type="Full time"
       deadline="9 days"
-      description={`Do you love to think outside the box and deeply consider UI interactions for every element? We are searching for Senior / Mid-Senior UI/UX designers who are eager to take on the challenge of creating an “Outstanding Design Project. We are prepared to elevate your creativity. For now, we would like to see your courage and confidence. We aim to set a benchmark as we have done before. As a senior designer, you'll become integral to Musemind's vibrant design culture by collaborating with our talented other designers.
+      description={`Do you love to think outside the box and deeply consider UI interactions for every element? We are searching for Senior / Mid-Senior UI/UX designers who are eager to take on the challenge of creating an “Outstanding Design Project. We are prepared to elevate your creativity. For now, we would like to see your courage and confidence. We aim to set a benchmark as we have done before. As a senior designer, you'll become integral to Brandnasu's vibrant design culture by collaborating with our talented other designers.
         `}
       responsibilities={[
         'Create intuitive, aesthetically pleasing, and functional user interfaces and experiences for web and mobile applications.',
