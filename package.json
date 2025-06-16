@@ -30,6 +30,7 @@
     "aos": "^2.3.4",
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
+    "firebase": "^11.9.1",
     "formidable": "^3.5.4",
     "framer-motion": "^12.9.2",
     "isomorphic-dompurify": "^2.25.0",

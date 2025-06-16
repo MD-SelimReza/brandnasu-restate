@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import ConfirmDeleteDialog from './ConfirmDeleteDialog';
+import Link from 'next/link';
+import { FiEdit, FiTrash2, FiEye } from 'react-icons/fi';
 
 export default function ProjectsAdmin() {
   const { projects, loading, error } = useProjects();
@@ -90,6 +92,9 @@ export default function ProjectsAdmin() {
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
                   Delete
                 </th>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
+                  View
+                </th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -115,7 +120,7 @@ export default function ProjectsAdmin() {
                       />
                     </div>
                   </td>
-                  <td className="px-4 py-3 w-28">
+                  {/* <td className="px-4 py-3 w-28">
                     <button
                       onClick={() => handleEdit(project._id)}
                       className="px-3 bg-gray100 text-darkGray py-1.5 w-20 rounded-md hover:bg-gray-100"
@@ -130,6 +135,44 @@ export default function ProjectsAdmin() {
                     >
                       Delete
                     </button>
+                  </td>
+                  <td className="px-4 py-3 w-28">
+                    <Link
+                      href={`/work/${project.slug}`}
+                      className="px-3 bg-gray100 text-darkGray py-1.5 w-20 rounded-md hover:bg-gray-100"
+                    >
+                      View
+                    </Link>
+                  </td> */}
+                  <td className="px-4 py-3 w-16">
+                    <button
+                      onClick={() => handleEdit(project._id)}
+                      className="flex items-center justify-center bg-gray100 text-darkGray py-1.5 px-2 rounded-md hover:bg-gray-100 border"
+                      title="Edit"
+                    >
+                      <FiEdit className="text-lg" />
+                    </button>
+                  </td>
+
+                  <td className="px-4 py-3 w-16">
+                    <button
+                      onClick={() => confirmDelete(project._id)}
+                      className="flex items-center justify-center py-1.5 px-2 rounded-md bg-gray100 text-[#f62447] hover:bg-red-100 border"
+                      title="Delete"
+                    >
+                      <FiTrash2 className="text-lg" />
+                    </button>
+                  </td>
+
+                  <td className="px-4 py-3 w-16">
+                    <Link href={`/work/${project.slug}`}>
+                      <button
+                        className="flex items-center justify-center py-1.5 px-2 rounded-md bg-gray100 text-darkGray hover:bg-gray-100 border"
+                        title="Delete"
+                      >
+                        <FiEye className="text-lg" />
+                      </button>
+                    </Link>
                   </td>
                 </tr>
               ))}
