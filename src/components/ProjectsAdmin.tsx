@@ -90,10 +90,10 @@ export default function ProjectsAdmin() {
                   Edit
                 </th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                  Delete
+                  View
                 </th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                  View
+                  Delete
                 </th>
               </tr>
             </thead>
@@ -155,16 +155,6 @@ export default function ProjectsAdmin() {
                   </td>
 
                   <td className="px-4 py-3 w-16">
-                    <button
-                      onClick={() => confirmDelete(project._id)}
-                      className="flex items-center justify-center py-1.5 px-2 rounded-md bg-gray100 text-[#f62447] hover:bg-red-100 border"
-                      title="Delete"
-                    >
-                      <FiTrash2 className="text-lg" />
-                    </button>
-                  </td>
-
-                  <td className="px-4 py-3 w-16">
                     <Link href={`/work/${project.slug}`}>
                       <button
                         className="flex items-center justify-center py-1.5 px-2 rounded-md bg-gray100 text-darkGray hover:bg-gray-100 border"
@@ -173,6 +163,16 @@ export default function ProjectsAdmin() {
                         <FiEye className="text-lg" />
                       </button>
                     </Link>
+                  </td>
+
+                  <td className="px-4 py-3 w-16">
+                    <button
+                      onClick={() => confirmDelete(project._id)}
+                      className="flex items-center justify-center py-1.5 px-2 rounded-md bg-gray100 text-[#f62447] hover:bg-red-100 border"
+                      title="Delete"
+                    >
+                      <FiTrash2 className="text-lg" />
+                    </button>
                   </td>
                 </tr>
               ))}

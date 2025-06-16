@@ -10,13 +10,6 @@ import ServiceMenu from './ServiceMenu';
 import logo from '../../public/Logo/light-logo.svg';
 import darkLogo from '../../public/Logo/dark-logo.svg';
 import { usePathname } from 'next/navigation';
-import {
-  signInWithPopup,
-  signOut,
-  onAuthStateChanged,
-  User,
-} from 'firebase/auth';
-import { auth, provider } from '@/lib/firebase';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -24,15 +17,6 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const [user, setUser] = useState<User | null>(null);
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-      setUser(firebaseUser);
-    });
-    return () => unsubscribe();
-  }, []);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
   const toggleDropdown = (menu: string) => {
@@ -50,32 +34,17 @@ export default function Navbar() {
         !dropdownRef.current.contains(target)
       ) {
         setMenuOpen(false);
-        setShowDropdown(false);
       }
     };
 
-    if (menuOpen || showDropdown) {
+    if (menuOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [menuOpen, showDropdown]);
-
-  const handleGoogleLogin = async () => {
-    try {
-      await signInWithPopup(auth, provider);
-    } catch (error) {
-      console.error('Login error', error);
-    }
-  };
-
-  const handleLogout = async () => {
-    await signOut(auth);
-    setUser(null);
-    setShowDropdown(false);
-  };
+  }, [menuOpen]);
 
   return (
     <nav className="w-full bg-darkIndigo shadow-md sticky top-0 z-50 font-sans">
@@ -181,59 +150,20 @@ export default function Navbar() {
           </div>
 
           {/* Buttons */}
-          <div className="hidden xl:flex text-base gap-6">
-            {/* <Link
+          {/* <div className="hidden xl:flex text-base gap-6"> */}
+          {/* <Link
             href="/admin/projects/add"
             className="px-4 py-1 block bg-indigo text-white border-[0.1px] border-indigo transition-all duration-200 rounded-full"
           >
             Add Project
           </Link> */}
-            <Link
-              href="https://client.brandnasu.com/sign-in"
-              className="hidden xl:block px-4 py-1 border-[0.1px] hover:bg-indigo hover:border-indigo transition-all duration-200 border-lightIndigo/25 text-lightIndigo rounded-full"
-            >
-              Dashboard
-            </Link>
-            {user ? (
-              <div ref={dropdownRef} className="relative">
-                <Image
-                  src={user.photoURL || '/default-avatar.png'}
-                  alt={user.displayName || 'User'}
-                  width={36}
-                  height={36}
-                  title={user.displayName || ''}
-                  className="rounded-full cursor-pointer hover:ring-2 hover:ring-indigo"
-                  onClick={() => setShowDropdown((prev) => !prev)}
-                />
-                {showDropdown && (
-                  <div className="absolute right-0 mt-5 w-40 bg-white rounded-md shadow-lg text-sm z-50">
-                    {user.email === 'rezaselim405@gmail.com' && (
-                      <Link
-                        href="/admin/projects"
-                        className="block px-4 py-2 hover:bg-indigo/10 text-darkIndigo"
-                        onClick={() => setShowDropdown(false)}
-                      >
-                        Admin Panel
-                      </Link>
-                    )}
-                    <button
-                      onClick={handleLogout}
-                      className="w-full text-left px-4 py-2 hover:bg-indigo/10 text-darkIndigo"
-                    >
-                      Logout
-                    </button>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div
-                onClick={handleGoogleLogin}
-                className="hidden xl:block px-4 py-1 border-[0.1px] hover:bg-indigo hover:border-indigo transition-all duration-200 border-lightIndigo/25 text-lightIndigo rounded-full cursor-pointer"
-              >
-                Get Started
-              </div>
-            )}
-          </div>
+          <Link
+            href="https://client.brandnasu.com/sign-in"
+            className="hidden xl:block px-4 py-1 border-[0.1px] hover:bg-indigo hover:border-indigo transition-all duration-200 border-lightIndigo/25 text-lightIndigo rounded-full"
+          >
+            Dashboard
+          </Link>
+          {/* </div> */}
         </div>
       </div>
 
