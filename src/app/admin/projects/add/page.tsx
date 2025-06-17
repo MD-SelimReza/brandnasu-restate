@@ -1,6 +1,9 @@
 import React from 'react';
 import RichTextEditor from '@/components/RichTextEditor';
 import type { Metadata } from 'next';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/authOptions';
+import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'Add Project | BrandNasu',
@@ -18,9 +21,14 @@ export const metadata: Metadata = {
   },
 };
 
-const EditorPage = () => {
+const EditorPage = async () => {
+  const session = await getServerSession(authOptions);
+
+  if (!session) {
+    redirect('/signin');
+  }
   return (
-    <div>
+    <div className="max-w-[1440px] mx-auto px-4">
       <RichTextEditor />
     </div>
   );

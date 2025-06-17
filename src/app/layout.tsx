@@ -6,6 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import DataAosProvider from '@/components/DataAosProvider';
 import { usePathname } from 'next/navigation';
+import SessionProviderWrapper from '@/components/authentication/SessionProviderWrapper';
+import { ToastContainer } from 'react-toastify';
 
 // export const metadata: Metadata = {
 //   title: 'BrandNasu',
@@ -70,18 +72,18 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
 
-  const shouldHideFooter =
-    pathname.startsWith('/admin/projects/add') ||
-    pathname.startsWith('/admin/projects/edit');
+  const isDashboardRoute = pathname.startsWith('/dashboard');
+  const isAdminRoute = pathname.startsWith('/admin');
+
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body className="bg-gray100">
-        <Navbar />
-        <DataAosProvider>{children}</DataAosProvider>
-        {!shouldHideFooter && <Footer />}
+        <SessionProviderWrapper>
+          {!isDashboardRoute && <Navbar />}
+          <ToastContainer />
+          <DataAosProvider>{children}</DataAosProvider>
+          {!isDashboardRoute && !isAdminRoute && <Footer />}
+        </SessionProviderWrapper>
       </body>
     </html>
   );

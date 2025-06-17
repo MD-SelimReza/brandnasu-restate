@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function EditPage() {
   return (
-    <div>
+    <div className="max-w-[1440px] mx-auto px-4">
       <UpdateProjectEditor />
     </div>
   );

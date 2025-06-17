@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import ConfirmDeleteDialog from './ConfirmDeleteDialog';
 import Link from 'next/link';
 import { FiEdit, FiTrash2, FiEye } from 'react-icons/fi';
+import { TbLayoutGridAdd } from 'react-icons/tb';
 
 export default function ProjectsAdmin() {
   const { projects, loading, error } = useProjects();
@@ -65,11 +66,18 @@ export default function ProjectsAdmin() {
     );
 
   return (
-    <div className="bg-white">
-      <div className="max-w-[1440px] px-5 mx-auto lg:py-32 md:py-24 py-16">
-        <h1 className="text-3xl font-bold border-x border-t px-4 py-5 rounded-t-lg border-gray-200">
-          Projects Admin
-        </h1>
+    <div className="bg-white rounded-xl">
+      <div className="max-w-full p-6">
+        <div className="flex justify-between items-center px-4 border-x border-t rounded-t-lg border-gray-200">
+          <h1 className="text-3xl font-bold py-5">Projects Management</h1>
+          <div>
+            <Link href={'/admin/projects/add'}>
+              <button className="flex items-center gap-2 bg-indigo text-white font-medium py-2.5 px-5 rounded-md hover:bg-darkIndigo transition">
+                <TbLayoutGridAdd /> Add Project
+              </button>
+            </Link>
+          </div>
+        </div>
         <div className="overflow-x-auto rounded-b-lg border border-gray-200">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
@@ -120,30 +128,6 @@ export default function ProjectsAdmin() {
                       />
                     </div>
                   </td>
-                  {/* <td className="px-4 py-3 w-28">
-                    <button
-                      onClick={() => handleEdit(project._id)}
-                      className="px-3 bg-gray100 text-darkGray py-1.5 w-20 rounded-md hover:bg-gray-100"
-                    >
-                      Edit
-                    </button>
-                  </td>
-                  <td className="px-4 py-3 w-28">
-                    <button
-                      onClick={() => confirmDelete(project._id)}
-                      className="px-3 py-1.5 w-20 rounded-md bg-gray100 text-[#f62447] hover:bg-red-100"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                  <td className="px-4 py-3 w-28">
-                    <Link
-                      href={`/work/${project.slug}`}
-                      className="px-3 bg-gray100 text-darkGray py-1.5 w-20 rounded-md hover:bg-gray-100"
-                    >
-                      View
-                    </Link>
-                  </td> */}
                   <td className="px-4 py-3 w-16">
                     <button
                       onClick={() => handleEdit(project._id)}

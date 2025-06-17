@@ -175,3 +175,21 @@ blockquote {
     background-position: 0% 50%;
   }
 }
+
+@layer utilities {
+  @keyframes bar-loader {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-bar-loader {
+    animation: bar-loader 1.5s ease-in-out infinite;
+  }
+}
