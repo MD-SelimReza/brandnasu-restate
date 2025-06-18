@@ -213,15 +213,24 @@ export const authOptions: NextAuthOptions = {
         // If user does not exist in DB, create them
         if (!dbUser) {
           const normalizedEmail = user.email?.toLowerCase();
-          const isSuperAdminEmail =
-            normalizedEmail === 'rezaselim405@gmail.com';
+
+          // Define superadmin emails
+          const superAdminEmails = [
+            'rezaselim405@gmail.com',
+            'suvas@brandnasu.com',
+          ];
+
+          // Check if the current user is a superadmin
+          const isSuperAdminEmail = superAdminEmails.includes(
+            normalizedEmail || ''
+          );
 
           dbUser = await UserModel.create({
             first_name: user.name?.split(' ')[0] || '',
             last_name: user.name?.split(' ')[1] || '',
             email: normalizedEmail,
             image: user.image,
-            password: null,
+            password: null, // Not used for Google users
             role: isSuperAdminEmail ? 'superadmin' : 'user',
           });
         }
