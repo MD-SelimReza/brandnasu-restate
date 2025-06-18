@@ -28,7 +28,6 @@ const DashboardLayoutWrapper = ({
   }
 
   const isActive = (path: string) => pathname === path;
-  const isAdmin = user?.role === 'admin';
 
   const getNavLinkClass = (path: string) =>
     `block py-2 px-4 rounded ${
@@ -84,6 +83,7 @@ const DashboardLayoutWrapper = ({
         </div>
 
         <nav className="mt-6 space-y-2 px-2">
+          {/* Dashboard - All roles */}
           <Link
             href="/dashboard"
             onClick={() => setSidebarOpen(false)}
@@ -92,38 +92,43 @@ const DashboardLayoutWrapper = ({
             Dashboard
           </Link>
 
-          {isAdmin ? (
-            <>
-              <Link
-                onClick={() => setSidebarOpen(false)}
-                href="/dashboard/projects"
-                className={getNavLinkClass('/dashboard/projects')}
-              >
-                Projects
-              </Link>
-              <Link
-                onClick={() => setSidebarOpen(false)}
-                href="/dashboard/users"
-                className={getNavLinkClass('/dashboard/users')}
-              >
-                Users
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link
-                onClick={() => setSidebarOpen(false)}
-                href="/dashboard/support"
-                className={getNavLinkClass('/dashboard/support')}
-              >
-                Support
-              </Link>
-            </>
+          {/* SuperAdmin & Admin: Can view Projects */}
+          {(user?.role === 'superadmin' || user?.role === 'admin') && (
+            <Link
+              href="/dashboard/projects"
+              onClick={() => setSidebarOpen(false)}
+              className={getNavLinkClass('/dashboard/projects')}
+            >
+              Projects
+            </Link>
           )}
 
+          {/* SuperAdmin only: Can view Users */}
+          {user?.role === 'superadmin' && (
+            <Link
+              href="/dashboard/users"
+              onClick={() => setSidebarOpen(false)}
+              className={getNavLinkClass('/dashboard/users')}
+            >
+              Users
+            </Link>
+          )}
+
+          {/* User & SuperAdmin: Support route */}
+          {/* {(user?.role === 'user' || user?.role === 'superadmin') && ( */}
           <Link
+            href="/dashboard/support"
             onClick={() => setSidebarOpen(false)}
+            className={getNavLinkClass('/dashboard/support')}
+          >
+            Support
+          </Link>
+          {/* // )} */}
+
+          {/* All roles: My Account */}
+          <Link
             href="/dashboard/my-account"
+            onClick={() => setSidebarOpen(false)}
             className={getNavLinkClass('/dashboard/my-account')}
           >
             My Account
@@ -164,15 +169,6 @@ const DashboardLayoutWrapper = ({
             </Link>
           </div>
         </header>
-
-        {/* Top Logo Bar */}
-        {/* <div className="flex items-center justify-center bg-darkIndigo px-4 py-5 sticky top-0 z-20">
-          <Link href={'/'}>
-            <div className="flex items-center">
-              <Image src={logo} alt="Shop Logo" width={160} height={160} />
-            </div>
-          </Link>
-        </div> */}
 
         {/* Dashboard Body */}
         <main className="px-4 md:px-6 space-y-6 flex-1 max-w-dvw">

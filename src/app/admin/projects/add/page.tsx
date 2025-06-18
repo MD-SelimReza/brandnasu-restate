@@ -27,6 +27,11 @@ const EditorPage = async () => {
   if (!session) {
     redirect('/signin');
   }
+
+  if (session?.user?.role !== 'admin') {
+    redirect('/dashboard');
+  }
+
   return (
     <div className="max-w-[1440px] mx-auto px-4">
       <RichTextEditor />

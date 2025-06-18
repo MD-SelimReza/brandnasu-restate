@@ -11,6 +11,10 @@ const page = async () => {
     redirect('/signin');
   }
 
+  if (session?.user?.role !== 'superadmin') {
+    redirect('/dashboard');
+  }
+
   return (
     <div className="py-6">
       <CustomersPage />

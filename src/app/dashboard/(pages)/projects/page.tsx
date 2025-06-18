@@ -28,6 +28,10 @@ const Page = async () => {
     redirect('/signin');
   }
 
+  if (session?.user?.role !== 'admin') {
+    redirect('/dashboard');
+  }
+
   return (
     <div className="py-6">
       <ProjectsAdmin />

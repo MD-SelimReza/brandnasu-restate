@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import { FaLinkedin } from 'react-icons/fa';
@@ -50,37 +50,36 @@ const SignupPage = () => {
     setServerError('');
 
     try {
-      // ✅ Create user first via signup API
+      // ✅ Send signup request
       const payload = {
         first_name: data.first_name,
         last_name: data.last_name,
         email: data.email,
         password: data.password,
       };
+
       await axios.post('/api/auth/signup', payload);
 
-      // ✅ Automatically sign them in right after signup
+      // ✅ Auto login after successful signup
       await signIn('credentials', {
-        redirect: true, // true = automatically redirect to callbackUrl
+        redirect: true,
         email: data.email,
         password: data.password,
-        callbackUrl: '/dashboard', // redirect after login, adjust if needed
+        callbackUrl: '/dashboard',
       });
-    } catch (error) {
-      if (error instanceof Error) {
-        setServerError(error.message);
-      } else if (
-        typeof error === 'object' &&
-        error !== null &&
-        'response' in error
-      ) {
-        setServerError(
-          (error as { response?: { data?: { message?: string } } }).response
-            ?.data?.message || 'Something went wrong'
-        );
+    } catch (err) {
+      const axiosError = err as AxiosError<{ error?: string }>;
+
+      // ✅ Handle server error response
+      if (axiosError.response?.data?.error === 'User already exists.') {
+        setServerError('Email already exists. Please sign in instead.');
+      } else if (axiosError.response?.data?.error) {
+        setServerError(axiosError.response.data.error);
       } else {
-        setServerError('Something went wrong');
+        setServerError('Something went wrong. Please try again.');
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -284,6 +283,7 @@ const SignupPage = () => {
               <FaLinkedin size={20} /> LinkedIn
             </button>
             <button
+              onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
               type="button"
               className="flex items-center gap-2 border p-2 rounded-md hover:bg-gray-50 cursor-pointer"
             >

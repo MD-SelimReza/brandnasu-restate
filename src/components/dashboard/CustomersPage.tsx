@@ -136,6 +136,7 @@ export default function UserManagement() {
                     >
                       <option value="user">User</option>
                       <option value="admin">Admin</option>
+                      <option value="superadmin">Super Admin</option>{' '}
                     </select>
                   </td>
                   <td className="px-4 py-3">

@@ -34,8 +34,6 @@ const UserPage = () => {
         const response = await axios.get(`/api/user/${id}`);
         setUser(response.data);
       } catch (err) {
-        console.error('User fetch error:', err);
-
         if (axios.isAxiosError(err)) {
           setError(err.response?.data?.message || 'Failed to load user');
         } else {

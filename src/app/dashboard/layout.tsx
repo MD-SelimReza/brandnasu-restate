@@ -5,14 +5,16 @@ import { redirect } from 'next/navigation';
 
 export default async function DashboardLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const session = await getServerSession(authOptions);
+  console.log('Session:', session?.user?.role);
 
   if (!session) {
-    redirect('/signin');
+    return redirect('/signin');
   }
+
   return (
     <main className="w-full bg-white">
       <DashboardLayoutWrapper>{children}</DashboardLayoutWrapper>
