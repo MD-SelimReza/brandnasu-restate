@@ -7,7 +7,6 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import { FaLinkedin } from 'react-icons/fa';
 import { signIn } from 'next-auth/react';
-import Link from 'next/link';
 
 type FormData = {
   first_name: string;
@@ -257,8 +256,8 @@ const SignupPage = () => {
             type="submit"
             disabled={loading}
             className={`w-full ${
-              loading ? 'bg-gray-400' : 'bg-lime-600 hover:bg-lime-700'
-            } text-white rounded-md py-2 text-sm font-semibold cursor-pointer`}
+              loading ? 'bg-gray-400' : 'bg-indigo hover:bg-darkIndigo'
+            } text-white rounded-md py-2 text-sm font-semibold cursor-pointer transition duration-300`}
           >
             {loading ? 'Signing Up...' : 'Sign Up'}
           </button>
@@ -292,12 +291,12 @@ const SignupPage = () => {
           </div>
 
           {/* Already have account */}
-          <p className="text-center text-sm mt-4">
+          {/* <p className="text-center text-sm mt-4">
             Already have an account?{' '}
             <Link href="/signin" className="text-blue-600 hover:underline">
               Sign in
             </Link>
-          </p>
+          </p> */}
         </form>
       </div>
     </div>

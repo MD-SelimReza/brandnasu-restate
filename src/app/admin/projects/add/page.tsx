@@ -25,11 +25,7 @@ const EditorPage = async () => {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    redirect('/signin');
-  }
-
-  if (session?.user?.role !== 'admin') {
-    redirect('/dashboard');
+    redirect('/');
   }
 
   return (

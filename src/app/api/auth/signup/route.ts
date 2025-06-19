@@ -9,16 +9,8 @@ export async function POST(req: Request) {
     await connectDB();
 
     // 2. Get the data from the request body
-    const {
-      first_name,
-      last_name,
-      email,
-      role,
-      password,
-      phone,
-      image,
-      location,
-    } = await req.json();
+    const { first_name, last_name, email, password, phone, image, location } =
+      await req.json();
 
     // 3. Basic field validation
     if (!first_name || !last_name || !email || !password) {
@@ -30,8 +22,13 @@ export async function POST(req: Request) {
 
     // 4. Normalize email to lowercase to prevent duplicates with casing differences
     const normalizedEmail = email.toLowerCase();
+    const superAdminEmail = process.env.SUPERADMIN_EMAIL?.toLowerCase();
 
-    // 5. Check if the user already exists
+    // 5. Determine role based on email
+    const assignedRole =
+      normalizedEmail === superAdminEmail ? 'superadmin' : 'admin';
+
+    // 6. Check if the user already exists
     const existingUser = await User.findOne({ email: normalizedEmail });
     if (existingUser) {
       return NextResponse.json(
@@ -40,25 +37,25 @@ export async function POST(req: Request) {
       );
     }
 
-    // 6. Hash the password (using async for better performance)
+    // 7. Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // 7. Create a new user document
+    // 8. Create a new user document
     const newUser = new User({
       first_name,
       last_name,
       email: normalizedEmail,
-      role: role || 'user',
+      role: assignedRole,
       phone: phone || '',
       image: image || '',
       location: location || '',
       password: hashedPassword,
     });
 
-    // 8. Save the user to the database
+    // 9. Save the user to the database
     await newUser.save();
 
-    // 9. Return success response
+    // 10. Return success response
     return NextResponse.json(
       { message: 'User created successfully.' },
       { status: 201 }

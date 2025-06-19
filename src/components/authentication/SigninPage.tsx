@@ -46,7 +46,7 @@ const SigninPage = () => {
     }
 
     if (res?.ok) {
-      router.push('/dashboard'); // Redirect to your desired page after login
+      router.push('/dashboard');
     }
   };
 
@@ -152,8 +152,8 @@ const SigninPage = () => {
             className={`w-full ${
               loading
                 ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-lime-600 hover:bg-lime-700'
-            } text-white rounded-md py-2 text-sm font-semibold cursor-pointer`}
+                : 'bg-indigo hover:bg-darkIndigo'
+            } text-white rounded-md py-2 text-sm font-semibold cursor-pointer transition duration-300`}
           >
             {loading ? 'Logging in...' : 'Login'}
           </button>

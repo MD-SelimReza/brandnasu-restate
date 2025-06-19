@@ -10,7 +10,6 @@ import Superscript from '@tiptap/extension-superscript';
 import TiptapImage from '@tiptap/extension-image';
 import TextStyle from '@tiptap/extension-text-style';
 import Color from '@tiptap/extension-color';
-// import Highlight from '@tiptap/extension-highlight';
 import FontFamily from '@tiptap/extension-font-family';
 import FontSize from 'tiptap-extension-font-size';
 import Strike from '@tiptap/extension-strike';

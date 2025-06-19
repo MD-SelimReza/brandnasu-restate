@@ -18,8 +18,8 @@ const UserSchema = new Schema<IUser>(
     email: { type: String, required: true, unique: true },
     role: {
       type: String,
-      enum: ['superadmin', 'admin', 'user'],
-      default: 'user',
+      enum: ['superadmin', 'admin'],
+      default: 'admin',
     },
     phone: { type: String },
     image: { type: String },

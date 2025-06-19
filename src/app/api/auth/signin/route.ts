@@ -17,7 +17,7 @@ export async function GET() {
       id: session.user.id,
       email: session.user.email,
       name: session.user.name,
-      role: session.user.role, // Assuming role is part of the user object
+      role: session.user.role,
     },
     process.env.JWT_SECRET as string,
     { expiresIn: '7d' }
@@ -29,7 +29,7 @@ export async function GET() {
   response.cookies.set('token', token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    maxAge: 60 * 60 * 24 * 7, // 7 days
+    maxAge: 60 * 60 * 24 * 7,
     path: '/',
   });
 

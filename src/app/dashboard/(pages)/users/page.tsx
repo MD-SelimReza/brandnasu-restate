@@ -1,17 +1,26 @@
+'use client';
 import React from 'react';
-import CustomersPage from '@/components/dashboard/CustomersPage';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/authOptions';
 import { redirect } from 'next/navigation';
+import { useSessionUser } from '@/hooks/useSessionUser';
+import CustomersPage from '@/components/dashboard/CustomersPage';
+import BarLoader from '@/components/ui/BarLoader';
 
-const page = async () => {
-  const session = await getServerSession(authOptions);
+const Page = () => {
+  const { user, loading } = useSessionUser();
 
-  if (!session) {
-    redirect('/signin');
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center mt-40">
+        <BarLoader />
+      </div>
+    );
   }
 
-  if (session?.user?.role !== 'superadmin') {
+  if (!user) {
+    return redirect('/');
+  }
+
+  if (user?.role !== 'superadmin') {
     redirect('/dashboard');
   }
 
@@ -22,4 +31,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;

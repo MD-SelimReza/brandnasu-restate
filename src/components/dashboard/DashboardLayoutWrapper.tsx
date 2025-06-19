@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FiMenu } from 'react-icons/fi';
-import BarLoader from '../ui/BarLoader';
 import logo from '../../../public/Logo/light-logo.svg';
 
 const DashboardLayoutWrapper = ({
@@ -16,16 +15,8 @@ const DashboardLayoutWrapper = ({
   children: React.ReactNode;
 }>) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { user, loading } = useSessionUser();
+  const { user } = useSessionUser();
   const pathname = usePathname();
-
-  if (loading) {
-    return (
-      <div className="h-screen p-6 bg-gray100">
-        <BarLoader />
-      </div>
-    );
-  }
 
   const isActive = (path: string) => pathname === path;
 
@@ -67,7 +58,7 @@ const DashboardLayoutWrapper = ({
         </div>
 
         <div className="flex items-center space-x-4 ml-auto mt-6 px-6">
-          <Link href={'/dashboard/my-account'} className="relative w-10 h-10">
+          <div className="relative w-10 h-10">
             <Image
               src={
                 user?.image ? user?.image : 'https://i.pravatar.cc/40?img=32'
@@ -76,7 +67,7 @@ const DashboardLayoutWrapper = ({
               layout="fill"
               className="rounded-full border-2 border-lightIndigo object-cover"
             />
-          </Link>
+          </div>
           <span className="text-lightIndigo hidden sm:block capitalize text-center">
             {user?.first_name} {user?.last_name}
           </span>
@@ -84,13 +75,13 @@ const DashboardLayoutWrapper = ({
 
         <nav className="mt-6 space-y-2 px-2">
           {/* Dashboard - All roles */}
-          <Link
+          {/* <Link
             href="/dashboard"
             onClick={() => setSidebarOpen(false)}
             className={getNavLinkClass('/dashboard')}
           >
             Dashboard
-          </Link>
+          </Link> */}
 
           {/* SuperAdmin & Admin: Can view Projects */}
           {(user?.role === 'superadmin' || user?.role === 'admin') && (
@@ -115,24 +106,22 @@ const DashboardLayoutWrapper = ({
           )}
 
           {/* User & SuperAdmin: Support route */}
-          {/* {(user?.role === 'user' || user?.role === 'superadmin') && ( */}
-          <Link
+          {/* <Link
             href="/dashboard/support"
             onClick={() => setSidebarOpen(false)}
             className={getNavLinkClass('/dashboard/support')}
           >
             Support
-          </Link>
-          {/* // )} */}
+          </Link> */}
 
           {/* All roles: My Account */}
-          <Link
+          {/* <Link
             href="/dashboard/my-account"
             onClick={() => setSidebarOpen(false)}
             className={getNavLinkClass('/dashboard/my-account')}
           >
             My Account
-          </Link>
+          </Link> */}
         </nav>
       </aside>
 

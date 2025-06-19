@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
-import { FiEdit, FiEye, FiTrash2 } from 'react-icons/fi';
+import { FiTrash2 } from 'react-icons/fi';
 import { BiUserPlus } from 'react-icons/bi';
 import ConfirmDeleteDialog from '../ConfirmDeleteDialog';
 import { User, useUsers } from '@/hooks/useUsers';
@@ -97,79 +97,58 @@ export default function UserManagement() {
                   Role
                 </th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                  Edit
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                  View
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
                   Delete
                 </th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {currentUsers.map((user) => (
-                <tr key={user._id}>
-                  <td className="px-4 py-3">
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden border">
-                      <Image
-                        src={user.image || 'https://i.pravatar.cc/40?img=32'}
-                        alt={user.first_name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </td>
-                  <td className="px-4 py-3 text-sm font-medium text-gray-900">
-                    {user.first_name} {user.last_name}
-                  </td>
-                  <td className="px-4 py-3 text-sm text-gray-700">
-                    {user.email}
-                  </td>
-                  <td className="px-4 py-3">
-                    <select
-                      value={user.role || 'user'}
-                      onChange={(e) =>
-                        handleRoleChange(user._id, e.target.value)
-                      }
-                      className="border border-gray-300 rounded-md px-2 py-1 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    >
-                      <option value="user">User</option>
-                      <option value="admin">Admin</option>
-                      <option value="superadmin">Super Admin</option>{' '}
-                    </select>
-                  </td>
-                  <td className="px-4 py-3">
-                    <Link href={`/dashboard/update-user/${user._id}`}>
-                      <button
-                        className="flex items-center justify-center bg-gray-100 text-gray-700 py-1.5 px-2 rounded-md hover:bg-gray-200 border"
-                        title="Edit"
+              {currentUsers.map((user) => {
+                const isProtectedUser = user.email === 'suvas@brandnasu.com';
+
+                return (
+                  <tr key={user._id}>
+                    <td className="px-4 py-3">
+                      <div className="relative w-10 h-10 rounded-full overflow-hidden border">
+                        <Image
+                          src={user.image || 'https://i.pravatar.cc/40?img=32'}
+                          alt={user.first_name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </td>
+                    <td className="px-4 py-3 text-sm font-medium text-gray-900">
+                      {user.first_name} {user.last_name}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-gray-700">
+                      {user.email}
+                    </td>
+                    <td className="px-4 py-3">
+                      <select
+                        value={user.role || 'user'}
+                        onChange={(e) =>
+                          handleRoleChange(user._id, e.target.value)
+                        }
+                        className="border border-gray-300 rounded-md px-2 py-1 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60 cursor-pointer disabled:cursor-not-allowed"
+                        disabled={isProtectedUser}
                       >
-                        <FiEdit className="text-lg" />
-                      </button>
-                    </Link>
-                  </td>
-                  <td className="px-4 py-3">
-                    <Link href={`/dashboard/user/${user._id}`}>
+                        <option value="admin">Admin</option>
+                        <option value="superadmin">Super Admin</option>
+                      </select>
+                    </td>
+                    <td className="px-4 py-3">
                       <button
-                        className="flex items-center justify-center py-1.5 px-2 rounded-md bg-gray100 text-darkGray hover:bg-gray-100 border"
-                        title="View"
+                        onClick={() => confirmDelete(user._id)}
+                        className="flex items-center justify-center py-1.5 px-2 rounded-md bg-gray-100 text-red-600 hover:bg-red-100 border disabled:opacity-60 disabled:cursor-not-allowed"
+                        title="Delete"
+                        disabled={isProtectedUser}
                       >
-                        <FiEye className="text-lg" />
+                        <FiTrash2 className="text-lg" />
                       </button>
-                    </Link>
-                  </td>
-                  <td className="px-4 py-3">
-                    <button
-                      onClick={() => confirmDelete(user._id)}
-                      className="flex items-center justify-center py-1.5 px-2 rounded-md bg-gray-100 text-red-600 hover:bg-red-100 border"
-                      title="Delete"
-                    >
-                      <FiTrash2 className="text-lg" />
-                    </button>
-                  </td>
-                </tr>
-              ))}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

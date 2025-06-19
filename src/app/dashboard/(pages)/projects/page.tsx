@@ -25,11 +25,7 @@ const Page = async () => {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    redirect('/signin');
-  }
-
-  if (session?.user?.role !== 'admin' && session?.user?.role !== 'superadmin') {
-    redirect('/dashboard');
+    redirect('/');
   }
 
   return (

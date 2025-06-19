@@ -1,135 +1,3 @@
-// import { NextAuthOptions, Session } from 'next-auth';
-// import CredentialsProvider from 'next-auth/providers/credentials';
-// import GoogleProvider from 'next-auth/providers/google';
-// import UserModel from '@/models/User';
-// import { connectDB } from './mongo';
-// import bcrypt from 'bcryptjs';
-// import { JWT } from 'next-auth/jwt';
-
-// export const authOptions: NextAuthOptions = {
-//   providers: [
-//     // Google Authentication
-//     GoogleProvider({
-//       clientId: process.env.GOOGLE_CLIENT_ID as string,
-//       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-//     }),
-
-//     // Credentials Authentication (SignUp + SignIn)
-//     CredentialsProvider({
-//       name: 'credentials',
-//       credentials: {
-//         email: { label: 'Email', type: 'email' },
-//         password: { label: 'Password', type: 'password' },
-//         first_name: { label: 'First Name', type: 'text' },
-//         last_name: { label: 'Last Name', type: 'text' },
-//       },
-
-//       async authorize(credentials) {
-//         if (!credentials) {
-//           throw new Error('Missing credentials');
-//         }
-
-//         const { email, password, first_name, last_name } = credentials;
-
-//         await connectDB();
-
-//         // ✅ If first_name and last_name are present, we treat it as SIGN UP.
-//         if (first_name && last_name && email && password) {
-//           const existingUser = await UserModel.findOne({ email });
-
-//           if (existingUser) {
-//             throw new Error('User already exists');
-//           }
-
-//           const hashedPassword = bcrypt.hashSync(password, 10);
-
-//           const newUser = new UserModel({
-//             first_name,
-//             last_name,
-//             email,
-//             password: hashedPassword,
-//           });
-
-//           await newUser.save();
-
-//           return {
-//             id: newUser._id.toString(),
-//             first_name: newUser.first_name,
-//             last_name: newUser.last_name,
-//             email: newUser.email,
-//             image: newUser.image || null,
-//           };
-//         }
-
-//         // ✅ SIGN IN flow if only email and password provided
-//         if (email && password) {
-//           const user = await UserModel.findOne({ email });
-
-//           if (!user) {
-//             throw new Error('User not found');
-//           }
-
-//           const isValidPassword = bcrypt.compareSync(
-//             password,
-//             user.password || ''
-//           );
-
-//           if (!isValidPassword) {
-//             throw new Error('Invalid credentials');
-//           }
-
-//           return {
-//             id: user._id.toString(),
-//             name: `${user.first_name} ${user.last_name}`,
-//             email: user.email,
-//             image: user.image || null,
-//           };
-//         }
-
-//         return null;
-//       },
-//     }),
-//   ],
-
-//   session: {
-//     strategy: 'jwt',
-//   },
-
-//   callbacks: {
-//     // JWT callback runs on sign in / signup and whenever a session is checked.
-//     async jwt({ token, user }) {
-//       if (user) {
-//         token.id = user.id;
-//         token.email = user.email ?? '';
-//         token.name = user.name ?? '';
-//         token.image = user.image || null;
-//       }
-
-//       return token;
-//     },
-
-//     // Session callback attaches user data to the session
-//     async session({ session, token }: { session: Session; token: JWT }) {
-//       if (session.user) {
-//         session.user.id = token.id as string;
-//         session.user.email = token.email as string;
-//         session.user.name = token.name as string;
-//         session.user.image = token.image as string | null;
-//       }
-
-//       return session;
-//     },
-//   },
-
-//   pages: {
-//     signIn: '/signin',
-//     signOut: '/',
-//     error: '/',
-//   },
-
-//   secret: process.env.NEXTAUTH_SECRET,
-// };
-
 import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
@@ -145,7 +13,6 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
 
-    // Credentials Authentication (SignUp + SignIn)
     CredentialsProvider({
       name: 'credentials',
       credentials: {
@@ -153,48 +20,44 @@ export const authOptions: NextAuthOptions = {
         password: { label: 'Password', type: 'password' },
         first_name: { label: 'First Name', type: 'text' },
         last_name: { label: 'Last Name', type: 'text' },
+        magic: { label: 'Magic Login', type: 'text' },
       },
-
       async authorize(credentials) {
-        if (!credentials) {
-          throw new Error('Missing credentials');
-        }
+        if (!credentials?.email) throw new Error('Missing email');
 
         await connectDB();
-        const { email, password, first_name, last_name } = credentials;
+        const user = await UserModel.findOne({ email: credentials.email });
 
-        const user = await UserModel.findOne({ email });
+        if (!user) throw new Error('User not found');
 
-        if (first_name && last_name) {
-          if (user) throw new Error('User already exists');
+        const normalizedEmail = credentials?.email.toLowerCase();
+        const superAdminEmail = process.env.SUPERADMIN_EMAIL?.toLowerCase();
 
-          const hashedPassword = bcrypt.hashSync(password, 10);
-          const newUser = await UserModel.create({
-            first_name,
-            last_name,
-            email,
-            password: hashedPassword,
-          });
+        console.log(normalizedEmail, superAdminEmail, 'isSuperAdminEmail');
 
+        const isSuperAdminEmail = normalizedEmail === superAdminEmail;
+
+        if (credentials.magic === 'true') {
           return {
-            id: newUser._id.toString(),
-            name: `${newUser.first_name} ${newUser.last_name}`,
-            email: newUser.email,
-            image: newUser.image || null,
-            role: newUser.role || 'user',
+            id: user._id.toString(),
+            name: `${user.first_name} ${user.last_name}`,
+            email: user.email,
+            role: isSuperAdminEmail ? 'superadmin' : 'admin',
           };
         }
 
-        if (!user) throw new Error('User not found');
-        const valid = bcrypt.compareSync(password, user.password || '');
+        if (!credentials.password) throw new Error('Missing password');
+        const valid = bcrypt.compareSync(
+          credentials.password,
+          user.password || ''
+        );
         if (!valid) throw new Error('Invalid credentials');
 
         return {
           id: user._id.toString(),
           name: `${user.first_name} ${user.last_name}`,
           email: user.email,
-          image: user.image || null,
-          role: user.role || 'user',
+          role: isSuperAdminEmail ? 'superadmin' : 'admin',
         };
       },
     }),
@@ -211,27 +74,19 @@ export const authOptions: NextAuthOptions = {
         let dbUser = await UserModel.findOne({ email: user.email });
 
         // If user does not exist in DB, create them
+        const normalizedEmail = user.email?.toLowerCase();
+        const superAdminEmail = process.env.SUPERADMIN_EMAIL?.toLowerCase();
+
+        const isSuperAdminEmail = normalizedEmail === superAdminEmail;
+
         if (!dbUser) {
-          const normalizedEmail = user.email?.toLowerCase();
-
-          // Define superadmin emails
-          const superAdminEmails = [
-            'rezaselim405@gmail.com',
-            'suvas@brandnasu.com',
-          ];
-
-          // Check if the current user is a superadmin
-          const isSuperAdminEmail = superAdminEmails.includes(
-            normalizedEmail || ''
-          );
-
           dbUser = await UserModel.create({
             first_name: user.name?.split(' ')[0] || '',
             last_name: user.name?.split(' ')[1] || '',
             email: normalizedEmail,
             image: user.image,
-            password: null, // Not used for Google users
-            role: isSuperAdminEmail ? 'superadmin' : 'user',
+            password: null,
+            role: isSuperAdminEmail ? 'superadmin' : 'admin',
           });
         }
 
@@ -247,7 +102,7 @@ export const authOptions: NextAuthOptions = {
         token.email = user.email!;
         token.name = user.name ?? '';
         token.image = user.image ?? null;
-        token.role = user.role ?? 'user';
+        token.role = user.role ?? 'admin';
       }
 
       return token;

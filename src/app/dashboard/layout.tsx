@@ -1,18 +1,26 @@
+'use client';
 import DashboardLayoutWrapper from '@/components/dashboard/DashboardLayoutWrapper';
-import { authOptions } from '@/lib/authOptions';
-import { getServerSession } from 'next-auth';
+import BarLoader from '@/components/ui/BarLoader';
+import { useSessionUser } from '@/hooks/useSessionUser';
 import { redirect } from 'next/navigation';
 
-export default async function DashboardLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerSession(authOptions);
-  console.log('Session:', session?.user?.role);
+  const { user, loading } = useSessionUser();
 
-  if (!session) {
-    return redirect('/signin');
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center mt-40">
+        <BarLoader />
+      </div>
+    );
+  }
+
+  if (!user) {
+    return redirect('/');
   }
 
   return (
