@@ -141,7 +141,7 @@ export default function UserManagement() {
                         onClick={() => confirmDelete(user._id)}
                         className="flex items-center justify-center py-1.5 px-2 rounded-md bg-gray-100 text-red-600 hover:bg-red-100 border disabled:opacity-60 disabled:cursor-not-allowed"
                         title="Delete"
-                        disabled={isProtectedUser}
+                        // disabled={isProtectedUser}
                       >
                         <FiTrash2 className="text-lg" />
                       </button>

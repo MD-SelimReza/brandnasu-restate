@@ -110,7 +110,7 @@ const WorkHero = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-                {webProjects.slice(0, 5).map((web) => (
+                {webProjects.map((web) => (
                   <div
                     key={web.slug}
                     data-aos="fade-up"
@@ -178,7 +178,7 @@ const WorkHero = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-                {designProjects.slice(0, 8).map((brand) => (
+                {designProjects.map((brand) => (
                   <div
                     data-aos="fade-up"
                     data-aos-easing="ease"
@@ -246,7 +246,7 @@ const WorkHero = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-                {marketingProjects.slice(0, 6).map((brand) => (
+                {marketingProjects.map((brand) => (
                   <div
                     data-aos="fade-up"
                     data-aos-easing="ease"
@@ -314,7 +314,7 @@ const WorkHero = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-24 gap-y-20 md:gap-x-5 gap-x-10 xl:px-6 px-5">
-                {videoProjects.slice(0, 6).map((brand) => (
+                {videoProjects.map((brand) => (
                   <div
                     data-aos="fade-up"
                     data-aos-easing="ease"

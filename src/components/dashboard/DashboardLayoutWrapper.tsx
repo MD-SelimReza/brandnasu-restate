@@ -57,7 +57,7 @@ const DashboardLayoutWrapper = ({
           </button>
         </div>
 
-        <div className="flex items-center space-x-4 ml-auto mt-6 px-6">
+        {/* <div className="flex items-center space-x-4 ml-auto mt-6 px-6">
           <div className="relative w-10 h-10">
             <Image
               src={
@@ -71,7 +71,7 @@ const DashboardLayoutWrapper = ({
           <span className="text-lightIndigo hidden sm:block capitalize text-center">
             {user?.first_name} {user?.last_name}
           </span>
-        </div>
+        </div> */}
 
         <nav className="mt-6 space-y-2 px-2">
           {/* Dashboard - All roles */}
