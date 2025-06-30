@@ -2,7 +2,7 @@ import AutoSlider from '@/components/AutoSlider';
 import GradientSection from '@/components/GradientBackground';
 import OurWorks from '@/components/OurWorks';
 import DesignProcess from '@/components/DesignProcess';
-import TestimonialsCarousel from '@/components/TestimonialsCarousel';
+// import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import CallToActionSection from '@/components/CallToActionSection';
 import FAQSection from '@/components/FAQSection';
 import BookADemo from '@/components/BookADemo';
@@ -17,7 +17,7 @@ export default function Home() {
       <OurWorks />
       <GradientSection />
       <DesignProcess />
-      <TestimonialsCarousel />
+      {/* <TestimonialsCarousel /> */}
       <CallToActionSection />
       <FAQSection
         title="Frequently Asked Questions"

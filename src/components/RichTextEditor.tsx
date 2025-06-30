@@ -303,7 +303,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialData }) => {
 
         // Redirect current page after editing
         if (initialData?._id) {
-          router.push('/admin/projects');
+          router.push('/dashboard/projects');
         }
 
         setErrors({});

@@ -39,9 +39,9 @@ export default async function WorkDetailsPage(props: {
   }
 
   return (
-    <div className="px-5 max-w-[1440px] mx-auto pb-12">
+    <div className="px-5 max-w-[1440px] mx-auto pb-12 min-h-[calc(100vh-580px)]">
       <div className="my-10">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center">
           <div>
             <h1 className="text-3xl font-bold text-darkIndigo">
               {project.title}
