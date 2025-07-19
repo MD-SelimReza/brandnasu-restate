@@ -66,6 +66,12 @@ const teamMembers = [
       'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/team-suvo.jpg',
   },
   {
+    name: 'Nasrin Sultana',
+    title: 'Sr. Graphic Designer',
+    image:
+      'https://brandnasu-space.nyc3.cdn.digitaloceanspaces.com/uploads/Nasrin-S.jpg',
+  },
+  {
     name: 'Ab Hadi',
     title: 'Sr. Graphic Designer',
     image:
@@ -848,7 +854,7 @@ const About = () => {
               deliver marketing that actually drives results.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {teamMembers.map((member, index) => (
                 <div
                   key={index}
